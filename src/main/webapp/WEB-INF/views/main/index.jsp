@@ -83,55 +83,30 @@
 	height: 100%;
 	border-radius: 5px;
 }
-/* .box > h4{
-	width: 100%;
-	padding: 12px;
-	font-size: 19px;
-}
-.box > p{
-	font-size: 14px;
-	font-weight: bold;
-	padding: 0 10px;
-	padding-bottom: 5px;
-} */
 .box1{
 	width: 205px;
 	background: url("${pageContext.request.contextPath}/resources/images/box1Bg.jpg") no-repeat;
 	background-size: cover;
 }
-.box1 > h4{
-	color: #246d8e;
-}
+
 .box2{
 	width: 205px;
 	background: url("${pageContext.request.contextPath}/resources/images/box2Bg.jpg") no-repeat;
 	background-size: cover;
 }
-.box2 > h4{
-	color: #fed700;
-}
-.box2 > p{
-	color: #fff;
-}
+
 .box3{
 	width: 245px;
 	background: url("${pageContext.request.contextPath}/resources/images/box3Bg.jpg") no-repeat;
 	background-size: cover;
 }
-.box3 > h4{
-	color: #fed700;
-}
-.box3 > p{
-	color: #fff;
-}
+
 .box4{
 	width: 165px;
 	background: url("${pageContext.request.contextPath}/resources/images/box4Bg.jpg") no-repeat;
 	background-size: cover;
 }
-.box4 > h4{
-	color: #246d8e;
-}
+
 .box5{
 	width: 416px;
 }
@@ -142,13 +117,46 @@
 	width: 205px;
 	background: #fff;
 }
+.box6 > .box_title{
+	border-bottom: 2px solid #8754c7;
+}
+.box6 > .box_title > h4{
+	color: #8754c7;
+}
+
 .box7{
 	width: 205px;
 	background: #fff;
 }
-
-
-
+.box7 > .box_title{
+	border-bottom: 2px solid #ed933a;
+}
+.box7 > .box_title > h4{
+	color: #ed933a;
+}
+.box_title{
+	width: 100%;
+	padding: 5px 10px;
+	overflow: hidden;
+}
+.box_title > h4{
+	font-size: 19px;
+	float:left;
+}
+.box_title > p{
+	float: right;
+	font-size: 15px;
+	padding-top: 3px;
+}
+.box > ul{
+	
+}
+.box> ul > li{
+	padding: 5px 8px;
+}
+.box> ul > li > a{
+	font-size: 15px;
+}
 
 .footerWrap{
 	width: 100%;
@@ -198,25 +206,15 @@ $(function(){
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-						<!-- <h4>인사말</h4>
-						<p>원마취 통증의학과는 <br>항상 환자들의 통증완화에<br>앞장서며 만족도 높은<br> 서비스를 제공합니다. </p> -->
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox1.jpg">
 					</div>
 					<div class="box2 box">
-						<!-- <h4>상담문의</h4>
-						<p>진료 및 치료관련 궁금증을</p>
-						<p>친절하게 상담해드립니다.</p> -->
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox2.jpg">
 					</div>
 					<div class="box3 box">
-						<!-- <h4>병원둘러보기</h4>
-						<p>원마취통증의학과의 내부 시설 및 장비를 알아볼 수 있습니다.</p> -->
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox3.jpg">
 					</div>
 					<div class="box4 box">
-						<!-- <h4>오시는 길</h4>
-						<p>원마취통증의학과로 오시는 길을</p>
-						<p>상세하게 안내해드립니다.</p> -->
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox4.jpg">
 					</div>
 					<div class="box5 box">
@@ -228,10 +226,10 @@ $(function(){
 							<p><a href="#none">더보기</a></p>
 						</div>
 						<ul>
-							<li>척추측만증 도수치료 후...</li>
-							<li>허리디스크 재활치료 경과...</li>
-							<li>척추측만증 도수치료 후...</li>
-							<li>목디스크 재활치료 경과...</li>
+							<li><a href="">- 척추측만증 도수치료 후...</a></li>
+							<li><a href="">- 허리디스크 재활치료 경과...</a></li>
+							<li><a href="">- 척추측만증 도수치료 후...</a></li>
+							<li><a href="">- 목디스크 재활치료 경과...</a></li>
 						</ul>
 					</div>
 					<div class="box7 box">
@@ -239,7 +237,11 @@ $(function(){
 							<h4>언론보도</h4>
 							<p><a href="#none">더보기</a></p>
 						</div>
-						
+						<ul>
+							<li><a href="">- 통증의학과 전문 병원 개원...</a></li>
+							<li><a href="">- 통증의학 전문의가 있는 병원...</a></li>
+							<li><a href="">- 재활치료 전문병원 원통증...</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
