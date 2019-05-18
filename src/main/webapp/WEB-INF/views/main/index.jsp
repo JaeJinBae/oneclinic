@@ -198,11 +198,11 @@ $(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="sectionBg">
-				<img src="${pageContext.request.contextPath}/resources/images/mainBg2.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
 			</div>
 			<div class="sectionContentWrap">
 				<div class="mainBanner">
-					<img src="${pageContext.request.contextPath}/resources/images/mainBanner2.png">
+					<img src="${pageContext.request.contextPath}/resources/images/mainBanner.png">
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
@@ -231,7 +231,7 @@ $(function(){
 							<li><a href="">- 척추측만증 도수치료 후...</a></li>
 							<li><a href="">- 목디스크 재활치료 경과...</a></li>
 						</ul>
-					</div>
+					</div><!-- box6 end -->
 					<div class="box7 box">
 						<div class="box_title">
 							<h4>언론보도</h4>
@@ -242,10 +242,10 @@ $(function(){
 							<li><a href="">- 통증의학 전문의가 있는 병원...</a></li>
 							<li><a href="">- 재활치료 전문병원 원통증...</a></li>
 						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+					</div><!-- box7 end -->
+				</div><!-- boxWrap -->
+			</div><!-- sectionContentWrap end -->
+		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
 		
 		</div>
