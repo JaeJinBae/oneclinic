@@ -62,6 +62,7 @@ $(function(){
 		$(this).find(".subMenu").css("display","block");
 		$(this).find("p").css({"background":"#00557c", "color":"#fff"});
 	});
+	
 });
 </script>
 <div class="header">

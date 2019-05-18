@@ -56,7 +56,6 @@
 	border:1px solid lightgray;
 	border-radius: 5px;
 	width: 33%;
-	height: 200px;
 }
 .box > img{
 	width: 100%;
@@ -111,19 +110,19 @@ $(function(){
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-					
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox1.png">
 					</div>
 					<div class="box2 box">
-					
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.png">
 					</div>
 					<div class="box3 box">
-					
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox3.png">
 					</div>
 					<div class="box4 box">
-					
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox4.jpg">
 					</div>
 					<div class="box5 box">
-					
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox5.png">
 					</div>
 					<div class="box6 box">
 					
