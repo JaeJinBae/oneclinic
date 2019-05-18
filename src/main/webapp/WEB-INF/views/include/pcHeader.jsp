@@ -8,7 +8,7 @@
 
 	.whiteBack{
 		width:100%;
-		height:115px;
+		height:100px;
 		background: #fff;
 		position: absolute;
 		top:0;
@@ -28,25 +28,25 @@
 	}
 	.mainMenuUl > li{
 		float:left;
-		width:120px;
+		width:150px;
 		text-align: center;
-		padding-top:45px;
+		padding-top:42px;
 	}
 	.mainMenuUl > li > a{
 		display:block;
 		font-size:20px;
 		font-weight:600;
-		margin-bottom:47px;
+		margin-bottom:34px;
 		color: #5E5E5E;
 	}
 	.mainMenuUl > li:first-child{
 		width:500px;
-		padding-top:24px;
+		padding-top:18px;
 	}
 	.logoDiv{
 		width:500px;
 		text-align: left;
-		margin-bottom:23px;
+		margin-bottom:14px;
 	}
 	.logoWrap > .logoDiv > a{
 		display:block;
@@ -56,7 +56,7 @@
 		width:100%;
 	}
 	.mainMenuUl > li:hover > a{
-		color:black;
+		color: #00557c;
 	}
 	.subMenuWrap{
 		display:none;
@@ -75,6 +75,7 @@
 	}
 	.subMenuUl > li{
 		margin-bottom:25px;
+		text-align: center;
 	}
 	.subMenuUl > li > a{
 		font-size:17px;
