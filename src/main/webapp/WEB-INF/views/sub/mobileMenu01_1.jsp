@@ -20,8 +20,10 @@
 }
 .headerWrap{
 	width:100%;
-	position: absolute;
+	height: 132px;
+	position: fixed;
 	top:0;
+	z-index: 99;
 }
 .header_top{
 	width: 100%;

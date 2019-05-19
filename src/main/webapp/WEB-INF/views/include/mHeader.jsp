@@ -27,10 +27,11 @@
 	.mainMenu > li{
 		width: 100%;
 		text-align: center;
+		background: #fff;
 	}
 	.mainMenu > li > p{
 		font-size: 17px;
-		padding: 10px 0;
+		padding: 10px 0 11px 0;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
 	}
@@ -61,6 +62,10 @@ $(function(){
 		$(".subMenu").css("display","none");
 		$(this).find(".subMenu").css("display","block");
 		$(this).find("p").css({"background":"#00557c", "color":"#fff"});
+	});
+	$(".sectionWrap").click(function(){
+		$(".mainMenu > li > p").css({"background":"#fff", "color":"#333333"});
+		$(".subMenu").css("display","none");
 	});
 	
 });

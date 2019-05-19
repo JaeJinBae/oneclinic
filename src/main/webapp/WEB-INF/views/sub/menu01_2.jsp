@@ -205,7 +205,7 @@ $(document).ready(function(){
 							<p>직원소개</p> 
 						</div>
 						<div class="tLogo">
-							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">
+							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
