@@ -9,7 +9,10 @@
 <meta charset="UTF-8">
 <title>insert title here</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 .allWrap{
 	width:100%;
@@ -50,6 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
+	height: 750px;
 	background: #477a9b;
 	padding: 20px 35px;
 }
@@ -75,13 +79,14 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(2) > a{
+.leftMenu > ul > li:nth-child(3) > a{
 	font-weight: bold;
 }
 
 
 .contentWrap{
 	width: 820px;
+	height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;
@@ -121,42 +126,26 @@
 .content{
 	width: 100%;
 }
-.empWrap{
-	width: 600px;
-	margin: 20px auto;
-	overflow: hidden;
-}
-.empWrap > .empImg{
-	float: left;
-	width: 195px;
-	height: 250px;
-	border: 1px solid gray;
-}
-.empWrap > .empCareer{
-	float: right;
-}
-.empCareer > .ecTitle{
+.slideWrap{
 	width: 100%;
-	overflow: hidden;
+	margin: 0 auto;
 }
-.empCareer > .ecTitle > h3{
-	float: left;
-	font-size: 23px;
-	font-family: sans-serif;
+.slider_for{
+	width: 600px;
+	margin: 0 auto;
+	margin-bottom: 90px;
 }
-.empCareer > .ecTitle > .bline{
-	float:left;
-	width: 200px; 
-	height: 2px;
-	background: #333333;
-	margin: 15px 0 15px 10px;
+.slider_for img{
+	width: 100%;
+	height: 320px;
 }
-.empCareer > ul{
-	margin: 20px 0;
+.slider_nav{
+	width: 100%;
 }
-.empCareer > ul > li{
-	font-size: 17px;
-	padding: 5px; 
+.slider_nav img{
+	width: 190px;
+	text-align: center;
+	margin:10px;
 }
 
 
@@ -169,8 +158,23 @@
 </style>
 <script>
 $(document).ready(function(){
-	var height = $(".sectionContent").outerHeight();
-	$(".sectionContent > .leftMenu").css("height", height);
+	var height = $(".contentWrap").height();
+	//$(".sectionContent > .leftMenu").css("height", height);
+	console.log(height);
+	$('.slider_for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider_nav'
+	});
+	$('.slider_nav').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		asNavFor: '.slider_for',
+		dots: true,
+		focusOnSelect: true
+	});
 });
 </script>
 </head>
@@ -189,7 +193,7 @@ $(document).ready(function(){
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">02</h2>
-					<h2>직원소개</h2>
+					<h2>병원둘러보기</h2>
 					<div class="line"></div> 
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/menu01_01">01.의료진소개</a></li>
@@ -202,73 +206,41 @@ $(document).ready(function(){
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>직원소개</p> 
+							<p>병원둘러보기</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="empWrap">
-							<div class="empImg">
-								
+						<div class="slideWrap">
+							<div class="slider_for slider">
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
 							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
-						<div class="empWrap">
-							<div class="empImg">
-								
+							<div class="slider_nav slider">
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
 							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
-						<div class="empWrap">
-							<div class="empImg">
-								
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
+						</div>
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->
