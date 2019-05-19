@@ -69,8 +69,9 @@
 .box1{
 	width: 100%;
 } 
-.box1 > a > img{
+.box1 > img{
 	width: 100%;
+	border-radius: 5px;
 }
 .box2{
 	margin: 0 1.6px;
@@ -118,19 +119,19 @@ $(function(){
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></a>
+						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg">
 					</div>
 					<div class="box2 box">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.jpg"></a>
+						<a href="${pageContext.request.contextPath}/mMenu04_03"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.jpg"></a>
 					</div>
 					<div class="box3 box">
 						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox3.jpg"></a>
 					</div>
 					<div class="box4 box"> 
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox4.jpg"></a>
+						<a href="${pageContext.request.contextPath}/mMenu01_04"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox4.jpg"></a>
 					</div>
 					<div class="box5 box">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox5.jpg"></a>
+						<a href="${pageContext.request.contextPath}/mMenu01_03"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox5.jpg"></a>
 					</div>
 					<div class="box6 box">
 					
