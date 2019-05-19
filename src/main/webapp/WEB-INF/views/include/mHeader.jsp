@@ -76,10 +76,10 @@ $(function(){
 			<li>
 				<p>병원소개</p>
 				<ul class="subMenu">
-					<li><a href="">의료진 소개</a></li>
-					<li><a href="">직원소개</a></li>
-					<li><a href="">병원둘러보기</a></li>
-					<li><a href="">오시는 길</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu01_01">의료진 소개</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu01_02">직원소개</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu01_03">병원둘러보기</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu01_04">오시는 길</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -87,10 +87,10 @@ $(function(){
 			<li>
 				<p>진료분야</p>
 				<ul class="subMenu">
-					<li><a href="">비수술척추클리닉</a></li>
-					<li><a href="">관절클리닉</a></li>
-					<li><a href="">성장클리닉</a></li>
-					<li><a href="">다이어트클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu02_01">비수술척추클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu02_02">관절클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu02_03">성장클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu02_04">다이어트클리닉</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -98,11 +98,11 @@ $(function(){
 			<li>
 				<p>재활분야</p>
 				<ul class="subMenu">
-					<li><a href="">통증재활</a></li>
-					<li><a href="">스포츠재활</a></li>
-					<li><a href="">성장운동</a></li>
-					<li><a href="">측만증운동</a></li>
-					<li><a href="">교정클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu03_01">통증재활</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu03_02">스포츠재활</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu03_03">성장운동</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu03_04">측만증운동</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu03_05">교정클리닉</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -110,11 +110,11 @@ $(function(){
 			<li>
 				<p>병원소식</p>
 				<ul class="subMenu">
-					<li><a href="">공지사항</a></li>
-					<li><a href="">언론보도</a></li>
-					<li><a href="">상담문의</a></li>
-					<li><a href="">치료후기</a></li>
-					<li><a href="">비용공지</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu04_01">공지사항</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu04_02">언론보도</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu04_03">상담문의</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu04_04">치료후기</a></li>
+					<li><a href="${pageContext.request.contextPath}/mMenu04_05">비용공지</a></li>
 				</ul>
 			</li>
 		</ul>

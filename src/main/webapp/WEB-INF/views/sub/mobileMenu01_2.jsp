@@ -7,34 +7,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원마취통증의학과</title>
+<title>insert title here</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .allWrap{
 	width:100%;
-	height: 100%;
+	background: #f2f6f8;
+	position: relative;
+	padding-top: 131px;
 }
 .headerWrap{
 	width:100%;
-	min-width:1100px;
-	background: url("${pageContext.request.contextPath}/resources/images/subNavBg.png");
-	background-size: cover;
 	position: absolute;
-	top:0; 
-	z-index: 99;
+	top:0;
 }
 .header_top{
-	width:100%;
-	height:20px;
+	width: 100%;
+	height: 20px;
 	background: #276f90;
 }
-.mg_top_135{
-	height:120px;
-}
+
 .sectionWrap{
 	width:100%;
-	margin: 0 auto;
 }
 .section_top{
 	width: 100%;
@@ -42,52 +38,13 @@
 .section_top > img{
 	width: 100%;
 }
-.sectionContent{
-	width: 1100px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-.sectionContent > .leftMenu{
-	float: left;
-	width: 233px;
-	background: #477a9b;
-	padding: 20px 35px;
-}
-.leftMenu > .line{
-	width: 100px;
-	height:3px;
-	background: #eaeaea;
-	margin: 50px 0;
-}
-.leftMenu > h2{
-	color: #fff;
-	font-weight: bold;
-	font-family: sans-serif;
-}
-.leftMenu > ul{
-
-}
-.leftMenu > ul > li{
-	padding: 13px 0;
-}
-.leftMenu > ul > li > a{
-	color: #fff;
-	font-size: 18px;
-	font-family: sans-serif;
-}
-.leftMenu > ul > li:nth-child(2) > a{
-	font-weight: bold;
-}
-
 
 .contentWrap{
-	width: 820px;
-	float:left;
-	padding: 20px 10px;
-	border: 1px solid lightgray;
+	width: 100%;
+	padding: 10px 5px;
 }
 .contentTitle{
-	width: 90%;
+	width: 99%;
 	margin: 0 auto;
 	margin-bottom: 50px;
 	padding-bottom: 10px;
@@ -122,14 +79,14 @@
 	width: 100%;
 }
 .empWrap{
-	width: 600px;
-	margin: 20px auto;
+	width: 100%;
+	margin: 15px auto;
 	overflow: hidden;
 }
 .empWrap > .empImg{
 	float: left;
-	width: 195px;
-	height: 250px;
+	width: 150px;
+	height: 190px;
 	border: 1px solid gray;
 }
 .empWrap > .empCareer{
@@ -141,22 +98,23 @@
 }
 .empCareer > .ecTitle > h3{
 	float: left;
-	font-size: 23px;
-	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: bold;
 }
 .empCareer > .ecTitle > .bline{
 	float:left;
-	width: 200px; 
+	width: 50px; 
 	height: 2px;
 	background: #333333;
-	margin: 15px 0 15px 10px;
+	margin: 8px 0 15px 10px;
 }
 .empCareer > ul{
 	margin: 20px 0;
+	margin-top: 5px;
 }
 .empCareer > ul > li{
-	font-size: 17px;
-	padding: 5px; 
+	font-size: 15px;
+	padding: 3px; 
 }
 
 
@@ -177,28 +135,14 @@ $(document).ready(function(){
 <body>
 	<div class="allWrap">
 		<div class="headerWrap">
-		<div class="header_top"></div>
-			<jsp:include page="../include/pcHeader.jsp"></jsp:include>
-		</div> 
-		<div class="mg_top_135"></div>
+			<div class="header_top"></div>
+			<jsp:include page="../include/mHeader.jsp"></jsp:include>
+		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu01_1top.png">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.jpg">
 			</div> 
-			<div class="sectionContent">
-				<div class="leftMenu">
-					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">02</h2>
-					<h2>직원소개</h2>
-					<div class="line"></div> 
-					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
-					</ul>
-				</div><!-- leftMenu end -->
-				<div class="contentWrap">
+			<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
@@ -271,11 +215,10 @@ $(document).ready(function(){
 						</div><!-- empWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
-			</div><!-- sectionContent end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
 		
 		</div>
-	</div>
+	</div><!-- allWrap end -->
 </body>
 </html>

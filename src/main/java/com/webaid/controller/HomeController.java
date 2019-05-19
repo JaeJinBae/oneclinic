@@ -42,7 +42,7 @@ public class HomeController {
 			return "main/index";
 		}
 	}
-	
+
 	@RequestMapping(value="/menu01_01")
 	public String menu01_1(){
 		
@@ -150,4 +150,114 @@ public class HomeController {
 		
 		return "sub/menu04_5";
 	}
+	
+	//mobile
+	@RequestMapping(value="/mMenu01_01")
+	public String mMenu01_1(){
+		
+		return "sub/mobileMenu01_1";
+	}
+	
+	@RequestMapping(value="/mMenu01_02")
+	public String mMenu01_2(){
+		
+		return "sub/mobileMenu01_2";
+	}
+	
+	@RequestMapping(value="/mMenu01_03")
+	public String mMenu01_3(){
+		
+		return "sub/mobileMenu01_3";
+	}
+	
+	@RequestMapping(value="/mMenu01_04")
+	public String mMenu01_4(){
+		
+		return "sub/mobileMenu01_4";
+	}
+	
+	@RequestMapping(value="/mMenu02_01")
+	public String mMenu02_1(){
+		
+		return "sub/mobileMenu02_1";
+	}
+	
+	@RequestMapping(value="/mMenu02_02")
+	public String mMenu02_2(){
+		
+		return "sub/mobileMenu02_2";
+	}
+	
+	@RequestMapping(value="/mMenu02_03")
+	public String mMenu02_3(){
+		
+		return "sub/mobileMenu02_3";
+	}
+	
+	@RequestMapping(value="/mMenu02_04")
+	public String mMenu02_4(){
+		
+		return "sub/mobileMenu02_4";
+	}
+	
+	@RequestMapping(value="/mMenu03_01")
+	public String mMenu03_1(){
+		
+		return "sub/mobileMenu03_1";
+	}
+	
+	@RequestMapping(value="/mMenu03_02")
+	public String mMenu03_2(){
+		
+		return "sub/mobileMenu03_2";
+	}
+	
+	@RequestMapping(value="/mMenu03_03")
+	public String mMenu03_3(){
+		
+		return "sub/mobileMenu03_3";
+	}
+	
+	@RequestMapping(value="/mMenu03_04")
+	public String mMenu03_4(){
+		
+		return "sub/mobileMenu03_4";
+	}
+	
+	@RequestMapping(value="/mMenu03_05")
+	public String mMenu03_5(){
+		
+		return "sub/mobileMenu03_5";
+	}
+	
+	@RequestMapping(value="/mMenu04_01")
+	public String mMenu04_1(){
+		
+		return "sub/mobileMenu04_1";
+	}
+	
+	@RequestMapping(value="/mMenu04_02")
+	public String mMenu04_2(){
+		
+		return "sub/mobileMenu04_2";
+	}
+	
+	@RequestMapping(value="/mMenu04_03")
+	public String mMenu04_3(){
+		
+		return "sub/mobileMenu04_3";
+	}
+	
+	@RequestMapping(value="/mMenu04_04")
+	public String mMenu04_4(){
+		
+		return "sub/mobileMenu04_4";
+	}
+	
+	@RequestMapping(value="/mMenu04_05")
+	public String mMenu04_5(){
+		
+		return "sub/mobileMenu04_5";
+	}
+	
 }
