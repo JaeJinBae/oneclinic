@@ -128,10 +128,7 @@
 } 
 </style>
 <script>
-$(document).ready(function(){
-	var height = $(".sectionContent").outerHeight();
-	$(".sectionContent > .leftMenu").css("height", height);
-});
+
 </script>
 </head>
 <body>

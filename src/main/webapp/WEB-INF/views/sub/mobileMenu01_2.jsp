@@ -65,7 +65,6 @@
 	font-size: 20px;
 	font-weight: bold;
 	color: #6e6e6e;
-	/* font-family: sans-serif; */
 }
 
 .contentTitle > .tLogo{
@@ -126,10 +125,7 @@
 } 
 </style>
 <script>
-$(document).ready(function(){
-	var height = $(".sectionContent").outerHeight();
-	$(".sectionContent > .leftMenu").css("height", height);
-});
+
 </script>
 </head>
 <body>
