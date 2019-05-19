@@ -9,10 +9,7 @@
 <meta charset="UTF-8">
 <title>insert title here</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 .allWrap{
 	width:100%;
@@ -129,7 +126,7 @@
 	float:left;
 }
 .contentAside1 > img{
-	width: 100%;
+	width: 350px;
 }
 .contentAside2{
 	float:right;
@@ -140,7 +137,7 @@
 }
 .contentAside2 > .aside2Title > h3{
 	float: left;
-	font-size: 25px;
+	font-size: 23px;
 	font-family: sans-serif;
 }
 .contentAside2 > .aside2Title > .bline{
@@ -155,7 +152,7 @@
 }
 .contentAside2 > ul > li{
 	font-size: 17px;
-	padding: 3px; 
+	padding: 5px; 
 }
 
 .footerWrap{
@@ -165,9 +162,9 @@
 } 
 </style>
 <script>
-$(function(){
-	var height = $(".sectionContent").css("height");
-	$(".sectionContent > .leftMenu").css("height",height);
+$(document).ready(function(){
+	var height = $(".sectionContent").outerHeight();
+	$(".sectionContent > .leftMenu").css("height", height);
 });
 </script>
 </head>
