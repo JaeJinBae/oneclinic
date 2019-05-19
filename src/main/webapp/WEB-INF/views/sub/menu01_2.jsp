@@ -75,7 +75,7 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:first-child > a{
+.leftMenu > ul > li:nth-child(2) > a{
 	font-weight: bold;
 }
 
@@ -120,40 +120,46 @@
 }
 .content{
 	width: 100%;
-	overflow:hidden;
 }
-.contentAside1{
-	float:left;
+.empWrap{
+	width: 600px;
+	margin: 20px auto;
+	overflow: hidden;
 }
-.contentAside1 > img{
-	width: 350px;
+.empWrap > .empImg{
+	float: left;
+	width: 195px;
+	height: 250px;
+	border: 1px solid gray;
 }
-.contentAside2{
-	float:right;
+.empWrap > .empCareer{
+	float: right;
 }
-.contentAside2 > .aside2Title{
+.empCareer > .ecTitle{
 	width: 100%;
 	overflow: hidden;
 }
-.contentAside2 > .aside2Title > h3{
+.empCareer > .ecTitle > h3{
 	float: left;
 	font-size: 23px;
 	font-family: sans-serif;
 }
-.contentAside2 > .aside2Title > .bline{
+.empCareer > .ecTitle > .bline{
 	float:left;
 	width: 200px; 
 	height: 2px;
 	background: #333333;
 	margin: 15px 0 15px 10px;
 }
-.contentAside2 > ul{
+.empCareer > ul{
 	margin: 20px 0;
 }
-.contentAside2 > ul > li{
+.empCareer > ul > li{
 	font-size: 17px;
 	padding: 5px; 
 }
+
+
 
 .footerWrap{
 	width: 100%;
@@ -182,8 +188,8 @@ $(document).ready(function(){
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">01</h2>
-					<h2>의료진소개</h2>
+					<h2 style="margin-bottom: 20px;">02</h2>
+					<h2>직원소개</h2>
 					<div class="line"></div> 
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/menu01_01">01.의료진소개</a></li>
@@ -196,53 +202,73 @@ $(document).ready(function(){
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>의료진소개</p> 
+							<p>직원소개</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="contentAside1">
-							<img src="${pageContext.request.contextPath}/resources/images/menu01_1doctorimg.png">
-						</div>
-						<div class="contentAside2">
-							<div class="aside2Title">
-								<h3>학회활동</h3>
-								<div class="bline"></div>
+						<div class="empWrap">
+							<div class="empImg">
+								
 							</div>
-							<ul>
-								<li>- &nbsp;대한마취통증학회 정회원</li>
-								<li>- &nbsp;대한통증학회 정회원</li>
-								<li>- &nbsp;대한척추통증학회 정회원</li>
-								<li>- &nbsp;대한임상노인의학회 정회원</li>
-								<li>- &nbsp;대한약물영양의학회 정회원</li>
-								<li>- &nbsp;대한성장의학회 정회원</li>
-								<li>- &nbsp;대한비만체형학회 정회원</li>
-							</ul>
-							<ul>
-								<li>- &nbsp;Preventive medical training school 수료</li>
-								<li>- &nbsp;M-puncture 척추-관절 만성통증 치료 전문가 과정 수료</li>
-								<li>- &nbsp;Neural prolotherapy 수료</li>
-								<li>- &nbsp;TPI 교육 이수</li>
-								<li>- &nbsp;중재적 신경블록 교육 이수</li>
-							</ul>
-							<ul>
-								<li>- &nbsp;계명대학교 의과대학교 졸업 2005.</li>
-								<li>- &nbsp;가톨릭대학교 중앙의료원 인턴 수료 </li>
-								<li>- &nbsp;가톨릭대학교 중앙의료원 마취통증의학과 레지던트 수료</li>
-								<li>- &nbsp;마취통증의학과 전문의</li>
-								<li>- &nbsp;여의도 성모병원 마취통증의학과 임상강사</li>
-								<li>- &nbsp;통증의학 고위자 과정 이수</li>
-							</ul>
-							<ul>
-								<li>- &nbsp;올림픽병원 마취통증의학과 과장</li>
-								<li>- &nbsp;유성선병원 마취통증의학과 과장</li>
-								<li>- &nbsp;S중앙병원 마취통증의학과 과장</li>
-								<li>- &nbsp;봄길의원 원장</li>
-								<li>- &nbsp;가톨릭대학교 성빈센트 병원 진료교수</li>
-							</ul>
-						</div>
+							<div class="empCareer">
+								<div class="ecTitle">
+									<h3>경력활동</h3>
+									<div class="bline"></div>
+								</div>
+								<ul>
+									<li>- &nbsp;대한마취통증학회 정회원</li>
+									<li>- &nbsp;대한통증학회 정회원</li>
+									<li>- &nbsp;대한척추통증학회 정회원</li>
+									<li>- &nbsp;대한임상노인의학회 정회원</li>
+									<li>- &nbsp;대한약물영양의학회 정회원</li>
+									<li>- &nbsp;대한성장의학회 정회원</li>
+									<li>- &nbsp;대한비만체형학회 정회원</li>
+								</ul>
+							</div><!-- empCareer end -->
+						</div><!-- empWrap end -->
+						<div class="empWrap">
+							<div class="empImg">
+								
+							</div>
+							<div class="empCareer">
+								<div class="ecTitle">
+									<h3>경력활동</h3>
+									<div class="bline"></div>
+								</div>
+								<ul>
+									<li>- &nbsp;대한마취통증학회 정회원</li>
+									<li>- &nbsp;대한통증학회 정회원</li>
+									<li>- &nbsp;대한척추통증학회 정회원</li>
+									<li>- &nbsp;대한임상노인의학회 정회원</li>
+									<li>- &nbsp;대한약물영양의학회 정회원</li>
+									<li>- &nbsp;대한성장의학회 정회원</li>
+									<li>- &nbsp;대한비만체형학회 정회원</li>
+								</ul>
+							</div><!-- empCareer end -->
+						</div><!-- empWrap end -->
+						<div class="empWrap">
+							<div class="empImg">
+								
+							</div>
+							<div class="empCareer">
+								<div class="ecTitle">
+									<h3>경력활동</h3>
+									<div class="bline"></div>
+								</div>
+								<ul>
+									<li>- &nbsp;대한마취통증학회 정회원</li>
+									<li>- &nbsp;대한통증학회 정회원</li>
+									<li>- &nbsp;대한척추통증학회 정회원</li>
+									<li>- &nbsp;대한임상노인의학회 정회원</li>
+									<li>- &nbsp;대한약물영양의학회 정회원</li>
+									<li>- &nbsp;대한성장의학회 정회원</li>
+									<li>- &nbsp;대한비만체형학회 정회원</li>
+								</ul>
+							</div><!-- empCareer end -->
+						</div><!-- empWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->
