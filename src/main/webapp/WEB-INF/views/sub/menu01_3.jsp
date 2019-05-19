@@ -192,14 +192,14 @@ $(document).ready(function(){
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">02</h2>
+					<h2 style="margin-bottom: 20px;">03</h2>
 					<h2>병원둘러보기</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu01_01">01.의료진소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_02">02.직원소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_03">03.병원둘러보기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_04">04.오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
