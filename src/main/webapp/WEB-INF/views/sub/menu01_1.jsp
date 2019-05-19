@@ -52,9 +52,9 @@
 }
 .sectionContent > .leftMenu{
 	float: left;
-	width: 230px;
+	width: 205px;
 	background: #477a9b;
-	padding: 20px 50px;
+	padding: 20px 35px;
 }
 .leftMenu > .line{
 	width: 100px;
@@ -65,6 +65,7 @@
 .leftMenu > h2{
 	color: #fff;
 	font-weight: bold;
+	font-family: sans-serif;
 }
 .leftMenu > ul{
 
@@ -75,14 +76,86 @@
 .leftMenu > ul > li > a{
 	color: #fff;
 	font-size: 18px;
+	font-family: sans-serif;
 }
 .leftMenu > ul > li:first-child > a{
 	font-weight: bold;
 }
 
 
-.content{
+.contentWrap{
 	width: 820px;
+	float:left;
+	padding: 20px 10px;
+	border: 1px solid lightgray;
+}
+.contentTitle{
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #91afc3;
+	overflow: hidden;
+}
+.contentTitle > .tText{
+	float:left;
+	padding-top: 25px;
+}
+.contentTitle > .tText > .shortLine{
+	width: 35px;
+	height: 3px;
+	background: #6e6e6e;
+	margin-bottom: 5px;
+}
+.contentTitle > .tText > p{
+	font-size: 20px;
+	font-weight: bold;
+	color: #6e6e6e;
+	/* font-family: sans-serif; */
+}
+
+.contentTitle > .tLogo{
+	float:right;
+	width: 70px;
+}
+.contentTitle > .tLogo > img{
+	width: 100%;
+}
+.content{
+	width: 100%;
+	overflow:hidden;
+}
+.contentAside1{
+	float:left;
+}
+.contentAside1 > img{
+	width: 100%;
+}
+.contentAside2{
+	float:right;
+}
+.contentAside2 > .aside2Title{
+	width: 100%;
+	overflow: hidden;
+}
+.contentAside2 > .aside2Title > h3{
+	float: left;
+	font-size: 25px;
+	font-family: sans-serif;
+}
+.contentAside2 > .aside2Title > .bline{
+	float:left;
+	width: 200px; 
+	height: 2px;
+	background: #333333;
+	margin: 15px 0 15px 10px;
+}
+.contentAside2 > ul{
+	margin: 20px 0;
+}
+.contentAside2 > ul > li{
+	font-size: 17px;
+	padding: 3px; 
 }
 
 .footerWrap{
@@ -93,7 +166,8 @@
 </style>
 <script>
 $(function(){
-
+	var height = $(".sectionContent").css("height");
+	$(".sectionContent > .leftMenu").css("height",height);
 });
 </script>
 </head>
@@ -102,7 +176,7 @@ $(function(){
 		<div class="headerWrap">
 		<div class="header_top"></div>
 			<jsp:include page="../include/pcHeader.jsp"></jsp:include>
-		</div>
+		</div> 
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
@@ -120,11 +194,61 @@ $(function(){
 						<li><a href="${pageContext.request.contextPath}/menu01_03">03.병원둘러보기</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_04">04.오시는 길</a></li>
 					</ul>
-				</div>
-				<div class="content">
-				
-				</div>
-			</div>
+				</div><!-- leftMenu end -->
+				<div class="contentWrap">
+					<div class="contentTitle">
+						<div class="tText">
+							<div class="shortLine"></div>
+							<p>의료진소개</p> 
+						</div>
+						<div class="tLogo">
+							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">
+						</div>
+					</div><!-- contentTitle end -->
+					<div class="content">
+						<div class="contentAside1">
+							<img src="${pageContext.request.contextPath}/resources/images/menu01_1doctorimg.png">
+						</div>
+						<div class="contentAside2">
+							<div class="aside2Title">
+								<h3>학회활동</h3>
+								<div class="bline"></div>
+							</div>
+							<ul>
+								<li>- &nbsp;대한마취통증학회 정회원</li>
+								<li>- &nbsp;대한통증학회 정회원</li>
+								<li>- &nbsp;대한척추통증학회 정회원</li>
+								<li>- &nbsp;대한임상노인의학회 정회원</li>
+								<li>- &nbsp;대한약물영양의학회 정회원</li>
+								<li>- &nbsp;대한성장의학회 정회원</li>
+								<li>- &nbsp;대한비만체형학회 정회원</li>
+							</ul>
+							<ul>
+								<li>- &nbsp;Preventive medical training school 수료</li>
+								<li>- &nbsp;M-puncture 척추-관절 만성통증 치료 전문가 과정 수료</li>
+								<li>- &nbsp;Neural prolotherapy 수료</li>
+								<li>- &nbsp;TPI 교육 이수</li>
+								<li>- &nbsp;중재적 신경블록 교육 이수</li>
+							</ul>
+							<ul>
+								<li>- &nbsp;계명대학교 의과대학교 졸업 2005.</li>
+								<li>- &nbsp;가톨릭대학교 중앙의료원 인턴 수료 </li>
+								<li>- &nbsp;가톨릭대학교 중앙의료원 마취통증의학과 레지던트 수료</li>
+								<li>- &nbsp;마취통증의학과 전문의</li>
+								<li>- &nbsp;여의도 성모병원 마취통증의학과 임상강사</li>
+								<li>- &nbsp;통증의학 고위자 과정 이수</li>
+							</ul>
+							<ul>
+								<li>- &nbsp;올림픽병원 마취통증의학과 과장</li>
+								<li>- &nbsp;유성선병원 마취통증의학과 과장</li>
+								<li>- &nbsp;S중앙병원 마취통증의학과 과장</li>
+								<li>- &nbsp;봄길의원 원장</li>
+								<li>- &nbsp;가톨릭대학교 성빈센트 병원 진료교수</li>
+							</ul>
+						</div>
+					</div><!-- content end -->
+				</div><!-- contentWrap end -->
+			</div><!-- sectionContent end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
 		
