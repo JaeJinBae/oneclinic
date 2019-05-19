@@ -43,6 +43,111 @@ public class HomeController {
 		}
 	}
 	
+	@RequestMapping(value="/menu01_01")
+	public String menu01_1(){
+		
+		return "sub/menu01_1";
+	}
 	
+	@RequestMapping(value="/menu01_02")
+	public String menu01_2(){
+		
+		return "sub/menu01_2";
+	}
 	
+	@RequestMapping(value="/menu01_03")
+	public String menu01_3(){
+		
+		return "sub/menu01_3";
+	}
+	
+	@RequestMapping(value="/menu01_04")
+	public String menu01_4(){
+		
+		return "sub/menu01_4";
+	}
+	
+	@RequestMapping(value="/menu02_01")
+	public String menu02_1(){
+		
+		return "sub/menu02_1";
+	}
+	
+	@RequestMapping(value="/menu02_02")
+	public String menu02_2(){
+		
+		return "sub/menu02_2";
+	}
+	
+	@RequestMapping(value="/menu02_03")
+	public String menu02_3(){
+		
+		return "sub/menu02_3";
+	}
+	
+	@RequestMapping(value="/menu02_04")
+	public String menu02_4(){
+		
+		return "sub/menu02_4";
+	}
+	
+	@RequestMapping(value="/menu03_01")
+	public String menu03_1(){
+		
+		return "sub/menu03_1";
+	}
+	
+	@RequestMapping(value="/menu03_02")
+	public String menu03_2(){
+		
+		return "sub/menu03_2";
+	}
+	
+	@RequestMapping(value="/menu03_03")
+	public String menu03_3(){
+		
+		return "sub/menu03_3";
+	}
+	
+	@RequestMapping(value="/menu03_04")
+	public String menu03_4(){
+		
+		return "sub/menu03_4";
+	}
+	
+	@RequestMapping(value="/menu03_05")
+	public String menu03_5(){
+		
+		return "sub/menu03_5";
+	}
+	
+	@RequestMapping(value="/menu04_01")
+	public String menu04_1(){
+		
+		return "sub/menu04_1";
+	}
+	
+	@RequestMapping(value="/menu04_02")
+	public String menu04_2(){
+		
+		return "sub/menu04_2";
+	}
+	
+	@RequestMapping(value="/menu04_03")
+	public String menu04_3(){
+		
+		return "sub/menu04_3";
+	}
+	
+	@RequestMapping(value="/menu04_04")
+	public String menu04_4(){
+		
+		return "sub/menu04_4";
+	}
+	
+	@RequestMapping(value="/menu04_05")
+	public String menu04_5(){
+		
+		return "sub/menu04_5";
+	}
 }

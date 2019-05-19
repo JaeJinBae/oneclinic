@@ -121,48 +121,48 @@ $(function(){
 				</div>
 			</li>
 			<li>
-				<a class="mMenu" href="#none">병원소개</a>
+				<a class="mMenu" href="${pageContext.request.contextPath}/menu01_01">병원소개</a>
 				<div class="subMenuWrap">
 					<ul class="subMenuUl">
-						<li><a href="${pageContext.request.contextPath}/menu01_1">의료진소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_2">직원소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_3">병원둘러보기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_4">오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_01">의료진소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_02">직원소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_03">병원둘러보기</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_04">오시는 길</a></li>
 					</ul>
 				</div>
 			</li>
 			<li>
-				<a class="mMenu" href="#none">진료분야</a>
+				<a class="mMenu" href="${pageContext.request.contextPath}/menu02_01">진료분야</a>
 				<div class="subMenuWrap">
 					<ul class="subMenuUl">
-						<li><a href="${pageContext.request.contextPath}/menu02_1">비수술척추클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_2">관절클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_3">성장클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_4">다이어트클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_01">비수술척추클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_02">관절클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_03">성장클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_04">다이어트클리닉</a></li>
 					</ul>
 				</div>
 			</li>
 			<li>
-				<a class="mMenu" href="#none">재활분야</a>
+				<a class="mMenu" href="${pageContext.request.contextPath}/menu03_01">재활분야</a>
 				<div class="subMenuWrap">
 					<ul class="subMenuUl">
-						<li><a href="${pageContext.request.contextPath}/menu03_1">통증재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_2">스포츠재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_3">성장운동</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_4">측만증운동</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_5">교정클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_01">통증재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_02">스포츠재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_03">성장운동</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_04">측만증운동</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_05">교정클리닉</a></li>
 					</ul>
 				</div>
 			</li>
 			<li>
-				<a class="mMenu" href="#none">병원소식</a>
+				<a class="mMenu" href="${pageContext.request.contextPath}/menu04_01">병원소식</a>
 				<div class="subMenuWrap">
 					<ul class="subMenuUl">
-						<li><a href="${pageContext.request.contextPath}/menu04_1">공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_2">언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_2">상담문의</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_2">치료후기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_2">비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_01">공지사항</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_02">언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_02">상담문의</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_02">치료후기</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_02">비용공지</a></li>
 					</ul>
 				</div>
 			</li>
