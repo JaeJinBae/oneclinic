@@ -54,21 +54,27 @@
 .box{
 	float:left;
 	border:1px solid lightgray;
-	border-radius: 5px;
-	width: 33%;
+	border-radius: 10px;
+	width: 49%;
 }
-.box > img{
+.box > a{
+	width: 100%;
+}
+.box > a > img{
 	width: 100%;
 	border-radius: 5px;
 }
 .box1{
-	
+	width: 100%;
+} 
+.box1 > a > img{
+	width: 100%;
 }
 .box2{
 	margin: 0 1.6px;
 }
 .box4{
-	width: 100%;
+	margin: 0 1.6px;
 }
 .box5{
 	margin: 0 1.6px;
@@ -76,7 +82,7 @@
 
 .footerWrap{
 	width: 100%;
-	height: 70px;
+	height: 70px; 
 	background: #393939;
 } 
 </style>
@@ -110,19 +116,19 @@ $(function(){
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox1.png">
+						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></a>
 					</div>
 					<div class="box2 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.png">
+						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.jpg"></a>
 					</div>
 					<div class="box3 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox3.png">
+						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox3.jpg"></a>
 					</div>
-					<div class="box4 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox4.jpg">
+					<div class="box4 box"> 
+						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox4.jpg"></a>
 					</div>
 					<div class="box5 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBox5.png">
+						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox5.jpg"></a>
 					</div>
 					<div class="box6 box">
 					

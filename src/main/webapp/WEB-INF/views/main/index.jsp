@@ -85,26 +85,18 @@
 }
 .box1{
 	width: 205px;
-	background: url("${pageContext.request.contextPath}/resources/images/box1Bg.jpg") no-repeat;
-	background-size: cover;
 }
 
 .box2{
 	width: 205px;
-	background: url("${pageContext.request.contextPath}/resources/images/box2Bg.jpg") no-repeat;
-	background-size: cover;
 }
 
 .box3{
 	width: 245px;
-	background: url("${pageContext.request.contextPath}/resources/images/box3Bg.jpg") no-repeat;
-	background-size: cover;
 }
 
 .box4{
 	width: 165px;
-	background: url("${pageContext.request.contextPath}/resources/images/box4Bg.jpg") no-repeat;
-	background-size: cover;
 }
 
 .box5{
@@ -137,10 +129,11 @@
 .box_title{
 	width: 100%;
 	padding: 5px 10px;
+	padding-top: 10px;
 	overflow: hidden;
 }
 .box_title > h4{
-	font-size: 19px;
+	font-size: 18px;
 	float:left;
 }
 .box_title > p{
@@ -152,7 +145,7 @@
 	
 }
 .box> ul > li{
-	padding: 5px 8px;
+	padding: 8px;
 }
 .box> ul > li > a{
 	font-size: 15px;
@@ -229,7 +222,6 @@ $(function(){
 							<li><a href="">- 척추측만증 도수치료 후...</a></li>
 							<li><a href="">- 허리디스크 재활치료 경과...</a></li>
 							<li><a href="">- 척추측만증 도수치료 후...</a></li>
-							<li><a href="">- 목디스크 재활치료 경과...</a></li>
 						</ul>
 					</div><!-- box6 end -->
 					<div class="box7 box">
