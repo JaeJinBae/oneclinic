@@ -70,6 +70,15 @@
 .mainBanner img{
 	width: 100%;
 }
+.slick-dots{
+	bottom: 0 !important;
+}
+.slick-dots li.slick-active button:before{
+	color: skyblue !important;
+}
+.slick-dots li button:before{
+	color: lightgray;
+}
 .boxWrap{
 	width:420px;
 	float: right;
@@ -86,6 +95,14 @@
 	width: 100%;
 }
 .box > a > img{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+.box{
+	width: 100%;
+}
+.box > img{
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
@@ -154,6 +171,10 @@
 .box> ul > li{
 	padding: 8px;
 }
+.box> ul > li > p{
+	text-align: center;
+	font-size: 15px;
+}
 .box> ul > li > a{
 	font-size: 15px;
 }
@@ -178,13 +199,13 @@ $(function(){
 	});
 	
 	$(".mainBanner").slick({
-		arrows:true,
+		arrows:false,
 		infinite:true,
-		speed:500,
+		speed:1000,
 		fade:true,
 		cssEase:'linear',
 		autoplay:true,
-		autoplaySpeed:4000,
+		autoplaySpeed:7000,
 		dots:true,
 	});
 });
@@ -200,30 +221,30 @@ $(function(){
 		<div class="sectionWrap">
 			<div class="sectionBg">
 				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
-				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
-				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
 			</div>
 			<div class="sectionContentWrap">
 				<div class="mainBannerWrap">
 					<div class="mainBanner">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBanner.png">
+						<img src="${pageContext.request.contextPath}/resources/images/mainBanner1.png">
+						<img src="${pageContext.request.contextPath}/resources/images/mainBanner2.png">
+						<img src="${pageContext.request.contextPath}/resources/images/mainBanner3.png">
 					</div>
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox1.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/mainBox1.png">
 					</div>
 					<div class="box2 box">
-						<a href="${pageContext.request.contextPath}/menu04_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox2.jpg"></a>
+						<a href="${pageContext.request.contextPath}/menu04_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox2.png"></a>
 					</div>
 					<div class="box3 box">
-						<a href="${pageContext.request.contextPath}/menu01_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox3.jpg"></a>
+						<a href="${pageContext.request.contextPath}/menu01_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox3.png"></a>
 					</div>
 					<div class="box4 box">
-						<a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/mainBox4.jpg"></a>
+						<a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/mainBox4.png"></a>
 					</div>
 					<div class="box5 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.png">
 					</div>
 					<div class="box6 box">
 						<div class="box_title">
@@ -250,7 +271,7 @@ $(function(){
 			</div><!-- sectionContentWrap end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
-		
+			<jsp:include page="../include/pcFooter.jsp"></jsp:include>
 		</div>
 	</div>
 </body>

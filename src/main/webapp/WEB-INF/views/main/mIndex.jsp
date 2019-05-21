@@ -143,7 +143,7 @@ $(function(){
 			</div>
 		</div>
 		<div class="footerWrap">
-		
+			<jsp:include page="../include/mFooter.jsp"></jsp:include>
 		</div>
 	</div>
 </body>

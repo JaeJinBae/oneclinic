@@ -9,7 +9,10 @@
 <meta charset="UTF-8">
 <title>원마취통증의학과</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 .allWrap{
 	width:100%;
@@ -50,6 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
+	height: 750px;
 	background: #477a9b;
 	padding: 20px 35px;
 }
@@ -75,13 +79,14 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(2) > a{
+.leftMenu > ul > li:nth-child(1) > a{
 	font-weight: bold;
 }
 
 
 .contentWrap{
 	width: 820px;
+	height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;
@@ -121,42 +126,26 @@
 .content{
 	width: 100%;
 }
-.empWrap{
-	width: 600px;
-	margin: 20px auto;
-	overflow: hidden;
-}
-.empWrap > .empImg{
-	float: left;
-	width: 195px;
-	height: 250px;
-	border: 1px solid gray;
-}
-.empWrap > .empCareer{
-	float: right;
-}
-.empCareer > .ecTitle{
+.slideWrap{
 	width: 100%;
-	overflow: hidden;
+	margin: 0 auto;
 }
-.empCareer > .ecTitle > h3{
-	float: left;
-	font-size: 23px;
-	font-family: sans-serif;
+.slider_for{
+	width: 600px;
+	margin: 0 auto;
+	margin-bottom: 90px;
 }
-.empCareer > .ecTitle > .bline{
-	float:left;
-	width: 200px; 
-	height: 2px;
-	background: #333333;
-	margin: 15px 0 15px 10px;
+.slider_for img{
+	width: 100%;
+	height: 320px;
 }
-.empCareer > ul{
-	margin: 20px 0;
+.slider_nav{
+	width: 100%;
 }
-.empCareer > ul > li{
-	font-size: 17px;
-	padding: 5px; 
+.slider_nav img{
+	width: 190px;
+	text-align: center;
+	margin:10px;
 }
 .fix_img{
 	width: 72%;
@@ -192,21 +181,22 @@ $(document).ready(function(){
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">02</h2>
-					<h2>직원소개</h2>
+					<h2 style="margin-bottom: 20px;">01</h2>
+					<h2>통증재활</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_01">01. 통증재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_02">02. 스포츠재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_03">03. 성장운동</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_04">04. 측만증운동</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_05">05. 교정클리닉</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>직원소개</p> 
+							<p>통증재활</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
@@ -214,66 +204,6 @@ $(document).ready(function(){
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
-						<!-- <div class="empWrap">
-							<div class="empImg">
-								
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div>empCareer end
-						</div>empWrap end
-						<div class="empWrap">
-							<div class="empImg">
-								
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div>empCareer end
-						</div>empWrap end
-						<div class="empWrap">
-							<div class="empImg">
-								
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div>empCareer end
-						</div> --><!-- empWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->

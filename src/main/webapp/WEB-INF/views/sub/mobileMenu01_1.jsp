@@ -58,13 +58,13 @@
 	padding-top: 25px;
 }
 .contentTitle > .tText > .shortLine{
-	width: 35px;
+	width: 30px;
 	height: 3px;
 	background: #6e6e6e;
 	margin-bottom: 5px;
 }
 .contentTitle > .tText > p{
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	color: #6e6e6e;
 	/* font-family: sans-serif; */
@@ -85,10 +85,11 @@
 	text-align: center;
 }
 .contentAside1 > img{
-	width: 100px;
+	width: 200px;
 }
 .contentAside2{
 	width: 100%;
+	margin-top: 20px;
 }
 .contentAside2 > .aside2Title{
 	width: 100%;
@@ -101,13 +102,14 @@
 }
 .contentAside2 > .aside2Title > .bline{
 	float:left;
-	width: 135px; 
+	width: 100px; 
 	height: 2px;
 	background: #333333;
-	margin: 15px 0 15px 10px;
-}
+	margin: 15px 22px;
+} 
 .contentAside2 > ul{
 	margin: 15px 0;
+	margin-left: 36px;
 }
 .contentAside2 > ul > li{
 	font-size: 14px;
@@ -116,6 +118,7 @@
 }
 .contentAside2 > ul > li > p{
 	float:left;
+	font-size: 13px;
 }
 .contentAside2 > ul > li > p:nth-child(2){
 	/* width: 210px; */
@@ -155,10 +158,11 @@
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<div class="contentAside1">
-							<img src="${pageContext.request.contextPath}/resources/images/menu01_1doctorimg.png">
+							<img src="${pageContext.request.contextPath}/resources/images/menu01_01img.png">
 						</div>
 						<div class="contentAside2">
 							<div class="aside2Title">
+								<div class="bline"></div>
 								<h3>학회활동</h3>
 								<div class="bline"></div>
 							</div>
@@ -198,7 +202,7 @@
 				</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
-		
+			<jsp:include page="../include/mFooter.jsp"></jsp:include>
 		</div>
 	</div><!-- allWrap end -->
 </body>
