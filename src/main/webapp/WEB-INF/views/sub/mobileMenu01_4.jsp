@@ -59,13 +59,13 @@
 	padding-top: 25px;
 }
 .contentTitle > .tText > .shortLine{
-	width: 35px;
+	width: 30px;
 	height: 3px;
 	background: #6e6e6e;
 	margin-bottom: 5px;
 }
 .contentTitle > .tText > p{
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	color: #6e6e6e;
 }
@@ -159,7 +159,6 @@
 .cbText > table tr > td:nth-child(1){
 	width:180px;
 }
-
 
 
 .footerWrap{

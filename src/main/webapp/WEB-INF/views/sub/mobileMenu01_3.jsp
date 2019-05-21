@@ -61,13 +61,13 @@
 	padding-top: 25px;
 }
 .contentTitle > .tText > .shortLine{
-	width: 35px;
+	width: 30px;
 	height: 3px;
 	background: #6e6e6e;
 	margin-bottom: 5px;
 }
 .contentTitle > .tText > p{
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	color: #6e6e6e;
 }
@@ -81,7 +81,7 @@
 }
 .content{
 	width: 100%;
-	height: 260px;
+	/* height: 260px; */
 }
 .slideWrap{
 	width: 100%;
@@ -118,7 +118,10 @@
 .slick-prev:before, .slick-next:before{
 	-webkit-appearance:none;
 }
-
+.fix_img{
+	width: 100%;
+	margin-bottom: 30px;
+}
 
 
 .footerWrap{
@@ -160,7 +163,8 @@ $(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="slideWrap">
+						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
+						<%-- <div class="slideWrap">
 							<div class="slider_for slider">
 								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
@@ -174,12 +178,12 @@ $(function(){
 								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
 							</div>
-						</div>
+						</div> --%>
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
-		
+			<jsp:include page="../include/mFooter.jsp"></jsp:include>
 		</div>
 	</div><!-- allWrap end -->
 </body>

@@ -147,7 +147,7 @@
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>직원소개</p> 
+							<p>교정클리닉</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">
@@ -155,66 +155,6 @@
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
-						<!-- <div class="empWrap">
-							<div class="empImg">
-								
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div>empCareer end
-						</div>empWrap end
-						<div class="empWrap">
-							<div class="empImg">
-								
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div>empCareer end
-						</div>empWrap end
-						<div class="empWrap">
-							<div class="empImg">
-								
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>경력활동</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대한마취통증학회 정회원</li>
-									<li>- &nbsp;대한통증학회 정회원</li>
-									<li>- &nbsp;대한척추통증학회 정회원</li>
-									<li>- &nbsp;대한임상노인의학회 정회원</li>
-									<li>- &nbsp;대한약물영양의학회 정회원</li>
-									<li>- &nbsp;대한성장의학회 정회원</li>
-									<li>- &nbsp;대한비만체형학회 정회원</li>
-								</ul>
-							</div>empCareer end
-						</div> --><!-- empWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->
