@@ -39,8 +39,6 @@
 	width:100%;
 	height: 100%;
 	min-height: 650px;
-	/* background: url("${pageContext.request.contextPath}/resources/images/mainBg1.jpg") no-repeat;
-	background-size: cover; */
 	position: relative;
 	padding-top: 50px;
 }
@@ -62,9 +60,15 @@
 	margin: 0 auto;
 	overflow: hidden;
 }
-.mainBanner{
+.mainBannerWrap{
 	width: 665px;
 	float:left;
+}
+.mainBanner{
+	width: 100%;
+}
+.mainBanner img{
+	width: 100%;
 }
 .boxWrap{
 	width:420px;
@@ -78,7 +82,10 @@
 	border: 1px solid lightgray;
 	border-radius: 5px;
 }
-.box > img{
+.box > a{
+	width: 100%;
+}
+.box > a > img{
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
@@ -159,17 +166,7 @@
 </style>
 <script>
 $(function(){
-	/* 메인배너 배경 */
-	/* $(".mainBanner").slick({
-		arrows:true,
-		infinite:true,
-		speed:500,
-		fade:true,
-		cssEase:'linear',
-		autoplay:true,
-		autoplaySpeed:4000,
-		dots:true,
-	}); */
+	
 	var height = $(window).height();
 	var sectionHeight = height-189; 
 	$(".sectionWrap").css("height",sectionHeight);
@@ -178,6 +175,17 @@ $(function(){
 		height = $(window).height();
 		sectionHeight = height-189; 
 		$(".sectionWrap").css("height",sectionHeight);
+	});
+	
+	$(".mainBanner").slick({
+		arrows:true,
+		infinite:true,
+		speed:500,
+		fade:true,
+		cssEase:'linear',
+		autoplay:true,
+		autoplaySpeed:4000,
+		dots:true,
 	});
 });
 </script>
@@ -192,23 +200,27 @@ $(function(){
 		<div class="sectionWrap">
 			<div class="sectionBg">
 				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
 			</div>
 			<div class="sectionContentWrap">
-				<div class="mainBanner">
-					<img src="${pageContext.request.contextPath}/resources/images/mainBanner.png">
+				<div class="mainBannerWrap">
+					<div class="mainBanner">
+						<img src="${pageContext.request.contextPath}/resources/images/mainBanner.png">
+					</div>
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox1.jpg">
 					</div>
 					<div class="box2 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox2.jpg">
+						<a href="${pageContext.request.contextPath}/menu04_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox2.jpg"></a>
 					</div>
 					<div class="box3 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox3.jpg">
+						<a href="${pageContext.request.contextPath}/menu01_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox3.jpg"></a>
 					</div>
 					<div class="box4 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox4.jpg">
+						<a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/mainBox4.jpg"></a>
 					</div>
 					<div class="box5 box">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg">
@@ -216,23 +228,22 @@ $(function(){
 					<div class="box6 box">
 						<div class="box_title">
 							<h4>치료후기</h4>
-							<p><a href="#none">더보기</a></p>
+							<p><a href="${pageContext.request.contextPath}/menu04_04">더보기</a></p>
 						</div>
 						<ul>
-							<li><a href="">- 척추측만증 도수치료 후...</a></li>
+							<!-- <li><a href="">- 척추측만증 도수치료 후...</a></li>
 							<li><a href="">- 허리디스크 재활치료 경과...</a></li>
-							<li><a href="">- 척추측만증 도수치료 후...</a></li>
+							<li><a href="">- 척추측만증 도수치료 후...</a></li> -->
+							<li><p>등록된 게시물이 없습니다.</p></li>
 						</ul>
 					</div><!-- box6 end -->
 					<div class="box7 box">
 						<div class="box_title">
 							<h4>언론보도</h4>
-							<p><a href="#none">더보기</a></p>
+							<p><a href="${pageContext.request.contextPath}/menu04_02">더보기</a></p>
 						</div>
 						<ul>
-							<li><a href="">- 통증의학과 전문 병원 개원...</a></li>
-							<li><a href="">- 통증의학 전문의가 있는 병원...</a></li>
-							<li><a href="">- 재활치료 전문병원 원통증...</a></li>
+							<li><p>등록된 게시물이 없습니다.</p></li>
 						</ul>
 					</div><!-- box7 end -->
 				</div><!-- boxWrap -->
