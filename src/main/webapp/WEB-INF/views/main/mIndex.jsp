@@ -51,12 +51,13 @@
 }
 .boxWrap{
 	width: 100%;
+	overflow: hidden;
 	padding: 10px 5px;
 }
 .box{
 	float:left;
 	border:1px solid lightgray;
-	border-radius: 10px;
+	border-radius: 13px;
 	width: 49%;
 }
 .box > a{
@@ -64,7 +65,7 @@
 }
 .box > a > img{
 	width: 100%;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 .box1{
 	width: 100%;
@@ -122,10 +123,10 @@ $(function(){
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg">
 					</div>
 					<div class="box2 box">
-						<a href="${pageContext.request.contextPath}/mMenu04_03"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.jpg"></a>
+						<a href="#none"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.jpg"></a>
 					</div>
 					<div class="box3 box">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox3.jpg"></a>
+						<a href="${pageContext.request.contextPath}/mMenu04_03"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox3.jpg"></a>
 					</div>
 					<div class="box4 box"> 
 						<a href="${pageContext.request.contextPath}/mMenu01_04"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox4.jpg"></a>
