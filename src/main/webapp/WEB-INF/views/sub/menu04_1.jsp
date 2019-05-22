@@ -125,28 +125,79 @@
 }
 .content{
 	width: 100%;
+	padding: 0 38px;
 }
-.slideWrap{
+.searchWrap{
 	width: 100%;
-	margin: 0 auto;
+	text-align: right;
+	margin-bottom: 13px;
 }
-.slider_for{
-	width: 600px;
-	margin: 0 auto;
-	margin-bottom: 90px;
+.searchWrap > select{
+	
+	font-size: 15px;
+	padding: 2px 3px;
+	letter-spacing: 1px;
 }
-.slider_for img{
-	width: 100%;
-	height: 320px;
+.searchWrap > input{
+	
+	width: 200px;
+	padding: 2px 4px;
+	font-size: 15px;
 }
-.slider_nav{
-	width: 100%;
-}
-.slider_nav img{
-	width: 190px;
+.searchWrap > p{
+	display: inline-block;
+	width: 55px;
+	font-size: 15px;
 	text-align: center;
-	margin:10px;
+	letter-spacing: 1.5px;
+	color: #fff;
+	background: #4a7899;
+	padding: 4px;
 }
+.tblWrap{
+	width: 100%;
+}
+.tblWrap > table{
+	width: 100%;
+	border-top: 8px solid #417ca6; 
+}
+.tblWrap > table tr{
+	border-bottom: 1px solid lightgray;
+}
+.tblWrap > table tr > th{
+	color: #fff;
+	font-size: 17px;
+	text-align: center;
+	background: #91b0c4;
+	padding: 6px 0;
+}
+.tblWrap > table tr > th:nth-child(1){
+	width: 50px;
+}
+.tblWrap > table tr > th:nth-child(2){
+	width: 455px;
+}
+.tblWrap > table tr > th:nth-child(3){
+	width: 90px;
+}
+.tblWrap > table tr > th:nth-child(4){
+	width: 70px;
+}
+.tblWrap > table tr > th:nth-child(5){
+	width: 50px;
+}
+.tblWrap > table tr > td{
+	font-size: 15px;
+	text-align: center;
+	padding: 7px 0;
+}
+.tblWrap > table tr > td:nth-child(2){
+	text-align: left;
+	padding: 7px 10px;
+}
+
+
+
 .fix_img{
 	width: 72%;
 	display: block;
@@ -203,7 +254,65 @@ $(document).ready(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
+						<%-- <img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg"> --%>
+						<div class="searchWrap">
+							<select>
+								<option>선택</option>
+								<option>제목</option>
+								<option>번호</option>
+							</select>
+							<input type="text" name="">
+							<p>검색</p>
+						</div>
+						<div class="tblWrap">
+							<table>
+								<tr>
+									<th>번호</th>
+									<th>제목</th>
+									<th>등록일</th>
+									<th>작성자</th>
+									<th>조회</th>
+								</tr>
+								<tr>
+									<td>공지</td>
+									<td>원마취통증의학과공지사항 테스트 입니다.</td>
+									<td>2019-12-31</td>
+									<td>관리자</td>
+									<td>4250</td>
+								</tr>
+								<tr>
+									<td>공지</td>
+									<td>원마취통증의학과공지사항 테스트 입니다.</td>
+									<td>2019-12-31</td>
+									<td>관리자</td>
+									<td>250</td>
+								</tr>
+								<tr>
+									<td>4553</td>
+									<td>원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</td>
+									<td>2018-12-31</td>
+									<td>관리자</td>
+									<td>550</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</td>
+									<td>2018-12-31</td>
+									<td>관리자</td>
+									<td>550</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</td>
+									<td>2018-12-31</td>
+									<td>관리자</td>
+									<td>550</td>
+								</tr>
+							</table>
+							<div class="pageWrap">
+							
+							</div>
+						</div>
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->
