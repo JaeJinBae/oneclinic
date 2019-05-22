@@ -164,7 +164,7 @@ $(function(){
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.png">
 					</div>
 					<div class="box2 box">
 						<a href="#none"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.jpg"></a>
