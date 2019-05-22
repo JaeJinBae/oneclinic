@@ -8,6 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>원마취통증의학과</title>
+<meta name="naver-site-verification" content="d53046e7ecfe442e3b973c1baeb37ec7fc75031d"/>
+<meta name="description" content="대구 북구 침산동, 비수술클리닉, 성장클리닉, 교정클리닉, 도수치료">
+<meta property="og:type" content="website">
+<meta property="og:title" content="원마취통증의학과">
+<meta property="og:description" content="대구 북구 침산동, 비수술클리닉, 성장클리닉, 교정클리닉, 도수치료">
+<meta property="og:image" content="http://www.1clinic.co.kr/logo.png">
+<meta property="og:url" content="http://www.1clinic.co.kr">
+<link rel="canonical" href="http://www.1clinic.co.kr/">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
@@ -41,6 +49,32 @@
 	min-height: 650px;
 	position: relative;
 	padding-top: 50px;
+}
+.popup{
+	position: fixed;
+	top: 40px;
+	right: 500px;
+	z-index: 99;
+	width: 550px;
+	border: 1px solid lightgray;
+}
+.popup > img{
+	width: 100%;
+}
+.popup > .popup_closeBtn{
+	width: 100%;
+	background: #999;
+}
+.popup > .popup_closeBtn > p{
+	margin-left: 87%;
+	color: #fefefe;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+.popup > .popup_closeBtn > p:hover{
+	font-weight: bold;
 }
 .sectionBg{
 	position: absolute;
@@ -208,6 +242,10 @@ $(function(){
 		autoplaySpeed:7000,
 		dots:true,
 	});
+	
+	$(".popup > .popup_closeBtn > p").click(function(){
+		$(".popup").css("display","none");
+	});
 });
 </script>
 </head>
@@ -219,6 +257,12 @@ $(function(){
 		</div>
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
+			<div class="popup">
+				<img src="${pageContext.request.contextPath}/resources/images/popup20190522.png">
+				<div class="popup_closeBtn">
+					<p>닫기</p>
+				</div>
+			</div>
 			<div class="sectionBg">
 				<img src="${pageContext.request.contextPath}/resources/images/mainBg.jpg">
 			</div>

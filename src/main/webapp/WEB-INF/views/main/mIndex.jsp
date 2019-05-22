@@ -37,17 +37,48 @@
 .sectionWrap{
 	width:100%;
 }
-
+.popup{
+	position: fixed;
+	top: 135px;
+	left: 10px;
+	z-index: 99;
+	width: 95%;
+	border: 1px solid lightgray;
+}
+.popup > img{
+	width: 100%;
+}
+.popup > .popup_closeBtn{
+	width: 100%;
+	background: #999;
+}
+.popup > .popup_closeBtn > p{
+	margin-left: 84%;
+	color: #fefefe;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 15px;
+	letter-spacing: 2px;
+}
 .sectionContentWrap{
 	width: 100%;
 	margin: 0 auto;
 	overflow: hidden;
+}
+.mainBannerWrap{
+	width: 100%;
 }
 .mainBanner{
 	width: 100%;
 }
 .mainBanner > img{
 	width: 100%;
+}
+.slick-dots{
+	bottom: 2px !important;
+}
+.slick-dotted.slick-slider{
+	margin-bottom: 5px !important;
 }
 .boxWrap{
 	width: 100%;
@@ -93,17 +124,20 @@
 <script>
 $(function(){
 	/* 메인배너 배경 */
-	/* $(".mainBanner").slick({
-		arrows:true,
-		infinite:true,
-		speed:500,
-		fade:true,
-		cssEase:'linear',
-		autoplay:true,
-		autoplaySpeed:4000,
-		dots:true,
-	}); */
-	
+	$(".mainBanner").slick({
+		arrows: false,
+		infinite: true,
+		speed: 500,
+		fade: true,
+		cssEase: 'linear',
+		autoplay: true,
+		autoplaySpeed: 4000,
+		dots: true,
+	});
+	//팝업 닫기
+	$(".popup > .popup_closeBtn > p").click(function(){
+		$(".popup").css("display","none");
+	});
 });
 </script>
 </head>
@@ -114,9 +148,19 @@ $(function(){
 			<jsp:include page="../include/mHeader.jsp"></jsp:include>
 		</div>
 		<div class="sectionWrap">
+			<div class="popup">
+				<img src="${pageContext.request.contextPath}/resources/images/popup20190522.png">
+				<div class="popup_closeBtn">
+					<p>닫기</p>
+				</div>
+			</div>
 			<div class="sectionContentWrap">
-				<div class="mainBanner">
-					<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner1.png">
+				<div class="mainBannerWrap">
+					<div class="mainBanner">
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner1.png">
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner2.png">
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner3.png">
+					</div>
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
