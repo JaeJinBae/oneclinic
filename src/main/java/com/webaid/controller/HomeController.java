@@ -127,10 +127,22 @@ public class HomeController {
 		return "sub/menu04_1";
 	}
 	
+	@RequestMapping(value="/menu04_01Read")
+	public String menu04_1Read(){
+		
+		return "sub/menu04_1Read";
+	}
+	
 	@RequestMapping(value="/menu04_02")
 	public String menu04_2(){
 		
 		return "sub/menu04_2";
+	}
+	
+	@RequestMapping(value="/menu04_02Read")
+	public String menu04_2Read(){
+		
+		return "sub/menu04_2Read";
 	}
 	
 	@RequestMapping(value="/menu04_03")
