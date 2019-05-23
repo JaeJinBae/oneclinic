@@ -221,7 +221,17 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/menu04_03Read")
-	public String menu04_3Read(){
+	public String menu04_3Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
+		AdviceVO vo=aService.selectOne(no);
+		aService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu04_3Read";
 	}

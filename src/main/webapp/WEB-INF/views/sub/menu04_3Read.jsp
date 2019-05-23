@@ -165,6 +165,30 @@
 	width: 100%;
 	padding: 30px 10px;
 	border-bottom: 2px solid lightgray;
+	font-size: 15px;
+}
+.replyWrap{
+	width: 100%;
+	margin-top: 20px;
+}
+.replyWrap > table{
+	width: 100%;
+	border-top: 1px solid #91b0c4;
+	border-bottom: 1px solid #91b0c4;
+}
+.replyWrap > table tr > th{
+	width: 120px;
+	padding: 10px 0;
+	background: #91b0c4;
+	color: #fff;
+	font-size: 15px;
+}
+.replyWrap > table tr > td{
+	padding: 15px;
+	font-size: 15px;
+}
+.replyWrap > table tr > td > p{
+	font-size: 15px;
 }
 
 
@@ -269,7 +293,7 @@ $(document).ready(function(){
 										<td>
 											<c:choose>
 												<c:when test="${item.reply eq ''}">
-													<p>답변대기 중 입니다. 빠른 시일 내 답변을 달겠습니다.</p>
+													<p>답변대기 중 입니다. 빠른 시일 내 문의하신 내용에 대한 답변을 드리겠습니다.</p> 
 												</c:when>
 												<c:otherwise>
 													${item.reply}
