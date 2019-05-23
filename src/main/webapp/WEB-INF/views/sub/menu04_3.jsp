@@ -176,7 +176,7 @@
 	width: 50px;
 }
 .tblWrap > table tr > th:nth-child(2){
-	width: 411px;
+	width: 392px;
 }
 .tblWrap > table tr > th:nth-child(3){
 	width: 70px;

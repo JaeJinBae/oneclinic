@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webaid.domain.AdviceVO;
+import com.webaid.domain.CommentVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.AdviceService;
+import com.webaid.service.CommentService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 
@@ -37,6 +39,9 @@ public class HomeController {
 	
 	@Autowired
 	private AdviceService aService;
+	
+	@Autowired
+	private CommentService cService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req,Model model) {
@@ -243,13 +248,32 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/menu04_04")
-	public String menu04_4(){
+	public String menu04_4(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		List<CommentVO> list = cService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu04_4";
 	}
 	
 	@RequestMapping(value="/menu04_04Read")
-	public String menu04_4Read(){
+	public String menu04_4Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		CommentVO vo=cService.selectOne(no);
+		cService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu04_4Read";
 	}

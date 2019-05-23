@@ -269,23 +269,19 @@ $(document).ready(function(){
 							<table>
 								<tr>
 									<th>제목</th>
-									<td colspan="5">원마취통증의학과 홈페이지 공지사항 게시판 테스트입니다.</td>
+									<td colspan="5">${item.title}</td>
 								</tr>
 								<tr>
 									<th>작성자</th>
-									<td>관리자</td>
+									<td>${item.writer}</td>
 									<th>등록일</th>
-									<td>2019-12-30</td>
+									<td>${item.regdate}</td>
 									<th>조회</th>
-									<td>6000</td>
+									<td>${item.cnt}</td>
 								</tr>
 							</table>
 							<div class="tblContent">
-								안녕하세요 원마취통증의학과입니다.<br>
-								저희 원마취통증의학과는 5/30일에 오픈합니다.<br>
-								지금은 게시판 작성 테스트 중입니다.<br>
-								최선을 다하여 진료하겠습니다.<br>
-								감사합니다.
+								${item.content}
 							</div>
 							<div class="prevNextBtn">
 								<table>
@@ -299,7 +295,7 @@ $(document).ready(function(){
 									</tr>
 								</table>
 							</div><!-- prevNextBtn -->
-							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_01">목 록</a></p>
+							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_04">목 록</a></p>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
