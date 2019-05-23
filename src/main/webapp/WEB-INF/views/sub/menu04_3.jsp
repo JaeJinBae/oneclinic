@@ -276,6 +276,17 @@
 $(document).ready(function(){
 	var height = $(".sectionContent").outerHeight();
 	$(".sectionContent > .leftMenu").css("height", height);
+	
+	$(document).on("click",".tblWrap > table tr > td:nth-child(2) > a", function(e){
+		e.preventDefault();
+		var pwtype = $(this).parent().find("img").length;
+		if(pwtype == 0){
+			location.href=$(this).attr("href");
+		}else{
+			
+			
+		}
+	})
 });
 </script>
 </head>
@@ -287,6 +298,9 @@ $(document).ready(function(){
 		</div> 
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
+			<div class="pw_popup">
+				
+			</div>
 			<div class="section_top">
 				<img src="${pageContext.request.contextPath}/resources/images/menu04top.png">
 			</div> 
