@@ -1,33 +1,24 @@
 package com.webaid.domain;
 
-import java.util.Date;
-
 public class NoticeVO {
-	private int bno;
+	private int no;
 	private String title;
-	private String writer;
 	private String content;
-	private Date regdate;
+	private String writer;
+	private String regdate;
 	private int cnt;
+	private String top_state;
 
 	public NoticeVO() {
 		super();
 	}
 
-	public String getContent() {
-		return content;
+	public int getNo() {
+		return no;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public int getBno() {
-		return bno;
-	}
-
-	public void setBno(int bno) {
-		this.bno = bno;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
 	public String getTitle() {
@@ -38,6 +29,14 @@ public class NoticeVO {
 		this.title = title;
 	}
 
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 	public String getWriter() {
 		return writer;
 	}
@@ -46,11 +45,11 @@ public class NoticeVO {
 		this.writer = writer;
 	}
 
-	public Date getRegdate() {
+	public String getRegdate() {
 		return regdate;
 	}
 
-	public void setRegdate(Date regdate) {
+	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
 
@@ -62,13 +61,18 @@ public class NoticeVO {
 		this.cnt = cnt;
 	}
 
-	@Override
-	public String toString() {
-		return "NoticeVO [bno=" + bno + ", title=" + title + ", writer=" + writer + ", content=" + content
-				+ ", regdate=" + regdate + ", cnt=" + cnt + "]";
+	public String getTop_state() {
+		return top_state;
 	}
 
-	
-	
-	
+	public void setTop_state(String top_state) {
+		this.top_state = top_state;
+	}
+
+	@Override
+	public String toString() {
+		return "NoticeVO [no=" + no + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
+				+ regdate + ", cnt=" + cnt + ", top_state=" + top_state + "]";
+	}
+
 }

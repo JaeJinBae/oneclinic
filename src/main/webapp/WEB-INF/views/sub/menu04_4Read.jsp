@@ -79,7 +79,7 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(3) > a{
+.leftMenu > ul > li:nth-child(4) > a{
 	font-weight: bold;
 }
 
@@ -166,6 +166,32 @@
 	padding: 30px 10px;
 	border-bottom: 2px solid lightgray;
 }
+.prevNextBtn{
+	width: 100%;
+	margin: 15px 0;
+}
+.prevNextBtn > table{
+	width: 100%;
+}
+.prevNextBtn > table tr > th{
+	width: 70px;
+	padding: 6px;
+	font-size: 15px;
+	color: #fff;
+	letter-spacing: 1px;
+	background: #91b0c4;
+	border-top: 1px solid #91b0c4;
+	border-bottom: 1px solid #91b0c4;
+}
+.prevNextBtn > table tr:nth-child(1) > th{
+	border-bottom: 1px solid lightgray;
+}
+.prevNextBtn > table tr > td{
+	padding: 6px 15px;
+	font-size: 15px;
+	border-top: 1px solid #91b0c4;
+	border-bottom: 1px solid #91b0c4;
+}
 
 
 .backBtn{
@@ -216,8 +242,8 @@ $(document).ready(function(){
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">03</h2>
-					<h2>상담문의</h2>
+					<h2 style="margin-bottom: 20px;">04</h2>
+					<h2>치료후기</h2>
 					<div class="line"></div> 
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/menu04_01">01. 공지사항</a></li>
@@ -231,7 +257,7 @@ $(document).ready(function(){
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>상담문의</p> 
+							<p>치료후기</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
@@ -243,11 +269,11 @@ $(document).ready(function(){
 							<table>
 								<tr>
 									<th>제목</th>
-									<td colspan="5"><img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">원마취통증의학과 홈페이지 상담문의 게시판 테스트입니다.</td>
+									<td colspan="5">원마취통증의학과 홈페이지 공지사항 게시판 테스트입니다.</td>
 								</tr>
 								<tr>
 									<th>작성자</th>
-									<td>제갈공명</td>
+									<td>관리자</td>
 									<th>등록일</th>
 									<td>2019-12-30</td>
 									<th>조회</th>
@@ -261,7 +287,19 @@ $(document).ready(function(){
 								최선을 다하여 진료하겠습니다.<br>
 								감사합니다.
 							</div>
-							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_03">목 록</a></p>
+							<div class="prevNextBtn">
+								<table>
+									<tr>
+										<th>이전글</th>
+										<td><a href="#none">원마취통증의학과 오픈 준비 공지사항 게시판 테스트2입니다.</a></td>
+									</tr>
+									<tr>
+										<th>다음글</th>
+										<td><a href="#none">원마취통증의학과 오픈 준비 공지사항 게시판 테스트4입니다.</a></td>
+									</tr>
+								</table>
+							</div><!-- prevNextBtn -->
+							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_01">목 록</a></p>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->

@@ -242,7 +242,7 @@ $(document).ready(function(){
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">01</h2>
+					<h2 style="margin-bottom: 20px;">02</h2>
 					<h2>언론보도</h2>
 					<div class="line"></div> 
 					<ul>

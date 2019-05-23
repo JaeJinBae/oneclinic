@@ -125,28 +125,9 @@
 }
 .content{
 	width: 100%;
+	padding: 0 38px;
 }
-.slideWrap{
-	width: 100%;
-	margin: 0 auto;
-}
-.slider_for{
-	width: 600px;
-	margin: 0 auto;
-	margin-bottom: 90px;
-}
-.slider_for img{
-	width: 100%;
-	height: 320px;
-}
-.slider_nav{
-	width: 100%;
-}
-.slider_nav img{
-	width: 190px;
-	text-align: center;
-	margin:10px;
-}
+
 .fix_img{
 	width: 72%;
 	display: block;

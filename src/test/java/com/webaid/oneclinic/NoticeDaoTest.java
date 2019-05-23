@@ -38,7 +38,7 @@ public class NoticeDaoTest {
 	//@Test
 	public void update(){
 		NoticeVO vo=new NoticeVO();
-		vo.setBno(20);
+		vo.setNo(20);
 		vo.setTitle("ㅋㅋㅋ");
 		vo.setWriter("sadf");
 		vo.setContent("ㅋㅋ이바이");
