@@ -125,28 +125,110 @@
 }
 .content{
 	width: 100%;
+	padding: 0 38px;
 }
-.slideWrap{
+.searchWrap{
 	width: 100%;
-	margin: 0 auto;
+	text-align: right;
+	margin-bottom: 13px;
 }
-.slider_for{
-	width: 600px;
-	margin: 0 auto;
-	margin-bottom: 90px;
+.searchWrap > select{
+	
+	font-size: 15px;
+	padding: 2px 3px;
+	letter-spacing: 1px;
 }
-.slider_for img{
-	width: 100%;
-	height: 320px;
+.searchWrap > input{
+	
+	width: 200px;
+	padding: 2px 4px;
+	font-size: 15px;
 }
-.slider_nav{
-	width: 100%;
-}
-.slider_nav img{
-	width: 190px;
+.searchWrap > p{
+	display: inline-block;
+	width: 55px;
+	font-size: 15px;
 	text-align: center;
-	margin:10px;
+	letter-spacing: 1.5px;
+	color: #fff;
+	background: #4a7899;
+	padding: 4px;
+	cursor: pointer;
 }
+.tblWrap{
+	width: 100%;
+}
+.tblWrap > table{
+	width: 100%;
+	border-top: 8px solid #417ca6; 
+}
+.tblWrap > table tr{
+	border-bottom: 1px solid lightgray;
+}
+.tblWrap > table tr > th{
+	color: #fff;
+	font-size: 17px;
+	text-align: center;
+	background: #91b0c4;
+	padding: 6px 0;
+}
+.tblWrap > table tr > th:nth-child(1){
+	width: 50px;
+}
+.tblWrap > table tr > th:nth-child(2){
+	width: 411px;
+}
+.tblWrap > table tr > th:nth-child(3){
+	width: 70px;
+}
+.tblWrap > table tr > th:nth-child(4){
+	width: 70px;
+}
+.tblWrap > table tr > th:nth-child(5){
+	width: 90px;
+}
+.tblWrap > table tr > td{
+	font-size: 15px;
+	text-align: center;
+	padding: 7px 0;
+}
+.tblWrap > table tr > td:nth-child(2){
+	text-align: left;
+	padding: 7px 10px;
+}
+.tblWrap > table tr > td > p{
+	font-size: 15px;
+	text-align: center;
+	color: #fff;
+	padding: 3px 0;
+	border-radius: 5px;
+}
+.tblWrap > table tr > td > .reply_o{
+	background: #3e7395;
+}
+.tblWrap > table tr > td > .reply_x{
+	background: #fe5003;
+}
+.registerBtn{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.registerBtn > p{
+	width: 70px;
+	float: right;
+	background: #3e7395;
+	padding: 5px;
+	text-align: center;
+}
+.registerBtn > p > a{
+	width: 100%;
+	display: inline-block;
+	color: #fff;
+	font-size: 15px;
+}
+
+
 .fix_img{
 	width: 72%;
 	display: block;
@@ -203,7 +285,55 @@ $(document).ready(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
+						<%-- <img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg"> --%>
+						<div class="searchWrap">
+							<select>
+								<option>선 택</option>
+								<option>제 목</option>
+								<option>번 호</option>
+								<option>작성자</option>
+							</select>
+							<input type="text" name="">
+							<p>검색</p>
+						</div>
+						<div class="tblWrap">
+							<table>
+								<tr>
+									<th>번호</th>
+									<th>제목</th>
+									<th>상태</th>
+									<th>작성자</th>
+									<th>등록일</th>
+								</tr>
+								<tr>
+									<td>4553</td>
+									<td><a href="${pageContext.request.contextPath}/menu04_03Read"><img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
+									<td><p class="reply_o">답변완료</p></td>
+									<td>홍길동</td>
+									<td>2018-12-31</td>
+								</tr>
+								<tr>
+									<td>4552</td>
+									<td><a href="${pageContext.request.contextPath}/menu04_03Read"><img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
+									<td><p class="reply_o">답변완료</p></td>
+									<td>이순신</td>
+									<td>2018-12-31</td>
+								</tr>
+								<tr>
+									<td>4551</td>
+									<td><a href="${pageContext.request.contextPath}/menu04_03Read"><img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
+									<td><p class="reply_x">답변대기</p></td>
+									<td>장보고</td>
+									<td>2018-12-31</td>
+								</tr>
+							</table>
+							<div class="registerBtn">
+								<p><a href="${pageContext.request.contextPath}/menu04_03Register">글쓰기</a></p>
+							</div>
+							<div class="pageWrap">
+							
+							</div>
+						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->

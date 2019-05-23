@@ -153,6 +153,7 @@
 	color: #fff;
 	background: #4a7899;
 	padding: 4px;
+	cursor: pointer;
 }
 .tblWrap{
 	width: 100%;
@@ -194,25 +195,6 @@
 .tblWrap > table tr > td:nth-child(2){
 	text-align: left;
 	padding: 7px 10px;
-}
-.noticeTop > td:nth-child(1){
-	color: #f84d02;
-}
-.noticeTop > td:nth-child(2) > a{
-	color: #f84d02;
-}
-
-
-.backBtn{
-	width:60px;
-	padding: 5px 10px;
-	margin: 15px 0;
-	text-align: center;
-	background: #91b0c4;
-}
-.backBtn > a{
-	font-size: 15px;
-	color: #fff;
 }
 
 

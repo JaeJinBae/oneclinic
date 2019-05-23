@@ -79,7 +79,7 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(1) > a{
+.leftMenu > ul > li:nth-child(3) > a{
 	font-weight: bold;
 }
 
@@ -127,82 +127,57 @@
 	width: 100%;
 	padding: 0 38px;
 }
-.searchWrap{
-	width: 100%;
-	text-align: right;
-	margin-bottom: 13px;
-}
-.searchWrap > select{
-	
-	font-size: 15px;
-	padding: 2px 3px;
-	letter-spacing: 1px;
-}
-.searchWrap > input{
-	
-	width: 200px;
-	padding: 2px 4px;
-	font-size: 15px;
-}
-.searchWrap > p{
-	display: inline-block;
-	width: 55px;
-	font-size: 15px;
-	text-align: center;
-	letter-spacing: 1.5px;
-	color: #fff;
-	background: #4a7899;
-	padding: 4px;
-	cursor: pointer;
-}
 .tblWrap{
 	width: 100%;
 }
 .tblWrap > table{
 	width: 100%;
-	border-top: 8px solid #417ca6; 
 }
 .tblWrap > table tr{
-	border-bottom: 1px solid lightgray;
+
 }
 .tblWrap > table tr > th{
 	color: #fff;
 	font-size: 17px;
 	text-align: center;
-	background: #91b0c4;
+	background: #417ca6;
 	padding: 6px 0;
-}
-.tblWrap > table tr > th:nth-child(1){
-	width: 50px;
-}
-.tblWrap > table tr > th:nth-child(2){
-	width: 455px;
-}
-.tblWrap > table tr > th:nth-child(3){
-	width: 90px;
-}
-.tblWrap > table tr > th:nth-child(4){
-	width: 70px;
-}
-.tblWrap > table tr > th:nth-child(5){
-	width: 50px;
+	letter-spacing: 1px;
+	border-top: 1px solid #417ca6;
+	border-bottom: 1px solid #417ca6;
+	
 }
 .tblWrap > table tr > td{
 	font-size: 15px;
 	text-align: center;
-	padding: 7px 0;
-}
-.tblWrap > table tr > td:nth-child(2){
-	text-align: left;
 	padding: 7px 10px;
+	border-top: 1px solid #417ca6;
+	border-bottom: 1px solid #417ca6;
 }
-.noticeTop > td:nth-child(1){
-	color: #c80719;
+.tblWrap > table tr:nth-child(1) > th{
+	border-bottom: 1px solid lightgray;
+}
+.tblWrap > table tr:nth-child(1) > td{
+	text-align: left;
 	font-weight: bold;
 }
-.noticeTop > td:nth-child(2) > a{
-	color: #c80719;
-	
+.tblContent{
+	width: 100%;
+	padding: 30px 10px;
+	border-bottom: 2px solid lightgray;
+}
+
+
+.backBtn{
+	width:60px;
+	padding: 5px 10px;
+	margin: 15px 0;
+	text-align: center;
+	background: #91b0c4;
+}
+.backBtn > a{
+	font-size: 15px;
+	color: #fff;
 }
 
 
@@ -242,7 +217,7 @@ $(document).ready(function(){
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">01</h2>
-					<h2>공지사항</h2>
+					<h2>상담문의</h2>
 					<div class="line"></div> 
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/menu04_01">01. 공지사항</a></li>
@@ -256,7 +231,7 @@ $(document).ready(function(){
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>공지사항</p> 
+							<p>상담문의</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
@@ -264,63 +239,29 @@ $(document).ready(function(){
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<%-- <img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg"> --%>
-						<div class="searchWrap">
-							<select>
-								<option>선 택</option>
-								<option>제 목</option>
-								<option>번 호</option>
-							</select>
-							<input type="text" name="">
-							<p>검색</p>
-						</div>
 						<div class="tblWrap">
 							<table>
 								<tr>
-									<th>번호</th>
 									<th>제목</th>
-									<th>등록일</th>
+									<td colspan="5"><img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">원마취통증의학과 홈페이지 상담문의 게시판 테스트입니다.</td>
+								</tr>
+								<tr>
 									<th>작성자</th>
+									<td>제갈공명</td>
+									<th>등록일</th>
+									<td>2019-12-30</td>
 									<th>조회</th>
-								</tr>
-								<tr class="noticeTop">
-									<td>공지</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_01Read">원마취통증의학과공지사항 테스트 입니다.</a></td>
-									<td>2019-12-31</td>
-									<td>관리자</td>
-									<td>4250</td>
-								</tr>
-								<tr class="noticeTop">
-									<td>공지</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_01Read">원마취통증의학과공지사항 테스트 입니다.</a></td>
-									<td>2019-12-31</td>
-									<td>관리자</td>
-									<td>250</td>
-								</tr>
-								<tr>
-									<td>4553</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_01Read">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
-									<td>2018-12-31</td>
-									<td>관리자</td>
-									<td>550</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_01Read">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
-									<td>2018-12-31</td>
-									<td>관리자</td>
-									<td>550</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_01Read">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
-									<td>2018-12-31</td>
-									<td>관리자</td>
-									<td>550</td>
+									<td>6000</td>
 								</tr>
 							</table>
-							<div class="pageWrap">
-							
+							<div class="tblContent">
+								안녕하세요 원마취통증의학과입니다.<br>
+								저희 원마취통증의학과는 5/30일에 오픈합니다.<br>
+								지금은 게시판 작성 테스트 중입니다.<br>
+								최선을 다하여 진료하겠습니다.<br>
+								감사합니다.
 							</div>
+							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_03">목 록</a></p>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->

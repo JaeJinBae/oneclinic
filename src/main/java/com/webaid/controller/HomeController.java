@@ -151,6 +151,18 @@ public class HomeController {
 		return "sub/menu04_3";
 	}
 	
+	@RequestMapping(value="/menu04_03Read")
+	public String menu04_3Read(){
+		
+		return "sub/menu04_3Read";
+	}
+	
+	@RequestMapping(value="/menu04_03Register")
+	public String menu04_3Register(){
+		
+		return "sub/menu04_3Register";
+	}
+	
 	@RequestMapping(value="/menu04_04")
 	public String menu04_4(){
 		

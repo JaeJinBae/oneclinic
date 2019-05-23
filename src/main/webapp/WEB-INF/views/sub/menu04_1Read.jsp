@@ -143,19 +143,19 @@
 	background: #417ca6;
 	padding: 6px 0;
 	letter-spacing: 1px;
-	border-top: 2px solid #417ca6;
-	border-bottom: 2px solid #417ca6;
+	border-top: 1px solid #417ca6;
+	border-bottom: 1px solid #417ca6;
 	
 }
 .tblWrap > table tr > td{
 	font-size: 15px;
 	text-align: center;
 	padding: 7px 10px;
-	border-top: 2px solid #417ca6;
-	border-bottom: 2px solid #417ca6;
+	border-top: 1px solid #417ca6;
+	border-bottom: 1px solid #417ca6;
 }
 .tblWrap > table tr:nth-child(1) > th{
-	border-bottom: 2px solid lightgray;
+	border-bottom: 1px solid lightgray;
 }
 .tblWrap > table tr:nth-child(1) > td{
 	text-align: left;
