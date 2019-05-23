@@ -5,47 +5,51 @@
 <mapper namespace="com.webaid.mappers.NoticeMapper">
 
 	<select id="selectAll" resultType="NoticeVO">
-		select * from notice order by bno desc
+		select * from notice order by no desc
 	</select>
 	
 	<select id="selectOne" resultType="NoticeVO">
-		select * from notice where bno=#{bno}
+		select * from notice where no=#{no}
+	</select>
+	
+	<select id="selectTopNotice" resultType="NoticeVO">
+		select * from notice where top_state='y' order by no desc;
 	</select>
 	
 	<insert id="insert">
-		insert into notice values(0, #{title}, #{writer}, #{content}, #{regdate}, 0)
+		insert into notice values(0, #{title}, #{content}, #{writer}, #{regdate}, 0, #{top_state})
 	</insert>
 	
 	<update id="update">
-		update notice set title=#{title}, writer=#{writer}, content=#{content} where bno=#{bno}
+		update notice set title=#{title}, writer=#{writer}, content=#{content}, #{top_state} where no=#{no}
 	</update>
 	
 	<update id="updateCnt">
-		update notice set cnt=cnt+1 where bno=#{bno}
+		update notice set cnt=cnt+1 where no=#{no}
 	</update>
 	
 	<delete id="delete">
-		delete from notice where bno=#{bno}
+		delete from notice where no=#{no}
 	</delete>
 	
 	<select id="listSearch" resultType="NoticeVO">
-		select * from notice <include refid="search"></include> order by bno desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from notice where top_state='n' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<sql id="search">
 		<if test="searchType=='c'.toString()">
-			where content like concat('%',#{keyword},'%')
+			and content like concat('%',#{keyword},'%')
 		</if>
 		<if test="searchType=='t'.toString()">
-			where title like concat('%',#{keyword},'%') 
+			and title like concat('%',#{keyword},'%') 
 		</if>
-		<if test="searchType=='r'.toString()">
-			where regdate like concat('%',#{keyword},'%')
+		<if test="searchType=='no'.toString()">
+			and no=#{keyword}
 		</if>
 	</sql>
 	
 	<select id="listSearchCount" resultType="int">
-		select count(bno) from notice <include refid="search"></include>
+		select count(no) from notice where top_state='n' <include refid="search"></include>
 	</select>
 	
 </mapper>

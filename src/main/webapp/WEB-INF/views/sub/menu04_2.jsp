@@ -53,7 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	height: 750px;
+	min-height: 750px;
 	background: #477a9b;
 	padding: 20px 35px;
 }
@@ -86,7 +86,7 @@
 
 .contentWrap{
 	width: 820px;
-	height: 750px;
+	min-height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;
@@ -179,10 +179,10 @@
 	width: 455px;
 }
 .tblWrap > table tr > th:nth-child(3){
-	width: 90px;
+	width: 70px;
 }
 .tblWrap > table tr > th:nth-child(4){
-	width: 70px;
+	width: 90px;
 }
 .tblWrap > table tr > th:nth-child(5){
 	width: 50px;
@@ -195,6 +195,36 @@
 .tblWrap > table tr > td:nth-child(2){
 	text-align: left;
 	padding: 7px 10px;
+}
+.page{
+	margin: 15px auto;
+}
+.page > ul{
+	text-align: center;
+}
+.page ul li{
+	margin:0 auto;
+	list-style: none;
+	display: inline-block;
+	text-align:center;
+	border:1px solid #e9e9e9;
+	border-radius: 8px;
+	margin: 0 1px;
+	background: #fafafa;
+}
+.active1{
+	background: #4a7899 !important;
+}
+.active2{
+	font-weight: bold;
+	color:white;
+}
+.page ul li a{
+	display:inline-block;
+	width:35px;
+	height:30px;
+	font-size:1.1em;
+	line-height: 30px;
 }
 
 
@@ -269,34 +299,45 @@ $(document).ready(function(){
 								<tr>
 									<th>번호</th>
 									<th>제목</th>
-									<th>등록일</th>
 									<th>작성자</th>
+									<th>등록일</th>
 									<th>조회</th>
 								</tr>
-								<tr>
-									<td>4553</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_02Read">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
-									<td>2018-12-31</td>
-									<td>관리자</td>
-									<td>550</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_02Read">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
-									<td>2018-12-31</td>
-									<td>관리자</td>
-									<td>550</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td><a href="${pageContext.request.contextPath}/menu04_02Read">원마취통증의학과공지사항 테스트 입니다. 오픈을 축하합니다.</a></td>
-									<td>2018-12-31</td>
-									<td>관리자</td>
-									<td>550</td>
-								</tr>
+								<c:choose>
+								    <c:when test="${fn:length(list) == 0}">
+							        	<tr>
+							        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+							        	</tr>
+								    </c:when>
+								    
+								    <c:otherwise>
+								        <c:forEach var="item" items="${list}">
+											<tr>
+												<td>${item.no}</td>
+												<td><a href="${pageContext.request.contextPath}/menu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
+												<td>${item.writer}</td>
+												<td>${item.regdate}</td>
+												<td>${item.cnt}</td>
+											</tr>
+										</c:forEach>
+								    </c:otherwise> 
+								</c:choose>
 							</table>
-							<div class="pageWrap">
-							
+							<div class="page">
+								<ul>
+									<c:if test="${pageMaker.prev}">
+										<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
+									</c:if>
+									
+									<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+										<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
+									</c:forEach>
+									
+									<c:if test="${pageMaker.next}">
+										<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
+									</c:if>
+									
+								</ul>
 							</div>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->

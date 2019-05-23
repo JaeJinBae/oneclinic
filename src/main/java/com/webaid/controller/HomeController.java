@@ -1,20 +1,42 @@
 package com.webaid.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.webaid.domain.AdviceVO;
+import com.webaid.domain.NewsVO;
+import com.webaid.domain.NoticeVO;
+import com.webaid.domain.PageMaker;
+import com.webaid.domain.SearchCriteria;
+import com.webaid.service.AdviceService;
+import com.webaid.service.NewsService;
+import com.webaid.service.NoticeService;
 
 @Controller
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	@Autowired
+	private NoticeService nService;
+	
+	@Autowired
+	private NewsService newsService;
+	
+	@Autowired
+	private AdviceService aService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req,Model model) {
@@ -122,32 +144,79 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/menu04_01")
-	public String menu04_1(){
+	public String menu04_1(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		
+		List<NoticeVO> topList = nService.selectTopNotice();
+		List<NoticeVO> list = nService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu04_1";
 	}
 	
 	@RequestMapping(value="/menu04_01Read")
-	public String menu04_1Read(){
+	public String menu04_1Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		NoticeVO vo=nService.selectOne(no);
+		nService.updateCnt(no);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu04_1Read";
 	}
 	
 	@RequestMapping(value="/menu04_02")
-	public String menu04_2(){
+	public String menu04_2(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		List<NewsVO> list = newsService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu04_2";
 	}
 	
 	@RequestMapping(value="/menu04_02Read")
-	public String menu04_2Read(){
+	public String menu04_2Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		NewsVO vo=newsService.selectOne(no);
+		newsService.updateCnt(no);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu04_2Read";
 	}
 	
 	@RequestMapping(value="/menu04_03")
-	public String menu04_3(){
+	public String menu04_3(@ModelAttribute("cri") SearchCriteria cri, Model model){
+		List<AdviceVO> list = aService.listSearch(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu04_3";
 	}
 	

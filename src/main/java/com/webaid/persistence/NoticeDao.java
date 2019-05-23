@@ -7,11 +7,12 @@ import com.webaid.domain.SearchCriteria;
 
 public interface NoticeDao {
 	public List<NoticeVO> selectAll();
-	public NoticeVO selectOne(int bno);
+	public NoticeVO selectOne(int no);
+	public List<NoticeVO> selectTopNotice();
 	public void insert(NoticeVO vo);
 	public void update(NoticeVO vo);
-	public void updateCnt(int bno);
-	public void delete(int bno);
+	public void updateCnt(int no);
+	public void delete(int no);
 	public List<NoticeVO> listSearch(SearchCriteria cri) throws Exception;
 	public int listSearchCount(SearchCriteria cri) throws Exception;
 }

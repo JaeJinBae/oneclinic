@@ -53,7 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	height: 750px;
+	min-height: 750px;
 	background: #477a9b;
 	padding: 20px 35px;
 }
@@ -86,7 +86,7 @@
 
 .contentWrap{
 	width: 820px;
-	height: 750px;
+	min-height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;
@@ -243,23 +243,41 @@ $(document).ready(function(){
 							<table>
 								<tr>
 									<th>제목</th>
-									<td colspan="5"><img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">원마취통증의학과 홈페이지 상담문의 게시판 테스트입니다.</td>
+									<td colspan="5">
+										<c:if test="${item.pwtype eq 'o'}">
+											<img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">
+										</c:if>
+										${item.title}
+									</td>
 								</tr>
 								<tr>
 									<th>작성자</th>
-									<td>제갈공명</td>
+									<td>${item.writer}</td>
 									<th>등록일</th>
-									<td>2019-12-30</td>
+									<td>${item.regdate}</td>
 									<th>조회</th>
-									<td>6000</td>
+									<td>${item.cnt}</td>
 								</tr>
 							</table>
 							<div class="tblContent">
-								안녕하세요 원마취통증의학과입니다.<br>
-								저희 원마취통증의학과는 5/30일에 오픈합니다.<br>
-								지금은 게시판 작성 테스트 중입니다.<br>
-								최선을 다하여 진료하겠습니다.<br>
-								감사합니다.
+								${item.content}
+							</div>
+							<div class="replyWrap">
+								<table>
+									<tr>
+										<th>답변</th>
+										<td>
+											<c:choose>
+												<c:when test="${item.reply eq ''}">
+													<p>답변대기 중 입니다. 빠른 시일 내 답변을 달겠습니다.</p>
+												</c:when>
+												<c:otherwise>
+													${item.reply}
+												</c:otherwise>
+											</c:choose>
+										</td>
+									</tr>
+								</table>
 							</div>
 							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_03">목 록</a></p>
 						</div><!-- tblWrap end -->

@@ -11,51 +11,56 @@ import com.webaid.domain.SearchCriteria;
 
 @Repository
 public class NoticeDaoImpl implements NoticeDao {
-	
-	private static final String namespace="com.webaid.mappers.NoticeMapper";
-	
+
+	private static final String namespace = "com.webaid.mappers.NoticeMapper";
+
 	@Autowired
 	private SqlSession session;
-	
+
 	@Override
 	public List<NoticeVO> selectAll() {
-		return session.selectList(namespace+".selectAll");
+		return session.selectList(namespace + ".selectAll");
 	}
 
 	@Override
-	public NoticeVO selectOne(int bno) {
-		return session.selectOne(namespace+".selectOne", bno);
+	public NoticeVO selectOne(int no) {
+		return session.selectOne(namespace + ".selectOne", no);
+	}
+
+	@Override
+	public List<NoticeVO> selectTopNotice() {
+		return session.selectList(namespace + ".selectTopNotice");
 	}
 
 	@Override
 	public void insert(NoticeVO vo) {
-		session.insert(namespace+".insert", vo);
+		session.insert(namespace + ".insert", vo);
 	}
 
 	@Override
 	public void update(NoticeVO vo) {
-		session.update(namespace+".update", vo);
-	}
-	
-	@Override
-	public void updateCnt(int bno) {
-		session.update(namespace+".updateCnt", bno);
+		session.update(namespace + ".update", vo);
 	}
 
 	@Override
-	public void delete(int bno) {
-		session.delete(namespace+".delete",bno);
-		
+	public void updateCnt(int no) {
+		session.update(namespace + ".updateCnt", no);
+	}
+
+	@Override
+	public void delete(int no) {
+		session.delete(namespace + ".delete", no);
+
 	}
 
 	@Override
 	public List<NoticeVO> listSearch(SearchCriteria cri) throws Exception {
-		return session.selectList(namespace+".listSearch", cri);
+		return session.selectList(namespace + ".listSearch", cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
-		return session.selectOne(namespace+".listSearchCount", cri);
+		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 
 }

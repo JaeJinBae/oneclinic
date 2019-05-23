@@ -53,7 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	height: 750px;
+	min-height: 750px;
 	background: #477a9b;
 	padding: 20px 35px;
 }
@@ -86,7 +86,7 @@
 
 .contentWrap{
 	width: 820px;
-	height: 750px;
+	min-height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;

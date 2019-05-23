@@ -5,38 +5,33 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.webaid.domain.NoticeVO;
+import com.webaid.domain.NewsVO;
 import com.webaid.domain.SearchCriteria;
-import com.webaid.persistence.NoticeDao;
+import com.webaid.persistence.NewsDao;
 
 @Service
-public class NoticeServiceImpl implements NoticeService {
+public class NewsServiceImpl implements NewsService {
 
 	@Autowired
-	private NoticeDao dao;
-
+	private NewsDao dao;
+	
 	@Override
-	public List<NoticeVO> selectAll() {
+	public List<NewsVO> selectAll() {
 		return dao.selectAll();
 	}
 
 	@Override
-	public NoticeVO selectOne(int no) {
+	public NewsVO selectOne(int no) {
 		return dao.selectOne(no);
 	}
 
 	@Override
-	public List<NoticeVO> selectTopNotice() {
-		return dao.selectTopNotice();
-	}
-
-	@Override
-	public void insert(NoticeVO vo) {
+	public void insert(NewsVO vo) {
 		dao.insert(vo);
 	}
 
 	@Override
-	public void update(NoticeVO vo) {
+	public void update(NewsVO vo) {
 		dao.update(vo);
 	}
 
@@ -51,7 +46,7 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public List<NoticeVO> listSearch(SearchCriteria cri) throws Exception {
+	public List<NewsVO> listSearch(SearchCriteria cri) throws Exception {
 		return dao.listSearch(cri);
 	}
 
