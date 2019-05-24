@@ -233,11 +233,6 @@
 }
 
 
-.fix_img{
-	width: 72%;
-	display: block;
-	margin: 0 auto;
-}
 
 
 .footerWrap{
@@ -289,7 +284,6 @@ $(document).ready(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<%-- <img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg"> --%>
 						<div class="searchWrap">
 							<select>
 								<option>선 택</option>

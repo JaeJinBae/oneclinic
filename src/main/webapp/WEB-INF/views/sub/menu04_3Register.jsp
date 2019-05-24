@@ -132,6 +132,7 @@
 }
 .tblWrap > table{
 	width: 100%;
+	border-right: 1px solid #417ca6;
 }
 .tblWrap > table tr{
 
@@ -208,13 +209,6 @@
 
 
 
-.fix_img{
-	width: 72%;
-	display: block;
-	margin: 0 auto;
-}
-
-
 .footerWrap{
 	width: 100%;
 	height: 70px;
@@ -222,9 +216,62 @@
 } 
 </style>
 <script>
+function adviceRegister(vo){
+	console.log(vo);
+	$.ajax({
+		url:"${pageContext.request.contextPath}/adviceRegister",
+		type:"post",
+		dataType:"text",
+		data:vo,
+		async:false,
+		success:function(json){
+			if(json == "ok"){
+				alert("상담문의 등록이 완료되었습니다.");
+				location.href="${pageContext.request.contextPath}/menu04_03";
+			}else{
+				alert("문의글 등록이 정상적으로 등록되지 않았습니다. 새로고침(F5) 후 다시 이용하세요.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+	
+}
+
 $(document).ready(function(){
 	var height = $(".sectionContent").outerHeight();
 	$(".sectionContent > .leftMenu").css("height", height);
+	
+	$(".btnWrap > p:nth-child(1)").click(function(){
+		var title = $(".tblWrap > table tr > td > input[name='title']").val();
+		var writer = $(".tblWrap > table tr > td > input[name='writer']").val();
+		var pw = $(".tblWrap > table tr > td > input[name='pw']").val();
+		var pwtype = $(".tblWrap > table tr > td > label > input[name='pwtype']:checked").val();
+		var content = $(".tblWrap > table tr > td > textarea").val();
+		var ndate = new Date();
+		var year = ndate.getFullYear();
+		var month = ndate.getMonth();
+		var date = ndate.getDate();
+		var regdate = year+"-"+((month>9?'':"0")+month)+"-"+((date>9?'':"0")+date);
+		
+		if(title == ""){
+			alert("제목을 입력해 주세요.");
+			return false;
+		}
+		if(writer == ""){
+			alert("작성자를 입력해 주세요.");
+			return false;
+		}
+		if(pwtype == "o"){
+			if(pw == ""){
+				alert("비공개 선택시 비밀번호를 입력해주세요.");
+				return false;
+			}
+		}
+		var vo = {no:0, title:title, content:content, writer:writer, regdate:regdate, cnt:0, pwtype:pwtype, pw:pw, reply:""};
+		adviceRegister(vo);
+	});
 });
 </script>
 </head>
@@ -264,7 +311,6 @@ $(document).ready(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<%-- <img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg"> --%>
 						<div class="tblWrap">
 							<table>
 								<tr>
@@ -274,13 +320,13 @@ $(document).ready(function(){
 								<tr>
 									<th>작성자</th>
 									<td><input type="text" name="writer"></td>
-									<th>비밀번호</th>
-									<td><input type="text" name="pw"></td>
 									<th>공개</th>
 									<td>
-										<label><input type="radio" name="otype" value="o">공개</label>
-										<label><input type="radio" name="otype" value="x">비공개</label>
+										<label><input type="radio" name="pwtype" value="x">공개</label>
+										<label><input type="radio" name="pwtype" value="o" checked>비공개</label>
 									</td>
+									<th>비밀번호</th>
+									<td><input type="text" name="pw"></td>
 								</tr>
 								<tr>
 									<th>내용</th>

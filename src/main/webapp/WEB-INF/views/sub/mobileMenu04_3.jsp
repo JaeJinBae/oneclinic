@@ -79,48 +79,9 @@
 .content{
 	width: 100%;
 }
-.empWrap{
-	width: 100%;
-	margin: 15px auto;
-	overflow: hidden;
-}
-.empWrap > .empImg{
-	float: left;
-	width: 150px;
-	height: 190px;
-	border: 1px solid gray;
-}
-.empWrap > .empCareer{
-	float: right;
-}
-.empCareer > .ecTitle{
-	width: 100%;
-	overflow: hidden;
-}
-.empCareer > .ecTitle > h3{
-	float: left;
-	font-size: 18px;
-	font-weight: bold;
-}
-.empCareer > .ecTitle > .bline{
-	float:left;
-	width: 50px; 
-	height: 2px;
-	background: #333333;
-	margin: 8px 0 15px 10px;
-}
-.empCareer > ul{
-	margin: 20px 0;
-	margin-top: 5px;
-}
-.empCareer > ul > li{
-	font-size: 15px;
-	padding: 3px; 
-}
-.fix_img{
-	width: 100%;
-	margin-bottom: 30px;
-}
+
+
+
 
 
 .footerWrap{
@@ -154,7 +115,7 @@
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
+						
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->

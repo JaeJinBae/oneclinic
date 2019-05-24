@@ -275,6 +275,15 @@ public class HomeController {
 		return "sub/menu04_3Register";
 	}
 	
+	@RequestMapping(value="/adviceRegister", method=RequestMethod.POST)
+	public ResponseEntity<String> adviceRegister(@ModelAttribute("vo") AdviceVO vo){
+		ResponseEntity<String> entity = null;
+		System.out.println(vo);
+		aService.insert(vo);
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
+	}
+	
 	@RequestMapping(value="/menu04_04")
 	public String menu04_4(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		List<CommentVO> list = cService.listSearch(cri);
