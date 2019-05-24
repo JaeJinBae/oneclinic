@@ -13,11 +13,11 @@
 	</select>
 	
 	<select id="selectBefore" resultType="NoticeVO">
-		select * from notice where no=(select max(no) from notice where no<![CDATA[<]]>#{no}) and top_state='n'
+		select * from notice where no=(select min(no) from notice where no<![CDATA[>]]>#{no}) and top_state='n'
 	</select>
 	
 	<select id="selectAfter" resultType="NoticeVO">
-		select * from notice where no=(select min(no) from notice where no<![CDATA[>]]>#{no}) and top_state='n'
+		select * from notice where no=(select max(no) from notice where no<![CDATA[<]]>#{no}) and top_state='n'
 	</select>
 	
 	<select id="selectTopNotice" resultType="NoticeVO">

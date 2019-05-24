@@ -12,6 +12,14 @@
 		select * from comment where no=#{no}
 	</select>
 	
+	<select id="selectBefore" resultType="CommentVO">
+		select * from comment where no=(select min(no) from comment where no<![CDATA[>]]>#{no})
+	</select>
+	
+	<select id="selectAfter" resultType="CommentVO">
+		select * from comment where no=(select max(no) from comment where no<![CDATA[<]]>#{no})
+	</select>
+	
 	<insert id="insert">
 		insert into comment values(0, #{title}, #{content}, #{writer}, #{regdate}, 0, #{top_state})
 	</insert>

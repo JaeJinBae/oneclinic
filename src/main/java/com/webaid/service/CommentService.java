@@ -8,6 +8,8 @@ import com.webaid.domain.SearchCriteria;
 public interface CommentService {
 	public List<CommentVO> selectAll();
 	public CommentVO selectOne(int no);
+	public CommentVO selectBefore(int no);
+	public CommentVO selectAfter(int no);
 	public void insert(CommentVO vo);
 	public void update(CommentVO vo);
 	public void updateCnt(int no);

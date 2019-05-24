@@ -207,6 +207,8 @@ public class HomeController {
 	@RequestMapping(value="/menu04_02Read")
 	public String menu04_2Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		NewsVO vo=newsService.selectOne(no);
+		NewsVO beforeVO = newsService.selectBefore(no);
+		NewsVO afterVO = newsService.selectAfter(no);
 		newsService.updateCnt(no);
 		
 		PageMaker pageMaker = new PageMaker();
@@ -215,6 +217,8 @@ public class HomeController {
 		pageMaker.setTotalCount(newsService.listSearchCount(cri));
 		
 		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
 		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu04_2Read";
 	}
@@ -289,6 +293,9 @@ public class HomeController {
 	@RequestMapping(value="/menu04_04Read")
 	public String menu04_4Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		CommentVO vo=cService.selectOne(no);
+		CommentVO beforeVO = cService.selectBefore(no);
+		CommentVO afterVO = cService.selectAfter(no);
+		
 		cService.updateCnt(no);
 		
 		PageMaker pageMaker = new PageMaker();
@@ -297,6 +304,8 @@ public class HomeController {
 		pageMaker.setTotalCount(cService.listSearchCount(cri));
 		
 		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu04_4Read";

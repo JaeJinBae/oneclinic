@@ -287,11 +287,29 @@ $(document).ready(function(){
 								<table>
 									<tr>
 										<th>이전글</th>
-										<td><a href="#none">원마취통증의학과 오픈 준비 공지사항 게시판 테스트2입니다.</a></td>
+										<td>
+											<c:choose>
+												<c:when test="${beforeItem.no eq null}">
+													존재하지 않습니다.
+												</c:when>
+												<c:otherwise>
+													<a href="${pageContext.request.contextPath}/menu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+												</c:otherwise>
+											</c:choose>
+										</td>
 									</tr>
 									<tr>
 										<th>다음글</th>
-										<td><a href="#none">원마취통증의학과 오픈 준비 공지사항 게시판 테스트4입니다.</a></td>
+										<td>
+											<c:choose>
+												<c:when test="${afterItem.no eq null}">
+													존재하지 않습니다.
+												</c:when>
+												<c:otherwise>
+													<a href="${pageContext.request.contextPath}/menu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+												</c:otherwise>
+											</c:choose>
+										</td>
 									</tr>
 								</table>
 							</div><!-- prevNextBtn -->

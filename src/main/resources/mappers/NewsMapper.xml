@@ -12,6 +12,14 @@
 		select * from news where no=#{no}
 	</select>
 	
+	<select id="selectBefore" resultType="NewsVO">
+		select * from news where no=(select min(no) from news where no<![CDATA[>]]>#{no})
+	</select>
+	
+	<select id="selectAfter" resultType="NewsVO">
+		select * from news where no=(select max(no) from news where no<![CDATA[<]]>#{no})
+	</select>
+	
 	<insert id="insert">
 		insert into news values(0, #{title}, #{content}, #{writer}, #{regdate}, 0, #{top_state})
 	</insert>

@@ -14,7 +14,7 @@ public class NewsServiceImpl implements NewsService {
 
 	@Autowired
 	private NewsDao dao;
-	
+
 	@Override
 	public List<NewsVO> selectAll() {
 		return dao.selectAll();
@@ -23,6 +23,16 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public NewsVO selectOne(int no) {
 		return dao.selectOne(no);
+	}
+
+	@Override
+	public NewsVO selectBefore(int no) {
+		return dao.selectBefore(no);
+	}
+
+	@Override
+	public NewsVO selectAfter(int no) {
+		return dao.selectAfter(no);
 	}
 
 	@Override

@@ -8,6 +8,8 @@ import com.webaid.domain.SearchCriteria;
 public interface NewsDao {
 	public List<NewsVO> selectAll();
 	public NewsVO selectOne(int no);
+	public NewsVO selectBefore(int no);
+	public NewsVO selectAfter(int no);
 	public void insert(NewsVO vo);
 	public void update(NewsVO vo);
 	public void updateCnt(int no);

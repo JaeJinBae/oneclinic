@@ -14,7 +14,7 @@ public class CommentServiceImpl implements CommentService {
 
 	@Autowired
 	private CommentDao dao;
-	
+
 	@Override
 	public List<CommentVO> selectAll() {
 		return dao.selectAll();
@@ -23,6 +23,16 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public CommentVO selectOne(int no) {
 		return dao.selectOne(no);
+	}
+
+	@Override
+	public CommentVO selectBefore(int no) {
+		return dao.selectBefore(no);
+	}
+
+	@Override
+	public CommentVO selectAfter(int no) {
+		return dao.selectAfter(no);
 	}
 
 	@Override
