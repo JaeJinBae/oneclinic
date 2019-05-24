@@ -39,6 +39,65 @@
 	width:100%;
 	margin: 0 auto;
 }
+.pw_popupWrap{
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	display: none;
+}
+.pw_popupWrap > .popup_bg{
+	width: 100%;
+	height: 3000px;
+	background: #333;
+	opacity: 0.8;
+}
+.pw_popupWrap > .pwpopup{
+	position: fixed;
+	top:45%;
+	left: 40%;
+	width: 420px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 15px;
+}
+.pwpopup > h4{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+}
+.pwpopup > p{
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+}
+.pwpopup > ul{
+	width: 100%;
+	margin: 15px 0;
+}
+.pwpopup > ul > li{
+	text-align: center;
+	font-size: 15px;
+}
+.pwpopup > ul > li > input{
+	width: 150px;
+	font-size: 14px;
+	padding: 3px 6px;
+	margin-left: 10px;
+}
+.pwpopup > ul > li > button{
+	font-size: 15px;
+	padding: 5px 10px;
+	color: #fff;
+	margin-top: 10px;
+}
+.pwpopup > ul > li > button:nth-child(1){
+	background: #477a9b;
+	margin-right: 3px;
+}
+.pwpopup > ul > li > button:nth-child(2){
+	background: gray;
+}
+
 .section_top{
 	width: 100%;
 }
@@ -273,6 +332,28 @@
 } 
 </style>
 <script>
+function advicePw_chk(no, pw, href){
+	var vo = {no:no, pw:pw};
+	$.ajax({
+		url:"${pageContext.request.contextPath}/advicePwChk/"+no+"/"+pw,
+		type:"post",
+		dataType:"text",
+		async:false,
+		contentType : "application/json; charset=UTF-8",
+		success:function(json){
+			if(json == "ok"){
+				location.href=href;
+			}else{
+				alert("비밀번호가 다릅니다.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+	
+}
+
 $(document).ready(function(){
 	var height = $(".sectionContent").outerHeight();
 	$(".sectionContent > .leftMenu").css("height", height);
@@ -283,24 +364,51 @@ $(document).ready(function(){
 		if(pwtype == 0){
 			location.href=$(this).attr("href");
 		}else{
-			
-			
+			var no = $(this).find("input[name='no']").val();
+			var href = $(this).attr("href");
+			$(".pwpopup > ul > li > input[name='no']").val(no);
+			$(".pwpopup > ul > li > input[name='href']").val(href);
+			$(".pw_popupWrap").css("display","block");
 		}
 	})
+	
+	$(".pwpopup > ul > li:nth-child(2) > button").click(function(){
+		var idx = $(this).index();
+		
+		if(idx == 0){
+			var no = $(".pwpopup > ul > li > input[name='no']").val();
+			var pw = $(".pwpopup > ul > li > input[name='pw']").val();
+			var href = $(".pwpopup > ul > li > input[name='href']").val();
+			
+			advicePw_chk(no, pw, href);
+		}else if(idx == 1){
+			$(".pwpopup > ul > li > input").val("");
+			$(".pw_popupWrap").css("display","none");
+		}
+	});
 });
 </script>
 </head>
 <body>
 	<div class="allWrap">
+		<div class="pw_popupWrap">
+				<div class="popup_bg"></div>
+				<div class="pwpopup">
+					<h4>상담문의 비밀번호 확인</h4>
+					<p>비공개 글이므로 작성자와 관리자만 확인할 수 있습니다.</p>
+					<p>글 작성시 입력한 비밀번호를 입력해주세요.</p>
+					<ul>
+						<li>비밀번호<input type="password" name="pw"><input type="hidden" name="no" value=""><input type="hidden" name="href" value=""></li>
+						<li><button>확 인</button><button>닫 기</button></li>
+					</ul>
+				</div>
+			</div>
 		<div class="headerWrap">
 		<div class="header_top"></div>
 			<jsp:include page="../include/pcHeader.jsp"></jsp:include>
 		</div> 
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
-			<div class="pw_popup">
-				
-			</div>
 			<div class="section_top">
 				<img src="${pageContext.request.contextPath}/resources/images/menu04top.png">
 			</div> 
@@ -362,11 +470,13 @@ $(document).ready(function(){
 											<tr>
 												<td>${item.no}</td>
 												<td>
+													
 													<a href="${pageContext.request.contextPath}/menu04_03Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 														<c:if test="${item.pwtype eq 'o'}">
 															<img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">
 														</c:if>
 														${item.title}
+														<input type="hidden" name="no" value="${item.no}">
 													</a>
 												</td>
 												<td>

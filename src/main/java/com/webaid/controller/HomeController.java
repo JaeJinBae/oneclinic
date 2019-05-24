@@ -7,11 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -169,6 +172,9 @@ public class HomeController {
 	@RequestMapping(value="/menu04_01Read")
 	public String menu04_1Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		NoticeVO vo=nService.selectOne(no);
+		NoticeVO beforeVO = nService.selectBefore(no);
+		NoticeVO afterVO = nService.selectAfter(no);
+		
 		nService.updateCnt(no);
 		
 		PageMaker pageMaker = new PageMaker();
@@ -177,6 +183,8 @@ public class HomeController {
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
 		
 		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
 		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu04_1Read";
 	}
@@ -223,6 +231,22 @@ public class HomeController {
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu04_3";
+	}
+	
+	@RequestMapping(value="/advicePwChk/{no}/{pw}", method=RequestMethod.POST)
+	public ResponseEntity<String> menu04_3advicePwChk(@PathVariable("no") int no, @PathVariable("pw") String pw){
+		ResponseEntity<String> entity = null;
+		
+		AdviceVO vo = aService.selectOne(no);
+		
+		if(vo.getPw().equals(pw)){
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		
+		
+		return entity;
 	}
 	
 	@RequestMapping(value="/menu04_03Read")

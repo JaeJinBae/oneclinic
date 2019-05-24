@@ -28,6 +28,16 @@ public class NoticeDaoImpl implements NoticeDao {
 	}
 
 	@Override
+	public NoticeVO selectBefore(int no) {
+		return session.selectOne(namespace + ".selectBefore", no);
+	}
+
+	@Override
+	public NoticeVO selectAfter(int no) {
+		return session.selectOne(namespace + ".selectAfter", no);
+	}
+
+	@Override
 	public List<NoticeVO> selectTopNotice() {
 		return session.selectList(namespace + ".selectTopNotice");
 	}
