@@ -441,11 +441,39 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		return "sub/mobileMenu04_1Read";
 	}
-	
+
 	@RequestMapping(value="/mMenu04_02")
-	public String mMenu04_2(){
+	public String mMenu04_2(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		List<NewsVO> list = newsService.listSearch(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/mobileMenu04_2";
+	}
+	
+	@RequestMapping(value="/mMenu04_02Read")
+	public String mMenu04_2Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		NewsVO vo=newsService.selectOne(no);
+		NewsVO beforeVO = newsService.selectBefore(no);
+		NewsVO afterVO = newsService.selectAfter(no);
+		newsService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/mobileMenu04_2Read";
 	}
 	
 	@RequestMapping(value="/mMenu04_03")
@@ -455,9 +483,37 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/mMenu04_04")
-	public String mMenu04_4(){
+	public String mMenu04_4(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		List<CommentVO> list = cService.listSearch(cri);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "sub/mobileMenu04_4";
+	}
+	
+	@RequestMapping(value="/mMenu04_04Read")
+	public String mMenu04_4Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		CommentVO vo=cService.selectOne(no);
+		CommentVO beforeVO = cService.selectBefore(no);
+		CommentVO afterVO = cService.selectAfter(no);
+		cService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/mobileMenu04_4Read";
 	}
 	
 	@RequestMapping(value="/mMenu04_05")

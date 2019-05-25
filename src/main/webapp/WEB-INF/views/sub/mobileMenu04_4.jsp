@@ -79,7 +79,104 @@
 .content{
 	width: 100%;
 }
-
+.searchWrap{
+	width: 100%;
+	text-align: right;
+	margin-bottom: 13px;
+}
+.searchWrap > select{
+	
+	font-size: 14px;
+	padding: 2px 3px;
+	letter-spacing: 1px;
+}
+.searchWrap > input{
+	width: 200px;
+	padding: 2px 4px;
+	font-size: 15px;
+}
+.searchWrap > p{
+	display: inline-block;
+	width: 55px;
+	font-size: 14px;
+	text-align: center;
+	letter-spacing: 1.5px;
+	color: #fff;
+	background: #4a7899;
+	padding: 4px;
+	cursor: pointer;
+}
+.tblWrap{
+	width: 100%;
+}
+.tblWrap > table{
+	width: 100%;
+	border-top: 8px solid #417ca6; 
+}
+.tblWrap > table tr{
+	border-bottom: 1px solid lightgray;
+}
+.tblWrap > table tr > th{
+	color: #fff;
+	font-size: 15px;
+	text-align: center;
+	background: #91b0c4;
+	padding: 6px 0;
+}
+.tblWrap > table tr > th:nth-child(1){
+	width: 45px;
+}
+.tblWrap > table tr > th:nth-child(2){
+	width: 236px;
+}
+.tblWrap > table tr > th:nth-child(3){
+	width: 60px;
+}
+.tblWrap > table tr > td{
+	font-size: 14px;
+	text-align: center;
+	padding: 7px 0;
+}
+.tblWrap > table tr > td:nth-child(2){
+	text-align: left;
+	padding: 7px 8px;
+}
+.noticeTop > td:nth-child(1){
+	color: #c80719;
+	font-weight: bold;
+}
+.noticeTop > td:nth-child(2) > a{
+	color: #c80719;	
+}
+.page{
+	width: 100%;
+	margin: 15px auto;
+}
+.page > ul{
+	width: 100%;
+	text-align: center;
+}
+.page ul li{
+	margin:0 auto;
+	list-style: none;
+	display: inline-block;
+	text-align:center;
+	border:1px solid #e9e9e9;
+	border-radius: 6px;
+	background: #fafafa;
+}
+.page ul li a{
+	padding: 3px 8px;
+	font-size:1.1em;
+	line-height: 22px;
+}
+.active1{
+	background: #4a7899 !important;
+}
+.active2{
+	font-weight: bold;
+	color:white;
+}
 
 
 
@@ -116,7 +213,57 @@
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						
+						<div class="searchWrap">
+							<select>
+								<option>선 택</option>
+								<option>제 목</option>
+								<option>번 호</option>
+							</select>
+							<input type="text" name="">
+							<p>검색</p>
+						</div>
+						<div class="tblWrap">
+							<table>
+								<tr>
+									<th>번호</th>
+									<th>제목</th>
+									<th>작성자</th>
+								</tr>
+								<c:choose>
+								    <c:when test="${fn:length(list) == 0}">
+							        	<tr>
+							        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+							        	</tr>
+								    </c:when>
+								    
+								     <c:otherwise>
+								        <c:forEach var="item" items="${list}">
+											<tr>
+												<td>${item.no}</td>
+												<td><a href="${pageContext.request.contextPath}/mMenu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
+												<td>${item.writer}</td>
+											</tr>
+										</c:forEach>
+								    </c:otherwise> 
+								</c:choose>
+							</table>
+							<div class="page">
+								<ul>
+									<c:if test="${pageMaker.prev}">
+										<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
+									</c:if>
+									
+									<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+										<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
+									</c:forEach>
+									
+									<c:if test="${pageMaker.next}">
+										<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
+									</c:if>
+									
+								</ul>
+							</div>
+						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->
