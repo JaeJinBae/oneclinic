@@ -477,10 +477,42 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/mMenu04_03")
-	public String mMenu04_3(){
+	public String mMenu04_3(@ModelAttribute("cri") SearchCriteria cri, Model model){
+		List<AdviceVO> list = aService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/mobileMenu04_3";
 	}
+	
+	@RequestMapping(value="/mMenu04_03Read")
+	public String mMenu04_3Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
+		AdviceVO vo=aService.selectOne(no);
+		aService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/mobileMenu04_3Read";
+	}
+	
+	@RequestMapping(value="/mMenu04_03Register")
+	public String mMenu04_3Register(){
+		
+		return "sub/mobileMenu04_3Register";
+	}
+	
 	
 	@RequestMapping(value="/mMenu04_04")
 	public String mMenu04_4(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{

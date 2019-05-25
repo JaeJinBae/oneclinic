@@ -387,19 +387,19 @@ $(document).ready(function(){
 <body>
 	<div class="allWrap">
 		<div class="pw_popupWrap">
-				<div class="popup_bg"></div>
-				<div class="pwpopup">
-					<h4>상담문의 비밀번호 확인</h4>
-					<p>비공개 글이므로 작성자와 관리자만 확인할 수 있습니다.</p>
-					<p>글 작성시 입력한 비밀번호를 입력해주세요.</p>
-					<ul>
-						<li>비밀번호<input type="password" name="pw"><input type="hidden" name="no" value=""><input type="hidden" name="href" value=""></li>
-						<li><button>확 인</button><button>닫 기</button></li>
-					</ul>
-				</div>
+			<div class="popup_bg"></div>
+			<div class="pwpopup">
+				<h4>상담문의 비밀번호 확인</h4>
+				<p>비공개 글이므로 작성자와 관리자만 확인할 수 있습니다.</p>
+				<p>글 작성시 입력한 비밀번호를 입력해주세요.</p>
+				<ul>
+					<li>비밀번호<input type="password" name="pw"><input type="hidden" name="no" value=""><input type="hidden" name="href" value=""></li>
+					<li><button>확 인</button><button>닫 기</button></li>
+				</ul>
 			</div>
+		</div>
 		<div class="headerWrap">
-		<div class="header_top"></div>
+			<div class="header_top"></div>
 			<jsp:include page="../include/pcHeader.jsp"></jsp:include>
 		</div> 
 		<div class="mg_top_135"></div>
