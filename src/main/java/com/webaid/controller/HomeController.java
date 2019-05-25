@@ -47,7 +47,7 @@ public class HomeController {
 	private CommentService cService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(HttpServletRequest req,Model model) {
+	public String home(HttpServletRequest req,Model model) throws Exception {
 		logger.info("deviceCheck.");
 		
 		Device device=DeviceUtils.getCurrentDevice(req);
@@ -55,7 +55,14 @@ public class HomeController {
 		
 		if(device == null){
 			deviceType="unknown";
-			logger.info("디바이스타입= "+deviceType);			
+			logger.info("디바이스타입= "+deviceType);
+			SearchCriteria cri = new SearchCriteria();
+			
+			List<CommentVO> commentList = cService.listSearch(cri);
+			List<NewsVO> newsList = newsService.listSearch(cri);
+			
+			model.addAttribute("commentList", commentList);
+			model.addAttribute("newsList", newsList);
 			return "main/index";
 		}
 		if(device.isMobile()){
@@ -68,7 +75,14 @@ public class HomeController {
 			return "main/mIndex";
 		}else{
 			deviceType="normal";
-			logger.info("디바이스타입= "+deviceType);			
+			logger.info("디바이스타입= "+deviceType);
+			SearchCriteria cri = new SearchCriteria();
+			
+			List<CommentVO> commentList = cService.listSearch(cri);
+			List<NewsVO> newsList = newsService.listSearch(cri);
+			
+			model.addAttribute("commentList", commentList);
+			model.addAttribute("newsList", newsList);
 			return "main/index";
 		}
 	}

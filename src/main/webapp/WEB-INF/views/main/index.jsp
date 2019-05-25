@@ -133,9 +133,6 @@
 	height: 100%;
 	border-radius: 5px;
 }
-.box{
-	width: 100%;
-}
 .box > img{
 	width: 100%;
 	height: 100%;
@@ -143,18 +140,26 @@
 }
 .box1{
 	width: 205px;
+	background: url("${pageContext.request.contextPath}/resources/images/mainBox1bg.jpg") no-repeat;
+	background-size: cover;
 }
 
 .box2{
 	width: 205px;
+	background: url("${pageContext.request.contextPath}/resources/images/mainBox2bg.jpg") no-repeat;
+	background-size: cover;
 }
 
 .box3{
 	width: 245px;
+	background: url("${pageContext.request.contextPath}/resources/images/mainBox3bg.jpg") no-repeat;
+	background-size: cover;
 }
 
 .box4{
 	width: 165px;
+	background: url("${pageContext.request.contextPath}/resources/images/mainBox4bg.jpg") no-repeat;
+	background-size: cover;
 }
 
 .box5{
@@ -210,7 +215,13 @@
 	font-size: 15px;
 }
 .box> ul > li > a{
+	display: inline-block;
+	width: 100%;
 	font-size: 15px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
 }
 
 .footerWrap{
@@ -276,16 +287,33 @@ $(function(){
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox1.png">
+						<%-- <img src="${pageContext.request.contextPath}/resources/images/mainBox1.png"> --%>
+						<h4>인사말</h4>
+						<p>원마취통증의학과는</p>
+						<p>항상 환자들의 통증완화에</p>
+						<p>앞장서며 만족도 높은</p>
+						<p>서비스를 제공합니다.</p>
 					</div>
 					<div class="box2 box">
-						<a href="${pageContext.request.contextPath}/menu04_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox2.png"></a>
+						<%-- <a href="${pageContext.request.contextPath}/menu04_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox2.png"></a> --%>
+						<a href="${pageContext.request.contextPath}/menu04_03">
+							<h4>상담문의</h4>
+							<p>진료 및 치료관련 궁금증을</p>
+							<p>친절하게 상담해드립니다.</p>
+						</a>
 					</div>
 					<div class="box3 box">
-						<a href="${pageContext.request.contextPath}/menu01_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox3.png"></a>
+						<%-- <a href="${pageContext.request.contextPath}/menu01_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox3.png"></a> --%>
+						<h4>병원둘러보기</h4>
+						<p>원마취통증의학과의 내부 시설 및</p>
+						<p>장비를 알아볼 수 있습니다.</p>
 					</div>
 					<div class="box4 box">
-						<a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/mainBox4.png"></a>
+						<%-- <a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/mainBox4.png"></a> --%>
+						<h4>오시는 길</h4>
+						<p>원마취통증의학과로</p>
+						<p>오시는 길을 상세하게</p>
+						<p>안내해드립니다.</p>
 					</div>
 					<div class="box5 box">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.png">
@@ -296,10 +324,16 @@ $(function(){
 							<p><a href="${pageContext.request.contextPath}/menu04_04">더보기</a></p>
 						</div>
 						<ul>
-							<!-- <li><a href="">- 척추측만증 도수치료 후...</a></li>
-							<li><a href="">- 허리디스크 재활치료 경과...</a></li>
-							<li><a href="">- 척추측만증 도수치료 후...</a></li> -->
-							<li><p>등록된 게시물이 없습니다.</p></li>
+							<c:choose>
+								<c:when test="${fn:length(commentList) == 0}">
+									<li><p>등록된 게시물이 없습니다.</p></li>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var="item" items="${commentList}" begin="0" end="2">
+										<li><a title="${item.title}" href="${pageContext.request.contextPath}/menu04_04Read?page=1&perPageNum=10&searchType&keyword&no=${item.no}">- ${item.title}</a></li>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
 						</ul>
 					</div><!-- box6 end -->
 					<div class="box7 box">
@@ -308,7 +342,16 @@ $(function(){
 							<p><a href="${pageContext.request.contextPath}/menu04_02">더보기</a></p>
 						</div>
 						<ul>
-							<li><p>등록된 게시물이 없습니다.</p></li>
+							<c:choose>
+								<c:when test="${fn:length(newsList) == 0}">
+									<li><p>등록된 게시물이 없습니다.</p></li>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var="item" items="${newsList}" begin="0" end="2">
+										<li><a title="${item.title}" href="${pageContext.request.contextPath}/menu04_02Read?page=1&perPageNum=10&searchType&keyword&no=${item.no}">- ${item.title}</a></li>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
 						</ul>
 					</div><!-- box7 end -->
 				</div><!-- boxWrap -->
