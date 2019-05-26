@@ -17,11 +17,18 @@
 		color: #e1e1e1;
 		font-size: 14px;
 		margin-right: 20px;
+		padding-bottom: 2px;
 	}
 	.textWrap > ul > li:nth-child(2){
-		padding-top: 17px;
+		padding-top: 10px;
 	}
 	.textWrap > ul > li:nth-child(4){
+		padding-top: 2px;
+	}
+	.textWrap > p{
+		font-size: 14px;
+		color: #e1e1e1;
+		text-align: center;
 		padding-top: 2px;
 	}
 </style>
@@ -35,5 +42,6 @@
 			<li>등록번호: 125-93-55621</li>
 			<li>소재지: 대구광역시 북구 침산로 124, 4층(침산동, P&A빌딩)</li>
 		</ul>
+		<p>Copyrightⓒ원마취통증의학과. All Rights Reserved</p>
 	</div>
 </div>

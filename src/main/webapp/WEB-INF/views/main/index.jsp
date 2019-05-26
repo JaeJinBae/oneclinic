@@ -150,7 +150,9 @@
 	padding: 15px 10px;
 }
 .box1 > h4{
+	font-size: 20px;
 	margin-bottom: 10px;
+	color: #0f657e;
 }
 .box1 > p{
 	font-size: 15px;
@@ -164,6 +166,7 @@
 	padding: 15px 10px;
 }
 .box2 > h4{
+	font-size: 20px;
 	color: #ffdd00;
 	margin-bottom: 10px;
 }
@@ -181,6 +184,7 @@
 }
 .box3 > h4{
 	width: 100%;
+	font-size: 20px;
 	text-align: center;
 	color: #ffdd00;
 	margin-bottom: 10px;
@@ -201,6 +205,8 @@
 }
 .box4 > h4{
 	width: 100%;
+	font-size: 20px;
+	color: #0f657e;
 	text-align: center;
 	margin-bottom: 10px;
 }
