@@ -51,6 +51,7 @@
 	padding-top: 50px;
 }
 .popup{
+	display: none;
 	position: fixed;
 	top: 140px;
 	right: 500px;
@@ -125,6 +126,7 @@
 	border: 1px solid lightgray;
 	border-radius: 5px;
 }
+
 .box > a{
 	width: 100%;
 }
@@ -138,28 +140,75 @@
 	height: 100%;
 	border-radius: 5px;
 }
+.box2, .box3, .box4{
+	cursor: pointer;
+}
 .box1{
 	width: 205px;
 	background: url("${pageContext.request.contextPath}/resources/images/mainBox1bg.jpg") no-repeat;
 	background-size: cover;
+	padding: 15px 10px;
+}
+.box1 > h4{
+	margin-bottom: 10px;
+}
+.box1 > p{
+	font-size: 15px;
+	margin-top: 2px;
 }
 
 .box2{
 	width: 205px;
 	background: url("${pageContext.request.contextPath}/resources/images/mainBox2bg.jpg") no-repeat;
 	background-size: cover;
+	padding: 15px 10px;
+}
+.box2 > h4{
+	color: #ffdd00;
+	margin-bottom: 10px;
+}
+.box2 > p{
+	font-size: 15px;
+	margin-top: 2px;
+	color: #fff;
 }
 
 .box3{
 	width: 245px;
 	background: url("${pageContext.request.contextPath}/resources/images/mainBox3bg.jpg") no-repeat;
 	background-size: cover;
+	padding-top: 35px;
+}
+.box3 > h4{
+	width: 100%;
+	text-align: center;
+	color: #ffdd00;
+	margin-bottom: 10px;
+}
+.box3 > p{
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+	margin-top: 2px;
 }
 
 .box4{
 	width: 165px;
 	background: url("${pageContext.request.contextPath}/resources/images/mainBox4bg.jpg") no-repeat;
 	background-size: cover;
+	padding-top: 25px;
+}
+.box4 > h4{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.box4 > p{
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+	margin-top: 2px;
 }
 
 .box5{
@@ -257,6 +306,16 @@ $(function(){
 	$(".popup > .popup_closeBtn > p").click(function(){
 		$(".popup").css("display","none");
 	});
+	
+	$(".box2").click(function(){
+		location.href="${pageContext.request.contextPath}/menu04_03";
+	});
+	$(".box3").click(function(){
+		location.href="${pageContext.request.contextPath}/menu01_03";
+	});
+	$(".box4").click(function(){
+		location.href="${pageContext.request.contextPath}/menu01_04";
+	});
 });
 </script>
 </head>
@@ -296,11 +355,9 @@ $(function(){
 					</div>
 					<div class="box2 box">
 						<%-- <a href="${pageContext.request.contextPath}/menu04_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox2.png"></a> --%>
-						<a href="${pageContext.request.contextPath}/menu04_03">
-							<h4>상담문의</h4>
-							<p>진료 및 치료관련 궁금증을</p>
-							<p>친절하게 상담해드립니다.</p>
-						</a>
+						<h4>상담문의</h4>
+						<p>진료 및 치료관련 궁금증을</p>
+						<p>친절하게 상담해드립니다.</p>
 					</div>
 					<div class="box3 box">
 						<%-- <a href="${pageContext.request.contextPath}/menu01_03"><img src="${pageContext.request.contextPath}/resources/images/mainBox3.png"></a> --%>
