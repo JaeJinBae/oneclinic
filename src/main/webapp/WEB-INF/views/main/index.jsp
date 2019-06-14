@@ -92,8 +92,11 @@
 .sectionContentWrap{
 	width: 1100px;
 	height:600px;
-	margin: 0 auto;
-	overflow: hidden;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top: -300px;
+	margin-left: -550px;
 }
 .mainBannerWrap{
 	width: 665px;
@@ -348,6 +351,9 @@ $(function(){
 						<img src="${pageContext.request.contextPath}/resources/images/mainBanner1.png">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBanner2.png">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBanner3.png">
+						<%-- <img src="${pageContext.request.contextPath}/resources/images/testmain1.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/testmain2.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/testmain3.jpg"> --%>
 					</div>
 				</div>
 				<div class="boxWrap">
