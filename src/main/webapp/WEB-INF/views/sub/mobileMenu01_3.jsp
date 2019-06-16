@@ -88,17 +88,18 @@
 	margin: 0 auto;
 }
 .slider_for{
-	width: 90%;
+	width: 95%;
 	margin: 0 auto;
 	margin-bottom: 90px;
 	text-align: center;
 }
 .slider_for img{
 	width: 100%;
-	height: 140px;
+	border-radius: 7px;
+	border: 1px solid #efefef;
 }
 .slick-prev, .slick-next{
-	top: 175px !important;
+	top: 275px !important;
 }
 .slick-prev{
 	left: 85px !important;
@@ -126,7 +127,7 @@
 
 .footerWrap{
 	width: 100%;
-	height: 70px;
+	height: 80px;
 	background: #393939;
 } 
 </style>
@@ -137,7 +138,7 @@ $(function(){
 		slidesToScroll: 1,
 		arrows: true,
 		fade: true,
-		dots: true
+		dots: false
 	});
 })
 </script>
@@ -163,22 +164,20 @@ $(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
-						<%-- <div class="slideWrap">
+						<div class="slideWrap">
 							<div class="slider_for slider">
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/mainBox5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
 							</div>
-						</div> --%>
+						</div>
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->

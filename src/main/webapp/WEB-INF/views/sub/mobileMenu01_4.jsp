@@ -87,8 +87,15 @@
 .mapWrap > h3{
 	text-align: center;
 	padding: 30px 0;
+	padding-bottom: 10px;
 	font-size: 17px;
 	font-weight: bold;
+}
+.mapWrap > h4{
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+	padding-bottom: 30px;
 }
 .cline{
 	width: 100%;
@@ -246,6 +253,7 @@
 								});
 							</script>
 							<h3>대구광역시 <span style="color:#3353a2">북구 침산로 124</span><br><span style="color:#4ea031">P&A빌딩 4층 (침산동)</span></h3>
+							<h4>스타벅스, 맥도날드 사이 올리브영건물 4층</h4>
 						</div><!-- mapWrap end -->
 						<div class="cline"></div>
 						<div class="cSubway">

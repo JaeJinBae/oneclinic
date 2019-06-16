@@ -230,7 +230,7 @@ $(document).ready(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu01top.png">
+				<img src="${pageContext.request.contextPath}/resources/images/menu01top.jpg">
 			</div> 
 			<div class="sectionContent">
 				<div class="leftMenu">

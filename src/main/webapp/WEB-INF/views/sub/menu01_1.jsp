@@ -124,13 +124,15 @@
 }
 .contentAside1{
 	float:left;
+	padding-left: 15px;
 }
 .contentAside1 > img{
 	width: 350px;
+	border-radius: 10px;
 }
 .contentAside1 > p{
 	font-size: 22px;
-	text-align: right;
+	text-align: center;
 	margin-top: 30px;
 	letter-spacing: -1px;
 }
@@ -187,7 +189,7 @@ $(document).ready(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu01top.png">
+				<img src="${pageContext.request.contextPath}/resources/images/menu01top.jpg">
 			</div> 
 			<div class="sectionContent">
 				<div class="leftMenu">
@@ -214,8 +216,8 @@ $(document).ready(function(){
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<div class="contentAside1">
-							<%-- <img src="${pageContext.request.contextPath}/resources/images/menu01_01img.png"> --%>
-							<img src="${pageContext.request.contextPath}/resources/images/menu01_01imgTest3.png">
+							<%-- <img src="${pageContext.request.contextPath}/resources/images/menu01_01imgTest3.png"> --%>
+							<img src="${pageContext.request.contextPath}/resources/images/aa.jpg">
 							<p>마취통증의학과 전문의 <b>한윤진</b> 원장</p>
 						</div>
 						<div class="contentAside2">

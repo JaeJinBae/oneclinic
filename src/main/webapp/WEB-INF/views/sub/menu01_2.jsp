@@ -124,13 +124,18 @@
 .empWrap{
 	width: 720px;
 	margin: 20px auto;
+	margin-bottom: 50px;
 	overflow: hidden;
 }
 .empWrap > .empImg{
 	float: left;
 	width: 195px;
-	height: 250px;
-	border: 1px solid gray;
+}
+.empWrap > .empImg > img{
+	width: 100%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	margin-bottom: 15px;
 }
 .empWrap > .empImg > p{
 	width: 100%;
@@ -193,7 +198,7 @@ $(document).ready(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu01top.png">
+				<img src="${pageContext.request.contextPath}/resources/images/menu01top.jpg">
 			</div> 
 			<div class="sectionContent">
 				<div class="leftMenu">
@@ -219,9 +224,9 @@ $(document).ready(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<%-- <img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg"> --%>
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist1.jpg">
 								<p><b>김종혁</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -246,6 +251,7 @@ $(document).ready(function(){
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist2.jpg">
 								<p><b>박수용</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -267,6 +273,7 @@ $(document).ready(function(){
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist3.jpg">
 								<p><b>서대원</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -284,6 +291,7 @@ $(document).ready(function(){
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist4.jpg">
 								<p><b>손민지</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -306,6 +314,7 @@ $(document).ready(function(){
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist5.jpg">
 								<p><b>이민기</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
