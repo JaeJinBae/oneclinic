@@ -216,8 +216,7 @@ $(document).ready(function(){
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<div class="contentAside1">
-							<%-- <img src="${pageContext.request.contextPath}/resources/images/menu01_01imgTest3.png"> --%>
-							<img src="${pageContext.request.contextPath}/resources/images/aa.jpg">
+							<img src="${pageContext.request.contextPath}/resources/images/menu01_01doctorimg.jpg">
 							<p>마취통증의학과 전문의 <b>한윤진</b> 원장</p>
 						</div>
 						<div class="contentAside2">

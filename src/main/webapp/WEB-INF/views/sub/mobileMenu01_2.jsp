@@ -135,7 +135,7 @@
 	width: 10px;
 }
 .empCareer > ul > li > p:last-child{
-	width: 340px;
+	width: 333px;
 }
 .fix_img{
 	width: 100%;
