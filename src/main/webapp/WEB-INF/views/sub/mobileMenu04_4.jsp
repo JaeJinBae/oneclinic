@@ -240,7 +240,7 @@
 								        <c:forEach var="item" items="${list}">
 											<tr>
 												<td>${item.no}</td>
-												<td><a href="${pageContext.request.contextPath}/mMenu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
+												<td><a href="${pageContext.request.contextPath}/mMenu04_04Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
 												<td>${item.writer}</td>
 											</tr>
 										</c:forEach>
