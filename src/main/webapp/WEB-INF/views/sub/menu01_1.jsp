@@ -128,6 +128,16 @@
 .contentAside1 > img{
 	width: 350px;
 }
+.contentAside1 > p{
+	font-size: 22px;
+	text-align: right;
+	margin-top: 30px;
+	letter-spacing: -1px;
+}
+.contentAside1 > p > b{
+	font-size: 28px;
+	letter-spacing: -3px;
+}
 .contentAside2{
 	float:right;
 }
@@ -204,7 +214,9 @@ $(document).ready(function(){
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<div class="contentAside1">
-							<img src="${pageContext.request.contextPath}/resources/images/menu01_01img.png">
+							<%-- <img src="${pageContext.request.contextPath}/resources/images/menu01_01img.png"> --%>
+							<img src="${pageContext.request.contextPath}/resources/images/menu01_01imgTest3.png">
+							<p>마취통증의학과 전문의 <b>한윤진</b> 원장</p>
 						</div>
 						<div class="contentAside2">
 							<div class="aside2Title">
@@ -215,10 +227,11 @@ $(document).ready(function(){
 								<li>- &nbsp;대한마취통증학회 정회원</li>
 								<li>- &nbsp;대한통증학회 정회원</li>
 								<li>- &nbsp;대한척추통증학회 정회원</li>
-								<li>- &nbsp;대한임상노인의학회 정회원</li>
-								<li>- &nbsp;대한약물영양의학회 정회원</li>
 								<li>- &nbsp;대한성장의학회 정회원</li>
 								<li>- &nbsp;대한비만체형학회 정회원</li>
+								<li>- &nbsp;대한임상노인의학회 정회원</li>
+								<li>- &nbsp;대한약물영양의학회 정회원</li>
+								<li>- &nbsp;재활운동학회 프리메드스쿨 자문위원</li>
 							</ul>
 							<ul>
 								<li>- &nbsp;Preventive medical training school 수료</li>
@@ -228,17 +241,16 @@ $(document).ready(function(){
 								<li>- &nbsp;중재적 신경블록 교육 이수</li>
 							</ul>
 							<ul>
-								<li>- &nbsp;계명대학교 의과대학교 졸업 2005.</li>
-								<li>- &nbsp;가톨릭대학교 중앙의료원 인턴 수료 </li>
-								<li>- &nbsp;가톨릭대학교 중앙의료원 마취통증의학과 레지던트 수료</li>
-								<li>- &nbsp;마취통증의학과 전문의</li>
-								<li>- &nbsp;여의도 성모병원 마취통증의학과 임상강사</li>
+								<li>- &nbsp;계명대학교 의과대학교</li>
+								<!-- <li>- &nbsp;서울 가톨릭대학교 중앙의료원 인턴 수료 </li>
+								<li>- &nbsp;서울 가톨릭대학교 중앙의료원 마취통증의학과 레지던트 수료</li> -->
+								<li>- &nbsp;서울 가톨릭대학교 중앙의료원 마취통증의학과 전문의 수료</li>
+								<li>- &nbsp;서울 여의도 성모병원 마취통증의학과 임상교수</li>
 								<li>- &nbsp;통증의학 고위자 과정 이수</li>
 							</ul>
 							<ul>
-								<li>- &nbsp;올림픽병원 마취통증의학과 과장</li>
-								<li>- &nbsp;유성선병원 마취통증의학과 과장</li>
-								<li>- &nbsp;S중앙병원 마취통증의학과 과장</li>
+								<li>- &nbsp;서울 올림픽병원 마취통증의학과 과장</li>
+								<li>- &nbsp;대전 유성선병원 마취통증의학과 과장</li>
 								<li>- &nbsp;봄길의원 원장</li>
 								<li>- &nbsp;가톨릭대학교 성빈센트 병원 진료교수</li>
 							</ul>

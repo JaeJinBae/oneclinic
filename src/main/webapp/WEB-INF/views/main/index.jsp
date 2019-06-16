@@ -348,12 +348,14 @@ $(function(){
 			<div class="sectionContentWrap">
 				<div class="mainBannerWrap">
 					<div class="mainBanner">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBanner1.png">
+						<img src="${pageContext.request.contextPath}/resources/images/1.png">
+						<img src="${pageContext.request.contextPath}/resources/images/2.png">
+						<%-- <img src="${pageContext.request.contextPath}/resources/images/mainBanner1.png">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBanner2.png">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBanner3.png">
-						<%-- <img src="${pageContext.request.contextPath}/resources/images/testmain1.jpg">
-						<img src="${pageContext.request.contextPath}/resources/images/testmain2.jpg">
-						<img src="${pageContext.request.contextPath}/resources/images/testmain3.jpg"> --%>
+						<img src="${pageContext.request.contextPath}/resources/images/mainBanner3.png"> --%>
+						<%-- <img src="${pageContext.request.contextPath}/resources/images/testmain1.jpg"> --%>
+						
+						<%-- <img src="${pageContext.request.contextPath}/resources/images/testmain3.jpg"> --%>
 					</div>
 				</div>
 				<div class="boxWrap">
