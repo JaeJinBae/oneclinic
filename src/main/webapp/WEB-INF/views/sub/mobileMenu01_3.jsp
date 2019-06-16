@@ -88,7 +88,7 @@
 	margin: 0 auto;
 }
 .slider_for{
-	width: 95%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 90px;
 	text-align: center;
@@ -151,7 +151,7 @@ $(function(){
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.png">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">

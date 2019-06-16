@@ -141,7 +141,7 @@
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu03top.png">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu03top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">

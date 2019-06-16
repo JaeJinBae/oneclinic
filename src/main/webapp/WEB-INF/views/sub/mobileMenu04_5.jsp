@@ -79,7 +79,10 @@
 .content{
 	width: 100%;
 }
-
+.fix_img{
+	width: 100%;
+	margin-bottom: 30px;
+}
 
 
 
@@ -103,7 +106,7 @@
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu04top.png">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu04top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">
@@ -116,7 +119,7 @@
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						
+						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->
