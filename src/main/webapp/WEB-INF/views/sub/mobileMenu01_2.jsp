@@ -82,16 +82,25 @@
 .empWrap{
 	width: 100%;
 	margin: 15px auto;
-	overflow: hidden;
+	
 }
 .empWrap > .empImg{
-	float: left;
-	width: 150px;
-	height: 190px;
-	border: 1px solid gray;
+	width: 195px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.empWrap > .empImg > img{
+	width: 100%;
+	border: 1px solid lightgray;
+	margin-bottom: 10px;
+}
+.empWrap > .empImg > p{
+	font-size: 18px;
+	width: 100%;
+	text-align: center;
 }
 .empWrap > .empCareer{
-	float: right;
+	margin-bottom: 50px;
 }
 .empCareer > .ecTitle{
 	width: 100%;
@@ -116,6 +125,17 @@
 .empCareer > ul > li{
 	font-size: 15px;
 	padding: 3px; 
+	overflow: hidden;
+}
+.empCareer > ul > li > p{
+	float: left; 
+	font-size: 15px;
+}
+.empCareer > ul > li > p:first-child{
+	width: 10px;
+}
+.empCareer > ul > li > p:last-child{
+	width: 340px;
 }
 .fix_img{
 	width: 100%;
@@ -156,6 +176,7 @@
 					<div class="content">
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist1.jpg">
 								<p><b>김종혁</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -164,22 +185,23 @@
 									<div class="bline"></div>
 								</div>
 								<ul>
-									<li>- &nbsp;대구보건대학 물리치료과 전문학사</li>
-									<li>- &nbsp;Pre Med Training School asistant instructor</li>
-									<li>- &nbsp;PMT Spine contrology course 수료</li>
-									<li>- &nbsp;PMT Rehab specialist course 수료</li>
-									<li>- &nbsp;PMT Weight training specialist course 수료</li>
-									<li>- &nbsp;Kaltenborn-Evjenth OMT(독일정형도수치료) 정회원</li>
-									<li>- &nbsp;International Schroth 3Dscoliosis(측만증) Therapy, Korea-part1 이수</li>
-									<li>- &nbsp;MTT-International Medical Training Therapy(의학적 운동처방) 수료</li>
-									<li>- &nbsp;Soft tissue&Nerve Mobilization Techniques(KCI) 수료</li>
-									<li>- &nbsp;The Redcord Education program-Neurac 1 이수</li>
-									<li>- &nbsp;운동처방사 1급, 스포츠 테이핑 1급</li>
+									<li><p>-</p><p>대구보건대학 물리치료과 전문학사</p></li>
+									<li><p>-</p><p>Pre Med Training School asistant instructor</p></li>
+									<li><p>-</p><p>PMT Spine contrology course 수료</p></li>
+									<li><p>-</p><p>PMT Rehab specialist course 수료</p></li>
+									<li><p>-</p><p>PMT Weight training specialist course 수료</p></li>
+									<li><p>-</p><p>Kaltenborn-Evjenth OMT(독일정형도수치료) 정회원</p></li>
+									<li><p>-</p><p>International Schroth 3Dscoliosis(측만증) Therapy, Korea-part1 이수</p></li>
+									<li><p>-</p><p>MTT-International Medical Training Therapy(의학적 운동처방) 수료</p></li>
+									<li><p>-</p><p>Soft tissue&Nerve Mobilization Techniques(KCI) 수료</p></li>
+									<li><p>-</p><p>The Redcord Education program-Neurac 1 이수</p></li>
+									<li><p>-</p><p>운동처방사 1급, 스포츠 테이핑 1급</p></li>
 								</ul>
 							</div><!-- empCareer end -->
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist2.jpg">
 								<p><b>박수용</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -188,19 +210,20 @@
 									<div class="bline"></div>
 								</div>
 								<ul>
-									<li>- &nbsp;대구대학교 물리치료학과 학사</li>
-									<li>- &nbsp;Pre Med Training school Rehab specialist Upper, Lower part 수료</li>
-									<li>- &nbsp;Korea Nerve Entrapment Syndrome Society 수료</li>
-									<li>- &nbsp;KAOMPT 정회원</li>
-									<li>- &nbsp;Kaltenborm-Evjenth OMT(독일정형도수치료) 정회원</li>
-									<li>- &nbsp;국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</li>
-									<li>- &nbsp;더 필라테스 재활 교육협회-The Pilates Instructor Course 수료</li>
-									<li>- &nbsp;중소기업청 맞춤형 건강 전문가과정 수료</li>
+									<li><p>-</p><p>대구대학교 물리치료학과 학사</p></li>
+									<li><p>-</p><p>Pre Med Training school Rehab specialist Upper, Lower part 수료</p></li>
+									<li><p>-</p><p>Korea Nerve Entrapment Syndrome Society 수료</p></li>
+									<li><p>-</p><p>KAOMPT 정회원</p></li>
+									<li><p>-</p><p>Kaltenborm-Evjenth OMT(독일정형도수치료) 정회원</p></li>
+									<li><p>-</p><p>국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</p></li>
+									<li><p>-</p><p>더 필라테스 재활 교육협회-The Pilates Instructor Course 수료</p></li>
+									<li><p>-</p><p>중소기업청 맞춤형 건강 전문가과정 수료</p></li>
 								</ul>
 							</div><!-- empCareer end -->
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist3.jpg">
 								<p><b>서대원</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -209,15 +232,16 @@
 									<div class="bline"></div>
 								</div>
 								<ul>
-									<li>- &nbsp;호산대학교 물리치료과 전문학사</li>
-									<li>- &nbsp;호산대학교 물리치료과 학사</li>
-									<li>- &nbsp;The Redcord Education program-Neurac 1 이수</li>
-									<li>- &nbsp;임상 발란스 테이핑 물리치료학회 - Part 1, 3 이수</li>
+									<li><p>-</p><p>호산대학교 물리치료과 전문학사</p></li>
+									<li><p>-</p><p>호산대학교 물리치료과 학사</p></li>
+									<li><p>-</p><p>The Redcord Education program-Neurac 1 이수</p></li>
+									<li><p>-</p><p>임상 발란스 테이핑 물리치료학회 - Part 1, 3 이수</p></li>
 								</ul>
 							</div><!-- empCareer end -->
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist4.jpg">
 								<p><b>손민지</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -226,20 +250,21 @@
 									<div class="bline"></div>
 								</div>
 								<ul>
-									<li>- &nbsp;대구보건대학교 물리치료과 전문학사</li>
-									<li>- &nbsp;대구보건대학교 물리치료과 학사</li>
-									<li>- &nbsp;Pre Med Training school(Spine Contrology)-카이로프래틱 수료</li>
-									<li>- &nbsp;PMT Rehab specialist Lower part 이수</li>
-									<li>- &nbsp;PMT pilates specialist Upper, Lower 수료</li>
-									<li>- &nbsp;International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</li>
-									<li>- &nbsp;The Redcord Education program-Neurac 1 이수</li>
-									<li>- &nbsp;STM(Soft Tissue Mobilization Technic) level 1 이수</li>
-									<li>- &nbsp;더 필라테스 재활 교육협회-The Pilates Instructor Course 수료</li>
+									<li><p>-</p><p>대구보건대학교 물리치료과 전문학사</p></li>
+									<li><p>-</p><p>대구보건대학교 물리치료과 학사</p></li>
+									<li><p>-</p><p>Pre Med Training school(Spine Contrology)-카이로프래틱 수료</p></li>
+									<li><p>-</p><p>PMT Rehab specialist Lower part 이수</p></li>
+									<li><p>-</p><p>PMT pilates specialist Upper, Lower 수료</p></li>
+									<li><p>-</p><p>International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</p></li>
+									<li><p>-</p><p>The Redcord Education program-Neurac 1 이수</p></li>
+									<li><p>-</p><p>STM(Soft Tissue Mobilization Technic) level 1 이수</p></li>
+									<li><p>-</p><p>더 필라테스 재활 교육협회-The Pilates Instructor Course 수료</p></li>
 								</ul>
 							</div><!-- empCareer end -->
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist5.jpg">
 								<p><b>이민기</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
@@ -248,15 +273,15 @@
 									<div class="bline"></div>
 								</div>
 								<ul>
-									<li>- &nbsp;대구과학대학교 물리치료과 전문학사</li>
-									<li>- &nbsp;영남이공대학교 물리치료과 학사</li>
-									<li>- &nbsp;DGMM-FAC certified Manual Therapist(독일인증 도수치료사)</li>
-									<li>- &nbsp;대한기능도수치료학회(FMT) - 240시간 이수</li>
-									<li>- &nbsp;Pre Med Training school(Spine Contrology) - 카이로프래틱 수료</li>
-									<li>- &nbsp;International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</li>
-									<li>- &nbsp;KEMA-Advanced course 수료</li>
-									<li>- &nbsp;필라테스지도자 자격증 - 사단법인 한국스포츠인재개발</li>
-									<li>- &nbsp;국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</li>
+									<li><p>-</p><p>대구과학대학교 물리치료과 전문학사</p></li>
+									<li><p>-</p><p>영남이공대학교 물리치료과 학사</p></li>
+									<li><p>-</p><p>DGMM-FAC certified Manual Therapist(독일인증 도수치료사)</p></li>
+									<li><p>-</p><p>대한기능도수치료학회(FMT) - 240시간 이수</p></li>
+									<li><p>-</p><p>Pre Med Training school(Spine Contrology) - 카이로프래틱 수료</p></li>
+									<li><p>-</p><p>International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</p></li>
+									<li><p>-</p><p>KEMA-Advanced course 수료</p></li>
+									<li><p>-</p><p>필라테스지도자 자격증 - 사단법인 한국스포츠인재개발</p></li>
+									<li><p>-</p><p>국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</p></li>
 								</ul>
 							</div><!-- empCareer end -->
 						</div><!-- empWrap end -->

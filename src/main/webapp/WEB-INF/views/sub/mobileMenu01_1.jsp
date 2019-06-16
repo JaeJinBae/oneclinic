@@ -85,7 +85,15 @@
 	text-align: center;
 }
 .contentAside1 > img{
-	width: 200px;
+	width: 60%;
+}
+.contentAside1 > p{
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+}
+.contentAside1 > p > b{
+	font-size: 20px;
 }
 .contentAside2{
 	width: 100%;
@@ -158,7 +166,9 @@
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<div class="contentAside1">
-							<img src="${pageContext.request.contextPath}/resources/images/menu01_01img.png">
+							<%-- <img src="${pageContext.request.contextPath}/resources/images/menu01_01img.png"> --%>
+							<img src="${pageContext.request.contextPath}/resources/images/t.png">
+							<p>마취통증의학과 전문의 <b>한윤진</b> 원장</p>
 						</div>
 						<div class="contentAside2">
 							<div class="aside2Title">
