@@ -117,7 +117,7 @@
 
 .footerWrap{
 	width: 100%;
-	height: 70px; 
+	height: 80px; 
 	background: #393939;
 } 
 </style>

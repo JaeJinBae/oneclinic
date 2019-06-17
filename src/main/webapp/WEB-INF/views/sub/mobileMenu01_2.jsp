@@ -201,6 +201,29 @@
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
+								<img src="${pageContext.request.contextPath}/resources/images/therapist5.jpg">
+								<p><b>이민기</b> 물리치료사</p>
+							</div>
+							<div class="empCareer">
+								<div class="ecTitle">
+									<h3>주요약력</h3>
+									<div class="bline"></div>
+								</div>
+								<ul>
+									<li><p>-</p><p>대구과학대학교 물리치료과 전문학사</p></li>
+									<li><p>-</p><p>영남이공대학교 물리치료과 학사</p></li>
+									<li><p>-</p><p>DGMM-FAC certified Manual Therapist(독일인증 도수치료사)</p></li>
+									<li><p>-</p><p>대한기능도수치료학회(FMT) - 240시간 이수</p></li>
+									<li><p>-</p><p>Pre Med Training school(Spine Contrology) - 카이로프래틱 수료</p></li>
+									<li><p>-</p><p>International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</p></li>
+									<li><p>-</p><p>KEMA-Advanced course 수료</p></li>
+									<li><p>-</p><p>필라테스지도자 자격증 - 사단법인 한국스포츠인재개발</p></li>
+									<li><p>-</p><p>국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</p></li>
+								</ul>
+							</div><!-- empCareer end -->
+						</div><!-- empWrap end -->
+						<div class="empWrap">
+							<div class="empImg">
 								<img src="${pageContext.request.contextPath}/resources/images/therapist2.jpg">
 								<p><b>박수용</b> 물리치료사</p>
 							</div>
@@ -218,24 +241,6 @@
 									<li><p>-</p><p>국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</p></li>
 									<li><p>-</p><p>더 필라테스 재활 교육협회-The Pilates Instructor Course 수료</p></li>
 									<li><p>-</p><p>중소기업청 맞춤형 건강 전문가과정 수료</p></li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
-						<div class="empWrap">
-							<div class="empImg">
-								<img src="${pageContext.request.contextPath}/resources/images/therapist3.jpg">
-								<p><b>서대원</b> 물리치료사</p>
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>주요약력</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li><p>-</p><p>호산대학교 물리치료과 전문학사</p></li>
-									<li><p>-</p><p>호산대학교 물리치료과 학사</p></li>
-									<li><p>-</p><p>The Redcord Education program-Neurac 1 이수</p></li>
-									<li><p>-</p><p>임상 발란스 테이핑 물리치료학회 - Part 1, 3 이수</p></li>
 								</ul>
 							</div><!-- empCareer end -->
 						</div><!-- empWrap end -->
@@ -264,8 +269,8 @@
 						</div><!-- empWrap end -->
 						<div class="empWrap">
 							<div class="empImg">
-								<img src="${pageContext.request.contextPath}/resources/images/therapist5.jpg">
-								<p><b>이민기</b> 물리치료사</p>
+								<img src="${pageContext.request.contextPath}/resources/images/therapist3.jpg">
+								<p><b>서대원</b> 물리치료사</p>
 							</div>
 							<div class="empCareer">
 								<div class="ecTitle">
@@ -273,15 +278,10 @@
 									<div class="bline"></div>
 								</div>
 								<ul>
-									<li><p>-</p><p>대구과학대학교 물리치료과 전문학사</p></li>
-									<li><p>-</p><p>영남이공대학교 물리치료과 학사</p></li>
-									<li><p>-</p><p>DGMM-FAC certified Manual Therapist(독일인증 도수치료사)</p></li>
-									<li><p>-</p><p>대한기능도수치료학회(FMT) - 240시간 이수</p></li>
-									<li><p>-</p><p>Pre Med Training school(Spine Contrology) - 카이로프래틱 수료</p></li>
-									<li><p>-</p><p>International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</p></li>
-									<li><p>-</p><p>KEMA-Advanced course 수료</p></li>
-									<li><p>-</p><p>필라테스지도자 자격증 - 사단법인 한국스포츠인재개발</p></li>
-									<li><p>-</p><p>국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</p></li>
+									<li><p>-</p><p>호산대학교 물리치료과 전문학사</p></li>
+									<li><p>-</p><p>호산대학교 물리치료과 학사</p></li>
+									<li><p>-</p><p>The Redcord Education program-Neurac 1 이수</p></li>
+									<li><p>-</p><p>임상 발란스 테이핑 물리치료학회 - Part 1, 3 이수</p></li>
 								</ul>
 							</div><!-- empCareer end -->
 						</div><!-- empWrap end -->
