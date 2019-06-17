@@ -160,9 +160,9 @@ $(function(){
 					<ul class="subMenuUl">
 						<li><a href="${pageContext.request.contextPath}/menu04_01">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu04_02">언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_02">상담문의</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_02">치료후기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_02">비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_03">상담문의</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_04">치료후기</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_05">비용공지</a></li>
 					</ul>
 				</div>
 			</li>
