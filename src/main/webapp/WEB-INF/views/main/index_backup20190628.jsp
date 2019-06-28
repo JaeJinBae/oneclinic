@@ -262,90 +262,24 @@
 	font-size: 15px;
 	padding-top: 3px;
 }
-.box8{
-	float: left;
-	margin-left: 5px;
-	margin-top: 5px;
-	width: 416px;
-	height: 298px;
-	background: #fff;
-	border: 1px solid lightgray;
-	border-radius: 5px; 
-}
-.box8 > .box_title{
-	width: 100%;
-	border-bottom: 1px solid lightgray;
-}
-.box8 > .box_title > h4{
-	font-size: 20px;
-}
-.box8 > table{
-	width: 100%;
-}
-.box8 > table tr{
+.box > ul{
 	
 }
-.box8 > table tr > th{
-	width: 90px;
-	font-size: 15px;
-	color: #fff;
-	background: #276f90;
-	padding: 5px 0;
-	border-bottom: 1px solid #efefef;
+.box> ul > li{
+	padding: 8px;
 }
-.box8 > table tr > td{
-	padding: 0 2px;
-	border-bottom: 1px solid lightgray;
-}
-.box8 > table tr > td > label{
-	font-size: 15px;
-	margin-left: 3px;
-}
-.box8 > table tr:nth-child(4) > td > label{
-	margin-right: 10px;
-}
-.box8 > table tr > td > label > input{
-	vertical-align: middle;
-	margin-right: 1px;
-}
-.box8 > table tr > td > input{
-	width: 100%;
-	font-size: 15px;
-	padding: 1px 2px;
-	border: 1px solid #ccc;
-}
-.box8 > table tr > td > textarea{
-	width: 100%;
-	height: 90px;
-	resize: none;
-	border: 1px solid #efefef;
-}
-.box8 > .agreementChkWrap{
-	width: 100%;
-	text-align: center;
-	padding: 3px 0;
-	font-size: 15px;
-}
-.box8 > .agreementChkWrap > label{
-	width: 100%;
+.box> ul > li > p{
 	text-align: center;
 	font-size: 15px;
 }
-.box8 > .agreementChkWrap > span{
-	cursor: pointer;
-}
-.box8 > .adviceBtnWrap{
+.box> ul > li > a{
+	display: inline-block;
 	width: 100%;
-	text-align: center;
-}
-.box8 > .adviceBtnWrap > p{
-	width: 50px;
-	margin: 0 auto;
-	color: #fff;
 	font-size: 15px;
-	background: #276f90;
-	padding: 5px;
-	border-radius: 5px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
 }
 
 .footerWrap{
@@ -420,6 +354,18 @@ $(function(){
 					</div>
 				</div>
 				<div class="boxWrap">
+					<!-- <div class="box1 box">
+						<h4>인사말</h4>
+						<p>원마취통증의학과는</p>
+						<p>항상 환자들의 통증완화에</p>
+						<p>앞장서며 만족도 높은</p>
+						<p>서비스를 제공합니다.</p>
+					</div>
+					<div class="box2 box">
+						<h4>상담문의</h4>
+						<p>진료 및 치료관련 궁금증을</p>
+						<p>친절하게 상담해드립니다.</p>
+					</div> -->
 					<div class="box3 box">
 						<h4>병원둘러보기</h4>
 						<p>원마취통증의학과의 내부 시설 및</p>
@@ -434,53 +380,42 @@ $(function(){
 					<div class="box5 box">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.png">
 					</div>
-					<div class="box8">
+					<%-- <div class="box6 box">
 						<div class="box_title">
-							<h4>상담문의</h4>
+							<h4>치료후기</h4>
+							<p><a href="${pageContext.request.contextPath}/menu04_04">더보기</a></p>
 						</div>
-						<table>
-							<tr>
-								<th>제목</th>
-								<td colspan="3"><input type="text" name="title"></td>
-							</tr>
-							<tr>
-								<th>작성자</th>
-								<td><input type="text" name="writer"></td>
-								<th>연락처</th>
-								<td><input type="text" name="phone"></td>
-							</tr>
-							<tr>
-								<th>공개여부</th>
-								<td>
-									<label><input type="radio" name="pwtype">공개</label>
-									<label><input type="radio" name="pwtype">비공개</label>
-								</td>
-								<th>비밀번호</th>
-								<td><input type="password" name="pw"></td>
-							</tr>
-							<tr>
-								<th>답변방법</th>
-								<td colspan="3">
-									<label><input type="checkbox" name="replyType">문자</label>
-									<label><input type="checkbox" name="replyType">전화</label>
-									<label><input type="checkbox" name="replyType">댓글</label>
-								</td>
-							</tr>
-							<tr>
-								<th>문의내용</th>
-								<td colspan="3"><textarea name="content"></textarea></td>
-							</tr>
-						</table>
-						<div class="agreementChkWrap">
-							<label>
-								<input type="checkbox" name="agreement">개인정보제공에 동의합니다.
-							</label>
-							<span>[자세히 보기]</span>
+						<ul>
+							<c:choose>
+								<c:when test="${fn:length(commentList) == 0}">
+									<li><p>등록된 게시물이 없습니다.</p></li>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var="item" items="${commentList}" begin="0" end="2">
+										<li><a title="${item.title}" href="${pageContext.request.contextPath}/menu04_04Read?page=1&perPageNum=10&searchType&keyword&no=${item.no}">- ${item.title}</a></li>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</ul>
+					</div><!-- box6 end -->
+					<div class="box7 box">
+						<div class="box_title">
+							<h4>언론보도</h4>
+							<p><a href="${pageContext.request.contextPath}/menu04_02">더보기</a></p>
 						</div>
-						<div class="adviceBtnWrap">
-							<p>등록</p>
-						</div>
-					</div>
+						<ul>
+							<c:choose>
+								<c:when test="${fn:length(newsList) == 0}">
+									<li><p>등록된 게시물이 없습니다.</p></li>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var="item" items="${newsList}" begin="0" end="2">
+										<li><a title="${item.title}" href="${pageContext.request.contextPath}/menu04_02Read?page=1&perPageNum=10&searchType&keyword&no=${item.no}">- ${item.title}</a></li>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</ul>
+					</div> --%><!-- box7 end -->
 				</div><!-- boxWrap -->
 			</div><!-- sectionContentWrap end -->
 		</div><!-- sectionWrap end -->
