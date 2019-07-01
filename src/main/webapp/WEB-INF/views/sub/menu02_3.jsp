@@ -182,20 +182,20 @@ $(document).ready(function(){
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">03</h2>
-					<h2>성장클리닉</h2>
+					<h2>Prolo주사</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu02_01">01. 비수술척추클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_02">02. 관절클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_03">03. 성장클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_04">04. 다이어트클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_01">01. 초음파주사</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_02">02. C-ARM주사</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_03">03. Prolo주사</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_04">04. M-Puncture주사</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>성장클리닉</p> 
+							<p>Prolo주사</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">

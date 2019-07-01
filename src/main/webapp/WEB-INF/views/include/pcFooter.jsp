@@ -46,7 +46,7 @@
 <div class="footer">
 	<div class="textWrap">
 		<ul>
-			<li>상호: 원마취통증의학과</li>
+			<li>상호: 원마취통증의학과의원</li>
 			<li>&nbsp;&nbsp;대표: 한윤진</li>
 			<li>연락처: 053-269-7575</li>
 			<li><a href="${pageContext.request.contextPath}/adminLogin">[관리자 모드]</a></li>

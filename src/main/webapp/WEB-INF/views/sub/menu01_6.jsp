@@ -79,7 +79,7 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(2) > a{
+.leftMenu > ul > li:nth-child(6) > a{
 	font-weight: bold;
 }
 
@@ -258,7 +258,7 @@ $(document).ready(function(){
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">02</h2>
+					<h2 style="margin-bottom: 20px;">06</h2>
 					<h2>언론보도</h2>
 					<div class="line"></div> 
 					<ul>
@@ -266,10 +266,10 @@ $(document).ready(function(){
 						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_07">비용공지</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_05">05. 공지사항</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_06">06. 언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_07">07. 비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_08">08. 상담문의</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
@@ -312,7 +312,7 @@ $(document).ready(function(){
 								        <c:forEach var="item" items="${list}">
 											<tr>
 												<td>${item.no}</td>
-												<td><a href="${pageContext.request.contextPath}/menu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
+												<td><a href="${pageContext.request.contextPath}/menu01_06Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
 												<td>${item.writer}</td>
 												<td>${item.regdate}</td>
 												<td>${item.cnt}</td>

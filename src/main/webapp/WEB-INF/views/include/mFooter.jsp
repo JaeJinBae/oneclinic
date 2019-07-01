@@ -28,7 +28,7 @@
 <div class="footer">
 	<div class="textWrap">
 		<ul>
-			<li>상호: 원마취통증의학과 &nbsp;&nbsp;&nbsp;대표: 한윤진</li>
+			<li>상호: 원마취통증의학과의원 &nbsp;&nbsp;&nbsp;대표: 한윤진</li>
 			<li>연락처: 053-269-7575 &nbsp;&nbsp;&nbsp;등록번호: 125-93-55621</li>
 			<li style="margin-right:0;">소재지: 대구광역시 북구 침산로 124, 4층(침산동, P&A빌딩)</li>
 			<li>Copyrightⓒ원마취통증의학과. All Rights Reserved</li>
