@@ -30,10 +30,13 @@
 		background: #fff;
 	}
 	.mainMenu > li > p{
-		font-size: 17px;
+		font-size: 14px;
 		padding: 10px 0 11px 0;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
+	}
+	.mainMenu:nth-child(3) > li > p{
+		letter-spacing: -2px;
 	}
 	.mainMenu:last-child > li > p{
 		border-right: 0;

@@ -15,6 +15,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+.popup{
+	display: none;
+}
 .allWrap{
 	width:100%;
 	background: #f2f6f8;
