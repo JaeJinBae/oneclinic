@@ -122,6 +122,55 @@
 .content{
 	width: 100%;
 }
+.timeWrap{
+	width: 95%;
+	margin: 0 auto;
+	margin-bottom: 35px;
+	padding: 20px 45px;
+	background: #f8f8f8;
+	overflow: hidden;
+}
+.timeTitle{
+	float: left;
+	width: 100px;
+	text-align: center;
+}
+.timeTitle > h4{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+}
+.timeTitle > img{
+	width: 50px;
+}
+.timeContent{
+	float: right;
+}
+.timeContent > table{
+
+}
+.timeContent > table tr{
+
+}
+.timeContent > table tr > th{
+	font-size: 18px;
+	color: #3353a2;
+	font-weight: bold;
+	letter-spacing: 4px;
+	padding: 15px;
+}
+.timeContent > table tr > td{
+	font-size: 18px;
+	
+}
+.timeContent > table tr > td:nth-child(2){
+	width: 80px;
+	text-align: center;
+}
+.timeContent > table tr > td > span{
+	font-size: 18px;
+	color: red;
+}
 .mapWrap {
 	width: 98%;
 	margin: 0 auto;
@@ -260,6 +309,37 @@ $(document).ready(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
+						<div class="timeWrap">
+							<div class="timeTitle">
+								<h4>진료시간</h4>
+								<img src="${pageContext.request.contextPath}/resources/images/icon_clock.png">
+							</div>
+							<div class="timeContent">
+								<table>
+									<tr>
+										<th>평&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일</th>
+										<td>-</td>
+										<td>오전 10:00 ~ 오후 08:00</td>
+									</tr>
+									<tr>
+										<th>점심&nbsp;시간</th>
+										<td>-</td>
+										<td>오후 01:00 ~ 오후 02:00</td>
+									</tr>
+									<tr>
+										<th>토/공휴일</th>
+										<td>-</td>
+										<td>오전 09:00 ~ 오후 01:00</td>
+									</tr>
+									<tr>
+										<th>휴&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;진</th>
+										<td>-</td>
+										<td>(매월) <span>2째주 토요일</span></td>
+									</tr>
+								</table>
+							</div>
+							
+						</div>
 						<div class="mapWrap">
 							<div id="map" style="width:100%;height:350px;margin:0 auto;"></div>
 							<script>
