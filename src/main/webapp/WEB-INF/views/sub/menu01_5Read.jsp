@@ -240,11 +240,14 @@ $(document).ready(function(){
 					<h2>공지사항</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu04_01">01. 공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_02">02. 언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_03">03. 상담문의</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_04">04. 치료후기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_05">05. 비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_07">비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">

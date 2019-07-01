@@ -132,7 +132,6 @@
 }
 .tblWrap > table{
 	width: 100%;
-	border-right: 1px solid #417ca6;
 }
 .tblWrap > table tr{
 
@@ -158,51 +157,50 @@
 .tblWrap > table tr:nth-child(1) > th{
 	border-bottom: 1px solid lightgray;
 }
-.tblWrap > table tr:nth-child(2) > th:nth-child(1){
-	border-bottom: 1px solid lightgray;
-}
 .tblWrap > table tr:nth-child(1) > td{
 	text-align: left;
+	font-weight: bold;
 }
-.tblWrap > table tr > td > input{
+.tblContent{
 	width: 100%;
+	padding: 30px 10px;
+	border-bottom: 2px solid lightgray;
 	font-size: 15px;
-	vertical-align: middle;
-	padding: 2px 5px;
 }
-.tblWrap > table tr > td > label > input{
-	vertical-align: middle;
-}
-.tblWrap > table tr > td > label:nth-child(2) > input{
-	margin-left:5px;
-}
-.tblWrap > table tr > td > textarea{
+.replyWrap{
 	width: 100%;
-	height:350px;
-	resize: none;
-	font-size: 15px;
-	padding:8px;
+	margin-top: 20px;
 }
-.btnWrap{
+.replyWrap > table{
 	width: 100%;
-	text-align: center;
-	margin-top: 30px;
+	border-top: 1px solid #91b0c4;
+	border-bottom: 1px solid #91b0c4;
 }
-.btnWrap > p{
-	display: inline-block;
-	text-align: center;
-	font-size: 17px;
+.replyWrap > table tr > th{
+	width: 120px;
+	padding: 10px 0;
+	background: #91b0c4;
 	color: #fff;
-	padding: 10px 15px;;
-	cursor: pointer;
+	font-size: 15px;
 }
-.btnWrap > p:nth-child(1){
-	background: #417ca6;
+.replyWrap > table tr > td{
+	padding: 15px;
+	font-size: 15px;
 }
-.btnWrap > p:nth-child(2){
+.replyWrap > table tr > td > p{
+	font-size: 15px;
+}
+
+
+.backBtn{
+	width:60px;
+	padding: 5px 10px;
+	margin: 15px 0;
+	text-align: center;
 	background: #91b0c4;
 }
-.btnWrap > p > a{
+.backBtn > a{
+	font-size: 15px;
 	color: #fff;
 }
 
@@ -216,62 +214,9 @@
 } 
 </style>
 <script>
-function adviceRegister(vo){
-	console.log(vo);
-	$.ajax({
-		url:"${pageContext.request.contextPath}/adviceRegister",
-		type:"post",
-		dataType:"text",
-		data:vo,
-		async:false,
-		success:function(json){
-			if(json == "ok"){
-				alert("상담문의 등록이 완료되었습니다.");
-				location.href="${pageContext.request.contextPath}/menu04_03";
-			}else{
-				alert("문의글 등록이 정상적으로 등록되지 않았습니다. 새로고침(F5) 후 다시 이용하세요.");
-			}
-		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}
-	});
-	
-}
-
 $(document).ready(function(){
 	var height = $(".sectionContent").outerHeight();
 	$(".sectionContent > .leftMenu").css("height", height);
-	
-	$(".btnWrap > p:nth-child(1)").click(function(){
-		var title = $(".tblWrap > table tr > td > input[name='title']").val();
-		var writer = $(".tblWrap > table tr > td > input[name='writer']").val();
-		var pw = $(".tblWrap > table tr > td > input[name='pw']").val();
-		var pwtype = $(".tblWrap > table tr > td > label > input[name='pwtype']:checked").val();
-		var content = $(".tblWrap > table tr > td > textarea").val();
-		var ndate = new Date();
-		var year = ndate.getFullYear();
-		var month = ndate.getMonth();
-		var date = ndate.getDate();
-		var regdate = year+"-"+((month>9?'':"0")+month)+"-"+((date>9?'':"0")+date);
-		
-		if(title == ""){
-			alert("제목을 입력해 주세요.");
-			return false;
-		}
-		if(writer == ""){
-			alert("작성자를 입력해 주세요.");
-			return false;
-		}
-		if(pwtype == "o"){
-			if(pw == ""){
-				alert("비공개 선택시 비밀번호를 입력해주세요.");
-				return false;
-			}
-		}
-		var vo = {no:0, title:title, content:content, writer:writer, regdate:regdate, cnt:0, pwtype:pwtype, pw:pw, reply:""};
-		adviceRegister(vo);
-	});
 });
 </script>
 </head>
@@ -293,11 +238,14 @@ $(document).ready(function(){
 					<h2>상담문의</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu04_01">01. 공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_02">02. 언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_03">03. 상담문의</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_04">04. 치료후기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_05">05. 비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_07">비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
@@ -315,30 +263,43 @@ $(document).ready(function(){
 							<table>
 								<tr>
 									<th>제목</th>
-									<td colspan="5"><input type="text" name="title"></td>
+									<td colspan="5">
+										<c:if test="${item.pwtype eq 'o'}">
+											<img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">
+										</c:if>
+										${item.title}
+									</td>
 								</tr>
 								<tr>
 									<th>작성자</th>
-									<td><input type="text" name="writer"></td>
-									<th>공개</th>
-									<td>
-										<label><input type="radio" name="pwtype" value="x">공개</label>
-										<label><input type="radio" name="pwtype" value="o" checked>비공개</label>
-									</td>
-									<th>비밀번호</th>
-									<td><input type="text" name="pw"></td>
-								</tr>
-								<tr>
-									<th>내용</th>
-									<td colspan="5">
-										<textarea></textarea>
-									</td>
+									<td>${item.writer}</td>
+									<th>등록일</th>
+									<td>${item.regdate}</td>
+									<th>조회</th>
+									<td>${item.cnt}</td>
 								</tr>
 							</table>
-							<div class="btnWrap">
-								<p>문의등록</p>
-								<p><a href="${pageContext.request.contextPath}/menu04_03">뒤로가기</a></p>
+							<div class="tblContent">
+								${item.content}
 							</div>
+							<div class="replyWrap">
+								<table>
+									<tr>
+										<th>답변</th>
+										<td>
+											<c:choose>
+												<c:when test="${item.reply eq ''}">
+													<p>답변대기 중 입니다. 빠른 시일 내 문의하신 내용에 대한 답변을 드리겠습니다.</p> 
+												</c:when>
+												<c:otherwise>
+													${item.reply}
+												</c:otherwise>
+											</c:choose>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_03">목 록</a></p>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->

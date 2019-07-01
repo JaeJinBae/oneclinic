@@ -79,7 +79,7 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(5) > a{
+.leftMenu > ul > li:nth-child(2) > a{
 	font-weight: bold;
 }
 
@@ -127,12 +127,86 @@
 	width: 100%;
 	padding: 0 38px;
 }
-
-.fix_img{
-	width: 72%;
-	display: block;
-	margin: 0 auto;
+.tblWrap{
+	width: 100%;
 }
+.tblWrap > table{
+	width: 100%;
+}
+.tblWrap > table tr{
+
+}
+.tblWrap > table tr > th{
+	color: #fff;
+	font-size: 17px;
+	text-align: center;
+	background: #417ca6;
+	padding: 6px 0;
+	letter-spacing: 1px;
+	border-top: 1px solid #417ca6;
+	border-bottom: 1px solid #417ca6;
+	
+}
+.tblWrap > table tr > td{
+	font-size: 15px;
+	text-align: center;
+	padding: 7px 10px;
+	border-top: 1px solid #417ca6;
+	border-bottom: 1px solid #417ca6;
+}
+.tblWrap > table tr:nth-child(1) > th{
+	border-bottom: 1px solid lightgray;
+}
+.tblWrap > table tr:nth-child(1) > td{
+	text-align: left;
+	font-weight: bold;
+}
+.tblContent{
+	width: 100%;
+	padding: 30px 10px;
+	border-bottom: 2px solid lightgray;
+}
+.prevNextBtn{
+	width: 100%;
+	margin: 15px 0;
+}
+.prevNextBtn > table{
+	width: 100%;
+}
+.prevNextBtn > table tr > th{
+	width: 70px;
+	padding: 6px;
+	font-size: 15px;
+	color: #fff;
+	letter-spacing: 1px;
+	background: #91b0c4;
+	border-top: 1px solid #91b0c4;
+	border-bottom: 1px solid #91b0c4;
+}
+.prevNextBtn > table tr:nth-child(1) > th{
+	border-bottom: 1px solid lightgray;
+}
+.prevNextBtn > table tr > td{
+	padding: 6px 15px;
+	font-size: 15px;
+	border-top: 1px solid #91b0c4;
+	border-bottom: 1px solid #91b0c4;
+}
+
+
+.backBtn{
+	width:60px;
+	padding: 5px 10px;
+	margin: 15px 0;
+	text-align: center;
+	background: #91b0c4;
+}
+.backBtn > a{
+	font-size: 15px;
+	color: #fff;
+}
+
+
 
 
 .footerWrap{
@@ -162,35 +236,87 @@ $(document).ready(function(){
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">05</h2>
-					<h2>비용공지</h2>
+					<h2 style="margin-bottom: 20px;">02</h2>
+					<h2>언론보도</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu04_01">01. 공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_02">02. 언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_03">03. 상담문의</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_04">04. 치료후기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_05">05. 비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_07">비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>비용공지</p> 
+							<p>언론보도</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
+						<div class="tblWrap">
+							<table>
+								<tr>
+									<th>제목</th>
+									<td colspan="5">${item.title}</td>
+								</tr>
+								<tr>
+									<th>작성자</th>
+									<td>${item.writer}</td>
+									<th>등록일</th>
+									<td>${item.regdate}</td>
+									<th>조회</th>
+									<td>${item.cnt}</td>
+								</tr>
+							</table>
+							<div class="tblContent">
+								${item.content}
+							</div>
+							<div class="prevNextBtn">
+								<table>
+									<tr>
+										<th>이전글</th>
+										<td>
+											<c:choose>
+												<c:when test="${beforeItem.no eq null}">
+													존재하지 않습니다.
+												</c:when>
+												<c:otherwise>
+													<a href="${pageContext.request.contextPath}/menu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+												</c:otherwise>
+											</c:choose>
+										</td>
+									</tr>
+									<tr>
+										<th>다음글</th>
+										<td>
+											<c:choose>
+												<c:when test="${afterItem.no eq null}">
+													존재하지 않습니다.
+												</c:when>
+												<c:otherwise>
+													<a href="${pageContext.request.contextPath}/menu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+												</c:otherwise>
+											</c:choose>
+										</td>
+									</tr>
+								</table>
+							</div><!-- prevNextBtn -->
+							<p class="backBtn"><a href="${pageContext.request.contextPath}/menu04_02">목 록</a></p>
+						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
-			<jsp:include page="../include/pcFooter.jsp"></jsp:include>		
+			<jsp:include page="../include/pcFooter.jsp"></jsp:include>
 		</div>
 	</div>
 </body>

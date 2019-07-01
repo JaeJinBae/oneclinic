@@ -53,7 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	height: 750px;
+	min-height: 750px;
 	background: #477a9b;
 	padding: 20px 35px;
 }
@@ -79,14 +79,14 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(3) > a{
+.leftMenu > ul > li:nth-child(5) > a{
 	font-weight: bold;
 }
 
 
 .contentWrap{
 	width: 820px;
-	height: 750px;
+	min-height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;
@@ -125,40 +125,15 @@
 }
 .content{
 	width: 100%;
+	padding: 0 38px;
 }
-.slideWrap{
-	width: 100%;
-	margin: 0 auto;
-}
-.slider_for{
-	width: 600px;
-	margin: 0 auto;
-	margin-bottom: 90px;
-}
-.slider_for img{
-	width: 100%;
-	height: 320px;
-}
-.slider_nav{
-	width: 100%;
-}
-.slider_nav img{
-	width: 190px;
-	text-align: center;
-	margin:10px;
-}
+
 .fix_img{
 	width: 72%;
 	display: block;
 	margin: 0 auto;
 }
-/* slick css */
-.slick-prev, .slick-next{
-	top: -240px !important;
-}
-.slick-dots{
-	bottom: 190px !important;
-}
+
 
 .footerWrap{
 	width: 100%;
@@ -168,23 +143,8 @@
 </style>
 <script>
 $(document).ready(function(){
-	var height = $(".contentWrap").height();
-	//$(".sectionContent > .leftMenu").css("height", height);
-	console.log(height);
-	$('.slider_for').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '.slider_nav'
-	});
-	$('.slider_nav').slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		asNavFor: '.slider_for',
-		dots: true,
-		focusOnSelect: true
-	});
+	var height = $(".sectionContent").outerHeight();
+	$(".sectionContent > .leftMenu").css("height", height);
 });
 </script>
 </head>
@@ -197,13 +157,13 @@ $(document).ready(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu01top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/menu04top.jpg">
 			</div> 
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">03</h2>
-					<h2>병원둘러보기</h2>
+					<h2 style="margin-bottom: 20px;">05</h2>
+					<h2>비용공지</h2>
 					<div class="line"></div> 
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
@@ -220,45 +180,20 @@ $(document).ready(function(){
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>병원둘러보기</p> 
+							<p>비용공지</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="slideWrap">
-							<div class="slider_for slider">
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
-							</div>
-							<div class="slider_nav slider">
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
-							</div>
-						</div>
+						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
-			<jsp:include page="../include/pcFooter.jsp"></jsp:include>
+			<jsp:include page="../include/pcFooter.jsp"></jsp:include>		
 		</div>
 	</div>
 </body>

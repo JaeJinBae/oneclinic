@@ -9,7 +9,10 @@
 <meta charset="UTF-8">
 <title>원마취통증의학과</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 .allWrap{
 	width:100%;
@@ -50,9 +53,9 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	min-height: 750px;
+	height: 750px;
 	background: #477a9b;
-	padding: 20px 35px;
+	padding: 20px 30px;
 }
 .leftMenu > .line{
 	width: 100px;
@@ -83,7 +86,7 @@
 
 .contentWrap{
 	width: 820px;
-	min-height: 750px;
+	height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;
@@ -122,117 +125,33 @@
 }
 .content{
 	width: 100%;
-	padding: 0 38px;
 }
-.searchWrap{
+.slideWrap{
 	width: 100%;
-	text-align: right;
-	margin-bottom: 13px;
+	margin: 0 auto;
 }
-.searchWrap > select{
-	
-	font-size: 15px;
-	padding: 2px 3px;
-	letter-spacing: 1px;
+.slider_for{
+	width: 600px;
+	margin: 0 auto;
+	margin-bottom: 90px;
 }
-.searchWrap > input{
-	
-	width: 200px;
-	padding: 2px 4px;
-	font-size: 15px;
-}
-.searchWrap > p{
-	display: inline-block;
-	width: 55px;
-	font-size: 15px;
-	text-align: center;
-	letter-spacing: 1.5px;
-	color: #fff;
-	background: #4a7899;
-	padding: 4px;
-	cursor: pointer;
-}
-.tblWrap{
+.slider_for img{
 	width: 100%;
-	/* height: 800px; */
+	height: 320px;
 }
-.tblWrap > table{
+.slider_nav{
 	width: 100%;
-	border-top: 8px solid #417ca6; 
 }
-.tblWrap > table tr{
-	border-bottom: 1px solid lightgray;
-}
-.tblWrap > table tr > th{
-	color: #fff;
-	font-size: 17px;
+.slider_nav img{
+	width: 190px;
 	text-align: center;
-	background: #91b0c4;
-	padding: 6px 0;
+	margin:10px;
 }
-.tblWrap > table tr > th:nth-child(1){
-	width: 50px;
+.fix_img{
+	width: 72%;
+	display: block;
+	margin: 0 auto;
 }
-.tblWrap > table tr > th:nth-child(2){
-	width: 455px;
-}
-.tblWrap > table tr > th:nth-child(3){
-	width: 70px;
-}
-.tblWrap > table tr > th:nth-child(4){
-	width: 90px;
-}
-.tblWrap > table tr > th:nth-child(5){
-	width: 50px;
-}
-.tblWrap > table tr > td{
-	font-size: 15px;
-	text-align: center;
-	padding: 7px 0;
-}
-.tblWrap > table tr > td:nth-child(2){
-	text-align: left;
-	padding: 7px 10px;
-}
-.noticeTop > td:nth-child(1){
-	color: #c80719;
-	font-weight: bold;
-}
-.noticeTop > td:nth-child(2) > a{
-	color: #c80719;	
-}
-.page{
-	margin: 15px auto;
-}
-.page > ul{
-	text-align: center;
-}
-.page ul li{
-	margin:0 auto;
-	list-style: none;
-	display: inline-block;
-	text-align:center;
-	border:1px solid #e9e9e9;
-	border-radius: 8px;
-	margin: 0 1px;
-	background: #fafafa;
-}
-.active1{
-	background: #4a7899 !important;
-}
-.active2{
-	font-weight: bold;
-	color:white;
-}
-.page ul li a{
-	display:inline-block;
-	width:35px;
-	height:30px;
-	font-size:1.1em;
-	line-height: 30px;
-}
-
-
 
 
 .footerWrap{
@@ -257,101 +176,33 @@ $(document).ready(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu04top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/menu02top.jpg">
 			</div> 
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">01</h2>
-					<h2>공지사항</h2>
+					<h2>비수술<br>척추클리닉</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu04_01">01. 공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_02">02. 언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_03">03. 상담문의</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_04">04. 치료후기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu04_05">05. 비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_01">01. 비수술척추클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_02">02. 관절클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_03">03. 성장클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu02_04">04. 다이어트클리닉</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>공지사항</p> 
+							<p>비수술척추클리닉</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="searchWrap">
-							<select>
-								<option>선 택</option>
-								<option>제 목</option>
-								<option>번 호</option>
-							</select>
-							<input type="text" name="">
-							<p>검색</p>
-						</div>
-						<div class="tblWrap">
-							<table>
-								<tr>
-									<th>번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>등록일</th>
-									<th>조회</th>
-								</tr>
-								<c:if test="${fn:length(topList) != 0}">
-									<c:forEach var="item" items="${topList}">
-										<tr class="noticeTop">
-											<td>공지</td>
-											<td><a href="${pageContext.request.contextPath}/menu04_01Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
-											<td>${item.writer}</td>
-											<td>${item.regdate}</td>
-											<td>${item.cnt}</td>
-										</tr>	
-									</c:forEach>
-								</c:if>
-								<c:choose>
-								    <c:when test="${fn:length(list) == 0}">
-							        	<tr>
-							        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
-							        	</tr>
-								    </c:when>
-								    
-								    <c:otherwise>
-								    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
-								        <c:forEach var="item" items="${list}">
-											<tr>
-												<td>${num}</td>
-												<td><a href="${pageContext.request.contextPath}/menu04_01Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
-												<td>${item.writer}</td>
-												<td>${item.regdate}</td>
-												<td>${item.cnt}</td>
-											</tr>
-											<c:set var="num" value="${num-1}"></c:set>	
-										</c:forEach>
-								    </c:otherwise> 
-								</c:choose>
-							</table>
-							<div class="page">
-								<ul>
-									<c:if test="${pageMaker.prev}">
-										<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
-									</c:if>
-									
-									<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-										<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
-									</c:forEach>
-									
-									<c:if test="${pageMaker.next}">
-										<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
-									</c:if>
-									
-								</ul>
-							</div>
-						</div><!-- tblWrap end -->
+						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->

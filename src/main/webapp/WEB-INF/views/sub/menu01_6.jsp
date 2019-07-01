@@ -53,7 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	height: 750px;
+	min-height: 750px;
 	background: #477a9b;
 	padding: 20px 35px;
 }
@@ -79,14 +79,14 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(3) > a{
+.leftMenu > ul > li:nth-child(2) > a{
 	font-weight: bold;
 }
 
 
 .contentWrap{
 	width: 820px;
-	height: 750px;
+	min-height: 750px;
 	float:left;
 	padding: 20px 10px;
 	border: 1px solid lightgray;
@@ -125,40 +125,111 @@
 }
 .content{
 	width: 100%;
+	padding: 0 38px;
 }
-.slideWrap{
+.searchWrap{
 	width: 100%;
-	margin: 0 auto;
+	text-align: right;
+	margin-bottom: 13px;
 }
-.slider_for{
-	width: 600px;
-	margin: 0 auto;
-	margin-bottom: 90px;
+.searchWrap > select{
+	
+	font-size: 15px;
+	padding: 2px 3px;
+	letter-spacing: 1px;
 }
-.slider_for img{
-	width: 100%;
-	height: 320px;
+.searchWrap > input{
+	
+	width: 200px;
+	padding: 2px 4px;
+	font-size: 15px;
 }
-.slider_nav{
-	width: 100%;
-}
-.slider_nav img{
-	width: 190px;
+.searchWrap > p{
+	display: inline-block;
+	width: 55px;
+	font-size: 15px;
 	text-align: center;
-	margin:10px;
+	letter-spacing: 1.5px;
+	color: #fff;
+	background: #4a7899;
+	padding: 4px;
+	cursor: pointer;
 }
-.fix_img{
-	width: 72%;
-	display: block;
-	margin: 0 auto;
+.tblWrap{
+	width: 100%;
 }
-/* slick css */
-.slick-prev, .slick-next{
-	top: -240px !important;
+.tblWrap > table{
+	width: 100%;
+	border-top: 8px solid #417ca6; 
 }
-.slick-dots{
-	bottom: 190px !important;
+.tblWrap > table tr{
+	border-bottom: 1px solid lightgray;
 }
+.tblWrap > table tr > th{
+	color: #fff;
+	font-size: 17px;
+	text-align: center;
+	background: #91b0c4;
+	padding: 6px 0;
+}
+.tblWrap > table tr > th:nth-child(1){
+	width: 50px;
+}
+.tblWrap > table tr > th:nth-child(2){
+	width: 455px;
+}
+.tblWrap > table tr > th:nth-child(3){
+	width: 70px;
+}
+.tblWrap > table tr > th:nth-child(4){
+	width: 90px;
+}
+.tblWrap > table tr > th:nth-child(5){
+	width: 50px;
+}
+.tblWrap > table tr > td{
+	font-size: 15px;
+	text-align: center;
+	padding: 7px 0;
+}
+.tblWrap > table tr > td:nth-child(2){
+	text-align: left;
+	padding: 7px 10px;
+}
+.page{
+	margin: 15px auto;
+}
+.page > ul{
+	text-align: center;
+}
+.page ul li{
+	margin:0 auto;
+	list-style: none;
+	display: inline-block;
+	text-align:center;
+	border:1px solid #e9e9e9;
+	border-radius: 8px;
+	margin: 0 1px;
+	background: #fafafa;
+}
+.active1{
+	background: #4a7899 !important;
+}
+.active2{
+	font-weight: bold;
+	color:white;
+}
+.page ul li a{
+	display:inline-block;
+	width:35px;
+	height:30px;
+	font-size:1.1em;
+	line-height: 30px;
+}
+
+
+
+
 
 .footerWrap{
 	width: 100%;
@@ -168,23 +239,8 @@
 </style>
 <script>
 $(document).ready(function(){
-	var height = $(".contentWrap").height();
-	//$(".sectionContent > .leftMenu").css("height", height);
-	console.log(height);
-	$('.slider_for').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '.slider_nav'
-	});
-	$('.slider_nav').slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		asNavFor: '.slider_for',
-		dots: true,
-		focusOnSelect: true
-	});
+	var height = $(".sectionContent").outerHeight();
+	$(".sectionContent > .leftMenu").css("height", height);
 });
 </script>
 </head>
@@ -197,13 +253,13 @@ $(document).ready(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu01top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/menu04top.jpg">
 			</div> 
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">03</h2>
-					<h2>병원둘러보기</h2>
+					<h2 style="margin-bottom: 20px;">02</h2>
+					<h2>언론보도</h2>
 					<div class="line"></div> 
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
@@ -220,39 +276,68 @@ $(document).ready(function(){
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>병원둘러보기</p> 
+							<p>언론보도</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="slideWrap">
-							<div class="slider_for slider">
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
-							</div>
-							<div class="slider_nav slider">
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
-							</div>
+						<div class="searchWrap">
+							<select>
+								<option>선 택</option>
+								<option>제 목</option>
+								<option>번 호</option>
+							</select>
+							<input type="text" name="">
+							<p>검색</p>
 						</div>
+						<div class="tblWrap">
+							<table>
+								<tr>
+									<th>번호</th>
+									<th>제목</th>
+									<th>작성자</th>
+									<th>등록일</th>
+									<th>조회</th>
+								</tr>
+								<c:choose>
+								    <c:when test="${fn:length(list) == 0}">
+							        	<tr>
+							        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+							        	</tr>
+								    </c:when>
+								    
+								    <c:otherwise>
+								        <c:forEach var="item" items="${list}">
+											<tr>
+												<td>${item.no}</td>
+												<td><a href="${pageContext.request.contextPath}/menu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
+												<td>${item.writer}</td>
+												<td>${item.regdate}</td>
+												<td>${item.cnt}</td>
+											</tr>
+										</c:forEach>
+								    </c:otherwise> 
+								</c:choose>
+							</table>
+							<div class="page">
+								<ul>
+									<c:if test="${pageMaker.prev}">
+										<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
+									</c:if>
+									
+									<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+										<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
+									</c:forEach>
+									
+									<c:if test="${pageMaker.next}">
+										<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
+									</c:if>
+									
+								</ul>
+							</div>
+						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->

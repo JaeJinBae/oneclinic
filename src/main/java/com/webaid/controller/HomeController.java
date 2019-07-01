@@ -111,6 +111,145 @@ public class HomeController {
 		return "sub/menu01_4";
 	}
 	
+	@RequestMapping(value="/menu01_05")
+	public String menu01_05(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		
+		List<NoticeVO> topList = nService.selectTopNotice();
+		List<NoticeVO> list = nService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu01_5";
+	}
+	
+	@RequestMapping(value="/menu01_05Read")
+	public String menu01_05Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		NoticeVO vo=nService.selectOne(no);
+		NoticeVO beforeVO = nService.selectBefore(no);
+		NoticeVO afterVO = nService.selectAfter(no);
+		
+		nService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		return "sub/menu01_5Read";
+	}
+	
+	@RequestMapping(value="/menu01_06")
+	public String menu01_06(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		List<NewsVO> list = newsService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu01_6";
+	}
+	
+	@RequestMapping(value="/menu01_06Read")
+	public String menu01_06Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		NewsVO vo=newsService.selectOne(no);
+		NewsVO beforeVO = newsService.selectBefore(no);
+		NewsVO afterVO = newsService.selectAfter(no);
+		newsService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		return "sub/menu01_6Read";
+	}
+	
+	@RequestMapping(value="/menu01_07")
+	public String menu01_7(){
+		
+		return "sub/menu01_7";
+	}
+	
+	@RequestMapping(value="/menu01_08")
+	public String menu01_08(@ModelAttribute("cri") SearchCriteria cri, Model model){
+		List<AdviceVO> list = aService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		return "sub/menu01_8";
+	}
+	
+	@RequestMapping(value="/advicePwChk/{no}/{pw}", method=RequestMethod.POST)
+	public ResponseEntity<String> menu01_8advicePwChk(@PathVariable("no") int no, @PathVariable("pw") String pw){
+		ResponseEntity<String> entity = null;
+		
+		AdviceVO vo = aService.selectOne(no);
+		
+		if(vo.getPw().equals(pw)){
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/menu01_08Read")
+	public String menu01_08Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
+		AdviceVO vo=aService.selectOne(no);
+		aService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu01_8Read";
+	}
+	
+	@RequestMapping(value="/menu01_08Register")
+	public String menu01_8Register(){
+		
+		return "sub/menu01_8Register";
+	}
+	
+	@RequestMapping(value="/adviceRegister", method=RequestMethod.POST)
+	public ResponseEntity<String> adviceRegister(@ModelAttribute("vo") AdviceVO vo){
+		ResponseEntity<String> entity = null;
+		System.out.println(vo);
+		aService.insert(vo);
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
+	}
+	
 	@RequestMapping(value="/menu02_01")
 	public String menu02_1(){
 		
@@ -165,140 +304,34 @@ public class HomeController {
 		return "sub/menu03_5";
 	}
 	
+	@RequestMapping(value="/menu03_06")
+	public String menu03_6(){
+		
+		return "sub/menu03_6";
+	}
+	
 	@RequestMapping(value="/menu04_01")
-	public String menu04_1(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		
-		List<NoticeVO> topList = nService.selectTopNotice();
-		List<NoticeVO> list = nService.listSearch(cri);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCount(cri));
-		
-		model.addAttribute("topList", topList);
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
+	public String menu04_1(){
 		
 		return "sub/menu04_1";
 	}
 	
-	@RequestMapping(value="/menu04_01Read")
-	public String menu04_1Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		NoticeVO vo=nService.selectOne(no);
-		NoticeVO beforeVO = nService.selectBefore(no);
-		NoticeVO afterVO = nService.selectAfter(no);
-		
-		nService.updateCnt(no);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCount(cri));
-		
-		model.addAttribute("item", vo);
-		model.addAttribute("beforeItem", beforeVO);
-		model.addAttribute("afterItem", afterVO);
-		model.addAttribute("pageMaker", pageMaker);
-		return "sub/menu04_1Read";
-	}
-	
 	@RequestMapping(value="/menu04_02")
-	public String menu04_2(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		List<NewsVO> list = newsService.listSearch(cri);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(newsService.listSearchCount(cri));
-		
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
+	public String menu04_2(){
 		
 		return "sub/menu04_2";
 	}
 	
-	@RequestMapping(value="/menu04_02Read")
-	public String menu04_2Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		NewsVO vo=newsService.selectOne(no);
-		NewsVO beforeVO = newsService.selectBefore(no);
-		NewsVO afterVO = newsService.selectAfter(no);
-		newsService.updateCnt(no);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(newsService.listSearchCount(cri));
-		
-		model.addAttribute("item", vo);
-		model.addAttribute("beforeItem", beforeVO);
-		model.addAttribute("afterItem", afterVO);
-		model.addAttribute("pageMaker", pageMaker);
-		return "sub/menu04_2Read";
-	}
-	
 	@RequestMapping(value="/menu04_03")
-	public String menu04_3(@ModelAttribute("cri") SearchCriteria cri, Model model){
-		List<AdviceVO> list = aService.listSearch(cri);
+	public String menu04_3(){
 		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(aService.listSearchCount(cri));
-		
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
 		return "sub/menu04_3";
 	}
 	
-	@RequestMapping(value="/advicePwChk/{no}/{pw}", method=RequestMethod.POST)
-	public ResponseEntity<String> menu04_3advicePwChk(@PathVariable("no") int no, @PathVariable("pw") String pw){
-		ResponseEntity<String> entity = null;
-		
-		AdviceVO vo = aService.selectOne(no);
-		
-		if(vo.getPw().equals(pw)){
-			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
-		}else{
-			entity = new ResponseEntity<String>("no", HttpStatus.OK);
-		}
-		
-		
-		return entity;
-	}
 	
-	@RequestMapping(value="/menu04_03Read")
-	public String menu04_3Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
-		AdviceVO vo=aService.selectOne(no);
-		aService.updateCnt(no);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(aService.listSearchCount(cri));
-		
-		model.addAttribute("item", vo);
-		model.addAttribute("pageMaker", pageMaker);
-		
-		return "sub/menu04_3Read";
-	}
 	
-	@RequestMapping(value="/menu04_03Register")
-	public String menu04_3Register(){
-		
-		return "sub/menu04_3Register";
-	}
-	
-	@RequestMapping(value="/adviceRegister", method=RequestMethod.POST)
-	public ResponseEntity<String> adviceRegister(@ModelAttribute("vo") AdviceVO vo){
-		ResponseEntity<String> entity = null;
-		System.out.println(vo);
-		aService.insert(vo);
-		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
-		return entity;
-	}
-	
-	@RequestMapping(value="/menu04_04")
+	//치료후기
+	/*@RequestMapping(value="/menu04_04")
 	public String menu04_4(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		List<CommentVO> list = cService.listSearch(cri);
 		
@@ -332,13 +365,9 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu04_4Read";
-	}
+	}*/
 	
-	@RequestMapping(value="/menu04_05")
-	public String menu04_5(){
-		
-		return "sub/menu04_5";
-	}
+	
 	
 	//mobile
 	@RequestMapping(value="/mMenu01_01")
@@ -363,6 +392,120 @@ public class HomeController {
 	public String mMenu01_4(){
 		
 		return "sub/mobileMenu01_4";
+	}
+	
+	@RequestMapping(value="/mMenu01_05")
+	public String mMenu01_05(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		List<NoticeVO> topList = nService.selectTopNotice();
+		List<NoticeVO> list = nService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/mobileMenu01_5";
+	}
+	
+	@RequestMapping(value="/mMenu01_05Read")
+	public String mMenu01_05Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		NoticeVO vo=nService.selectOne(no);
+		NoticeVO beforeVO = nService.selectBefore(no);
+		NoticeVO afterVO = nService.selectAfter(no);
+		
+		nService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		return "sub/mobileMenu01_5Read";
+	}
+
+	@RequestMapping(value="/mMenu01_06")
+	public String mMenu01_6(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		List<NewsVO> list = newsService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		return "sub/mobileMenu01_6";
+	}
+	
+	@RequestMapping(value="/mMenu01_06Read")
+	public String mMenu01_6Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		NewsVO vo=newsService.selectOne(no);
+		NewsVO beforeVO = newsService.selectBefore(no);
+		NewsVO afterVO = newsService.selectAfter(no);
+		newsService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/mobileMenu01_6Read";
+	}
+	
+	@RequestMapping(value="/mMenu01_07")
+	public String mMenu01_7(){
+		
+		return "sub/mobileMenu01_7";
+	}
+	
+	@RequestMapping(value="/mMenu01_08")
+	public String mMenu01_8(@ModelAttribute("cri") SearchCriteria cri, Model model){
+		List<AdviceVO> list = aService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/mobileMenu01_8";
+	}
+	
+	@RequestMapping(value="/mMenu01_08Read")
+	public String mMenu01_8Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
+		AdviceVO vo=aService.selectOne(no);
+		aService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/mobileMenu01_8Read";
+	}
+	
+	@RequestMapping(value="/mMenu01_08Register")
+	public String mMenu01_8Register(){
+		
+		return "sub/mobileMenu01_8Register";
 	}
 	
 	@RequestMapping(value="/mMenu02_01")
@@ -419,116 +562,35 @@ public class HomeController {
 		return "sub/mobileMenu03_5";
 	}
 	
+	@RequestMapping(value="/mMenu03_06")
+	public String mMenu03_6(){
+		
+		return "sub/mobileMenu03_6";
+	}
+	
 	@RequestMapping(value="/mMenu04_01")
-	public String mMenu04_1(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		List<NoticeVO> topList = nService.selectTopNotice();
-		List<NoticeVO> list = nService.listSearch(cri);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCount(cri));
-		
-		model.addAttribute("topList", topList);
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
+	public String mMenu04_1(){
 		
 		return "sub/mobileMenu04_1";
 	}
 	
-	@RequestMapping(value="/mMenu04_01Read")
-	public String mMenu04_1Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		NoticeVO vo=nService.selectOne(no);
-		NoticeVO beforeVO = nService.selectBefore(no);
-		NoticeVO afterVO = nService.selectAfter(no);
-		
-		nService.updateCnt(no);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCount(cri));
-		
-		model.addAttribute("item", vo);
-		model.addAttribute("beforeItem", beforeVO);
-		model.addAttribute("afterItem", afterVO);
-		model.addAttribute("pageMaker", pageMaker);
-		return "sub/mobileMenu04_1Read";
-	}
-
 	@RequestMapping(value="/mMenu04_02")
-	public String mMenu04_2(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		List<NewsVO> list = newsService.listSearch(cri);
+	public String mMenu04_2(){
 		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(newsService.listSearchCount(cri));
-		
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
 		return "sub/mobileMenu04_2";
 	}
 	
-	@RequestMapping(value="/mMenu04_02Read")
-	public String mMenu04_2Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		NewsVO vo=newsService.selectOne(no);
-		NewsVO beforeVO = newsService.selectBefore(no);
-		NewsVO afterVO = newsService.selectAfter(no);
-		newsService.updateCnt(no);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(newsService.listSearchCount(cri));
-		
-		model.addAttribute("item", vo);
-		model.addAttribute("beforeItem", beforeVO);
-		model.addAttribute("afterItem", afterVO);
-		model.addAttribute("pageMaker", pageMaker);
-		
-		return "sub/mobileMenu04_2Read";
-	}
-	
 	@RequestMapping(value="/mMenu04_03")
-	public String mMenu04_3(@ModelAttribute("cri") SearchCriteria cri, Model model){
-		List<AdviceVO> list = aService.listSearch(cri);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(aService.listSearchCount(cri));
-		
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
+	public String mMenu04_3(){
 		
 		return "sub/mobileMenu04_3";
 	}
 	
-	@RequestMapping(value="/mMenu04_03Read")
-	public String mMenu04_3Read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
-		AdviceVO vo=aService.selectOne(no);
-		aService.updateCnt(no);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(aService.listSearchCount(cri));
-		
-		model.addAttribute("item", vo);
-		model.addAttribute("pageMaker", pageMaker);
-		
-		return "sub/mobileMenu04_3Read";
-	}
-	
-	@RequestMapping(value="/mMenu04_03Register")
-	public String mMenu04_3Register(){
-		
-		return "sub/mobileMenu04_3Register";
-	}
 	
 	
-	@RequestMapping(value="/mMenu04_04")
+	
+	//치료후기
+	/*@RequestMapping(value="/mMenu04_04")
 	public String mMenu04_4(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		List<CommentVO> list = cService.listSearch(cri);
 		
@@ -560,12 +622,8 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/mobileMenu04_4Read";
-	}
+	}*/
 	
-	@RequestMapping(value="/mMenu04_05")
-	public String mMenu04_5(){
-		
-		return "sub/mobileMenu04_5";
-	}
+	
 	
 }
