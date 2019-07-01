@@ -352,7 +352,7 @@ $(document).ready(function(){
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu04top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">
@@ -397,7 +397,7 @@ $(document).ready(function(){
 												<td>${item.no}</td>
 												<td>
 													
-													<a href="${pageContext.request.contextPath}/mMenu04_03Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+													<a href="${pageContext.request.contextPath}/mMenu01_08Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 														<c:if test="${item.pwtype eq 'o'}">
 															<img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">
 														</c:if>
@@ -423,7 +423,7 @@ $(document).ready(function(){
 								</c:choose>
 							</table>
 							<div class="registerBtn">
-								<p><a href="${pageContext.request.contextPath}/mMenu04_03Register">글쓰기</a></p>
+								<p><a href="${pageContext.request.contextPath}/mMenu01_08Register">글쓰기</a></p>
 							</div>
 							<div class="page">
 								<ul>

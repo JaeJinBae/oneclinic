@@ -147,7 +147,7 @@
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>스포츠재활</p> 
+							<p>충격파치료</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">

@@ -179,7 +179,7 @@ function adviceRegister(vo){
 		success:function(json){
 			if(json == "ok"){
 				alert("상담문의 등록이 완료되었습니다.");
-				location.href="${pageContext.request.contextPath}/mMenu04_03";
+				location.href="${pageContext.request.contextPath}/mMenu01_08";
 			}else{
 				alert("문의글 등록이 정상적으로 등록되지 않았습니다. 새로고침(F5) 후 다시 이용하세요.");
 			}
@@ -235,7 +235,7 @@ $(document).ready(function(){
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu04top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">
@@ -274,7 +274,7 @@ $(document).ready(function(){
 							</table>
 							<div class="btnWrap">
 								<p>문의등록</p>
-								<p><a href="${pageContext.request.contextPath}/mMenu04_03">뒤로가기</a></p>
+								<p><a href="${pageContext.request.contextPath}/mMenu01_08">뒤로가기</a></p>
 							</div>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->

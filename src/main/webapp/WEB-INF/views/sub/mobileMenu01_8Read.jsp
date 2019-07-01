@@ -180,7 +180,7 @@ $(document).ready(function(){
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu04top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">
@@ -233,7 +233,7 @@ $(document).ready(function(){
 									</tr>
 								</table>
 							</div>
-							<p class="backBtn"><a href="${pageContext.request.contextPath}/mMenu04_03">목 록</a></p>
+							<p class="backBtn"><a href="${pageContext.request.contextPath}/mMenu01_08">목 록</a></p>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->

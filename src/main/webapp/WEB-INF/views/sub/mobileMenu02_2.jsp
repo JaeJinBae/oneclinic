@@ -147,7 +147,7 @@
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>관절클리닉</p> 
+							<p>C-ARM주사</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">

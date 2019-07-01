@@ -147,7 +147,7 @@
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>다이어트클리닉</p> 
+							<p>M-Puncture주사</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">

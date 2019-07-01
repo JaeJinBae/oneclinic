@@ -147,7 +147,7 @@
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>교정클리닉</p> 
+							<p>수술후재활</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">

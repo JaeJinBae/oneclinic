@@ -141,13 +141,13 @@
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu02top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu04top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>비수술척추클리닉</p> 
+							<p>다이어트</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">

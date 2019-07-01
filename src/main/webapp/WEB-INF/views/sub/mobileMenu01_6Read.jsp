@@ -181,7 +181,7 @@
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu04top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.jpg">
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">
@@ -222,7 +222,7 @@
 													존재하지 않습니다.
 												</c:when>
 												<c:otherwise>
-													<a href="${pageContext.request.contextPath}/mMenu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+													<a href="${pageContext.request.contextPath}/mMenu01_06Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
 												</c:otherwise>
 											</c:choose>
 										</td>
@@ -235,14 +235,14 @@
 													존재하지 않습니다.
 												</c:when>
 												<c:otherwise>
-													<a href="${pageContext.request.contextPath}/mMenu04_02Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+													<a href="${pageContext.request.contextPath}/mMenu01_06Read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
 												</c:otherwise>
 											</c:choose>
 										</td>
 									</tr>
 								</table>
 							</div><!-- prevNextBtn -->
-							<p class="backBtn"><a href="${pageContext.request.contextPath}/mMenu04_02">목 록</a></p>
+							<p class="backBtn"><a href="${pageContext.request.contextPath}/mMenu01_06">목 록</a></p>
 						</div><!-- tblWrap end -->
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
