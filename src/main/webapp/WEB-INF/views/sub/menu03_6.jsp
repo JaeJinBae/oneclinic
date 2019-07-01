@@ -79,7 +79,7 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(5) > a{
+.leftMenu > ul > li:nth-child(6) > a{
 	font-weight: bold;
 }
 
@@ -172,7 +172,7 @@ $(document).ready(function(){
 		<div class="headerWrap">
 		<div class="header_top"></div>
 			<jsp:include page="../include/pcHeader.jsp"></jsp:include>
-		</div> 
+		</div>  
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
@@ -182,21 +182,22 @@ $(document).ready(function(){
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">05</h2>
-					<h2>교정클리닉</h2>
+					<h2>산전/산후<br>재활</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu03_01">01. 통증재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_02">02. 스포츠재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_03">03. 성장운동</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_04">04. 측만증운동</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_05">05. 교정클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_01">01. 재활도수치료</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_02">02. 충격파치료</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_03">03. 측만증</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_04">04. 스포츠재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_05">05. 수술후재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_06">06. 산전/산후재활</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>교정클리닉</p> 
+							<p>산전/산후재활</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">

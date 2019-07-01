@@ -79,7 +79,7 @@
 	font-size: 18px;
 	font-family: sans-serif;
 }
-.leftMenu > ul > li:nth-child(1) > a{
+.leftMenu > ul > li:nth-child(3) > a{
 	font-weight: bold;
 }
 
@@ -176,26 +176,25 @@ $(document).ready(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="section_top">
-				<img src="${pageContext.request.contextPath}/resources/images/menu02top.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/menu04top.jpg">
 			</div> 
 			<div class="sectionContent">
 				<div class="leftMenu">
 					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">01</h2>
-					<h2>비수술<br>척추클리닉</h2>
+					<h2 style="margin-bottom: 20px;">03</h2>
+					<h2>다이어트</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu02_01">01. 비수술척추클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_02">02. 관절클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_03">03. 성장클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu02_04">04. 다이어트클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_01">01. 영양치료</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_02">02. 성 장</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu04_03">03. 다이어트</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>비수술척추클리닉</p> 
+							<p>다이어트</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">

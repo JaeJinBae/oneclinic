@@ -182,21 +182,22 @@ $(document).ready(function(){
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">03</h2>
-					<h2>성장운동</h2>
+					<h2>측만증</h2>
 					<div class="line"></div> 
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu03_01">01. 통증재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_02">02. 스포츠재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_03">03. 성장운동</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_04">04. 측만증운동</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_05">05. 교정클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_01">01. 재활도수치료</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_02">02. 충격파치료</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_03">03. 측만증</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_04">04. 스포츠재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_05">05. 수술후재활</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu03_06">06. 산전/산후재활</a></li>
 					</ul>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
 						<div class="tText">
 							<div class="shortLine"></div>
-							<p>성장운동</p> 
+							<p>측만증</p> 
 						</div>
 						<div class="tLogo">
 							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
