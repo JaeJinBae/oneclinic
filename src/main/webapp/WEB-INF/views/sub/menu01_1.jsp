@@ -50,7 +50,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	background: #477a9b;
+	background: #5c9bb8;
 	padding: 20px 35px;
 }
 .leftMenu > .line{
@@ -207,6 +207,9 @@ $(document).ready(function(){
 						<li><a href="${pageContext.request.contextPath}/menu01_07">07. 비용공지</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_08">08. 상담문의</a></li>
 					</ul>
+					<div class="hosInfo">
+						<img src="${pageContext.request.contextPath}/resources/images/leftMenuInfo.png">
+					</div>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">

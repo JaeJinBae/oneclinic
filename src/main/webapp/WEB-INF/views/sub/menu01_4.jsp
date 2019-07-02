@@ -51,7 +51,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	background: #477a9b;
+	background: #5c9bb8;
 	padding: 20px 35px;
 }
 .leftMenu > .line{
@@ -133,18 +133,21 @@
 .timeTitle{
 	float: left;
 	width: 100px;
+	margin-top: 15px;
 	text-align: center;
 }
 .timeTitle > h4{
 	width: 100%;
 	text-align: center;
-	font-size: 20px;
+	font-size: 25px;
 }
 .timeTitle > img{
 	width: 50px;
+	margin-top: 20px;
 }
 .timeContent{
 	float: right;
+	margin-right: 130px;
 }
 .timeContent > table{
 
@@ -153,14 +156,14 @@
 
 }
 .timeContent > table tr > th{
-	font-size: 18px;
+	font-size: 20px;
 	color: #3353a2;
 	font-weight: bold;
 	letter-spacing: 4px;
 	padding: 15px;
 }
 .timeContent > table tr > td{
-	font-size: 18px;
+	font-size: 20px;
 	
 }
 .timeContent > table tr > td:nth-child(2){
@@ -168,11 +171,11 @@
 	text-align: center;
 }
 .timeContent > table tr > td > span{
-	font-size: 18px;
+	font-size: 20px;
 	color: red;
 }
 .mapWrap {
-	width: 98%;
+	width: 95%;
 	margin: 0 auto;
 }
 .mapWrap > h3{
@@ -200,14 +203,15 @@
 	overflow: hidden;
 }
 .csImg{
-	width: 220px;
+	width: 100px;
 	float:left;
+	margin-left: 85px;
 }
 .csImg > img{
 	width: 100%;
 }
 .csText{
-	width: 440px;
+	width: 460px;
 	float:right;
 	margin-top: 30px;
 }
@@ -227,15 +231,16 @@
 	overflow: hidden;
 }
 .cbImg{
-	width: 220px;
+	width: 100px;
 	float:left;
-	margin-top: 60px;
+	margin-top: 35px;
+	margin-left: 85px;
 }
 .cbImg > img{
 	width: 100%;
 }
 .cbText{
-	width: 440px;
+	width: 460px;
 	float:right;
 	margin-top: 35px;
 }

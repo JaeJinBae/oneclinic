@@ -50,7 +50,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	background: #477a9b;
+	background: #5c9bb8;
 	padding: 20px 35px;
 }
 .leftMenu > .line{

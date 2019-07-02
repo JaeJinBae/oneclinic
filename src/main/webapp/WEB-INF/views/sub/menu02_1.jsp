@@ -54,7 +54,7 @@
 	float: left;
 	width: 233px;
 	height: 750px;
-	background: #477a9b;
+	background: #5c9bb8;
 	padding: 20px 30px;
 }
 .leftMenu > .line{
