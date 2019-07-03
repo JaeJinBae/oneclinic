@@ -46,26 +46,95 @@
 	width: 1100px;
 	margin: 0 auto;
 	overflow: hidden;
+	position: relative;
 }
+.quickMenu{
+	position: fixed;
+	/* top: 122px; */
+	bottom: 10px;
+	right: 0px;
+	width: 200px;
+	overflow: hidden;
+}
+.quickMenu > h4{
+	float: left;
+	font-size: 30px;
+	width: 50px;
+	background: gray;
+	color: #fff;
+	line-height: 76px;
+	text-align: center;
+	cursor: pointer;
+}
+.quickMenu > p{
+	float:right;
+	width: 150px;
+	background: #5c9bb8;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	padding: 15px 0;
+}
+.quickMenu > ul{
+	width: 150px;
+	float: right;
+	background: #fff;
+	border-left: 1px solid #efefef;
+}
+.quickMenu > ul > li{
+	width: 100%;
+	border-bottom: 1px solid lightgray;
+	padding: 10px 0px;
+}
+.quickMenu > ul > li > a{
+	font-size: 17px;
+}
+.quickMenu > ul > li > a > img{
+	width: 50px;
+	margin-right: 8px;
+	margin-left: 12px;
+	vertical-align: middle;
+}
+.quickMenu > ul > li:first-child > p{
+	width: 100%;
+	text-align: center;
+	font-size: 17px;
+	padding: 7px 0;
+}
+.quickMenu > ul > li:first-child > h5{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+}
+.quickMenu > ul > li:last-child{
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 20px;
+	color: #5c9bb8;
+}
+
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
 	background: #5c9bb8;
-	padding: 20px 35px;
+	padding: 20px 0px;
 }
 .leftMenu > .line{
 	width: 100px;
 	height:3px;
 	background: #eaeaea;
 	margin: 50px 0;
+	margin-left: 35px;
 }
 .leftMenu > h2{
 	color: #fff;
 	font-weight: bold;
 	font-family: sans-serif;
+	padding-left: 35px;
 }
 .leftMenu > ul{
-
+	padding-left: 35px;
 }
 .leftMenu > ul > li{
 	padding: 13px 0;
@@ -78,13 +147,18 @@
 .leftMenu > ul > li:first-child > a{
 	font-weight: bold;
 }
-
+.leftMenu > .hosInfo{
+	width: 100%;
+	margin-top: 50px;
+}
+.leftMenu > .hosInfo > img{
+	width: 100%;
+}
 
 .contentWrap{
 	width: 820px;
 	float:left;
 	padding: 20px 10px;
-	border: 1px solid lightgray;
 }
 .contentTitle{
 	width: 90%;
@@ -192,6 +266,22 @@ $(document).ready(function(){
 				<img src="${pageContext.request.contextPath}/resources/images/menu01top.jpg">
 			</div> 
 			<div class="sectionContent">
+				<div class="quickMenu">
+					<h4>◀</h4>
+					<p>Quick<br>Menu</p>
+					<ul>
+						<li>
+							<p><img src="${pageContext.request.contextPath}/resources/images/icon_call.png"></p>
+							<p>전화문의</p>
+							<h5>053.269.7575</h5>
+						</li>
+						<li><a href="${pageContext.request.contextPath}/menu01_08"><img src="${pageContext.request.contextPath}/resources/images/icon_chat.png">상담문의</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/icon_location.png">오시는길</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_07"><img src="${pageContext.request.contextPath}/resources/images/icon_hand.png">비급여</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_05"><img src="${pageContext.request.contextPath}/resources/images/icon_speaker.png">공지사항</a></li>
+						<li>▲<br>TOP</li>
+					</ul>
+				</div>
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">01</h2>
