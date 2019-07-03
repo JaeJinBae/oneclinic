@@ -50,7 +50,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	background: #5c9bb8;
+	background: #1f9ae0;
 	padding: 20px 0px;
 }
 .leftMenu > .line{
@@ -93,7 +93,6 @@
 	width: 820px;
 	float:left;
 	padding: 20px 10px;
-	border: 1px solid lightgray;
 }
 .contentTitle{
 	width: 90%;

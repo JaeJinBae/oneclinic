@@ -54,7 +54,7 @@
 	float: left;
 	width: 233px;
 	height: 750px;
-	background: #5c9bb8;
+	background: #1f9ae0;
 	padding: 20px 35px;
 }
 .leftMenu > .line{
@@ -89,7 +89,6 @@
 	height: 750px;
 	float:left;
 	padding: 20px 10px;
-	border: 1px solid lightgray;
 }
 .contentTitle{
 	width: 90%;

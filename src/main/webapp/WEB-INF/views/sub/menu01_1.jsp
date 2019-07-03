@@ -53,7 +53,7 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	background: #5c9bb8;
+	background: #1f9ae0;
 	padding: 20px 0px;
 }
 .leftMenu > .line{
@@ -185,8 +185,8 @@
 </style>
 <script>
 $(document).ready(function(){
-	var height = $(".sectionContent").outerHeight();
-	$(".sectionContent > .leftMenu").css("height", height);
+	/* var height = $(".sectionContent").outerHeight();
+	$(".sectionContent > .leftMenu").css("height", height); */
 });
 </script>
 </head>

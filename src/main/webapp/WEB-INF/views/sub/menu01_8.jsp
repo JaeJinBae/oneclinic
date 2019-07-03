@@ -113,22 +113,24 @@
 	float: left;
 	width: 233px;
 	min-height: 750px;
-	background: #5c9bb8;
-	padding: 20px 35px;
+	background: #1f9ae0;
+	padding: 20px 0;
 }
 .leftMenu > .line{
 	width: 100px;
 	height:3px;
 	background: #eaeaea;
 	margin: 50px 0;
+	margin-left: 35px;
 }
 .leftMenu > h2{
 	color: #fff;
 	font-weight: bold;
 	font-family: sans-serif;
+	margin-left: 35px;
 }
 .leftMenu > ul{
-
+	margin-left: 35px;
 }
 .leftMenu > ul > li{
 	padding: 13px 0;
@@ -141,14 +143,19 @@
 .leftMenu > ul > li:nth-child(8) > a{
 	font-weight: bold;
 }
-
+.leftMenu > .hosInfo{
+	width: 100%;
+	margin-top: 50px;
+}
+.leftMenu > .hosInfo > img{
+	width: 100%;
+}
 
 .contentWrap{
 	width: 820px;
 	min-height: 750px;
 	float:left;
 	padding: 20px 10px;
-	border: 1px solid lightgray;
 }
 .contentTitle{
 	width: 90%;
@@ -351,7 +358,7 @@ function advicePw_chk(no, pw, href){
 
 $(document).ready(function(){
 	var height = $(".sectionContent").outerHeight();
-	$(".sectionContent > .leftMenu").css("height", height);
+	//$(".sectionContent > .leftMenu").css("height", height);
 	
 	$(document).on("click",".tblWrap > table tr > td:nth-child(2) > a", function(e){
 		e.preventDefault();
@@ -424,6 +431,9 @@ $(document).ready(function(){
 						<li><a href="${pageContext.request.contextPath}/menu01_07">07. 비용공지</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_08">08. 상담문의</a></li>
 					</ul>
+					<div class="hosInfo">
+						<img src="${pageContext.request.contextPath}/resources/images/leftMenuInfo.png">
+					</div>
 				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
