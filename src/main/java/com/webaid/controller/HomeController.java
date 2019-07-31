@@ -78,11 +78,9 @@ public class HomeController {
 			logger.info("디바이스타입= "+deviceType);
 			SearchCriteria cri = new SearchCriteria();
 			
-			List<CommentVO> commentList = cService.listSearch(cri);
-			List<NewsVO> newsList = newsService.listSearch(cri);
+			List<NoticeVO> noticeList = nService.listSearch(cri);
 			
-			model.addAttribute("commentList", commentList);
-			model.addAttribute("newsList", newsList);
+			model.addAttribute("noticeList", noticeList);
 			return "main/index";
 		}
 	}

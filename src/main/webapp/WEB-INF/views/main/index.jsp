@@ -698,6 +698,16 @@ $(function(){
 								<div class="b2t_content">
 									<div class="updownBanner">
 										<ul>
+											<c:choose>
+											    <c:when test="${fn:length(noticeList) == 0}">
+										        		<li>등록된 게시물이 없습니다.</li>
+											    </c:when>
+											    <c:otherwise>
+											        <c:forEach var="item" items="${noticeList}">
+														<li>${item.regdate} <a href="${pageContext.request.contextPath}/noticeRead?no=${item.no}">${item.title}</a></li>
+													</c:forEach>
+												</c:otherwise> 
+											</c:choose> 
 											<li>2019-07-05<a href=""> 원마취통증의학과 공지사항 영역 테스트중 입니다!</a></li>
 											<li>2019-07-04<a href=""> 원마취통증의학과 공지사항 영역 테스트중 입니다!</a></li>
 											<li>2019-07-03<a href=""> 원마취통증의학과 공지사항 영역 테스트중 입니다!</a></li>
