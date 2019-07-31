@@ -78,8 +78,8 @@
 		text-align: center;
 	}
 	.subMenuUl > li > a{
-		font-size:17px;
-		color: #595959;
+		font-size:18px;
+		color: #fff;
 	}
 	.subMenuUl > li > a:hover{
 		font-weight:bold !important;

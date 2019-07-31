@@ -5,7 +5,7 @@
 		width: 100%;
 	}
 	.textWrap{
-		width: 520px;
+		width: 660px;
 		margin: 0 auto;
 	}
 	.textWrap > ul{

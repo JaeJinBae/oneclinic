@@ -25,12 +25,11 @@
 <style>
 .allWrap{
 	width:100%;
-	height: 100%;
 }
 .headerWrap{
 	width:100%;
 	min-width:1100px;
-	background: url("${pageContext.request.contextPath}/resources/images/subNavBg.png");
+	background: url("${pageContext.request.contextPath}/resources/images/subNavBg2.png");
 	background-size: cover;
 	position: absolute;
 	top:0; 
@@ -39,7 +38,7 @@
 .header_top{
 	width:100%;
 	height:20px;
-	background: #276f90;
+	background: #5ac2cb;
 }
 .mg_top_135{
 	height:120px;
@@ -92,20 +91,49 @@
 .mainBanner img{
 	width: 100%;
 	height: auto;
+	display: block;
 }
-.mainBanner img:after{
-	width: 100%;
-	height: auto;
-	transform: scale(1.1); 
+.slick-slide{
+	transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	-moz-transform: scale(1.1);
-	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
-	transition: all 1s ease-in-out;
+	-ms-transform: scale(1.1);
+	transform-origin: 50% 60%;
+	-webkit-transform-origin: 50% 60%;
+	-o-transform-origin: 50% 60%;
+	-moz-transform-origin: 50% 60%;
+	-ms-transform-origin: 50% 60%;
 }
-.mainBanner video{
-	width: 100%;
+.slick-slider { overflow: hidden; }
+.slick-active{
+  -webkit-animation: myMove 5s ease-in-out;
+  -moz-animation: myMove 5s ease-in-out;
+  -o-animation: myMove 5s ease-in-out;
+  -ms-animation: myMove 5s ease-in-out;
+  animation: myMove 5s ease-in-out;
 }
+@keyframes myMove {
+  from { transform: scale(1.0,1.0); transform-origin: 50% 50%; }
+  to { transform: scale(1.1,1.1); transform-origin: 50% 60%; }
+}
+@-webkit-keyframes myMove {
+  from { -webkit-transform: scale(1.0,1.0); -webkit-transform-origin: 50% 50%; }
+  to { -webkit-transform: scale(1.1,1.1); -webkit-transform-origin: 50% 60%;  }
+}
+@-o-keyframes myMove {
+  from { -o-transform: scale(1.0,1.0); -o-transform-origin: 50% 50%; }
+  to { -o-transform: scale(1.1,1.1); -o-transform-origin: 50% 60%;  }
+}
+@-moz-keyframes myMove {
+  from { -moz-transform: scale(1.0,1.0); -moz-transform-origin: 50% 50%; }
+  to { -moz-transform: scale(1.1,1.1); -moz-transform-origin: 50% 60%; }
+}
+@-ms-keyframes myMove {
+  from { -ms-transform: scale(1.0,1.0); -ms-transform-origin: 50% 50%; }
+  to { -ms-transform: scale(1.1,1.1); -ms-transform-origin: 50% 60%; }
+}
+
 .slick-dots{
 	bottom: 20px !important;
 }
@@ -115,14 +143,23 @@
 .slick-dots li button:before{
 	color: lightgray;
 }
+.slick-dotted.slick-slider{
+	margin-bottom: 0 !important;
+}
 .sectionContentWrap{
 	width: 100%;
-	background: url("${pageContext.request.contextPath}/resources/images/mainSectionBg.png") no-repeat;
-	background-size: cover;
+	/* background: url("${pageContext.request.contextPath}/resources/images/mainSectionBg.png") no-repeat;
+	background-size: cover; */
+	background: #e7e7e7; /* Old browsers */
+	background: -moz-linear-gradient(bottom,  #e7e7e7 0%, #ffffff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(bottom,  #e7e7e7 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to top,  #e7e7e7 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 .hosTitle{
 	width: 100%;
-	margin: 50px auto;
+	margin: 0 auto;
+	padding: 50px 0;
 	text-align: center;
 	font-weight: bold;
 	font-family: NanumSB;
@@ -133,6 +170,7 @@
 .content{
 	width: 1200px;
 	margin: 0 auto;
+	padding-bottom: 40px;
 }
 .boxWrap1{
 	width: 100%;
@@ -491,9 +529,36 @@
 .con2BoxWrap > .con2Box > a > img{
 	width: 100%;
 }
+.cooperationWrap{
+	width: 100%;
+	padding: 40px 100px;
+	background: #cccccc;
+}
+.cooperationWrap > .cooContent{
+	width: 100%;
+	overflow: hidden;
+}
+.cooperationWrap > .cooContent > span{
+	display: inline-block;
+	width: 150px;
+	margin-left: 100px;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 60px;
+	float: left;
+	color: #505050;
+}
+.cooperationWrap > .cooContent > .cooBanner{
+	width: 80%;
+	float: left;
+}
+.cooperationWrap > .cooContent > .cooBanner img{
+	margin: 0 30px;
+}
+
 .footerWrap{
 	width: 100%;
-	height: 70px;
+	height: 80px;
 	background: #393939;
 } 
 </style>
@@ -532,8 +597,8 @@ $(function(){
 		speed:1000,
 		fade:true,
 		cssEase:'linear',
-		autoplay:false,
-		autoplaySpeed:7000,
+		autoplay:true,
+		autoplaySpeed:5000,
 		dots:true,
 	});
 	
@@ -553,6 +618,18 @@ $(function(){
 	})
 	
 	$(".updownBanner").vTicker();
+	
+	$(".cooBanner").slick({
+		arrows: false,
+		dots: false,
+		infinite: true,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		speed:2000,
+		autoplay:true,
+		autoplaySpeed:1,
+		centerPadding: '50px',
+	});
 });
 </script>
 </head>
@@ -572,9 +649,9 @@ $(function(){
 			</div>
 			<div class="mainBannerWrap">
 				<div class="mainBanner">
-					<img src="${pageContext.request.contextPath}/resources/images/mainBanner1.jpg">
-					<img src="${pageContext.request.contextPath}/resources/images/mainBanner2.jpg">
-					<img src="${pageContext.request.contextPath}/resources/images/mainBanner3.jpg">
+					<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner1.jpg">
+					<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner2.jpg">
+					<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner3.jpg">
 				</div>
 			</div><!-- mainBannerWrap end -->
 			<div class="sectionContentWrap">
@@ -735,11 +812,23 @@ $(function(){
 						</div>
 					</div><!-- con2BoxWrap end -->
 				</div><!-- content2 end -->
+				<div class="cooperationWrap">
+					<div class="cooContent">
+						<span>협&nbsp;&nbsp;력</span>
+						<div class="cooBanner">
+							<img src="${pageContext.request.contextPath}/resources/images/ch1.png">
+							<img src="${pageContext.request.contextPath}/resources/images/ch2.png">
+							<img src="${pageContext.request.contextPath}/resources/images/ch3.png">
+							<img src="${pageContext.request.contextPath}/resources/images/ch4.png">
+							<img src="${pageContext.request.contextPath}/resources/images/ch5.png">
+						</div>
+					</div>
+				</div>
 			</div><!-- sectionContentWrap end -->
 		</div><!-- sectionWrap end -->
-		<%-- <div class="footerWrap">
+		<div class="footerWrap">
 			<jsp:include page="../include/pcFooter.jsp"></jsp:include>
-		</div> --%>
+		</div>
 	</div>
 </body>
 </html>
