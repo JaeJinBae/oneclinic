@@ -179,6 +179,7 @@ $(document).ready(function(){
 			</div> 
 			<div class="sectionContent">
 				<jsp:include page="../include/quickMenu.jsp"></jsp:include>
+				<img src="${pageContext.request.contextPath}/resources/images/testsub.jpg">
 				<div class="leftMenu">
 					<div class="line"></div>
 					<h2 style="margin-bottom: 20px;">01</h2>

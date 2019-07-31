@@ -81,11 +81,15 @@
 .mainBannerWrap{
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 }
 .mainBanner{
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+	overflow: hidden;
+}
+.mainBanner div{
 	overflow: hidden;
 }
 .mainBanner img{
@@ -104,6 +108,7 @@
 	-o-transform-origin: 50% 60%;
 	-moz-transform-origin: 50% 60%;
 	-ms-transform-origin: 50% 60%;
+	overflow: hidden;
 }
 .slick-slider { overflow: hidden; }
 .slick-active{
@@ -243,12 +248,19 @@
 .dulBannerWrap{
 	width: 100%;
 	height: 218px;
-	overflow: hidden !important;
+	overflow: hidden;
 }
 .dulBannerWrap div{
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+}
+.dulBannerWrap div img{
+	transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-moz-transform: scale(1.0);
+	-o-transform: scale(1.0);
+	-ms-transform: scale(1.0);
 }
 .boxWrap1 > .box1 > img{
 	width: 100%;
