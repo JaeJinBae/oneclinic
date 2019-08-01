@@ -48,83 +48,50 @@
 .sectionContent{
 	width: 1100px;
 	margin: 0 auto;
-	overflow: hidden;
-}
-.sectionContent > .leftMenu{
-	float: left;
-	width: 233px;
-	background: #1f9ae0;
-	padding: 20px 35px;
-}
-.leftMenu > .line{
-	width: 100px;
-	height:3px;
-	background: #eaeaea;
-	margin: 50px 0;
-}
-.leftMenu > h2{
-	color: #fff;
-	font-weight: bold;
-	font-family: sans-serif;
-}
-.leftMenu > ul{
-
-}
-.leftMenu > ul > li{
-	padding: 13px 0;
-}
-.leftMenu > ul > li > a{
-	color: #fff;
-	font-size: 18px;
-	font-family: sans-serif;
-}
-.leftMenu > ul > li:nth-child(1) > a{
-	font-weight: bold;
 }
 
 
 .contentWrap{
-	width: 820px;
-	float:left;
+	width: 100%;
 	padding: 20px 10px;
 }
 .contentTitle{
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 50px;
 	padding-bottom: 10px;
-	border-bottom: 2px solid #91afc3;
-	overflow: hidden;
 }
-.contentTitle > .tText{
-	float:left;
-	padding-top: 25px;
+.contentTitle > table{
+	width: 100%;
 }
-.contentTitle > .tText > .shortLine{
-	width: 35px;
-	height: 3px;
-	background: #6e6e6e;
-	margin-bottom: 5px;
+.contentTitle > table tr{
+	width: 100%;
 }
-.contentTitle > .tText > p{
+.contentTitle > table tr > td{
+	width: 25%;
+	text-align: center;
+	padding: 20px 0;
+	border: 1px solid #4f4f4f;
+} 
+.contentTitle > table tr:nth-child(1) > td:nth-child(1){
+	background: #4f4f4f;
+}
+.contentTitle > table tr > td > a{
 	font-size: 20px;
+	letter-spacing: 1px;
+}
+.contentTitle > table tr:nth-child(1) > td:nth-child(1) > a{
+	color: #fff;
 	font-weight: bold;
-	color: #6e6e6e;
-	/* font-family: sans-serif; */
 }
 
-.contentTitle > .tLogo{
-	float:right;
-	width: 70px;
-} 
-.contentTitle > .tLogo > img{
-	width: 100%;
-}
+
 .content{
 	width: 100%;
+	text-align: center;
 }
 .content > img{
-	width: 100%;
+	width: 90%;
 }
 
 
@@ -132,7 +99,7 @@
 	width: 100%;
 	height: 70px;
 	background: #393939;
-} 
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -154,29 +121,20 @@ $(document).ready(function(){
 			</div> 
 			<div class="sectionContent">
 				<jsp:include page="../include/quickMenu.jsp"></jsp:include>
-				<div class="leftMenu">
-					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">01</h2>
-					<h2>재활도수치료</h2>
-					<div class="line"></div> 
-					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu03_01">01. 재활도수치료</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_02">02. 충격파치료</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_03">03. 측만증</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_04">04. 스포츠재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_05">05. 수술후재활</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu03_06">06. 산전/산후재활</a></li>
-					</ul>
-				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
-						<div class="tText">
-							<div class="shortLine"></div>
-							<p>재활도수치료</p> 
-						</div>
-						<div class="tLogo">
-							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
-						</div>
+						<table>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu03_01">재활도수치료</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_02">충격파치료</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_03">측만증</a></td>
+							</tr>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu03_04">스포츠재활</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_05">수술후재활</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_06">산전/산후재활</a></td>
+							</tr>
+						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<img src="${pageContext.request.contextPath}/resources/images/menu03_1img.jpg">
