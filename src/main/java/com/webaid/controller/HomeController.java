@@ -1,6 +1,7 @@
 package com.webaid.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -240,9 +242,20 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/adviceRegister", method=RequestMethod.POST)
-	public ResponseEntity<String> adviceRegister(@ModelAttribute("vo") AdviceVO vo){
+	public ResponseEntity<String> adviceRegister(@RequestBody Map<String, String> info){
 		ResponseEntity<String> entity = null;
-		System.out.println(vo);
+		System.out.println(info);
+		AdviceVO vo = new AdviceVO();
+		vo.setTitle(info.get("title"));
+		vo.setContent(info.get("content"));
+		vo.setWriter(info.get("writer"));
+		vo.setRegdate(info.get("regdate"));
+		vo.setPhone(info.get("phone"));
+		vo.setPwtype(info.get("pwType"));
+		vo.setPw(info.get("pw"));
+		vo.setReplytype(info.get("replyType"));
+		vo.setReplytime(info.get("replyTime"));
+		vo.setReply("");
 		aService.insert(vo);
 		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
 		return entity;

@@ -364,6 +364,9 @@
 	padding:2px;
 	border: 1px solid lightgray;
 }
+.box2_1_bottom > .b2b_content > .formWrap > table tr > td > input[name='title']{
+	width: 250px;
+}
 .box2_1_bottom > .b2b_content > .formWrap > table tr > td > input[name='name']{
 	width: 70px;
 }
@@ -376,6 +379,7 @@
 .box2_1_bottom > .b2b_content > .formWrap > table tr > td > input[name='pw']{
 	width: 80px;
 }
+
 .box2_1_bottom > .b2b_content > .formWrap > table tr > td > select{
 	font-size: 16px;
 	padding: 2px;
@@ -601,6 +605,35 @@ function inputPhoneNumber(obj) {
 	obj.value = phone;
 }
 
+function post_adviceRegister(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/adviceRegister",
+		type: "post",
+		data:JSON.stringify(info),
+		async:false,
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		success:function(json){
+			if(json == "ok"){
+				alert("상담문의 등록이 완료되었습니다.\n문의하신 내용은 문의상담 메뉴에서 확인 가능합니다.");
+				$(".formWrap > table tr:nth-child(1) > td > input[name='title']").val("");
+				$(".formWrap > table tr:nth-child(1) > td > input[name='name']").val("");
+				$(".formWrap > table tr:nth-child(1) > td > input[name='phone']").val("");
+				$(".formWrap > table tr:nth-child(2) > td > select[name='replyType'] > option:nth-child(1)").prop("selected", true);
+				$(".formWrap > table tr:nth-child(2) > td > input[name='replyTime']").val("");
+				$(".formWrap > table tr:nth-child(2) > td > select[name='pwType'] > option:nth-child(1)").prop("selected", true);
+				$(".formWrap > table tr:nth-child(2) > td > input[name='pw']").val("");
+				$(".formWrap > table tr:nth-child(3) > td > textarea[name='content']").val("");
+			}else{
+				alert("문의글 등록이 정상적으로 등록되지 않았습니다. 새로고침(F5) 후 다시 이용하세요.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
 	
 	$(".mainBanner").slick({
@@ -641,6 +674,62 @@ $(function(){
 		autoplay:true,
 		autoplaySpeed:1,
 		centerPadding: '50px',
+	});
+	
+	$(".submitBtn").click(function(){
+		var title = $(".formWrap > table tr:nth-child(1) > td > input[name='title']").val();
+		var name = $(".formWrap > table tr:nth-child(1) > td > input[name='name']").val();
+		var phone = $(".formWrap > table tr:nth-child(1) > td > input[name='phone']").val();
+		var replyType = $(".formWrap > table tr:nth-child(2) > td > select[name='replyType']").val();
+		var replyTime = $(".formWrap > table tr:nth-child(2) > td > input[name='replyTime']").val();
+		var pwType = $(".formWrap > table tr:nth-child(2) > td > select[name='pwType']").val();
+		var pw = $(".formWrap > table tr:nth-child(2) > td > input[name='pw']").val();
+		var content = $(".formWrap > table tr:nth-child(3) > td > textarea[name='content']").val();
+		
+		if(title == ""){
+			alert("제목을 입력해주세요.");
+			return false;
+		}
+		if(name == ""){
+			alert("이름을 입력해주세요.");
+			return false;
+		}
+		if(phone == ""){
+			alert("연락처를 입력해주세요.");
+			return false;
+		}
+		if(pwType == "n"){
+			alert("공개여부를 선택해주세요.");
+			return false;
+		}else if(pwType == "o"){
+			if(pw == ""){
+				alert("비공개를 원하는 경우 비밀번호를 입력해주세요.");
+				return false;
+			}
+		}else if(pwType == "x"){
+			pw = "x";
+		}
+		if(replyType == "n"){
+			alert("답변방법을 선택해주세요.");
+			return false;
+		}
+		if(replyTime == ""){
+			replyTime = "미입력";
+		}
+		if(content == ""){
+			alert("문의내용을 입력해주세요.");
+			return false;
+		}
+		
+		var ndate = new Date();
+		var year = ndate.getFullYear();
+		var month = ndate.getMonth();
+		var date = ndate.getDate();
+		var regdate = year+"-"+((month>9?'':"0")+month)+"-"+((date>9?'':"0")+date);
+		
+		var info = {title:title, writer:name, phone:phone, replyType:replyType, replyTime:replyTime, pwType:pwType, pw:pw, content:content, regdate:regdate};
+		
+		post_adviceRegister(info);
 	});
 });
 </script>
@@ -739,30 +828,31 @@ $(function(){
 										<table>
 											<tr>
 												<td>
+													<input type="text" name="title" placeholder="제목">
 													<input type="text" name="name" value="" placeholder="이름" autocomplete="off">
 													<input type="text" name="phone" value="" placeholder="연락처" onKeyup="inputPhoneNumber(this);" maxlength="13" autocomplete="off">
-													<select>
-														<option>답변방법</option>
-														<option>문자</option>
-														<option>전화</option>
-														<option>상관없음</option>
-													</select>
-													<input type="text" name="replyTime" value="" placeholder="연락가능 시간" autocomplete="off">
 												</td>
 											</tr>
 											<tr>
 												<td>
-													<select>
-														<option>공개여부</option>
-														<option>공개</option>
-														<option>비공개</option>
+													<select name="pwType">
+														<option value="n">공개여부</option>
+														<option value="x">공개</option>
+														<option value="o">비공개</option>
 													</select>
 													<input type="password" name="pw" placeholder="비밀번호" autocomplete="off">
-													<span>문의 내용은 상담문의 메뉴에서 확인 가능합니다.</span>
+													<select name="replyType">
+														<option value="n">답변방법</option>
+														<option value="sms">문자</option>
+														<option value="call">전화</option>
+														<option value="all">상관없음</option>
+													</select>
+													<input type="text" name="replyTime" value="" placeholder="연락가능 시간" autocomplete="off">
+													<!-- <span>문의 내용은 상담문의 메뉴에서 확인 가능합니다.</span> -->
 												</td>
 											</tr>
 											<tr>
-												<td colspan="5"><textarea></textarea></td>
+												<td colspan="5"><textarea name="content"></textarea></td>
 											</tr>
 										</table>
 										<p id="privacyAgreementWrap"><label><input type="checkbox" value="">개인정보제공에 동의합니다.</label><span>[자세히]</span></p>

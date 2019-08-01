@@ -130,7 +130,7 @@ $(function(){
 						<li><a href="${pageContext.request.contextPath}/menu01_04">오시는 길</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_07">비용공지</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_07">비급여</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></li>
 					</ul>
 				</div>

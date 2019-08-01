@@ -6,9 +6,12 @@ public class AdviceVO {
 	private String content;
 	private String writer;
 	private String regdate;
+	private String phone;
 	private int cnt;
 	private String pwtype;
 	private String pw;
+	private String replytype;
+	private String replytime;
 	private String reply;
 
 	public AdviceVO() {
@@ -55,6 +58,14 @@ public class AdviceVO {
 		this.regdate = regdate;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public int getCnt() {
 		return cnt;
 	}
@@ -79,6 +90,22 @@ public class AdviceVO {
 		this.pw = pw;
 	}
 
+	public String getReplytype() {
+		return replytype;
+	}
+
+	public void setReplytype(String replytype) {
+		this.replytype = replytype;
+	}
+
+	public String getReplytime() {
+		return replytime;
+	}
+
+	public void setReplytime(String replytime) {
+		this.replytime = replytime;
+	}
+
 	public String getReply() {
 		return reply;
 	}
@@ -90,7 +117,8 @@ public class AdviceVO {
 	@Override
 	public String toString() {
 		return "AdviceVO [no=" + no + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
-				+ regdate + ", cnt=" + cnt + ", pwtype=" + pwtype + ", pw=" + pw + ", reply=" + reply + "]";
+				+ regdate + ", phone=" + phone + ", cnt=" + cnt + ", pwtype=" + pwtype + ", pw=" + pw + ", replytype="
+				+ replytype + ", replytime=" + replytime + ", reply=" + reply + "]";
 	}
 
 }

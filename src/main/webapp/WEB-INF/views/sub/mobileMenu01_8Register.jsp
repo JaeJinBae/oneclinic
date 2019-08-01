@@ -168,13 +168,12 @@
 } 
 </style>
 <script>
-function adviceRegister(vo){
-	console.log(vo);
+function adviceRegister(info){
 	$.ajax({
 		url:"${pageContext.request.contextPath}/adviceRegister",
 		type:"post",
 		dataType:"text",
-		data:vo,
+		data:info,
 		async:false,
 		success:function(json){
 			if(json == "ok"){
