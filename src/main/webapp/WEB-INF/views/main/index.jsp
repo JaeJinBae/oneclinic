@@ -45,6 +45,7 @@
 }
 .sectionWrap{
 	width:100%;
+	min-width: 1200px;
 	height: 100%;
 }
 .popup{
@@ -903,17 +904,17 @@ $(function(){
 					</div>
 					<div class="con2BoxWrap">
 						<div class="con2Box">
-							<a href="${pageContext.request.contextPath}/">
+							<a href="${pageContext.request.contextPath}/menu02_01">
 								<img src="${pageContext.request.contextPath}/resources/images/mainSpecial1.jpg">
 							</a>
 						</div>
 						<div class="con2Box">
-							<a href="${pageContext.request.contextPath}/">
+							<a href="${pageContext.request.contextPath}/menu04_01">
 								<img src="${pageContext.request.contextPath}/resources/images/mainSpecial2.jpg">
 							</a>
 						</div>
 						<div class="con2Box">
-							<a href="${pageContext.request.contextPath}/">
+							<a href="${pageContext.request.contextPath}/menu03_01">
 								<img src="${pageContext.request.contextPath}/resources/images/mainSpecial3.jpg">
 							</a>
 						</div>
