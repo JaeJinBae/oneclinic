@@ -29,7 +29,7 @@
 .headerWrap{
 	width:100%;
 	min-width:1100px;
-	background: url("${pageContext.request.contextPath}/resources/images/subNavBg2.png");
+	background: url("${pageContext.request.contextPath}/resources/images/subNavBg.png");
 	background-size: cover;
 	position: absolute;
 	top:0; 

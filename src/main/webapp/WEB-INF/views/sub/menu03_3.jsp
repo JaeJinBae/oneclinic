@@ -30,7 +30,7 @@
 .header_top{
 	width:100%;
 	height:20px;
-	background: #276f90;
+	background: #5ac2cb;
 }
 .mg_top_135{
 	height:120px;
@@ -53,7 +53,6 @@
 .sectionContent > .leftMenu{
 	float: left;
 	width: 233px;
-	height: 750px;
 	background: #1f9ae0;
 	padding: 20px 35px;
 }
@@ -86,7 +85,6 @@
 
 .contentWrap{
 	width: 820px;
-	height: 750px;
 	float:left;
 	padding: 20px 10px;
 }
@@ -125,31 +123,8 @@
 .content{
 	width: 100%;
 }
-.slideWrap{
+.content > img{
 	width: 100%;
-	margin: 0 auto;
-}
-.slider_for{
-	width: 600px;
-	margin: 0 auto;
-	margin-bottom: 90px;
-}
-.slider_for img{
-	width: 100%;
-	height: 320px;
-}
-.slider_nav{
-	width: 100%;
-}
-.slider_nav img{
-	width: 190px;
-	text-align: center;
-	margin:10px;
-}
-.fix_img{
-	width: 72%;
-	display: block;
-	margin: 0 auto;
 }
 
 
@@ -204,7 +179,7 @@ $(document).ready(function(){
 						</div>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<img class="fix_img" src="${pageContext.request.contextPath}/resources/images/fix_img.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/menu03_3img.jpg">
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->
