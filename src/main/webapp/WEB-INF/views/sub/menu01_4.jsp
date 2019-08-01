@@ -28,7 +28,7 @@
 .header_top{
 	width:100%;
 	height:20px;
-	background: #276f90;
+	background: #5ac2cb;
 }
 .mg_top_135{
 	height:120px;
@@ -46,85 +46,41 @@
 .sectionContent{
 	width: 1100px;
 	margin: 0 auto;
-	overflow: hidden;
-}
-.sectionContent > .leftMenu{
-	float: left;
-	width: 233px;
-	background: #1f9ae0;
-	padding: 20px 0px;
-}
-.leftMenu > .line{
-	width: 100px;
-	height:3px;
-	background: #eaeaea;
-	margin: 50px 0;
-	margin-left: 35px;
-}
-.leftMenu > h2{
-	color: #fff;
-	font-weight: bold;
-	font-family: sans-serif;
-	padding-left: 35px;
-}
-.leftMenu > ul{
-	padding-left: 35px;
-}
-.leftMenu > ul > li{
-	padding: 13px 0;
-}
-.leftMenu > ul > li > a{
-	color: #fff;
-	font-size: 18px;
-	font-family: sans-serif;
-}
-.leftMenu > ul > li:nth-child(4) > a{
-	font-weight: bold;
-}
-.leftMenu > .hosInfo{
-	width: 100%;
-	margin-top: 50px;
-}
-.leftMenu > .hosInfo > img{
-	width: 100%;
 }
 
+
 .contentWrap{
-	width: 820px;
-	float:left;
+	width: 100%;
 	padding: 20px 10px;
 }
 .contentTitle{
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 50px;
 	padding-bottom: 10px;
-	border-bottom: 2px solid #91afc3;
-	overflow: hidden;
 }
-.contentTitle > .tText{
-	float:left;
-	padding-top: 25px;
-}
-.contentTitle > .tText > .shortLine{
-	width: 35px;
-	height: 3px;
-	background: #6e6e6e;
-	margin-bottom: 5px;
-}
-.contentTitle > .tText > p{
-	font-size: 20px;
-	font-weight: bold;
-	color: #6e6e6e;
-	/* font-family: sans-serif; */
-}
-
-.contentTitle > .tLogo{
-	float:right;
-	width: 70px;
-} 
-.contentTitle > .tLogo > img{
+.contentTitle > table{
 	width: 100%;
+}
+.contentTitle > table tr{
+	width: 100%;
+}
+.contentTitle > table tr > td{
+	width: 25%;
+	text-align: center;
+	padding: 20px 0;
+	border: 1px solid #4f4f4f;
+} 
+.contentTitle > table tr:nth-child(1) > td:nth-child(4){
+	background: #4f4f4f;
+}
+.contentTitle > table tr > td > a{
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+.contentTitle > table tr:nth-child(1) > td:nth-child(4) > a{
+	color: #fff;
+	font-weight: bold;
 }
 .content{
 	width: 100%;
@@ -295,34 +251,22 @@ $(document).ready(function(){
 			</div> 
 			<div class="sectionContent">
 				<jsp:include page="../include/quickMenu.jsp"></jsp:include>
-				<div class="leftMenu">
-					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">04</h2>
-					<h2>오시는 길</h2>
-					<div class="line"></div> 
-					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_05">05. 공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_06">06. 언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_07">07. 비용공지</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_08">08. 상담문의</a></li>
-					</ul>
-					<div class="hosInfo">
-						<img src="${pageContext.request.contextPath}/resources/images/leftMenuInfo.png">
-					</div>
-				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
-						<div class="tText">
-							<div class="shortLine"></div>
-							<p>오시는 길</p> 
-						</div>
-						<div class="tLogo">
-							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
-						</div>
+						<table>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu01_01">의료진소개</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_02">직원소개</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_03">병원둘러보기</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_04">오시는길</a></td>
+							</tr>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_07">비급여</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></td>
+							</tr>
+						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<div class="timeWrap">

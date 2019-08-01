@@ -27,7 +27,7 @@
 .header_top{
 	width:100%;
 	height:20px;
-	background: #276f90;
+	background: #5ac2cb;
 }
 .mg_top_135{
 	height:120px;
@@ -45,142 +45,50 @@
 .sectionContent{
 	width: 1100px;
 	margin: 0 auto;
-	overflow: hidden;
-}
-.sectionContent > .leftMenu{
-	float: left;
-	width: 233px;
-	background: #1f9ae0;
-	padding: 20px 0px;
-}
-.leftMenu > .line{
-	width: 100px;
-	height:3px;
-	background: #eaeaea;
-	margin: 50px 0;
-	margin-left: 35px;
-}
-.leftMenu > h2{
-	color: #fff;
-	font-weight: bold;
-	font-family: sans-serif;
-	padding-left: 35px;
-}
-.leftMenu > ul{
-	padding-left: 35px;
-}
-.leftMenu > ul > li{
-	padding: 13px 0;
-}
-.leftMenu > ul > li > a{
-	color: #fff;
-	font-size: 18px;
-	font-family: sans-serif;
-}
-.leftMenu > ul > li:nth-child(2) > a{
-	font-weight: bold;
-}
-.leftMenu > .hosInfo{
-	width: 100%;
-	margin-top: 50px;
-}
-.leftMenu > .hosInfo > img{
-	width: 100%;
 }
 
 
 .contentWrap{
-	width: 820px;
-	float:left;
+	width: 100%;
 	padding: 20px 10px;
 }
 .contentTitle{
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 50px;
 	padding-bottom: 10px;
-	border-bottom: 2px solid #91afc3;
-	overflow: hidden;
 }
-.contentTitle > .tText{
-	float:left;
-	padding-top: 25px;
+.contentTitle > table{
+	width: 100%;
 }
-.contentTitle > .tText > .shortLine{
-	width: 35px;
-	height: 3px;
-	background: #6e6e6e;
-	margin-bottom: 5px;
+.contentTitle > table tr{
+	width: 100%;
 }
-.contentTitle > .tText > p{
+.contentTitle > table tr > td{
+	width: 25%;
+	text-align: center;
+	padding: 20px 0;
+	border: 1px solid #4f4f4f;
+} 
+.contentTitle > table tr:nth-child(1) > td:nth-child(2){
+	background: #4f4f4f;
+}
+.contentTitle > table tr > td > a{
 	font-size: 20px;
+	letter-spacing: 1px;
+}
+.contentTitle > table tr:nth-child(1) > td:nth-child(2) > a{
+	color: #fff;
 	font-weight: bold;
-	color: #6e6e6e;
-	/* font-family: sans-serif; */
 }
 
-.contentTitle > .tLogo{
-	float:right;
-	width: 70px;
-} 
-.contentTitle > .tLogo > img{
-	width: 100%;
-}
+
 .content{
 	width: 100%;
-}
-.empWrap{
-	width: 720px;
-	margin: 20px auto;
-	margin-bottom: 50px;
-	overflow: hidden;
-}
-.empWrap > .empImg{
-	float: left;
-	width: 195px;
-}
-.empWrap > .empImg > img{
-	width: 100%;
-	border: 1px solid lightgray;
-	border-radius: 5px;
-	margin-bottom: 15px;
-}
-.empWrap > .empImg > p{
-	width: 100%;
-	font-size: 18px;
 	text-align: center;
 }
-.empWrap > .empCareer{
-	float: right;
-	width: 485px;
-}
-.empCareer > .ecTitle{
-	width: 100%;
-	overflow: hidden;
-}
-.empCareer > .ecTitle > h3{
-	float: left;
-	font-size: 23px;
-	font-family: sans-serif;
-}
-.empCareer > .ecTitle > .bline{
-	float:left;
-	width: 200px; 
-	height: 2px;
-	background: #333333;
-	margin: 15px 0 15px 10px;
-}
-.empCareer > ul{
-	margin: 20px 0;
-}
-.empCareer > ul > li{
-	font-size: 16px;
-	padding: 5px; 
-}
-.fix_img{
-	width: 72%;
-	display: block;
-	margin: 0 auto;
+.content > img{
+	width: 90%;
 }
 
 
@@ -188,7 +96,7 @@
 	width: 100%;
 	height: 70px;
 	background: #393939;
-} 
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -210,147 +118,25 @@ $(document).ready(function(){
 			</div> 
 			<div class="sectionContent">
 				<jsp:include page="../include/quickMenu.jsp"></jsp:include>
-				<div class="leftMenu">
-					<div class="line"></div>
-					<h2 style="margin-bottom: 20px;">02</h2>
-					<h2>직원소개</h2>
-					<div class="line"></div> 
-					<ul>
-						<li><a href="${pageContext.request.contextPath}/menu01_01">01. 의료진소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_02">02. 직원소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_03">03. 병원둘러보기</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_04">04. 오시는 길</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_05">05. 공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_06">06. 언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_07">07. 비용공지</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_08">08. 상담문의</a></li>
-					</ul>
-					<div class="hosInfo">
-						<img src="${pageContext.request.contextPath}/resources/images/leftMenuInfo.png">
-					</div>
-				</div><!-- leftMenu end -->
 				<div class="contentWrap">
 					<div class="contentTitle">
-						<div class="tText">
-							<div class="shortLine"></div>
-							<p>직원소개</p> 
-						</div>
-						<div class="tLogo">
-							<img src="${pageContext.request.contextPath}/resources/images/tlogo2.png">
-						</div>
+						<table>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu01_01">의료진소개</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_02">직원소개</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_03">병원둘러보기</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_04">오시는길</a></td>
+							</tr>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_07">비급여</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></td>
+							</tr>
+						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="empWrap">
-							<div class="empImg">
-								<img src="${pageContext.request.contextPath}/resources/images/therapist1.jpg">
-								<p><b>김종혁</b> 물리치료사</p>
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>주요약력</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대구보건대학 물리치료과 전문학사</li>
-									<li>- &nbsp;Pre Med Training School asistant instructor</li>
-									<li>- &nbsp;PMT Spine contrology course 수료</li>
-									<li>- &nbsp;PMT Rehab specialist course 수료</li>
-									<li>- &nbsp;PMT Weight training specialist course 수료</li>
-									<li>- &nbsp;Kaltenborn-Evjenth OMT(독일정형도수치료) 정회원</li>
-									<li>- &nbsp;International Schroth 3Dscoliosis(측만증) Therapy, Korea-part1 이수</li>
-									<li>- &nbsp;MTT-International Medical Training Therapy(의학적 운동처방) 수료</li>
-									<li>- &nbsp;Soft tissue&Nerve Mobilization Techniques(KCI) 수료</li>
-									<li>- &nbsp;The Redcord Education program-Neurac 1 이수</li>
-									<li>- &nbsp;운동처방사 1급, 스포츠 테이핑 1급</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
-						<div class="empWrap">
-							<div class="empImg">
-								<img src="${pageContext.request.contextPath}/resources/images/therapist5.jpg">
-								<p><b>이민기</b> 물리치료사</p>
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>주요약력</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대구과학대학교 물리치료과 전문학사</li>
-									<li>- &nbsp;영남이공대학교 물리치료과 학사</li>
-									<li>- &nbsp;DGMM-FAC certified Manual Therapist(독일인증 도수치료사)</li>
-									<li>- &nbsp;대한기능도수치료학회(FMT) - 240시간 이수</li>
-									<li>- &nbsp;Pre Med Training school(Spine Contrology) - 카이로프래틱 수료</li>
-									<li>- &nbsp;International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</li>
-									<li>- &nbsp;KEMA-Advanced course 수료</li>
-									<li>- &nbsp;필라테스지도자 자격증 - 사단법인 한국스포츠인재개발</li>
-									<li>- &nbsp;국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
-						<div class="empWrap">
-							<div class="empImg">
-								<img src="${pageContext.request.contextPath}/resources/images/therapist2.jpg">
-								<p><b>박수용</b> 물리치료사</p>
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>주요약력</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대구대학교 물리치료학과 학사</li>
-									<li>- &nbsp;Pre Med Training school Rehab specialist Upper, Lower part 수료</li>
-									<li>- &nbsp;Korea Nerve Entrapment Syndrome Society 수료</li>
-									<li>- &nbsp;KAOMPT 정회원</li>
-									<li>- &nbsp;Kaltenborm-Evjenth OMT(독일정형도수치료) 정회원</li>
-									<li>- &nbsp;국민체육진흥공단 생활스포츠지도자 2급(보디빌딩)</li>
-									<li>- &nbsp;더 필라테스 재활 교육협회-The Pilates Instructor Course 수료</li>
-									<li>- &nbsp;중소기업청 맞춤형 건강 전문가과정 수료</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
-						<div class="empWrap">
-							<div class="empImg">
-								<img src="${pageContext.request.contextPath}/resources/images/therapist4.jpg">
-								<p><b>손민지</b> 물리치료사</p>
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>주요약력</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;대구보건대학교 물리치료과 전문학사</li>
-									<li>- &nbsp;대구보건대학교 물리치료과 학사</li>
-									<li>- &nbsp;Pre Med Training school(Spine Contrology)-카이로프래틱 수료</li>
-									<li>- &nbsp;PMT Rehab specialist Lower part 이수</li>
-									<li>- &nbsp;PMT pilates specialist Upper, Lower 수료</li>
-									<li>- &nbsp;International Schroth 3D scoliosis(측만증) Therapy, Korea-part1 이수</li>
-									<li>- &nbsp;The Redcord Education program-Neurac 1 이수</li>
-									<li>- &nbsp;STM(Soft Tissue Mobilization Technic) level 1 이수</li>
-									<li>- &nbsp;더 필라테스 재활 교육협회-The Pilates Instructor Course 수료</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
-						<div class="empWrap">
-							<div class="empImg">
-								<img src="${pageContext.request.contextPath}/resources/images/therapist3.jpg">
-								<p><b>서대원</b> 물리치료사</p>
-							</div>
-							<div class="empCareer">
-								<div class="ecTitle">
-									<h3>주요약력</h3>
-									<div class="bline"></div>
-								</div>
-								<ul>
-									<li>- &nbsp;호산대학교 물리치료과 전문학사</li>
-									<li>- &nbsp;호산대학교 물리치료과 학사</li>
-									<li>- &nbsp;The Redcord Education program-Neurac 1 이수</li>
-									<li>- &nbsp;임상 발란스 테이핑 물리치료학회 - Part 1, 3 이수</li>
-								</ul>
-							</div><!-- empCareer end -->
-						</div><!-- empWrap end -->
+						<img src="${pageContext.request.contextPath}/resources/images/menu01_2img.png">
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->
