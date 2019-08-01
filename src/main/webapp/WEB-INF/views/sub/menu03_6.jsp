@@ -61,24 +61,26 @@
 	margin-bottom: 50px;
 	padding-bottom: 10px;
 }
-.contentTitle > ul{
+.contentTitle > table{
 	width: 100%;
-	overflow: hidden;
 }
-.contentTitle > ul > li{
+.contentTitle > table tr{
+	width: 100%;
+}
+.contentTitle > table tr > td{
 	width: 25%;
-	float:left;
-	border: 1px solid #4f4f4f;
 	text-align: center;
 	padding: 20px 0;
+	border: 1px solid #4f4f4f;
 } 
-.contentTitle > ul > li:nth-child(1){
+.contentTitle > table tr:nth-child(2) > td:nth-child(3){
 	background: #4f4f4f;
 }
-.contentTitle > ul > li > a{
+.contentTitle > table tr > td > a{
 	font-size: 20px;
+	letter-spacing: 1px;
 }
-.contentTitle > ul > li:nth-child(1) > a{
+.contentTitle > table tr:nth-child(2) > td:nth-child(3) > a{
 	color: #fff;
 	font-weight: bold;
 }
@@ -121,7 +123,18 @@ $(document).ready(function(){
 				<jsp:include page="../include/quickMenu.jsp"></jsp:include>
 				<div class="contentWrap">
 					<div class="contentTitle">
-						
+						<table>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu03_01">재활도수치료</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_02">충격파치료</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_03">측만증</a></td>
+							</tr>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/menu03_04">스포츠재활</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_05">수술후재활</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu03_06">산전/산후재활</a></td>
+							</tr>
+						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<img src="${pageContext.request.contextPath}/resources/images/menu03_6img.jpg">
