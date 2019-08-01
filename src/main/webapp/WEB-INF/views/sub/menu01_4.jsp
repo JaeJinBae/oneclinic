@@ -84,6 +84,10 @@
 }
 .content{
 	width: 100%;
+	text-align: center;
+}
+.content > img{
+	width: 90%;
 }
 .timeWrap{
 	width: 95%;
@@ -269,7 +273,8 @@ $(document).ready(function(){
 						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="timeWrap">
+						<img src="${pageContext.request.contextPath}/resources/images/menu01_4img.jpg">
+						<%-- <div class="timeWrap">
 							<div class="timeTitle">
 								<h4>진료시간</h4>
 								<img src="${pageContext.request.contextPath}/resources/images/icon_clock.png">
@@ -404,7 +409,7 @@ $(document).ready(function(){
 									</tr>
 								</table>
 							</div>
-						</div>
+						</div> --%>
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->

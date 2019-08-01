@@ -216,7 +216,7 @@ $(document).ready(function(){
 							<table>
 								<tr>
 									<th>제목</th>
-									<td colspan="5">
+									<td colspan="7">
 										<c:if test="${item.pwtype eq 'o'}">
 											<img style="width:15px;" src="${pageContext.request.contextPath}/resources/images/lock1.png">
 										</c:if>
@@ -226,6 +226,8 @@ $(document).ready(function(){
 								<tr>
 									<th>작성자</th>
 									<td>${item.writer}</td>
+									<th>연락처</th>
+									<td>${item.phone}</td>
 									<th>등록일</th>
 									<td>${item.regdate}</td>
 									<th>조회</th>

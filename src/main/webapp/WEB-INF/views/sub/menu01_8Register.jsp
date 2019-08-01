@@ -138,6 +138,10 @@
 .tblWrap > table tr > td > label:nth-child(2) > input{
 	margin-left:5px;
 }
+.tblWrap > table tr > td > select{
+	font-size: 15px;
+	padding: 2px 5px;
+}
 .tblWrap > table tr > td > textarea{
 	width: 100%;
 	height:350px;
@@ -178,14 +182,40 @@
 } 
 </style>
 <script>
-function adviceRegister(vo){
-	console.log(vo);
+function inputPhoneNumber(obj) {
+	var number = obj.value.replace(/[^0-9]/g, "");
+	var phone = "";
+	
+	if(number.length < 4) {
+		return number;
+	} else if(number.length < 7) {
+		phone += number.substr(0, 3);
+		phone += "-";
+		phone += number.substr(3);
+	} else if(number.length < 11) {
+		phone += number.substr(0, 3);
+		phone += "-";
+		phone += number.substr(3, 3);
+		phone += "-";
+		phone += number.substr(6);
+	} else {
+		phone += number.substr(0, 3);
+		phone += "-";
+		phone += number.substr(3, 4);
+		phone += "-";
+		phone += number.substr(7);
+	}
+	obj.value = phone;
+}
+
+function post_adviceRegister(info){
 	$.ajax({
 		url:"${pageContext.request.contextPath}/adviceRegister",
-		type:"post",
-		dataType:"text",
-		data:vo,
+		type: "post",
+		data:JSON.stringify(info),
 		async:false,
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
 		success:function(json){
 			if(json == "ok"){
 				alert("상담문의 등록이 완료되었습니다.");
@@ -204,33 +234,59 @@ function adviceRegister(vo){
 $(document).ready(function(){
 	
 	$(".btnWrap > p:nth-child(1)").click(function(){
-		var title = $(".tblWrap > table tr > td > input[name='title']").val();
-		var writer = $(".tblWrap > table tr > td > input[name='writer']").val();
-		var pw = $(".tblWrap > table tr > td > input[name='pw']").val();
-		var pwtype = $(".tblWrap > table tr > td > label > input[name='pwtype']:checked").val();
-		var content = $(".tblWrap > table tr > td > textarea").val();
+		var title = $(".tblWrap > table tr:nth-child(1) > td > input[name='title']").val();
+		var name = $(".tblWrap > table tr:nth-child(2) > td > input[name='writer']").val();
+		var phone = $(".tblWrap > table tr:nth-child(2) > td > input[name='phone']").val();
+		var replyType = $(".tblWrap > table tr:nth-child(2) > td > select[name='replyType']").val();
+		var replyTime = $(".tblWrap > table tr:nth-child(2) > td > input[name='replyTime']").val();
+		var pwType = $(".tblWrap > table tr:nth-child(2) > td > select[name='pwType']").val();
+		var pw = $(".tblWrap > table tr:nth-child(2) > td > input[name='pw']").val();
+		var content = $(".tblWrap > table tr:nth-child(3) > td > textarea[name='content']").val();
+		
+		if(title == ""){
+			alert("제목을 입력해주세요.");
+			return false;
+		}
+		if(name == ""){
+			alert("이름을 입력해주세요.");
+			return false;
+		}
+		if(phone == ""){
+			alert("연락처를 입력해주세요.");
+			return false;
+		}
+		if(pwType == "n"){
+			alert("공개여부를 선택해주세요.");
+			return false;
+		}else if(pwType == "o"){
+			if(pw == ""){
+				alert("비공개를 원하는 경우 비밀번호를 입력해주세요.");
+				return false;
+			}
+		}else if(pwType == "x"){
+			pw = "x";
+		}
+		if(replyType == "n"){
+			alert("답변방법을 선택해주세요.");
+			return false;
+		}
+		if(replyTime == ""){
+			replyTime = "미입력";
+		}
+		if(content == ""){
+			alert("문의내용을 입력해주세요.");
+			return false;
+		}
+		
 		var ndate = new Date();
 		var year = ndate.getFullYear();
 		var month = ndate.getMonth();
 		var date = ndate.getDate();
 		var regdate = year+"-"+((month>9?'':"0")+month)+"-"+((date>9?'':"0")+date);
 		
-		if(title == ""){
-			alert("제목을 입력해 주세요.");
-			return false;
-		}
-		if(writer == ""){
-			alert("작성자를 입력해 주세요.");
-			return false;
-		}
-		if(pwtype == "o"){
-			if(pw == ""){
-				alert("비공개 선택시 비밀번호를 입력해주세요.");
-				return false;
-			}
-		}
-		var vo = {no:0, title:title, content:content, writer:writer, regdate:regdate, cnt:0, pwtype:pwtype, pw:pw, reply:""};
-		adviceRegister(vo);
+		var info = {title:title, writer:name, phone:phone, replyType:replyType, replyTime:replyTime, pwType:pwType, pw:pw, content:content, regdate:regdate};
+		
+		post_adviceRegister(info);
 	});
 });
 </script>
@@ -270,22 +326,37 @@ $(document).ready(function(){
 							<table>
 								<tr>
 									<th>제목</th>
-									<td colspan="5"><input type="text" name="title"></td>
+									<td colspan="6"><input type="text" name="title"></td>
 								</tr>
 								<tr>
-									<th>작성자</th>
-									<td><input type="text" name="writer"></td>
-									<th>공개</th>
+									<th>정보</th>
+									<td><input type="text" name="writer" placeholder="작성자"></td>
+									<td><input type="text" name="phone" value="" placeholder="연락처" onKeyup="inputPhoneNumber(this);" maxlength="13" autocomplete="off"></td>
 									<td>
-										<label><input type="radio" name="pwtype" value="x">공개</label>
-										<label><input type="radio" name="pwtype" value="o" checked>비공개</label>
+										<select name="pwType">
+											<option value="n">공개여부</option>
+											<option value="x">공개</option>
+											<option value="o">비공개</option>
+										</select>
 									</td>
-									<th>비밀번호</th>
-									<td><input type="text" name="pw"></td>
+									<td>
+										<input type="password" name="pw" placeholder="비밀번호" autocomplete="off">
+									</td>
+									<td>
+										<select name="replyType">
+											<option value="n">답변방법</option>
+											<option value="sms">문자</option>
+											<option value="call">전화</option>
+											<option value="all">상관없음</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" name="replyTime" value="" placeholder="연락가능 시간" autocomplete="off">
+									</td>
 								</tr>
 								<tr>
 									<th>내용</th>
-									<td colspan="5">
+									<td colspan="6"> 
 										<textarea></textarea>
 									</td>
 								</tr>
