@@ -683,6 +683,10 @@ $(function(){
 		centerPadding: '50px',
 	});
 	
+	$("#privacyAgreementWrap > span").click(function(){
+		window.open("${pageContext.request.contextPath}/privacy_popup", "_blank", "width=600px,height=700px, scrollbars=auto, resizable=no, directories=no")
+	});
+	
 	$(".submitBtn > p").click(function(){
 		var title = $(".formWrap > table tr:nth-child(1) > td > input[name='title']").val();
 		var name = $(".formWrap > table tr:nth-child(1) > td > input[name='name']").val();

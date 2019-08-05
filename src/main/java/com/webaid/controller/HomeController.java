@@ -102,6 +102,11 @@ public class HomeController {
 			return "main/index";
 		}
 	}
+	
+	@RequestMapping(value="/privacy_popup")
+	public String privacy_popup(){
+		return "sub/privacy_popup";
+	}
 
 	@RequestMapping(value="/menu01_01")
 	public String menu01_1(){
