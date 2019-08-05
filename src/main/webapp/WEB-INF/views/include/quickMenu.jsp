@@ -108,11 +108,11 @@ $(function(){
 	<p>Quick<br>Menu</p>
 	<ul>
 		<li>
-			<p><img src="${pageContext.request.contextPath}/resources/images/icon_call.png"></p>
+			<p><img src="${pageContext.request.contextPath}/resources/images/icon_q_phone.png"></p>
 			<p>전화문의</p>
 			<h5>053.269.7575</h5>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/menu01_08"><img src="${pageContext.request.contextPath}/resources/images/icon_chat.png">상담문의</a></li>
+		<li><a href="${pageContext.request.contextPath}/menu01_08"><img src="${pageContext.request.contextPath}/resources/images/icon_q_phone.png">상담문의</a></li>
 		<li><a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/icon_location.png">오시는길</a></li>
 		<li><a href="${pageContext.request.contextPath}/menu01_07"><img src="${pageContext.request.contextPath}/resources/images/icon_hand.png">비급여</a></li>
 		<li><a href="${pageContext.request.contextPath}/menu01_05"><img src="${pageContext.request.contextPath}/resources/images/icon_speaker.png">공지사항</a></li>
