@@ -12,6 +12,9 @@
 <style>
 	.allWrap{
 		width: 100%;
+		height: 680px;
+		overflow: scroll;
+		overflow-x: hidden;
 	}
 	.titleWrap{
 		width: 100%;
@@ -24,7 +27,7 @@
 	.titleWrap > h4 > span{
 		background: #277fd1;
 		color: #fff;
-		padding: 0 15px;
+		padding: 10px 15px;
 		border-radius: 5px;
 	}
 	.contentWrap{
@@ -41,7 +44,7 @@
 <body>
 	<div class="allWrap">
 		<div class="titleWrap">
-			<h4><span>개인정보취급방침</span></h4>
+			<h4><span> 개인정보취급방침</span></h4>
 		</div>
 		<div class="contentWrap">
 			<div class="content">

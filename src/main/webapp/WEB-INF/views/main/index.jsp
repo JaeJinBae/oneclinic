@@ -684,7 +684,7 @@ $(function(){
 	});
 	
 	$("#privacyAgreementWrap > span").click(function(){
-		window.open("${pageContext.request.contextPath}/privacy_popup", "_blank", "width=600px,height=700px, scrollbars=auto, resizable=no, directories=no")
+		window.open("${pageContext.request.contextPath}/privacy_popup", "_blank", "width=600px, height=700px, scrollbars=no, resizable=no, directories=no")
 	});
 	
 	$(".submitBtn > p").click(function(){
@@ -696,6 +696,7 @@ $(function(){
 		var pwType = $(".formWrap > table tr:nth-child(2) > td > select[name='pwType']").val();
 		var pw = $(".formWrap > table tr:nth-child(2) > td > input[name='pw']").val();
 		var content = $(".formWrap > table tr:nth-child(3) > td > textarea[name='content']").val();
+		var privacyState = $("#privacyAgreementWrap > label > input").prop("checked");
 		
 		if(title == ""){
 			alert("제목을 입력해주세요.");
@@ -729,6 +730,10 @@ $(function(){
 		}
 		if(content == ""){
 			alert("문의내용을 입력해주세요.");
+			return false;
+		}
+		if(privacyState == false){
+			alert("개인정보제공에 동의해야 상담등록이 진행됩니다.");
 			return false;
 		}
 		
@@ -816,7 +821,7 @@ $(function(){
 											    </c:when>
 											    <c:otherwise>
 											        <c:forEach var="item" items="${noticeList}">
-														<li>${item.regdate} <a href="${pageContext.request.contextPath}/noticeRead?no=${item.no}">${item.title}</a></li>
+														<li>${item.regdate} <a href="${pageContext.request.contextPath}/menu01_05Read?no=${item.no}">${item.title}</a></li>
 													</c:forEach>
 												</c:otherwise> 
 											</c:choose> 
