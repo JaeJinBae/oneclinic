@@ -200,7 +200,7 @@
 	font-size: 26px;
 	color: #fff;
 	padding: 15px 0;
-	text-shadow: 2px 2px 2px gray;
+	text-shadow: 2px 2px 1px #444;
 }
 .boxWrap1 > .box1:nth-child(1) > h4{
 	background: url("${pageContext.request.contextPath}/resources/images/mainLoc.jpg") no-repeat;
@@ -295,7 +295,7 @@
 	font-size: 26px;
 	color: #fff;
 	padding: 15px 0;
-	text-shadow: 2px 2px 2px gray;
+	text-shadow: 2px 2px 1px #444;
 	background: url("${pageContext.request.contextPath}/resources/images/mainNotice.jpg") no-repeat;
 	background-size: cover;
 }
@@ -423,14 +423,20 @@
 	width: 100%;
 }
 .submitBtn > p{
-	width: 120px;
+	width: 155px;
 	text-align: center;
 	margin: 0 auto;
 	font-size: 18px;
 	color: #fff;
-	background: #20b466;
 	padding: 8px 0;
 	cursor: pointer;
+	background: url("${pageContext.request.contextPath}/resources/images/mainSubmitBtnBg.jpg");
+	background-position: center;
+}
+.submitBtn > p > img{
+	width: 25px;
+	padding-left: 5px;
+	vertical-align: middle;
 }
 .box2_1_bottom > .b2b_img{
 	width: 30%;
@@ -454,7 +460,7 @@
 	font-size: 26px;
 	color: #fff;
 	padding: 15px 0;
-	text-shadow: 2px 2px 2px gray;
+	text-shadow: 2px 2px 1px #444;
 	background: url("${pageContext.request.contextPath}/resources/images/mainTime.jpg") no-repeat;
 	background-size: cover;
 }
@@ -677,7 +683,7 @@ $(function(){
 		centerPadding: '50px',
 	});
 	
-	$(".submitBtn").click(function(){
+	$(".submitBtn > p").click(function(){
 		var title = $(".formWrap > table tr:nth-child(1) > td > input[name='title']").val();
 		var name = $(".formWrap > table tr:nth-child(1) > td > input[name='name']").val();
 		var phone = $(".formWrap > table tr:nth-child(1) > td > input[name='phone']").val();
@@ -858,7 +864,7 @@ $(function(){
 										</table>
 										<p id="privacyAgreementWrap"><label><input type="checkbox" value="">개인정보제공에 동의합니다.</label><span>[자세히]</span></p>
 										<div class="submitBtn">
-											<p>상담문의하기</p>
+											<p>상담문의하기<img src="${pageContext.request.contextPath}/resources/images/icon_arrow.png"></p>
 										</div>
 									</div>
 								</div>
