@@ -27,7 +27,7 @@
 }
 .quickMenu > ul > li{
 	width: 100%;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid #019ead;
 	padding: 15px 0px;
 	text-align: center;
 }
