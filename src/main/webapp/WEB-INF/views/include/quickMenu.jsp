@@ -82,7 +82,7 @@
 	background: #fff;
 	color: #019ead;
 	font-weight: bold;
-	border-radius: 5px;
+	border-radius: 3px;
 	text-align: center;
 }
 
