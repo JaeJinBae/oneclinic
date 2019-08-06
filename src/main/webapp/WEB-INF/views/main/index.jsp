@@ -581,7 +581,7 @@ textarea::placeholder {
 }
 .cooperationWrap > .cooContent > span{
 	display: inline-block;
-	width: 150px;
+	width: 85px;
 	margin-left: 100px;
 	font-size: 25px;
 	font-weight: bold;

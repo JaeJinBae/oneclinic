@@ -5,7 +5,7 @@
 	position: fixed;
 	top: 120px;
 	right: 0px;
-	width: 150px;
+	width: 155px;
 	overflow: hidden;
 }
 .quickMenu > p{
@@ -20,7 +20,7 @@
 	border: 1px solid lightgray;
 }
 .quickMenu > ul{
-	width: 150px;
+	width: 100%;
 	float: right;
 	background: #fff;
 	border-left: 1px solid #efefef;
@@ -58,8 +58,9 @@
 	padding-bottom: 5px;
 }
 .quickMenu > ul > li:first-child > ul{
-	width: 95%;
+	/* width: 95%; */
 	margin: 0 auto;
+	padding-left: 7px;
 }
 .quickMenu > ul > li:first-child > ul > li{
 	width: 100%;
@@ -90,7 +91,13 @@
 	font-weight: bold;
 	cursor: pointer;
 	font-size: 20px;
-	color: #5c9bb8;
+	color: #333333;
+}
+.quickMenu > ul > li:last-child > img{
+	display: block;
+	width: 23px;
+	margin: 0 auto;
+	margin-bottom: 5px;
 }
 
 .quickMenuActive{
@@ -109,7 +116,6 @@
 <script>
 $(function(){
     $(".quickMenu > ul > li:last-child").click(function(){
-    	console.log($("html").offset());
     	$("html").animate({scrollTop:$("html").offset().top}, 400);
     });
 });
@@ -133,6 +139,6 @@ $(function(){
 		<li><a href="${pageContext.request.contextPath}/menu01_04"><img src="${pageContext.request.contextPath}/resources/images/icon_q_map.png"><br>오시는길</a></li>
 		<li><a href="${pageContext.request.contextPath}/menu01_08"><img src="${pageContext.request.contextPath}/resources/images/icon_q_conversation.png"><br>1:1 맞춤상담</a></li>
 		<li><a href="${pageContext.request.contextPath}/menu01_05"><img src="${pageContext.request.contextPath}/resources/images/icon_q_speaker.png"><br>공지사항</a></li>
-		<li>▲<br>TOP</li>
+		<li><img src="${pageContext.request.contextPath}/resources/images/icon_arrow_top.png">TOP</li>
 	</ul>
 </div>
