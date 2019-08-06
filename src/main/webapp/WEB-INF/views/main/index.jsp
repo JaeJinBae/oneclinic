@@ -400,6 +400,24 @@
 	padding: 5px;
 	border: 1px solid lightgray;
 }
+ input::-webkit-input-placeholder {
+	color: #aaaaaa;
+} 
+input:-ms-input-placeholder {
+	color: #aaaaaa;
+}
+textarea::-webkit-input-placeholder {
+	color: #aaaaaa;
+}
+textarea:-ms-input-placeholder {
+	color: #aaaaaa;
+}
+input::placeholder {
+	color: #aaaaaa;
+}
+textarea::placeholder {
+	color: #aaaaaa;
+}
 #privacyAgreementWrap{
 	font-size: 15px;
 	padding-left: 10px;
@@ -845,7 +863,7 @@ $(function(){
 										<table>
 											<tr>
 												<td>
-													<input type="text" name="title" placeholder="제목">
+													<input type="text" name="title" placeholder="불편한 곳은 어디신가요?">
 													<input type="text" name="name" value="" placeholder="이름" autocomplete="off">
 													<input type="text" name="phone" value="" placeholder="연락처" onKeyup="inputPhoneNumber(this);" maxlength="13" autocomplete="off">
 												</td>
@@ -869,7 +887,7 @@ $(function(){
 												</td>
 											</tr>
 											<tr>
-												<td colspan="5"><textarea name="content"></textarea></td>
+												<td colspan="5"><textarea name="content" placeholder="증상을 상세히 기입해주세요."></textarea></td>
 											</tr>
 										</table>
 										<p id="privacyAgreementWrap"><label><input type="checkbox" value="">개인정보제공에 동의합니다.</label><span>[자세히]</span></p>
