@@ -120,9 +120,9 @@
 		width: 33.33%;
 		float: left;
 		text-align: center;
-		margin: 10px 0;
-		padding: 3px 0;
-		font-size: 18px;
+		margin: 8px 0;
+		padding: 3px 0; 
+		font-size: 15px;
 	}
 	.shortMenuWrap > ul > li:nth-child(2){
 		border-left: 2px solid #fff;

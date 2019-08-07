@@ -14,22 +14,16 @@
 <style>
 .allWrap{
 	width:100%;
-	background: #f2f6f8;
 	position: relative;
-	padding-top: 131px;
+	padding-top: 114px;
 }
 .headerWrap{
 	width:100%;
-	height: 132px;
 	position: fixed;
 	top:0;
 	z-index: 99;
 }
-.header_top{
-	width: 100%;
-	height: 20px;
-	background: #276f90;
-}
+
 
 .sectionWrap{
 	width:100%;
@@ -46,97 +40,47 @@
 	padding: 10px 5px;
 }
 .contentTitle{
-	width: 99%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 50px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid #91afc3;
-	overflow: hidden;
 }
-.contentTitle > .tText{
-	float:left;
-	padding-top: 25px;
-}
-.contentTitle > .tText > .shortLine{
-	width: 30px;
-	height: 3px;
-	background: #6e6e6e;
-	margin-bottom: 5px;
-}
-.contentTitle > .tText > p{
-	font-size: 18px;
-	font-weight: bold;
-	color: #6e6e6e;
-	/* font-family: sans-serif; */
-}
-
-.contentTitle > .tLogo{
-	float:right;
-	width: 70px;
-} 
-.contentTitle > .tLogo > img{
+.contentTitle > table{
 	width: 100%;
+}
+.contentTitle > table tr{
+	width: 100%;
+}
+.contentTitle > table tr > td{
+	width: 25%;
+	text-align: center;
+	padding: 10px 0;
+	border: 1px solid #4f4f4f;
+} 
+.contentTitle > table tr:nth-child(1) > td:nth-child(1){
+	background: #4f4f4f;
+}
+.contentTitle > table tr > td > a{
+	font-size: 14px;
+}
+.contentTitle > table tr:nth-child(1) > td:nth-child(1) > a{
+	color: #fff;
+	font-weight: bold;
 }
 .content{
 	width: 100%;
-}
-.contentAside1{
-	width: 100%;
 	text-align: center;
-}
-.contentAside1 > img{
-	width: 60%;
-}
-.contentAside1 > p{
-	width: 100%;
-	text-align: center;
-	font-size: 15px;
-}
-.contentAside1 > p > b{
-	font-size: 20px;
-}
-.contentAside2{
-	width: 100%;
-	margin-top: 20px;
-}
-.contentAside2 > .aside2Title{
-	width: 100%;
+	box-shadow: 1px 1px 4px grey;
+	border-radius: 17px;
 	overflow: hidden;
 }
-.contentAside2 > .aside2Title > h3{
-	float: left;
-	font-size: 20px;
-	font-family: sans-serif;
-}
-.contentAside2 > .aside2Title > .bline{
-	float:left;
-	width: 90px; 
-	height: 2px;
-	background: #333333;
-	margin: 15px 22px;
-} 
-.contentAside2 > ul{
-	margin: 15px 0;
-	margin-left: 36px;
-}
-.contentAside2 > ul > li{
-	font-size: 14px;
-	padding: 3px 5px;
-	overflow: hidden; 
-}
-.contentAside2 > ul > li > p{
-	float:left;
-	font-size: 13px;
-}
-.contentAside2 > ul > li > p:nth-child(2){
-	/* width: 210px; */
-	margin-left: 2px;
+.content > img{
+	width: 99%;
 }
 
 
 .footerWrap{
 	width: 100%;
-	height: 70px;
+	height: 90px; 
 	background: #393939;
 } 
 </style>
@@ -155,62 +99,26 @@
 				<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01top.jpg">
 			</div>
 			<div class="contentWrap">
-					<div class="contentTitle">
-						<div class="tText">
-							<div class="shortLine"></div> 
-							<p>의료진소개</p>
-						</div>
-						<div class="tLogo">
-							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">
-						</div>
-					</div><!-- contentTitle end -->
-					<div class="content">
-						<div class="contentAside1">
-							<%-- <img src="${pageContext.request.contextPath}/resources/images/menu01_01img.png"> --%>
-							<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01_01doctorimg.png">
-							<p>마취통증의학과 전문의 <b>한윤진</b> 원장</p>
-						</div>
-						<div class="contentAside2">
-							<div class="aside2Title">
-								<div class="bline"></div>
-								<h3>학회활동</h3>
-								<div class="bline"></div>
-							</div>
-							<ul>
-								<li><p>-</p><p>대한마취통증학회 정회원</p></li>
-								<li><p>-</p><p>대한통증학회 정회원</p></li>
-								<li><p>-</p><p>대한척추통증학회 정회원</p></li>
-								<li><p>-</p><p>대한성장의학회 정회원</p></li>
-								<li><p>-</p><p>대한비만체형학회 정회원</p></li>
-								<li><p>-</p><p>대한임상노인의학회 정회원</p></li>
-								<li><p>-</p><p>대한약물영양의학회 정회원</p></li>
-								<li><p>-</p><p>재활운동학회 프리메드스쿨 자문위원</p></li>
-							</ul>
-							<ul>
-								<li><p>-</p><p>Preventive medical training school 수료</p></li>
-								<li><p>-</p><p>M-puncture 척추-관절 만성통증 치료 전문가 과정 수료</p></li>
-								<li><p>-</p><p>Neural prolotherapy 수료</p></li>
-								<li><p>-</p><p>TPI 교육 이수</p></li>
-								<li><p>-</p><p>중재적 신경블록 교육 이수</p></li>
-							</ul>
-							<ul>
-								<li><p>-</p><p>계명대학교 의과대학교</p></li>
-								<!-- <li><p>-</p><p>가톨릭대학교 중앙의료원 인턴 수료</p> </li>
-								<li><p>-</p><p>가톨릭대학교 중앙의료원 마취통증의학과 레지던트 수료</p></li> -->
-								<li><p>-</p><p>서울 가톨릭대학교 중앙의료원 마취통증의학과 전문의 수료</p></li>
-								<li><p>-</p><p>서울 여의도 성모병원 마취통증의학과 임상교수</p></li>
-								<li><p>-</p><p>통증의학 고위자 과정 이수</p></li>
-							</ul>
-							<ul>
-								<li><p>-</p><p>서울 올림픽병원 마취통증의학과 과장</p></li>
-								<li><p>-</p><p>대전 유성선병원 마취통증의학과 과장</p></li>
-								<li><p>-</p><p>S중앙병원 마취통증의학과 과장</p></li>
-								<li><p>-</p><p>봄길의원 원장</p></li>
-								<li><p>-</p><p>가톨릭대학교 성빈센트 병원 진료교수</p></li>
-							</ul>
-						</div>
-					</div><!-- content end -->
-				</div><!-- contentWrap end -->
+				<div class="contentTitle">
+					<table>
+						<tr>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_01">의료진소개</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_02">직원소개</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_03">병원둘러보기</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_04">오시는길</a></td>
+						</tr>
+						<tr>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_05">공지사항</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_06">언론보도</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_07">비급여</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_08">상담문의</a></td>
+						</tr>
+					</table>
+				</div><!-- contentTitle end -->
+				<div class="content">
+					<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01_1img.png">
+				</div><!-- content end -->
+			</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
 			<jsp:include page="../include/mFooter.jsp"></jsp:include>

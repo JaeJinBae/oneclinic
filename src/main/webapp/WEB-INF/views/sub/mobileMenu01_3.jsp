@@ -17,22 +17,16 @@
 <style>
 .allWrap{
 	width:100%;
-	background: #f2f6f8;
 	position: relative;
-	padding-top: 131px;
+	padding-top: 114px;
 }
 .headerWrap{
 	width:100%;
-	height: 132px;
 	position: fixed;
 	top:0;
 	z-index: 99;
 }
-.header_top{
-	width: 100%;
-	height: 20px;
-	background: #276f90;
-}
+
 
 .sectionWrap{
 	width:100%;
@@ -49,35 +43,31 @@
 	padding: 10px 5px;
 }
 .contentTitle{
-	width: 99%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 50px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid #91afc3;
-	overflow: hidden;
 }
-.contentTitle > .tText{
-	float:left;
-	padding-top: 25px;
-}
-.contentTitle > .tText > .shortLine{
-	width: 30px;
-	height: 3px;
-	background: #6e6e6e;
-	margin-bottom: 5px;
-}
-.contentTitle > .tText > p{
-	font-size: 18px;
-	font-weight: bold;
-	color: #6e6e6e;
-}
-
-.contentTitle > .tLogo{
-	float:right;
-	width: 70px;
-} 
-.contentTitle > .tLogo > img{
+.contentTitle > table{
 	width: 100%;
+}
+.contentTitle > table tr{
+	width: 100%;
+}
+.contentTitle > table tr > td{
+	width: 25%;
+	text-align: center;
+	padding: 10px 0;
+	border: 1px solid #4f4f4f;
+} 
+.contentTitle > table tr:nth-child(1) > td:nth-child(3){
+	background: #4f4f4f;
+}
+.contentTitle > table tr > td > a{
+	font-size: 14px;
+}
+.contentTitle > table tr:nth-child(1) > td:nth-child(3) > a{
+	color: #fff;
+	font-weight: bold;
 }
 .content{
 	width: 100%;
@@ -127,7 +117,7 @@
 
 .footerWrap{
 	width: 100%;
-	height: 80px;
+	height: 90px; 
 	background: #393939;
 } 
 </style>
@@ -155,13 +145,20 @@ $(function(){
 			</div> 
 			<div class="contentWrap">
 					<div class="contentTitle">
-						<div class="tText">
-							<div class="shortLine"></div>
-							<p>병원둘러보기</p> 
-						</div>
-						<div class="tLogo">
-							<img src="${pageContext.request.contextPath}/resources/images/tlogo.png">
-						</div>
+						<table>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_01">의료진소개</a></td>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_02">직원소개</a></td>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_03">병원둘러보기</a></td>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_04">오시는길</a></td>
+							</tr>
+							<tr>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_05">공지사항</a></td>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_06">언론보도</a></td>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_07">비급여</a></td>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_08">상담문의</a></td>
+							</tr>
+						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
 						<div class="slideWrap">
