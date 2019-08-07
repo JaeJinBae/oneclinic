@@ -23,7 +23,65 @@
 	top:0;
 	z-index: 99;
 }
-
+.pw_popupWrap{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	display: none;
+}
+.pw_popupWrap > .popup_bg{
+	width: 100%;
+	height: 2000px;
+	background: #333;
+	opacity: 0.8;
+}
+.pw_popupWrap > .pwpopup{
+	position: fixed;
+	top:30%;
+	left: 0;
+	width: 100%;
+	margin: 0 auto;
+	background: #fff;
+	padding: 15px;
+}
+.pwpopup > h4{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+}
+.pwpopup > p{
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+}
+.pwpopup > ul{
+	width: 100%;
+	margin: 15px 0;
+}
+.pwpopup > ul > li{
+	text-align: center;
+	font-size: 15px;
+}
+.pwpopup > ul > li > input{
+	width: 150px;
+	font-size: 14px;
+	padding: 3px 6px;
+	margin-left: 10px;
+}
+.pwpopup > ul > li > button{
+	font-size: 15px;
+	padding: 5px 10px;
+	color: #fff;
+	margin-top: 10px;
+}
+.pwpopup > ul > li > button:nth-child(1){
+	background: #477a9b;
+	margin-right: 3px;
+}
+.pwpopup > ul > li > button:nth-child(2){
+	background: gray;
+}
 
 .sectionWrap{
 	width:100%;
