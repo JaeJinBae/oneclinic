@@ -446,7 +446,7 @@ textarea::placeholder {
 	margin: 0 auto;
 	font-size: 18px;
 	color: #fff;
-	padding: 8px 0;
+	padding: 8px 0; 
 	cursor: pointer;
 	background: url("${pageContext.request.contextPath}/resources/images/mainSubmitBtnBg.jpg");
 	background-position: center;

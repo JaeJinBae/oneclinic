@@ -5,12 +5,12 @@
 		width: 100%;
 	}
 	.textWrap{
-		width: 310px;
+		width: 100%;
 		margin: 0 auto;
 	}
 	.textWrap > ul{
 		width: 100%;
-		padding-top: 3px;
+		padding-top: 5px;
 		overflow: hidden;
 	}
 	.textWrap > ul > li{

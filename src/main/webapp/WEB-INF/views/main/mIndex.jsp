@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>insert title here</title>
+<title>원마취통증의학과</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
@@ -22,20 +22,15 @@
 	width:100%;
 	background: #f2f6f8;
 	position: relative;
-	padding-top: 131px;
+	padding-top: 122px;
 }
 .headerWrap{
 	width:100%;
-	height: 132px;
 	position: fixed;
 	top:0;
 	z-index: 99;
 }
-.header_top{
-	width: 100%;
-	height: 20px;
-	background: #276f90;
-}
+
 
 .sectionWrap{
 	width:100%;
@@ -70,9 +65,11 @@
 }
 .mainBannerWrap{
 	width: 100%;
+	padding: 5px;
 }
 .mainBanner{
 	width: 100%;
+	box-shadow: 1px 1px 5px 1px gray;
 }
 .mainBanner > img{
 	width: 100%;
@@ -86,20 +83,16 @@
 .boxWrap{
 	width: 100%;
 	overflow: hidden;
-	padding: 10px 5px;
 }
 .box{
-	float:left;
-	border:1px solid lightgray;
-	border-radius: 13px;
-	width: 49%;
+	width: 100%;
+	padding: 0 5px;
 }
 .box > a{
 	width: 100%;
 }
 .box > a > img{
 	width: 100%;
-	border-radius: 10px;
 }
 .box1{
 	width: 100%;
@@ -109,18 +102,218 @@
 	border-radius: 5px;
 }
 .box2{
-	margin: 0 1.6px;
+	width: 100%;
+}
+.box2 > .b2b_content{
+	width: 100%;
+	background: url("${pageContext.request.contextPath}/resources/images/mainSangdam.jpg") no-repeat;
+	background-size: cover;
+}
+.box2 > .b2b_content > .b2b_c_title{
+	width: 100%;
+	padding: 15px 6px;
+	overflow: hidden;
+}
+.box2 > .b2b_content > .b2b_c_title > .b2b_c_title_img{
+	width: 65px;
+	float: left;
+}
+.box2 > .b2b_content > .b2b_c_title > .b2b_c_title_img > img{
+	width: 100%;
+}
+.box2 > .b2b_content > .b2b_c_title > .b2b_c_title_txt{
+	float:left;
+	margin-left: 7px;
+}
+.box2 > .b2b_content > .b2b_c_title > .b2b_c_title_txt > p{
+	font-size: 18px;
+	color: #fff;
+	line-height: 30px;
+	font-family: NanumSR;
+}
+.box2 > .b2b_content > .b2b_c_title > .b2b_c_title_txt > p:nth-child(2){
+	font-size: 21px;
+}
+.box2 > .b2b_content > .b2b_c_title > .b2b_c_title_txt > p:nth-child(2) > span{
+	font-weight: bold;
+}
+.box2 > .b2b_content > .formWrap{
+	width: 100%;
+	padding: 10px 5px;
+}
+.box2 > .b2b_content > .formWrap > table{
+	width: 100%;
+}
+.box2 > .b2b_content > .formWrap > table tr > td{
+	width: 100%;
+	font-size: 16px;
+	padding: 5px;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > input{
+	font-size: 14px;
+	padding:2px;
+	border: 1px solid lightgray;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > input[name='title']{
+	width: 100%;
+	margin-bottom:10px;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > input[name='name']{
+	width: 70px;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > input[name='phone']{
+	width: 140px;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > input[name='replyTime']{
+	width: 90px;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > input[name='pw']{
+	width: 60px;
+}
+
+.box2 > .b2b_content > .formWrap > table tr > td > select{
+	font-size: 14px;
+	padding: 2px 0;
+	border: 1px solid lightgray;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > span{
+	font-size: 15px;
+	color: #0e3bcc;
+	font-weight: bold;
+	font-family: NanumSR;
+}
+.box2 > .b2b_content > .formWrap > table tr > td > textarea{
+	width: 100%;
+	height: 80px;
+	resize: none;
+	font-size: 15px;
+	padding: 5px;
+	border: 1px solid lightgray;
+}
+ input::-webkit-input-placeholder {
+	color: #aaaaaa;
+} 
+input:-ms-input-placeholder {
+	color: #aaaaaa;
+}
+textarea::-webkit-input-placeholder {
+	color: #aaaaaa;
+}
+textarea:-ms-input-placeholder {
+	color: #aaaaaa;
+}
+input::placeholder {
+	color: #aaaaaa;
+}
+textarea::placeholder {
+	color: #aaaaaa;
+}
+#privacyAgreementWrap{
+	font-size: 15px;
+	padding-left: 10px;
+	margin-bottom: 18px;
+	font-family: NanumSR;
+}
+#privacyAgreementWrap > label{
+	vertical-align: middle;
+}
+#privacyAgreementWrap > label > input{
+	margin-right: 5px;
+	vertical-align: middle;
+}
+#privacyAgreementWrap > span{
+	display: inline-block;
+	margin-left: 10px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.submitBtn{
+	width: 100%;
+}
+.submitBtn > p{
+	width: 155px;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 18px;
+	color: #fff;
+	padding: 8px 0;
+	cursor: pointer;
+	background: url("${pageContext.request.contextPath}/resources/images/mainSubmitBtnBg.jpg");
+	background-position: center;
+}
+.submitBtn > p > img{
+	width: 25px;
+	padding-left: 5px;
+	vertical-align: middle;
+}
+.box3{
+	width: 100%;
+	background: url("/oneclinic/resources/images/mainSpecialBg.jpg");
+	padding: 0;
+}
+.box3Title{
+	width: 100%;
+	background: url("${pageContext.request.contextPath}/resources/images/mainSpecialBg.jpg");
+	padding: 35px 0;
+}
+.box3Title > h2{
+	width: 100%;
+	font-size: 22px;
+	text-align: center;
+	font-weight: bold;
+	font-family: NanumSR;
+	color: #00557b;
+	margin-bottom: 10px;
+}
+.box3Title > p{
+	width: 100%;
+	text-align: center;
+	font-size: 17px;
+	color: #8c8c8c;
+	font-weight: bold;
+	font-family: NanumSR;
+}
+.box3Img{
+	width: 100%;
+	overflow: hidden;
+}
+.box3Img > a{
+	width: 50%;
+}
+.box3Img > a > img{
+	width: 50%;
+	float: left;
 }
 .box4{
-	margin: 0 1.6px;
+	padding: 0;
+	background: #cccccc;
 }
-.box5{
-	margin: 0 1.6px;
+.box4 > .cooContent{
+	width: 100%;
+	overflow: hidden;
+}
+.box4 > .cooContent > span{
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 55px;
+	float: left; 
+	color: #505050;
+	font-family: NanumSR;
+}
+.box4 > .cooContent > .cooBanner{
+	width: 85%;
+	float: right;
+	margin-top: 7px;
+}
+.box4 > .cooContent > .cooBanner img{
+	margin: 0 5px;
 }
 
 .footerWrap{
 	width: 100%;
-	height: 80px; 
+	height: 90px; 
 	background: #393939;
 } 
 </style>
@@ -141,6 +334,18 @@ $(function(){
 	$(".popup > .popup_closeBtn > p").click(function(){
 		$(".popup").css("display","none");
 	});
+	
+	$(".cooBanner").slick({
+		arrows: false,
+		dots: false,
+		infinite: true,
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		speed:2000,
+		autoplay:true,
+		autoplaySpeed:1,
+		centerPadding: '50px',
+	});
 });
 </script>
 </head>
@@ -160,36 +365,91 @@ $(function(){
 			<div class="sectionContentWrap">
 				<div class="mainBannerWrap">
 					<div class="mainBanner">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner1.png">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner2.png">
-						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner3.png">
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner1.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner2.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainBanner3.jpg">
 					</div>
 				</div>
 				<div class="boxWrap">
 					<div class="box1 box">
-						<img src="${pageContext.request.contextPath}/resources/images/mainBox5.png">
+						<img src="${pageContext.request.contextPath}/resources/images/mobileMainTime.png">
 					</div>
 					<div class="box2 box">
-						<a href="#none"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox2.jpg"></a>
-					</div>
+						<div class="b2b_content">
+							<div class="b2b_c_title">
+								<div class="b2b_c_title_img">
+									<img src="${pageContext.request.contextPath}/resources/images/icon_monitor2.png">
+								</div>
+								<div class="b2b_c_title_txt">
+									<p>궁금한 모든 질문은</p>
+									<p><span>1:1 맞춤상담</span>을 통해 해결하세요!</p>
+								</div>
+							</div>
+							<div class="formWrap">
+								<table>
+									<tr>
+										<td>
+											<input type="text" name="title" placeholder="불편한 곳은 어디신가요?"><br>
+											<input type="text" name="name" value="" placeholder="이름" autocomplete="off">
+											<input type="text" name="phone" value="" placeholder="연락처" onKeyup="inputPhoneNumber(this);" maxlength="13" autocomplete="off">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<select name="pwType">
+												<option value="n">공개여부</option>
+												<option value="x">공개</option>
+												<option value="o">비공개</option>
+											</select>
+											<input type="password" name="pw" placeholder="비밀번호" autocomplete="off">
+											<select name="replyType">
+												<option value="n">답변방법</option>
+												<option value="sms">문자</option>
+												<option value="call">전화</option>
+												<option value="all">상관없음</option>
+											</select>
+											<input type="text" name="replyTime" value="" placeholder="연락가능시간" autocomplete="off">
+											<!-- <span>문의 내용은 상담문의 메뉴에서 확인 가능합니다.</span> -->
+										</td>
+									</tr>
+									<tr>
+										<td colspan="5"><textarea name="content" placeholder="증상을 상세히 기입해주세요."></textarea></td>
+									</tr>
+								</table>
+								<p id="privacyAgreementWrap"><label><input type="checkbox" value="">개인정보제공에 동의합니다.</label><span>[자세히]</span></p>
+								<div class="submitBtn">
+									<p>상담문의하기<img src="${pageContext.request.contextPath}/resources/images/icon_arrow.png"></p>
+								</div>
+							</div>
+						</div>
+					</div><!-- box2 end -->
 					<div class="box3 box">
-						<a href="${pageContext.request.contextPath}/mMenu04_03"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox3.jpg"></a>
+						<div class="box3Title">
+							<h2>원통증의학과만의 Special Clinic</h2>
+							<p>다년간의 노하우로 최상의 진료를 선사합니다!</p>
+						</div>
+						<div class="box3Img">
+							<a href="${pageContext.request.contextPath}/mMenu02_01"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial1.jpg"></a>
+							<a href="${pageContext.request.contextPath}/mMenu04_01"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial2.jpg"></a>
+							<a href="${pageContext.request.contextPath}/#none"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial4.jpg"></a>
+							<a href="${pageContext.request.contextPath}/mMenu03_01"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial3.jpg"></a>
+						</div>
 					</div>
 					<div class="box4 box"> 
-						<a href="${pageContext.request.contextPath}/mMenu01_04"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox4.jpg"></a>
+						<div class="cooContent">
+							<span>협력</span>
+							<div class="cooBanner">
+								<img src="${pageContext.request.contextPath}/resources/images/ch1.png">
+								<img src="${pageContext.request.contextPath}/resources/images/ch2.png">
+								<img src="${pageContext.request.contextPath}/resources/images/ch3.png">
+								<img src="${pageContext.request.contextPath}/resources/images/ch4.png">
+								<img src="${pageContext.request.contextPath}/resources/images/ch5.png">
+							</div>
+						</div>
 					</div>
-					<div class="box5 box">
-						<a href="${pageContext.request.contextPath}/mMenu01_03"><img src="${pageContext.request.contextPath}/resources/images/mobileMainBox5.jpg"></a>
-					</div>
-					<div class="box6 box">
-					
-					</div>
-					<div class="box7 box">
-					
-					</div>
-				</div>
-			</div>
-		</div>
+				</div><!-- boxWrap end -->
+			</div><!-- sectionContentWrap end -->
+		</div><!-- sectionWrap end -->
 		<div class="footerWrap">
 			<jsp:include page="../include/mFooter.jsp"></jsp:include>
 		</div>
