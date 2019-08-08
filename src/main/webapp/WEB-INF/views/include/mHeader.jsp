@@ -167,7 +167,7 @@ $(function(){
 			</div>
 			<div class="logoWrap">
 				<a href="${pageContext.request.contextPath}/">
-					<img src="${pageContext.request.contextPath}/resources/images/mobileLogo.png">
+					<img src="${pageContext.request.contextPath}/resources/images/mobileLogo_white.png">
 				</a>
 			</div>
 			<div class="callWrap">

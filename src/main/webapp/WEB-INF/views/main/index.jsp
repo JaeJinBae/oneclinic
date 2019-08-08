@@ -49,7 +49,6 @@
 	height: 100%;
 }
 .popup{
-	display: none;
 	position: fixed;
 	top: 140px;
 	right: 500px;
@@ -190,6 +189,7 @@
 	margin-bottom: 15px;
 	float:left;
 	box-shadow: 4px 3px 10px 0px gray;
+	cursor: pointer;
 }
 /* .boxWrap1 > .box1 >{
 	padding: 10px 15px;
@@ -677,6 +677,17 @@ $(function(){
 		$(".popup").css("display","none");
 	});
 	
+	$(".box1").click(function(){
+		var num = $(this).index();
+		if(num == 0){
+			location.href='${pageContext.request.contextPath}/menu01_04';
+		}else if(num == 2){
+			location.href='${pageContext.request.contextPath}/menu01_03';
+		}else{
+			return false;
+		}
+	});
+	
 	$(".dulBannerWrap").slick({
 		arrows:false,
 		infinite:true,
@@ -778,7 +789,7 @@ $(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="popup">
-				<img src="${pageContext.request.contextPath}/resources/images/popup20190522.png">
+				<img src="${pageContext.request.contextPath}/resources/popup/popup_20190807.jpg">
 				<div class="popup_closeBtn">
 					<p>닫기</p>
 				</div>

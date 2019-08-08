@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>insert title here</title>
+<title>원마취통증의학과</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,7 +100,7 @@
 							<td><a href="${pageContext.request.contextPath}/mMenu02_01">초음파주사</a></td>
 							<td><a href="${pageContext.request.contextPath}/mMenu02_02">C-ARM주사</a></td>
 							<td><a href="${pageContext.request.contextPath}/mMenu02_03">Prolo주사</a></td>
-							<td><a href="${pageContext.request.contextPath}/mMenu02_04">M-Puncture주사</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu02_04">M-Puncture</a></td>
 						</tr>
 					</table>
 				</div><!-- contentTitle end -->
