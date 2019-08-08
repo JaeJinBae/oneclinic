@@ -117,15 +117,18 @@
 		overflow:hidden;
 	}
 	.shortMenuWrap > ul > li{
-		width: 33.33%;
+		width: 25%;
 		float: left;
 		text-align: center;
 		margin: 8px 0;
 		padding: 3px 0; 
-		font-size: 15px;
+		font-size: 13px;
 	}
 	.shortMenuWrap > ul > li:nth-child(2){
 		border-left: 2px solid #fff;
+		border-right: 2px solid #fff;
+	}
+	.shortMenuWrap > ul > li:nth-child(3){
 		border-right: 2px solid #fff;
 	}
 	.shortMenuWrap > ul > li > a{
@@ -249,9 +252,10 @@ $(function(){
 	
 	<div class="shortMenuWrap">
 		<ul>
-			<li><a href="${pageContext.request.contextPath}/mMenu01_04">오시는 길</a></li>
-			<li><a href="${pageContext.request.contextPath}/mMenu01_05">공지사항</a></li>
-			<li><a href="${pageContext.request.contextPath}/mMenu01_03">둘러보기</a></li>
+			<li><a href="${pageContext.request.contextPath}/mMenu01_04">병원소개</a></li>
+			<li><a href="${pageContext.request.contextPath}/mMenu01_05">비수술클리닉</a></li>
+			<li><a href="${pageContext.request.contextPath}/mMenu01_03">재활/교정클리닉</a></li>
+			<li><a href="${pageContext.request.contextPath}/mMenu01_03">스페셜클리닉</a></li>
 		</ul>
 	</div><!-- mainMenuWrap end -->
 </div><!-- header end -->

@@ -80,7 +80,7 @@
 .slider_for{
 	width: 100%;
 	margin: 0 auto;
-	margin-bottom: 90px;
+	margin-bottom: 30px;
 	text-align: center;
 }
 .slider_for img{
@@ -89,13 +89,13 @@
 	border: 1px solid #efefef;
 }
 .slick-prev, .slick-next{
-	top: 275px !important;
+	top: -170% !important;
 }
 .slick-prev{
-	left: 85px !important;
+	left: 5px !important;
 }
 .slick-next{
-	right: 85px !important;
+	right: 5px !important;
 }
 .slick-dots{
 	bottom: -100px !important;
@@ -109,11 +109,15 @@
 .slick-prev:before, .slick-next:before{
 	-webkit-appearance:none;
 }
-.fix_img{
+.slider_nav{
 	width: 100%;
-	margin-bottom: 30px;
+	margin: 0 auto;
+	text-align: center;
 }
-
+.slider_nav img{
+	width: 98%;
+	border: 1px solid gray;
+}
 
 .footerWrap{
 	width: 100%;
@@ -123,12 +127,27 @@
 </style>
 <script>
 $(function(){
-	$('.slider_for').slick({
+	/* $('.slider_for').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: true,
 		fade: true,
 		dots: false
+	}); */
+	
+	$('.slider_for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider_nav'
+	});
+	$('.slider_nav').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.slider_for',
+		dots: false,
+		focusOnSelect: true
 	});
 })
 </script>
@@ -137,7 +156,7 @@ $(function(){
 	<div class="allWrap">
 		<div class="headerWrap">
 			<div class="header_top"></div>
-			<jsp:include page="../include/mHeader.jsp"></jsp:include>
+			<jsp:include page="../include/mHeader2.jsp"></jsp:include>
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
@@ -163,6 +182,18 @@ $(function(){
 					<div class="content">
 						<div class="slideWrap">
 							<div class="slider_for slider">
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
+							</div>
+							<div class="slider_nav slider">
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>

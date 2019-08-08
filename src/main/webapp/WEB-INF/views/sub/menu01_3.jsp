@@ -129,9 +129,6 @@
 </style>
 <script>
 $(document).ready(function(){
-	var height = $(".contentWrap").height();
-	//$(".sectionContent > .leftMenu").css("height", height);
-	console.log(height);
 	$('.slider_for').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,

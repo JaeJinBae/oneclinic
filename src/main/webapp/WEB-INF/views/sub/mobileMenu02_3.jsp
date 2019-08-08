@@ -87,7 +87,7 @@
 	<div class="allWrap">
 		<div class="headerWrap">
 			<div class="header_top"></div>
-			<jsp:include page="../include/mHeader.jsp"></jsp:include>
+			<jsp:include page="../include/mHeader2.jsp"></jsp:include>
 		</div>
 		<div class="sectionWrap">
 			<div class="section_top">
