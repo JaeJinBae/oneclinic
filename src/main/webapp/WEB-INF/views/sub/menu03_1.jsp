@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.rwdImageMaps.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 .allWrap{
@@ -90,8 +91,32 @@
 	width: 100%;
 	text-align: center;
 }
-.content > img{
+.content > .imgBox{
 	width: 90%;
+	margin: 0 auto;
+}
+.content > .imgBox:nth-child(2){
+	position: relative;
+}
+.content > .imgBox > img{
+	width: 100%;
+}
+.content > .imgBox > #img00{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.content > .imgBox > #img0{
+	position: relative;
+	z-index: 5;
+}
+.content > .imgBox > .txtImg{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
 }
 
 
@@ -103,8 +128,25 @@
 </style>
 <script>
 $(document).ready(function(){
-	var height = $(".sectionContent").outerHeight();
-	$(".sectionContent > .leftMenu").css("height", height);
+	
+	$("img[usemap]").rwdImageMaps();
+	
+	$(".imgBox > map > area").mouseover(function(){
+		var altVal = $(this).attr("alt");
+		if(altVal == "area1"){
+			$("#img1").fadeIn();
+		}else if(altVal == "area2"){
+			$("#img2").fadeIn();
+		}else if(altVal == "area3"){
+			$("#img3").fadeIn();
+		}else if(altVal == "area4"){
+			$("#img4").fadeIn();
+		}
+	});
+	$(".imgBox > map > area").mouseout(function(){
+		$(".txtImg").fadeOut();
+	});
+	
 });
 </script>
 </head>
@@ -137,7 +179,30 @@ $(document).ready(function(){
 						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<img src="${pageContext.request.contextPath}/resources/images/menu03_1img.jpg">
+						<div class="imgBox">
+							<img src="${pageContext.request.contextPath}/resources/images/menu03_1img01.jpg">
+						</div>
+						<div class="imgBox">
+							<img id="img0" name="img0" usemap="#img0" src="${pageContext.request.contextPath}/resources/images/menu03_1img02_0.png">
+							<map id="img0" name="img0">
+								<area shape="circle" alt="area1" title="" coords="595,302,140" href="#none" target="" />
+								<area shape="circle" alt="area2" title="" coords="222,680,139" href="#none" target="" />
+								<area shape="circle" alt="area3" title="" coords="963,679,139" href="#none" target="" />
+								<area shape="circle" alt="area4" title="" coords="595,1047,139" href="#none" target="" />
+								<!-- <area shape="rect" alt="" title="" coords="458,157,733,438" href="" target="" />
+								<area shape="rect" alt="" title="" coords="76,541,360,819" href="" target="" />
+								<area shape="rect" alt="" title="" coords="824,541,1101,819" href="" target="" />
+								<area shape="rect" alt="" title="" coords="457,908,730,1185" href="" target="" /> -->
+							</map>
+							<img id="img00" src="${pageContext.request.contextPath}/resources/images/menu03_1img02_00.png">
+							<img id="img1" class="txtImg" src="${pageContext.request.contextPath}/resources/images/menu03_1img02_1.png">
+							<img id="img2" class="txtImg" src="${pageContext.request.contextPath}/resources/images/menu03_1img02_2.png">
+							<img id="img3" class="txtImg" src="${pageContext.request.contextPath}/resources/images/menu03_1img02_3.png">
+							<img id="img4" class="txtImg" src="${pageContext.request.contextPath}/resources/images/menu03_1img02_4.png">
+						</div>
+						<div class="imgBox">
+							<img src="${pageContext.request.contextPath}/resources/images/menu03_1img03.jpg">
+						</div>
 					</div><!-- content end -->
 				</div><!-- contentWrap end -->
 			</div><!-- sectionContent end -->

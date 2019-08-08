@@ -222,6 +222,7 @@ function post_adviceRegister(info){
 				location.href="${pageContext.request.contextPath}/menu01_08";
 			}else{
 				alert("문의글 등록이 정상적으로 등록되지 않았습니다. 새로고침(F5) 후 다시 이용하세요.");
+				console.log(json);
 			}
 		},
 		error:function(request,status,error){
