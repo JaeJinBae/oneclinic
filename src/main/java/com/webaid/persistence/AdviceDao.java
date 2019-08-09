@@ -12,6 +12,7 @@ public interface AdviceDao {
 	public void update(AdviceVO vo);
 	public void updateReply(AdviceVO vo);
 	public void updateCnt(int no);
+	public void updateCntDown(int no);
 	public void delete(int no);
 	public List<AdviceVO> listSearch(SearchCriteria cri);
 	public int listSearchCount(SearchCriteria cri);

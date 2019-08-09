@@ -248,7 +248,7 @@
 			<h2>게시판 리스트</h2>
 			<ul> 
 				<li> <a href="${pageContext.request.contextPath}/admin/adminNotice"> 공지사항</a></li>
-				<li> <a href="${pageContext.request.contextPath}/admin/adminBroadcasting"> 언론보도</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminNews"> 언론보도</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice"> 진료/비용 상담</a></li>
 			</ul>
 		</div>

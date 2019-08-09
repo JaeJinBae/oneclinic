@@ -28,6 +28,10 @@
 		update advice set cnt=cnt+1 where no=#{no}
 	</update>
 	
+	<update id="updateCntDown">
+		update advice set cnt=cnt-1 where no=#{no}
+	</update>
+	
 	<delete id="delete">
 		delete from advice where no=#{no}
 	</delete>

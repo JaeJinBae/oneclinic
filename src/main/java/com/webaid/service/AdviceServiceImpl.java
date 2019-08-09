@@ -46,6 +46,11 @@ public class AdviceServiceImpl implements AdviceService {
 	}
 
 	@Override
+	public void updateCntDown(int no) {
+		dao.updateCntDown(no);
+	}
+
+	@Override
 	public void delete(int no) {
 		dao.delete(no);
 	}

@@ -464,6 +464,7 @@ public class AdminController {
 		}
 
 		AdviceVO vo = aService.selectOne(no);
+		aService.updateCnt(no);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
@@ -488,6 +489,7 @@ public class AdminController {
 		}
 		
 		aService.updateReply(vo);
+		aService.updateCntDown(vo.getNo());
 
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
@@ -519,26 +521,6 @@ public class AdminController {
 
 		return "admin/adminAdviceReplyUpdate";
 	}
-	
-	/*@RequestMapping(value = "/adminAdviceReplyUpdate", method = RequestMethod.POST)
-	public String adminAdviceReplyUpdatePost(AdviceVO vo, @ModelAttribute("cri") SearchCriteria cri, Model model,
-			HttpServletRequest req) throws Exception {
-		logger.info("adminAdviceReplyPost");
-
-		HttpSession session = req.getSession(false);
-
-		if (session.getAttribute("id") == null) {
-			logger.info("아이디는 null 입니다.");
-			return "redirect:/admin/adminLogin";
-		}
-
-		aService.updateReply(vo);
-
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-
-		return "redirect:/admin/adminAdviceRead" + pageMaker.makeSearch(cri.getPage()) + "&no=" + vo.getNo();
-	}*/
 	
 	@RequestMapping(value = "/adminAdviceUpdate", method = RequestMethod.GET)
 	public String adminAdviceUpdateGet(int no, @ModelAttribute("cri") SearchCriteria cri, Model model,
@@ -578,7 +560,8 @@ public class AdminController {
 		}
 
 		aService.update(vo);
-
+		aService.updateCntDown(vo.getNo());
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 
