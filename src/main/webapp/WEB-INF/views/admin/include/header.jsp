@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>억산한의원 관리자페이지</title>
+<title>원통증의학과 관리자MODE</title>
 <style>
 	*{
 		margin:0;

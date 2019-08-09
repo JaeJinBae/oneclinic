@@ -131,7 +131,7 @@ $(document).ready(function(){
 	
 	$("img[usemap]").rwdImageMaps();
 	
-	$(".imgBox > map > area").mouseover(function(){
+	$(".imgBox > map > area").hover(function(){
 		var altVal = $(this).attr("alt");
 		if(altVal == "area1"){
 			$("#img1").fadeIn();
@@ -142,8 +142,7 @@ $(document).ready(function(){
 		}else if(altVal == "area4"){
 			$("#img4").fadeIn();
 		}
-	});
-	$(".imgBox > map > area").mouseout(function(){
+	}, function(){
 		$(".txtImg").fadeOut();
 	});
 	

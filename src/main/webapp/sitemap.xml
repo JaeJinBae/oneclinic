@@ -8,6 +8,11 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>http://www.1clinic.co.kr/menu01_03</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.85</priority>
+	</url>
+	<url>
 		<loc>http://www.1clinic.co.kr/menu01_01</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.85</priority>
@@ -18,12 +23,27 @@
 		<priority>0.85</priority>
 	</url>
 	<url>
-		<loc>http://www.1clinic.co.kr/menu01_03</loc>
+		<loc>http://www.1clinic.co.kr/menu01_04</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.85</priority>
 	</url>
 	<url>
-		<loc>http://www.1clinic.co.kr/menu01_04</loc>
+		<loc>http://www.1clinic.co.kr/menu01_05</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.85</priority>
+	</url>
+	<url>
+		<loc>http://www.1clinic.co.kr/menu01_06</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.85</priority>
+	</url>
+	<url>
+		<loc>http://www.1clinic.co.kr/menu01_07</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.85</priority>
+	</url>
+	<url>
+		<loc>http://www.1clinic.co.kr/menu01_08</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.85</priority>
 	</url>
@@ -73,6 +93,11 @@
 		<priority>0.85</priority>
 	</url>
 	<url>
+		<loc>http://www.1clinic.co.kr/menu03_06</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.85</priority>
+	</url>
+	<url>
 		<loc>http://www.1clinic.co.kr/menu04_01</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.85</priority>
@@ -86,16 +111,6 @@
 		<loc>http://www.1clinic.co.kr/menu04_03</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.85</priority>
-	</url>
-	<url>
-		<loc>http://www.1clinic.co.kr/menu04_04</loc>
-		<changefreq>daily</changefreq>
-		<priority>0.85</priority>
-	</url>
-	<url>
-		<loc>http://www.1clinic.co.kr/menu04_05</loc>
-		<changefreq>daily</changefreq>
-		<priority>0.69</priority>
 	</url>
 </urlset>
  
