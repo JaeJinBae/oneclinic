@@ -9,6 +9,7 @@ public interface AdviceService {
 	public List<AdviceVO> selectAll();
 	public AdviceVO selectOne(int no);
 	public void insert(AdviceVO vo);
+	public void update(AdviceVO vo);
 	public void updateReply(AdviceVO vo);
 	public void updateCnt(int no);
 	public void delete(int no);

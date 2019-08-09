@@ -12,49 +12,54 @@ import com.webaid.domain.SearchCriteria;
 @Repository
 public class AdviceDaoImpl implements AdviceDao {
 
-private static final String namespace="com.webaid.mappers.AdviceMapper";
-	
+	private static final String namespace = "com.webaid.mappers.AdviceMapper";
+
 	@Autowired
 	private SqlSession session;
-	
+
 	@Override
 	public List<AdviceVO> selectAll() {
-		return session.selectList(namespace+".selectAll");
+		return session.selectList(namespace + ".selectAll");
 	}
 
 	@Override
 	public AdviceVO selectOne(int no) {
-		return session.selectOne(namespace+".selectOne", no);
+		return session.selectOne(namespace + ".selectOne", no);
 	}
 
 	@Override
 	public void insert(AdviceVO vo) {
-		session.insert(namespace+".insert", vo);
+		session.insert(namespace + ".insert", vo);
+	}
+
+	@Override
+	public void update(AdviceVO vo) {
+		session.update(namespace + ".update", vo);
 	}
 
 	@Override
 	public void updateReply(AdviceVO vo) {
-		session.update(namespace+".updateReplyState", vo);
+		session.update(namespace + ".updateReply", vo);
 	}
 
 	@Override
 	public void updateCnt(int no) {
-		session.update(namespace+".updateCnt", no);
+		session.update(namespace + ".updateCnt", no);
 	}
 
 	@Override
 	public void delete(int no) {
-		session.delete(namespace+".delete", no);
+		session.delete(namespace + ".delete", no);
 	}
 
 	@Override
 	public List<AdviceVO> listSearch(SearchCriteria cri) {
-		return session.selectList(namespace+".listSearch", cri);
+		return session.selectList(namespace + ".listSearch", cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) {
-		return session.selectOne(namespace+".listSearchCount", cri);
+		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 
 }

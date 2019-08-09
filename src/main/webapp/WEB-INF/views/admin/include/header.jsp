@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원통증의학과 관리자MODE</title>
+<title>원마취통증의학과 관리자 모드</title>
 <style>
 	*{
 		margin:0;
@@ -17,7 +17,6 @@
 		background: #17161C;
 	}
 	#headerDiv #logo{
-		width:300px;
 		height:80px;
 		color:white;
 		line-height: 80px;
@@ -28,6 +27,7 @@
 	    font-size: 25px;
 	    font-weight: bold;
 	    letter-spacing: 3px;
+	    color: #fff;
 	}
 	#headerDiv>.gohome{
 		position: absolute;
@@ -73,26 +73,16 @@
 </head>
 <script>
 	$(function(){
-		var d = new Date();
-		var year = d.getFullYear();
-		var month  = d.getMonth()+1;
-		var date = d.getDate();
-		if(month<10){
-			month = "0"+month;
-		}
-		if(date<10){
-			date = "0"+date;
-		}
-		$("#statistics").attr("href","statistics?keyword="+year+"-"+month+"-"+date);
+		
 		
 	});
 </script>
 <body>
 	<div id="headerDiv">
 		<div id="logo">
-			<h2>억산한의원 관리자</h2>
+			<h2>원마취통증의학과 관리자</h2>
 		</div>
-		<a class="gohome" href="${pageContext.request.contextPath}/adminLogout">로그아웃</a>
+		<a class="gohome" href="${pageContext.request.contextPath}/admin/logout">로그아웃</a>
 		<div id="headerMenu"> 
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리" id="boardCtr">게시판 관리</a></li>

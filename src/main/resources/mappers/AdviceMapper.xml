@@ -16,6 +16,10 @@
 		insert into advice values(0, #{title}, #{content}, #{writer}, #{regdate}, #{phone}, 0, #{pwtype}, #{pw}, #{replytype}, #{replytime}, #{reply})
 	</insert>
 	
+	<update id="update">
+		update advice set writer=#{writer}, title=#{title}, content=#{content} where no=#{no}
+	</update>
+	
 	<update id="updateReply">
 		update advice set reply=#{reply} where no=#{no}
 	</update>

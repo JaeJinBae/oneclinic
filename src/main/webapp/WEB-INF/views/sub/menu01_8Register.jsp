@@ -281,7 +281,7 @@ $(document).ready(function(){
 		
 		var ndate = new Date();
 		var year = ndate.getFullYear();
-		var month = ndate.getMonth();
+		var month = ndate.getMonth()+1;
 		var date = ndate.getDate();
 		var regdate = year+"-"+((month>9?'':"0")+month)+"-"+((date>9?'':"0")+date);
 		

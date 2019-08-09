@@ -14,7 +14,7 @@ public class AdviceServiceImpl implements AdviceService {
 
 	@Autowired
 	private AdviceDao dao;
-	
+
 	@Override
 	public List<AdviceVO> selectAll() {
 		return dao.selectAll();
@@ -28,6 +28,11 @@ public class AdviceServiceImpl implements AdviceService {
 	@Override
 	public void insert(AdviceVO vo) {
 		dao.insert(vo);
+	}
+
+	@Override
+	public void update(AdviceVO vo) {
+		dao.update(vo);
 	}
 
 	@Override

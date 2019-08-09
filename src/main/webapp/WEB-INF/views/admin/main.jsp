@@ -7,9 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>억산한의원 관리자페이지</title>
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<title>원마취통증의학과 관리자 모드</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -208,8 +207,8 @@
 		<div class="leftMenu">
 			<h2>게시판 리스트</h2>
 			<ul> 
-				<li> <a href="${pageContext.request.contextPath}/admin/" style="font-weight:bold;"> 공지사항</a></li>
-				<li> <a href="${pageContext.request.contextPath}/admin/adminBroadcasting"> 언론보도</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;"> 공지사항</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminNews"> 언론보도</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice"> 진료/비용 상담</a></li>
 			</ul>
 		</div>
@@ -235,13 +234,13 @@
 					        <c:forEach var="item" items="${list}">
 								<tr>
 									<td>${item.bno}</td>
-									<td class="title"><a href="adminNoticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
+									<td class="title"><a href="adminNoticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a></td>
 									<td>${item.writer}</td>
-									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
+									<td>${item.regdate}</td>
 									<td>${item.cnt}</td>
 									<td>
-										<a href="${pageContext.request.contextPath}/admin/adminNoticeUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
-										<a href="${pageContext.request.contextPath}/admin/adminNoticeDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
+										<a href="${pageContext.request.contextPath}/admin/adminNoticeUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><button>수정</button></a>
+										<a href="${pageContext.request.contextPath}/admin/adminNoticeDelete${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><button>삭제</button></a>
 									</td>
 								</tr>	
 							</c:forEach>

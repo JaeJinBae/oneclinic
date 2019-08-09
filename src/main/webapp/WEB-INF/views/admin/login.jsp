@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원마취통증의학과</title>
+<title>원마취통증의학과 관리자모드</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style>
@@ -87,16 +87,19 @@
 
 </style>
 <script>
-function adminIdPwChk(id, pw){
+function adminIdPwChk(info){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/adminIdPwChk/"+id+"/"+pw,
-		type:"post",
+		url:"${pageContext.request.contextPath}/admin/adminIdPwChk",
+		type: "post",
+		data:JSON.stringify(info),
+		async:false,
+		contentType : "application/json; charset=UTF-8",
 		dataType:"text",
 		success:function(json){
 			if(json!="ok"){
 				alert("아이디 또는 비밀번호를 다시 확인하세요.");
 			}else{
-				location.href="${pageContext.request.contextPath}/adminMain";
+				location.href="${pageContext.request.contextPath}/admin/adminMain";
 			}
 		},
 		error:function(request,status,error){
@@ -110,8 +113,8 @@ $(function(){
 	$("#loginBtn").click(function(){
 		var id = $(".top > table tr > td > input[name='id']").val();
 		var pw = $(".top > table tr > td > input[name='pw']").val();
-		
-		adminIdPwChk(id, pw);
+		var info = {id:id, pw:pw};
+		adminIdPwChk(info);
 	})
 });
 </script>
