@@ -21,11 +21,11 @@
 	</select>
 	
 	<insert id="insert">
-		insert into news values(0, #{title}, #{content}, #{writer}, #{regdate}, 0, #{top_state})
+		insert into news values(0, #{title}, #{content}, #{writer}, #{regdate}, 0)
 	</insert>
 	
 	<update id="update">
-		update news set title=#{title}, writer=#{writer}, content=#{content}, #{top_state} where no=#{no}
+		update news set title=#{title}, writer=#{writer}, content=#{content} where no=#{no}
 	</update>
 	
 	<update id="updateCnt">

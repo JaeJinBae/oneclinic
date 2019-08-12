@@ -109,10 +109,39 @@ function adminIdPwChk(info){
 	
 }
 
+function enterkey() {
+    if (window.event.keyCode == 13) {
+    	var id = $(".top > table tr > td > input[name='id']").val();
+		var pw = $(".top > table tr > td > input[name='pw']").val();
+		
+		if(id == "" || id ==null){
+			alert("아이디를 입력해주세요.");
+			return false;
+		}
+		if(pw == "" || pw == null){
+			alert("비밀번호를 입력해주세요.");
+			return false;
+		}
+		
+		var info = {id:id, pw:pw};
+		adminIdPwChk(info);
+    }
+}
+
 $(function(){
 	$("#loginBtn").click(function(){
 		var id = $(".top > table tr > td > input[name='id']").val();
 		var pw = $(".top > table tr > td > input[name='pw']").val();
+		
+		if(id == "" || id ==null){
+			alert("아이디를 입력해주세요.");
+			return false;
+		}
+		if(pw == "" || pw == null){
+			alert("비밀번호를 입력해주세요.");
+			return false;
+		}
+		
 		var info = {id:id, pw:pw};
 		adminIdPwChk(info);
 	})
@@ -127,11 +156,11 @@ $(function(){
 				<table>
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" name="id"></td>
+						<td><input onkeyup="enterkey();" type="text" name="id"></td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
-						<td><input type="password" name="pw"></td>
+						<td><input onkeyup="enterkey();" type="password" name="pw"></td>
 					</tr>
 				</table>
 				<button id="loginBtn">로그인</button>

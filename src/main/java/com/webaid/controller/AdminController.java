@@ -96,6 +96,7 @@ public class AdminController {
 			return "redirect:/admin/adminLogin";
 		}
 		List<NoticeVO> list = nService.listSearch(cri);
+		List<NoticeVO> topList = nService.selectTopNotice();
 		
 		cri.setKeyword(null);
 		cri.setSearchType("n");
@@ -105,6 +106,7 @@ public class AdminController {
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
 
+		model.addAttribute("topList", topList);
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		return "admin/adminNotice";
@@ -122,7 +124,8 @@ public class AdminController {
 			return "redirect:/admin/adminLogin";
 		}
 
-		List<NoticeVO> list = nService.listSearchAll(cri);
+		List<NoticeVO> list = nService.listSearch(cri);
+		List<NoticeVO> topList = nService.selectTopNotice();
 		
 		cri.setKeyword(null);
 		cri.setSearchType("n");
@@ -132,6 +135,7 @@ public class AdminController {
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
 
+		model.addAttribute("topList", topList);
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 
@@ -237,7 +241,7 @@ public class AdminController {
 
 		nService.update(vo);
 
-		rtts.addAttribute("bno", vo.getNo());
+		rtts.addAttribute("no", vo.getNo());
 
 		PageMaker pageMaker = new PageMaker();
 
@@ -339,7 +343,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/adminNewsRegister", method = RequestMethod.POST)
 	public String adminNewsRegisterPost(NewsVO vo, HttpServletRequest req) {
-		logger.info("adminNewsRegister post");
+		logger.info("adminNewsRegister post"); 
 
 		HttpSession session = req.getSession(false);
 
@@ -348,6 +352,12 @@ public class AdminController {
 			return "redirect:/admin/adminLogin";
 		}
 
+		Calendar now = Calendar.getInstance();
+		String nowYear = now.get(Calendar.YEAR)+"";
+		String nowMonth = ((now.get(Calendar.MONTH)+1)<10)?"0"+(now.get(Calendar.MONTH)+1):(now.get(Calendar.MONTH)+1)+"";
+		String nowDate = ((now.get(Calendar.DATE))<10)?"0"+(now.get(Calendar.DATE)):(now.get(Calendar.DATE))+"";
+		vo.setRegdate(nowYear+"-"+nowMonth+"-"+nowDate);
+		
 		newsService.insert(vo);
 
 		return "redirect:/admin/adminNews";
@@ -394,7 +404,7 @@ public class AdminController {
 
 		newsService.update(vo);
 
-		rtts.addAttribute("bno", vo.getNo());
+		rtts.addAttribute("no", vo.getNo());
 
 		PageMaker pageMaker = new PageMaker();
 

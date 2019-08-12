@@ -23,6 +23,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/vTicker.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
+.popup{
+	display: none;
+}
 .allWrap{
 	width:100%;
 }

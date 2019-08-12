@@ -49,7 +49,7 @@ public class AdviceDaoImpl implements AdviceDao {
 
 	@Override
 	public void updateCntDown(int no) {
-		session.update(namespace + "updateCntDown", no);
+		session.update(namespace + ".updateCntDown", no);
 	}
 
 	@Override

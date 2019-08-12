@@ -29,7 +29,7 @@
 	</insert>
 	
 	<update id="update">
-		update notice set title=#{title}, writer=#{writer}, content=#{content}, #{top_state} where no=#{no}
+		update notice set title=#{title}, writer=#{writer}, content=#{content}, top_state=#{top_state} where no=#{no}
 	</update>
 	
 	<update id="updateCnt">
