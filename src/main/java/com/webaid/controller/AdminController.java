@@ -38,6 +38,10 @@ import com.webaid.service.CommentService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 
+
+
+
+
 @Controller
 @RequestMapping("/admin/*")
 public class AdminController {
@@ -118,7 +122,7 @@ public class AdminController {
 			return "redirect:/admin/adminLogin";
 		}
 
-		List<NoticeVO> list = nService.listSearch(cri);
+		List<NoticeVO> list = nService.listSearchAll(cri);
 		
 		cri.setKeyword(null);
 		cri.setSearchType("n");
@@ -169,7 +173,7 @@ public class AdminController {
 			logger.info("아이디는 null 입니다.");
 			return "redirect:/admin/adminLogin";
 		}
-
+		
 		return "admin/adminNoticeRegister";
 	}
 
@@ -189,7 +193,7 @@ public class AdminController {
 		String nowDate = ((now.get(Calendar.DATE))<10)?"0"+(now.get(Calendar.DATE)):(now.get(Calendar.DATE))+"";
 		vo.setRegdate(nowYear+"-"+nowMonth+"-"+nowDate);
 		System.out.println(vo);
-		//nService.insert(vo);
+		nService.insert(vo);
 
 		return "redirect:/admin/adminNotice";
 	}

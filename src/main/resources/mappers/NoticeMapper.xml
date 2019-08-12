@@ -44,6 +44,10 @@
 		select * from notice where top_state='n' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
+	<select id="listSearchAll" resultType="NoticeVO">
+		select * from notice where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+	</select>
+	
 	<sql id="search">
 		<if test="searchType=='c'.toString()">
 			and content like concat('%',#{keyword},'%')

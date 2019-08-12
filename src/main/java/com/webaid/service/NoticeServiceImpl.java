@@ -66,6 +66,11 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
+	public List<NoticeVO> listSearchAll(SearchCriteria cri) throws Exception {
+		return dao.listSearchAll(cri);
+	}
+
+	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
 	}

@@ -196,13 +196,17 @@
 			<h1 class="boardTitle">&lt;공지사항 관리&gt;</h1>
 			<form id="form1" method="post" action="adminNoticeRegister">
 				<div id="container">
-					<p>작성자: <input type="text" name="writer" value="관리자"></p>
-					<br> 
 					<div id="header">
 						<span>제목:</span>
 						<input id="title" type="text" name="title">
 					</div>
-					
+					<p>작성자: <input type="text" name="writer" value="관리자"></p>
+					<p>
+						<select name="top_state">
+							<option value="y">공지</option>
+							<option value="n">일반</option>
+						</select>
+					</p>
 					<textarea id="editor1" name="content">
 					    
 					</textarea>

@@ -69,6 +69,11 @@ public class NoticeDaoImpl implements NoticeDao {
 	}
 
 	@Override
+	public List<NoticeVO> listSearchAll(SearchCriteria cri) throws Exception {
+		return session.selectList(namespace + ".listSearchAll", cri);
+	}
+
+	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
