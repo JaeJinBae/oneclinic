@@ -135,10 +135,14 @@
 	overflow: scroll;
 	overflow-x: hidden; 
 	font-size: 15px;
+	width: 100%;
+	height:150px;
+	resize: none;
+	border: 0;
 }
 .notice_content > .btnWrap{
 	text-align: center;
-	margin-top:30px;
+	margin-top:15px;
 }
 /* 글쓰기 */
 #form1{
@@ -147,42 +151,49 @@
 	background: white;
 	margin-bottom:10px;
 }
-#container{
+.container{
 	width: 100%;
 	text-align: center;
 }
-#container > h2{
+.container > h2{
 	font-size: 20px;
 	text-align: left;
     font-weight: bold;
     margin-left: 15px;
     margin-bottom: 15px;
 }
-#container > p{
+.container > p{
 	width: 100%;
-	padding: 10px 15px;
-	border-top: 2px solid gray;
-	border-bottom: 2px solid gray;
-	text-align: left;
+    text-align: left;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+    font-size: 15px;
+    padding-left: 15px;
+}
+.container > p > input{
 	font-size: 15px;
 }
-#container > p > input{
-	font-size: 15px;
-}
-#container > textarea{
+.container > textarea{
 	width: 98%;
-	height: 200px;
+	height: 160px;
 	resize: none;
 	padding: 7px 5px;
 	font-size: 14px;
+	margin: 15px 0;
 }
-
+.container > hr{
+	width:100%;
+	margin:0 auto;
+	border:0;
+	border-top:2px solid gray;
+}
 .btn{
 	width:300px;
 	height:40px;
 	font-size: 1.2em;
 	margin:0 auto;
-	margin-top:40px;
+	margin-top:15px;
 	margin-bottom:50px;
 	text-align: center;
 }
@@ -277,9 +288,7 @@
 						
 						<span>조회수: ${item.cnt}</span>
 					</p>
-					<div class="nContent">
-						${item.content}
-					</div>
+					<textarea class="nContent" readonly>${item.content}</textarea>
 					<hr>
 					<p class="btnWrap">
 						<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
@@ -289,24 +298,24 @@
 				</div><!-- notice_content end --> 
 				<c:choose>
 					<c:when test="${item.reply eq ''}">
-					<div id="container">
+					<div class="container">
 						<h2>문자답변</h2>
-						<p>작성자: <input type="text" name="replyer" value="관리자"></p>
-						<br> 
-						<input type="hidden" name="no" value="${item.no}">
+						<hr>
 						<textarea id="editor1" name="reply"></textarea>
+						<hr>
 						<div class="btn">
 							<p><button type="button">전송</button></p>
 						</div>
 					</div>
 					<form id="form1" method="post" action="adminAdviceReplyRegister">
 						<input type="hidden" name="no" value="${item.no}">
-						<div id="container">
+						<div class="container">
 							<h2>댓글답변</h2>
+							<hr>
 							<p>작성자: <input type="text" name="replyer" value="관리자"></p>
-							<br> 
 							<input type="hidden" name="no" value="${item.no}">
 							<textarea id="editor1" name="reply"></textarea>
+							<hr>
 							<div class="btn">
 								<input type="submit" value="저장">
 								<a href="${pageContext.request.contextPath}/admin/adminAdvice"><button type="button">뒤로가기</button></a>
@@ -318,9 +327,7 @@
 						<div class="notice_content">
 							<h2>답변</h2>
 							<hr>
-							<div class="nContent">
-								${item.reply}
-							</div>
+							<textarea class="nContent" readonly>${item.reply}</textarea>
 							<hr>
 							<p class="btnWrap">
 								<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>

@@ -133,7 +133,11 @@
 	padding: 20px 15px;
 	max-height: 200px;
 	overflow: scroll;
-	overflow-x: hidden; 
+	overflow-x: hidden;
+	width: 100%;
+	height:150px;
+	resize: none;
+	border: 0;
 }
 .notice_content > .btnWrap{
 	text-align: center;
@@ -268,13 +272,11 @@
 						
 						<span>조회수: ${item.cnt}</span>
 					</p>
-					<div class="nContent">
-						${item.content}
-					</div>
+					<textarea class="nContent">${item.content}</textarea>
 					<hr>
 					<p class="btnWrap">
 						<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
-						<a href="${pageContext.request.contextPath}/admin/adminAdviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><button>수정</button></a>
+						<%-- <a href="${pageContext.request.contextPath}/admin/adminAdviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><button>수정</button></a> --%>
 						<a href="${pageContext.request.contextPath}/admin/adminAdviceDelete${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><button>삭제</button></a>
 					</p>
 				</div><!-- notice_content end -->
