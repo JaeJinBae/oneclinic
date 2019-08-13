@@ -439,7 +439,13 @@ $(document).ready(function(){
 														</c:otherwise>
 													</c:choose>
 												</td>
-												<td>${item.writer}</td>
+												<td>
+													
+													<c:set var="writer" value="${item.writer}"></c:set>
+													<c:set var="writer2" value="${fn:substring(writer,1,4)}"/>
+													${fn:replace(writer,writer2,"**") }
+													<%-- ${item.writer} --%>
+												</td>
 												<td>${item.regdate}</td>
 												<td>${item.cnt}</td>
 											</tr>
