@@ -225,7 +225,7 @@
 				<ul>
 					<li>
 						<p><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">게시판</a></p>
-						<div class="subMenu" style="display:block;">
+						<div class="subMenu">
 							<ul> 
 								<li><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">- 공지사항</a></li>
 								<li><a href="${pageContext.request.contextPath}/admin/adminNews">- 언론보도</a></li>
@@ -272,7 +272,7 @@
 						
 						<span>조회수: ${item.cnt}</span>
 					</p>
-					<textarea class="nContent">${item.content}</textarea>
+					<div class="nContent">${item.content}</div>
 					<hr>
 					<p class="btnWrap">
 						<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>

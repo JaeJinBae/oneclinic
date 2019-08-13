@@ -193,6 +193,16 @@
     font-size: 15px;
     padding: 5px 10px;
 }
+.box-body > select{
+	font-size: 15px;
+	padding: 2px;
+	vertical-align: middle;
+}
+.box-body > input{
+	font-size: 15px;
+	padding: 2px;
+	vertical-align: middle;
+}
 #searchBtn{ 
 	border: 0;
     background: #3a4652;
@@ -224,7 +234,7 @@
 				<ul>
 					<li>
 						<p><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">게시판</a></p>
-						<div class="subMenu" style="display:block;">
+						<div class="subMenu">
 							<ul> 
 								<li><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">- 공지사항</a></li>
 								<li><a href="${pageContext.request.contextPath}/admin/adminNews">- 언론보도</a></li>

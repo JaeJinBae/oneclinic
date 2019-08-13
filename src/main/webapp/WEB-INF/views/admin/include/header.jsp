@@ -36,6 +36,13 @@
 .gohome:hover{
 	font-weight:bold;
 }
+.leftMenu > ul > li:hover > .subMenu{
+	display: block;
+}
+.subMenu > ul > li:hover > a{
+	color: #fff;
+	font-weight: bold;
+}
 </style>
 </head>
 <script>
