@@ -232,6 +232,42 @@
 	padding: 5px 10px;
 }
 </style>
+<script>
+function sendSms(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/adminAdviceSendSms",
+		type: "post",
+		data:JSON.stringify(info),
+		async:false,
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		success:function(json){
+			if(json == "ok"){
+				alert("문자전송이 완료되었습니다.");
+			}else{
+				console.log(json);
+				alert("문자전송이 실패했습니다. 새로고침(F5) 후 다시 이용하세요.\n계속 실패 하는 경우 관리자에게 문의하세요.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
+$(function(){
+	$("#sendSmsBtn").click(function(){
+		var phone = $(".smsWrap > input[name='phone']").val();
+		var cont = $(".smsWrap > #smsContent").val();
+		if(cont == ""){
+			alert("내용이 없습니다.");
+			return false;
+		}
+		var info = {phone:phone, content:cont};
+		sendSms(info);
+	});
+});
+</script>
 </head>
 <body>
 	<div class="allWrap">
@@ -298,13 +334,14 @@
 				</div><!-- notice_content end --> 
 				<c:choose>
 					<c:when test="${item.reply eq ''}">
-					<div class="container">
+					<div class="container smsWrap">
 						<h2>문자답변</h2>
 						<hr>
-						<textarea id="editor1" name="reply"></textarea>
+						<input type="hidden" name="phone" value="${item.phone}">
+						<textarea id="smsContent" name="reply"></textarea>
 						<hr>
 						<div class="btn">
-							<p><button type="button">전송</button></p>
+							<p><button id="sendSmsBtn" type="button">전송</button></p>
 						</div>
 					</div>
 					<form id="form1" method="post" action="adminAdviceReplyRegister">
