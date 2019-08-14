@@ -822,7 +822,7 @@ $(function(){
 							<div class="box1_videoWrap">
 								<video loop autoplay src="${pageContext.request.contextPath}/resources/video/v1.mp4"></video>
 							</div>
-						</div>
+						</div> 
 						<div class="box1">
 							<h4>병원둘러보기</h4>
 							<div class="dulBannerWrap">
@@ -978,6 +978,7 @@ $(function(){
 							<img src="${pageContext.request.contextPath}/resources/images/ch3.png">
 							<img src="${pageContext.request.contextPath}/resources/images/ch4.png">
 							<img src="${pageContext.request.contextPath}/resources/images/ch5.png">
+							<img src="${pageContext.request.contextPath}/resources/images/ch6_1.png">
 						</div>
 					</div>
 				</div>
