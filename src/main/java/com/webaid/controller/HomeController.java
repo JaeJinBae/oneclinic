@@ -114,8 +114,8 @@ public class HomeController {
 	public ResponseEntity<String> insertStatistic(@RequestBody Map<String, String> info) throws UnsupportedEncodingException{
 		ResponseEntity<String> entity = null;
 		StatisticVO vo = new StatisticVO();
-		String url = URLDecoder.decode(info.get("url"), "UTF-8");
-		vo.setUrl(url);
+		
+		vo.setUrl(info.get("url"));
 		vo.setDevice(info.get("device"));
 		vo.setConnectdate(info.get("connectdate"));
 		
