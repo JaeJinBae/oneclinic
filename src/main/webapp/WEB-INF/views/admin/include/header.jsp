@@ -18,13 +18,15 @@
 	line-height: 80px;
 	position:  relative;
 }
-#headerDiv #logo h2 {
+#headerDiv #logo h2{
     width: 100%;
     font-weight: bold;
     text-align: center;
     letter-spacing: 2px;
-    color: #fff;
     background: #3a4652;
+}
+#headerDiv #logo h2 > a{
+	color: #fff;
 }
 #headerDiv>.gohome{
 	font-size: 15px;
@@ -54,7 +56,7 @@
 <body>
 	<div id="headerDiv">
 		<div id="logo">
-			<h2>관리자모드</h2>
+			<h2><a href="${pageContext.request.contextPath}/admin/adminMain">관리자모드</a></h2>
 		</div>
 		<a class="gohome" href="${pageContext.request.contextPath}/admin/logout">로그아웃</a>
 	</div>

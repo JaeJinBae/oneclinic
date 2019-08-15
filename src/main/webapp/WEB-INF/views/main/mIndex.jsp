@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .popup{
-	/* display: none; */
+	display: none;
 }
 .allWrap{
 	width:100%;

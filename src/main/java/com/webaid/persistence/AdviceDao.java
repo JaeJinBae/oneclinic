@@ -8,6 +8,7 @@ import com.webaid.domain.SearchCriteria;
 public interface AdviceDao {
 	public List<AdviceVO> selectAll();
 	public AdviceVO selectOne(int no);
+	public List<AdviceVO> selectNoReply();
 	public void insert(AdviceVO vo);
 	public void update(AdviceVO vo);
 	public void updateReply(AdviceVO vo);

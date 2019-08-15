@@ -47,10 +47,12 @@ import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.CommentService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.StatisticService;
 
 
 
@@ -73,6 +75,9 @@ public class AdminController {
 	
 	@Autowired
 	private CommentService cService;
+	
+	@Autowired
+	private StatisticService sService;
 
 	@RequestMapping(value = "/adminLogin", method = RequestMethod.GET)
 	public String home() throws Exception {
@@ -101,7 +106,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/adminMain", method = RequestMethod.GET)
-	public String adminMain(@ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+	public String adminMain(Model model, HttpServletRequest req) throws Exception {
 		logger.info("admin main get");
 		
 		HttpSession session = req.getSession(false);
@@ -109,21 +114,41 @@ public class AdminController {
 			logger.info("아이디는 null 입니다.");
 			return "redirect:/admin/adminLogin";
 		}
-		List<NoticeVO> list = nService.listSearch(cri);
-		List<NoticeVO> topList = nService.selectTopNotice();
 		
-		cri.setKeyword(null);
-		cri.setSearchType("n");
+		Calendar now = Calendar.getInstance();
+		String nowYear = now.get(Calendar.YEAR)+"";
+		String nowMonth = ((now.get(Calendar.MONTH)+1)<10)?"0"+(now.get(Calendar.MONTH)+1):(now.get(Calendar.MONTH)+1)+"";
+		String nowDate = ((now.get(Calendar.DATE)+1)<10)?"0"+(now.get(Calendar.DATE)+1):(now.get(Calendar.DATE)+1)+"";
+		String ym = nowYear+"-"+nowMonth;
+		String ymd = nowYear+"-"+nowMonth+"-"+nowDate;
 		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCount(cri));
-
-		model.addAttribute("topList", topList);
+		StatisticVO vo = null;
+		vo = new StatisticVO();
+		vo.setDevice("PC");
+		vo.setConnectdate(ymd);
+		
+		int today_pc = sService.selectCountDevice(vo);
+		
+		vo = new StatisticVO();
+		vo.setDevice("MOBILE");
+		vo.setConnectdate(ymd);
+		int today_mobile = sService.selectCountDevice(vo);
+		
+		vo = new StatisticVO();
+		vo.setDevice("PC");
+		vo.setConnectdate(ym);
+		int month_pc = sService.selectCountDevice(vo);
+		
+		vo = new StatisticVO();
+		vo.setDevice("MOBILE");
+		vo.setConnectdate(ym);
+		int month_mobile = sService.selectCountDevice(vo);
+		
+		List<AdviceVO> list = aService.selectNoReply();
+		
 		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
-		return "admin/adminNotice";
+		
+		return "admin/adminMain";
 	}
 	
 	@RequestMapping(value = "/adminNotice")

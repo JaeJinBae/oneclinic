@@ -12,6 +12,10 @@
 		select * from advice where no=#{no}
 	</select>
 	
+	<select id="selectNoReply" resultType="AdviceVO">
+		select * from advice where reply='' order by no desc
+	</select>
+	
 	<insert id="insert">
 		insert into advice values(0, #{title}, #{content}, #{writer}, #{regdate}, #{phone}, 0, #{pwtype}, #{pw}, #{replytype}, #{replytime}, #{reply})
 	</insert>

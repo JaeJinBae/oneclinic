@@ -28,6 +28,11 @@ public class AdviceDaoImpl implements AdviceDao {
 	}
 
 	@Override
+	public List<AdviceVO> selectNoReply() {
+		return session.selectList(namespace + ".selectNoReply");
+	}
+
+	@Override
 	public void insert(AdviceVO vo) {
 		session.insert(namespace + ".insert", vo);
 	}

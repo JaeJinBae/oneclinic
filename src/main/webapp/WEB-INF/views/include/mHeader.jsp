@@ -135,7 +135,61 @@
 	
 </style>
 <script>
+function statistic(){
+	var referrer =  document.referrer;
+	if(referrer.indexOf("zzz") > 0 || referrer == ""){
+		console.log("같은페이지에서 넘어옴");
+		console.log(referrer);
+	}else{
+		referrer = encodeURI(referrer);
+		console.log(referrer);
+		var device = navigator.userAgent;
+		var pc_device = "win16|win32|win64|mac|macintel"; 
+	    // 접속한 디바이스 환경
+	    var this_device = navigator.platform;
+	 
+	    if(this_device){
+			if( pc_device.indexOf(navigator.platform.toLowerCase()) < 0 ){
+				device = 'MOBILE';
+			}else{
+				device = 'PC';
+			}
+		}
+	    var sdate = new Date();
+		var year = sdate.getFullYear();
+		var month = sdate.getMonth()+1;
+		var date = sdate.getDate();
+		var ymd = year+"-"+((month>9?'':"0")+month)+"-"+((date>9?'':"0")+date);
+		var hour = sdate.getHours();
+		var minute = sdate.getMinutes();
+		var connectdate = ymd+" "+((hour>9?'':"0")+hour)+":"+((minute>9?'':"0")+minute);
+		
+		var info = {url:referrer, device:device, connectdate:connectdate};
+		$.ajax({
+			url:"${pageContext.request.contextPath}/insertStatistic",
+			type: "post",
+			data:JSON.stringify(info),
+			async:false,
+			contentType : "application/json; charset=UTF-8",
+			dataType:"text",
+			success:function(json){
+				if(json == "ok"){
+					
+				}else{
+					console.log(json);
+				}
+			},
+			error:function(request,status,error){
+				console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			}
+		});
+	}
+	
+} 
+
 $(function(){
+	statistic();
+	
 	$(".menuBtnWrap").click(function(){
 		$(".headerTopActiveWrap").slideDown();
 	});

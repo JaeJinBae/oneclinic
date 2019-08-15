@@ -3,6 +3,8 @@ package com.webaid.controller;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.util.HashMap;
@@ -12,6 +14,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -23,7 +26,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.apache.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
@@ -42,10 +44,12 @@ import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.CommentService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.StatisticService;
 
 @Controller
 public class HomeController {
@@ -63,9 +67,12 @@ public class HomeController {
 	
 	@Autowired
 	private CommentService cService;
+	
+	@Autowired
+	private StatisticService sService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(HttpServletRequest req,Model model) throws Exception {
+	public String home(HttpServletRequest req, Model model) throws Exception {
 		logger.info("deviceCheck.");
 		
 		Device device=DeviceUtils.getCurrentDevice(req);
@@ -101,6 +108,19 @@ public class HomeController {
 			model.addAttribute("noticeList", noticeList);
 			return "main/index";
 		}
+	}
+	
+	@RequestMapping(value="/insertStatistic", method=RequestMethod.POST)
+	public ResponseEntity<String> insertStatistic(@RequestBody Map<String, String> info) throws UnsupportedEncodingException{
+		ResponseEntity<String> entity = null;
+		StatisticVO vo = new StatisticVO();
+		String url = URLDecoder.decode(info.get("url"), "UTF-8");
+		vo.setUrl(url);
+		vo.setDevice(info.get("device"));
+		vo.setConnectdate(info.get("connectdate"));
+		
+		sService.insert(vo);
+		return entity;
 	}
 	
 	@RequestMapping(value="/privacy_popup")

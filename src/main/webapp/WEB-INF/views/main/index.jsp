@@ -978,7 +978,7 @@ $(function(){
 							<img src="${pageContext.request.contextPath}/resources/images/ch3.png">
 							<img src="${pageContext.request.contextPath}/resources/images/ch4.png">
 							<img src="${pageContext.request.contextPath}/resources/images/ch5.png">
-							<img src="${pageContext.request.contextPath}/resources/images/ch6_1.png">
+							<img src="${pageContext.request.contextPath}/resources/images/ch6.png">
 						</div>
 					</div>
 				</div>

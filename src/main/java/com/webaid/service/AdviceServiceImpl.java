@@ -26,6 +26,11 @@ public class AdviceServiceImpl implements AdviceService {
 	}
 
 	@Override
+	public List<AdviceVO> selectNoReply() {
+		return dao.selectNoReply();
+	}
+
+	@Override
 	public void insert(AdviceVO vo) {
 		dao.insert(vo);
 	}

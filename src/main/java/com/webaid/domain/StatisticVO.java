@@ -3,7 +3,6 @@ package com.webaid.domain;
 public class StatisticVO {
 	private int no;
 	private String url;
-	private String browser;
 	private String device;
 	private String connectdate;
 
@@ -27,14 +26,6 @@ public class StatisticVO {
 		this.url = url;
 	}
 
-	public String getBrowser() {
-		return browser;
-	}
-
-	public void setBrowser(String browser) {
-		this.browser = browser;
-	}
-
 	public String getDevice() {
 		return device;
 	}
@@ -53,8 +44,7 @@ public class StatisticVO {
 
 	@Override
 	public String toString() {
-		return "StatisticVO [no=" + no + ", url=" + url + ", browser=" + browser + ", device=" + device
-				+ ", connectdate=" + connectdate + "]";
+		return "StatisticVO [no=" + no + ", url=" + url + ", device=" + device + ", connectdate=" + connectdate + "]";
 	}
 
 }
