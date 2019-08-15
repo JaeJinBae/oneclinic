@@ -8,16 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>원마취통증의학과 관리자 모드</title>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/common.css">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/jqplot/jquery.jqplot.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/jqplot/jquery.jqplot.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/jqplot/jqplot.pieRenderer.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/jqplot/jquery.jqplot.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jqplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jqplot/jqplot.pieRenderer.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .allWrap {
@@ -246,10 +241,12 @@ function draw_chart(target, v1, v2){
 }
 
 $(function() {
-	draw_chart("chart1", 50, 0);
-	draw_chart("chart2", 200, 50);
-	
-	
+	var tp = Number($(".statisticWrap > input[name='today_pc']").val());
+	var tm = Number($(".statisticWrap > input[name='today_mobile']").val());
+	var mp = Number($(".statisticWrap > input[name='month_pc']").val());
+	var mm = Number($(".statisticWrap > input[name='month_mobile']").val());
+	draw_chart("chart1", tp, tm);
+	draw_chart("chart2", mp, mm);
 });
 </script>
 </head>
@@ -284,6 +281,10 @@ $(function() {
 			<div class="centerMenu">
 				<div class="statisticWrap">
 					<h1 class="boardTitle">■ 통계현황</h1>
+					<input type="hidden" name="today_pc" value="${cntList.today_pc}">
+					<input type="hidden" name="today_mobile" value="${cntList.today_mobile}">
+					<input type="hidden" name="month_pc" value="${cntList.month_pc}">
+					<input type="hidden" name="month_mobile" value="${cntList.month_mobile}">
 					<div class="chartWrap">
 						<div id="chart1Wrap" class="cw">
 							<h4>당일접속현황</h4>

@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="selectCountDevice" resultType="int">
-		select count(*) from statistic where connectdate like concat('%',#{connectdate},'%') and device like concat('%',#{device},'%')
+		select count(*) from statistic where connectdate like concat('%',#{connectdate},'%') and device=#{device}
 	</select>
 	
 	<select id="selectByDate" resultType="statisticVO">

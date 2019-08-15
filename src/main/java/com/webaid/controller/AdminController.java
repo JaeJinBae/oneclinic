@@ -118,7 +118,7 @@ public class AdminController {
 		Calendar now = Calendar.getInstance();
 		String nowYear = now.get(Calendar.YEAR)+"";
 		String nowMonth = ((now.get(Calendar.MONTH)+1)<10)?"0"+(now.get(Calendar.MONTH)+1):(now.get(Calendar.MONTH)+1)+"";
-		String nowDate = ((now.get(Calendar.DATE)+1)<10)?"0"+(now.get(Calendar.DATE)+1):(now.get(Calendar.DATE)+1)+"";
+		String nowDate = ((now.get(Calendar.DATE))<10)?"0"+(now.get(Calendar.DATE)):(now.get(Calendar.DATE))+"";
 		String ym = nowYear+"-"+nowMonth;
 		String ymd = nowYear+"-"+nowMonth+"-"+nowDate;
 		
@@ -126,7 +126,6 @@ public class AdminController {
 		vo = new StatisticVO();
 		vo.setDevice("PC");
 		vo.setConnectdate(ymd);
-		
 		int today_pc = sService.selectCountDevice(vo);
 		
 		vo = new StatisticVO();
@@ -144,10 +143,16 @@ public class AdminController {
 		vo.setConnectdate(ym);
 		int month_mobile = sService.selectCountDevice(vo);
 		
+		Map<String, Integer> cntList = new HashMap<String, Integer>();
+		cntList.put("today_pc", today_pc);
+		cntList.put("today_mobile", today_mobile);
+		cntList.put("month_pc", month_pc);
+		cntList.put("month_mobile", month_mobile);
+		
 		List<AdviceVO> list = aService.selectNoReply();
 		
 		model.addAttribute("list", list);
-		
+		model.addAttribute("cntList", cntList);
 		return "admin/adminMain";
 	}
 	
