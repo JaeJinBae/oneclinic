@@ -217,15 +217,43 @@
 }
 </style>
 <script type="text/javascript">
-	$(function(){		
-		//게시판 검색
-        $("#searchBtn").click(function(){
-    		var k=$("input[name='keyword']").val();
-    		var keyword = encodeURIComponent(k);
-    		location.href="adminNotice${pageMaker.makeQuery(1)}&searchType=&keyword="+keyword;
-    	});
-		
-	});
+function inputBirthChk(obj) {
+	var number = obj.value.replace(/[^0-9]/g, "");
+	var birth = "";
+	
+	if(number.length < 5) {
+		return number;
+	} else if(number.length < 7) {
+		birth += number.substr(0, 4);
+		birth += "-";
+		birth += number.substr(4);
+	}else {
+		birth += number.substr(0, 4);
+		birth += "-";
+		birth += number.substr(4, 2);
+		birth += "-";
+		birth += number.substr(6);
+	}
+	
+	obj.value = birth;
+}
+
+$(function(){		
+	//게시판 검색
+    $("#searchBtn").click(function(){
+		var k=$("input[name='keyword']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="adminStatistic?${pageMaker.makeQuery(1)}&searchType=&keyword="+keyword;
+   	});
+	
+	$("#keywordInput").keyup(function(e){
+		if(e.keyCode == 13){
+			var k=$("input[name='keyword']").val();
+			var keyword = encodeURIComponent(k);
+			location.href="adminStatistic?${pageMaker.makeQuery(1)}&searchType=&keyword="+keyword;
+		}
+   	});
+});
 </script>
 </head>
 <body>
@@ -258,7 +286,7 @@
 				<h1 class="boardTitle">■ 날짜별 방문 통계</h1>
 				<div class="tbl_board">
 					<div class="box-body">
-						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
+						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}" onKeyup="inputBirthChk(this);" maxlength="10">
 						<button id="searchBtn">검색</button>
 					</div>
 					<table>
