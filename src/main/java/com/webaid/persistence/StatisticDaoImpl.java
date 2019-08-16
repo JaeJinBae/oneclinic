@@ -38,6 +38,11 @@ public class StatisticDaoImpl implements StatisticDao {
 	}
 
 	@Override
+	public int listSearchCount(SearchCriteria cri) {
+		return session.selectOne(namespace + ".listSearchCount", cri);
+	}
+
+	@Override
 	public void insert(StatisticVO vo) {
 		session.insert(namespace + ".insert", vo);
 	}

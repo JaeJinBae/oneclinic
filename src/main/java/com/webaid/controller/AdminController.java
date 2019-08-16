@@ -54,10 +54,6 @@ import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.StatisticService;
 
-
-
-
-
 @Controller
 @RequestMapping("/admin/*")
 public class AdminController {
@@ -646,6 +642,40 @@ public class AdminController {
 		return "redirect:/admin/adminAdvice" + pageMaker.makeSearch(cri.getPage());
 	}
 
+	@RequestMapping(value = "/adminStatistic", method = RequestMethod.GET)
+	public String adminStatistic(@ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req)
+			throws Exception {
+		logger.info("statistic get");
+
+		HttpSession session = req.getSession(false);
+
+		if (session.getAttribute("id") == null) {
+			logger.info("아이디는 null 입니다.");
+			return "redirect:/admin/adminLogin";
+		}
+
+		if(cri.getKeyword() == null){
+			Calendar now = Calendar.getInstance();
+			String nowYear = now.get(Calendar.YEAR)+"";
+			String nowMonth = ((now.get(Calendar.MONTH)+1)<10)?"0"+(now.get(Calendar.MONTH)+1):(now.get(Calendar.MONTH)+1)+"";
+			String nowDate = ((now.get(Calendar.DATE))<10)?"0"+(now.get(Calendar.DATE)):(now.get(Calendar.DATE))+"";
+			
+			cri.setKeyword(nowYear+"-"+nowMonth+"-"+nowDate);
+		}
+		System.out.println(cri.getKeyword());
+		List<StatisticVO> list = sService.selectByDate(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(sService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "admin/adminStatistic";
+	} 
+	
 	@ResponseBody
 	@RequestMapping("/imgUpload")
 	public Map<String, Object> imgaeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)

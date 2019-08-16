@@ -19,6 +19,10 @@
 		select * from statistic where connectdate like concat('%',#{keyword},'%') order by connectdate desc limit #{pageStart},#{perPageNum}
 	</select>
 	
+	<select id="listSearchCount" resultType="int">
+		select count(no) from statistic where connectdate like concat('%',#{keyword},'%')
+	</select>
+	
 	<insert id="insert">
 		insert into statistic(url, device, connectdate) values(#{url}, #{device}, #{connectdate})
 	</insert>

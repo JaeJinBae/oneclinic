@@ -10,5 +10,6 @@ public interface StatisticDao {
 	public int selectCountDate(String connectdate);
 	public int selectCountDevice(StatisticVO vo);
 	public List<StatisticVO> selectByDate(SearchCriteria cri);
+	public int listSearchCount(SearchCriteria cri);
 	public void insert(StatisticVO vo);
 }

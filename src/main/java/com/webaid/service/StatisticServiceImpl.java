@@ -36,6 +36,11 @@ public class StatisticServiceImpl implements StatisticService {
 	}
 
 	@Override
+	public int listSearchCount(SearchCriteria cri) {
+		return dao.listSearchCount(cri);
+	}
+
+	@Override
 	public void insert(StatisticVO vo) {
 		dao.insert(vo);
 	}

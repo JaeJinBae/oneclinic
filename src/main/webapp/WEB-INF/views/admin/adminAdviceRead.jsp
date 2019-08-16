@@ -286,12 +286,10 @@ $(function(){
 						</div>
 					</li>
 					<li>
-						<p><a href="statistics" title="통계" id="statistics">통 계</a></p>
+						<p><a href="${pageContext.request.contextPath}/admin/adminStatistic" title="통계" id="statistics">통 계</a></p>
 						<div class="subMenu">
-							<ul> 
-								<li> <a href="#" id="statisticsDate" style="font-weight:bold;"> 날짜별 방문 통계</a></li>
-								<li> <a href="#" id="goBrowser"> 브라우저 통계</a></li>
-								<li> <a href="#" id="goOs"> OS 통계</a></li>
+							<ul>
+								<li><a href="${pageContext.request.contextPath}/admin/adminStatistic" id="statisticsDate">- 날짜별 방문 통계</a></li>
 							</ul>
 						</div>
 					</li>
