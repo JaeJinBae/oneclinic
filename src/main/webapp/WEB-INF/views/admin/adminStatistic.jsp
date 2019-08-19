@@ -58,10 +58,10 @@
 	padding-left: 15px;
 }
 .leftMenu > ul > li > p > a{
-	font-size:22px;
-	color: #eeeeee;
+	font-size:20px;
+	color: #cccccc;
 }
-.leftMenu > ul > li:nth-child(1) > p > a{
+.leftMenu > ul > li:nth-child(2) > p > a{
 	color: #ffffff;
 }
 .leftMenu > ul > li > .subMenu{
@@ -78,7 +78,7 @@
 	padding: 10px 5px;
 }
 .subMenu > ul > li > a{
-	color: #eeeeee;
+	color: #cccccc;
 	font-size: 17px;
 }
 .centerMenu{
@@ -91,6 +91,14 @@
 	width:100%;
 	font-size:20px;
 	margin-top:33px;
+	overflow: hidden;
+}
+.boardTitle > span{
+	font-size: 12px;
+	font-weight: 300;
+	color: gray;
+	float: right;
+	vertical-align: bottom;
 }
 
 /* 공지사항 */
@@ -263,7 +271,7 @@ $(function(){
 			<div class="leftMenu">
 				<ul>
 					<li>
-						<p><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">게시판</a></p>
+						<p><a href="${pageContext.request.contextPath}/admin/adminNotice">게시판</a></p>
 						<div class="subMenu">
 							<ul> 
 								<li><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">- 공지사항</a></li>
@@ -273,17 +281,17 @@ $(function(){
 						</div>
 					</li>
 					<li>
-						<p><a href="${pageContext.request.contextPath}/admin/adminStatistic" title="통계" id="statistics">통 계</a></p>
+						<p><a href="${pageContext.request.contextPath}/admin/adminStatistic" title="통계" id="statistics" style="font-weight:bold;">통 계</a></p>
 						<div class="subMenu">
 							<ul> 
-								<li> <a href="${pageContext.request.contextPath}/admin/adminStatistic" id="statisticsDate" style="font-weight:bold;"> 날짜별 방문 통계</a></li>
+								<li> <a href="${pageContext.request.contextPath}/admin/adminStatistic" id="statisticsDate" style="font-weight:bold;color:#fff;"> 날짜별 방문 통계</a></li>
 							</ul>
 						</div>
 					</li>
 				</ul>
 			</div><!-- leftMenu end -->
 			<div class="centerMenu">
-				<h1 class="boardTitle">■ 날짜별 방문 통계</h1>
+				<h1 class="boardTitle">■ 날짜별 방문 통계<span>Home > 게시판 > 날짜별 방문 통계</span></h1>
 				<div class="tbl_board">
 					<div class="box-body">
 						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}" onKeyup="inputBirthChk(this);" maxlength="10">

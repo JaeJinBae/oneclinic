@@ -58,8 +58,8 @@
 	padding-left: 15px;
 }
 .leftMenu > ul > li > p > a{
-	font-size:22px;
-	color: #eeeeee;
+	font-size:20px;
+	color: #cccccc;
 }
 .leftMenu > ul > li:nth-child(1) > p > a{
 	color: #ffffff;
@@ -78,7 +78,7 @@
 	padding: 10px 5px;
 }
 .subMenu > ul > li > a{
-	color: #eeeeee;
+	color: #cccccc;
 	font-size: 17px;
 }
 .centerMenu{
@@ -91,6 +91,14 @@
 	width:100%;
 	font-size:20px;
 	margin-top:33px;
+	overflow: hidden;
+}
+.boardTitle > span{
+	font-size: 12px;
+	font-weight: 300;
+	color: gray;
+	float: right;
+	vertical-align: bottom;
 }
 
 /* readNotice */
@@ -152,8 +160,8 @@
 						<p><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">게시판</a></p>
 						<div class="subMenu">
 							<ul> 
-								<li><a href="${pageContext.request.contextPath}/admin/adminNotice" style="font-weight:bold;">- 공지사항</a></li>
-								<li><a href="${pageContext.request.contextPath}/admin/adminNews">- 언론보도</a></li>
+								<li><a href="${pageContext.request.contextPath}/admin/adminNotice">- 공지사항</a></li>
+								<li><a href="${pageContext.request.contextPath}/admin/adminNews" style="font-weight:bold;color:#fff;">- 언론보도</a></li>
 								<li><a href="${pageContext.request.contextPath}/admin/adminAdvice">- 상담문의</a></li>
 							</ul>
 						</div>
@@ -169,7 +177,7 @@
 				</ul>
 			</div><!-- leftMenu end -->
 			<div class="centerMenu">
-				<h1 class="boardTitle">■ 언론보도</h1>
+				<h1 class="boardTitle">■ 언론보도<span>Home > 게시판 > 언론보도</span></h1>
 				<div class="notice_content">
 					<hr>
 					<p class="nTitle">제목: ${item.title}</p>

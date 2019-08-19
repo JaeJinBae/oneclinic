@@ -69,8 +69,8 @@
 }
 
 .leftMenu>ul>li>p>a {
-	font-size: 22px;
-	color: #eeeeee;
+	font-size: 20px;
+	color: #cccccc;
 }
 
 .leftMenu>ul>li:nth-child(1)>p>a {
@@ -94,7 +94,7 @@
 }
 
 .subMenu>ul>li>a {
-	color: #eeeeee;
+	color: #cccccc;
 	font-size: 17px;
 }
 
@@ -110,7 +110,10 @@
 	font-size: 20px;
 	margin-top: 33px;
 }
-
+.boardTitle > a{
+	display: inline-block;
+	font-size: 15px;
+}
 .chartWrap {
 	width: 100%;
 	overflow: hidden;
@@ -278,7 +281,7 @@ $(function() {
 			</div><!-- leftMenu end -->
 			<div class="centerMenu">
 				<div class="statisticWrap">
-					<h1 class="boardTitle">■ 통계현황</h1>
+					<h1 class="boardTitle">■ 통계현황 <a href="${pageContext.request.contextPath}/admin/adminStatistic">[자세히]</a></h1>
 					<input type="hidden" name="today_pc" value="${cntList.today_pc}">
 					<input type="hidden" name="today_mobile" value="${cntList.today_mobile}">
 					<input type="hidden" name="month_pc" value="${cntList.month_pc}">
