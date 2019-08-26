@@ -253,9 +253,9 @@ $(function(){
 	<div class="shortMenuWrap">
 		<ul>
 			<li><a href="${pageContext.request.contextPath}/mMenu01_04">병원소개</a></li>
-			<li><a href="${pageContext.request.contextPath}/mMenu01_05">비수술클리닉</a></li>
-			<li><a href="${pageContext.request.contextPath}/mMenu01_03">재활/교정클리닉</a></li>
-			<li><a href="${pageContext.request.contextPath}/mMenu01_03">스페셜클리닉</a></li>
+			<li><a href="${pageContext.request.contextPath}/mMenu02_01">비수술클리닉</a></li>
+			<li><a href="${pageContext.request.contextPath}/mMenu03_01">재활/교정클리닉</a></li>
+			<li><a href="${pageContext.request.contextPath}/mMenu04_01">스페셜클리닉</a></li>
 		</ul>
 	</div><!-- mainMenuWrap end -->
 </div><!-- header end -->

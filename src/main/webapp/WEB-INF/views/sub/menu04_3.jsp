@@ -91,7 +91,7 @@
 	text-align: center;
 }
 .content > img{
-	width: 60%;
+	width: 90%;
 }
 
 
