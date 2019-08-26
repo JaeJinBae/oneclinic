@@ -7,11 +7,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원마취통증의학과</title>
+<title>원통증의학과</title>
 <meta name="naver-site-verification" content="d53046e7ecfe442e3b973c1baeb37ec7fc75031d"/>
 <meta name="description" content="대구 북구 침산동, 비수술클리닉, 성장클리닉, 교정클리닉, 도수치료">
 <meta property="og:type" content="website">
-<meta property="og:title" content="원마취통증의학과">
+<meta property="og:title" content="원통증의학과">
 <meta property="og:description" content="대구 북구 침산동, 비수술클리닉, 성장클리닉, 교정클리닉, 도수치료">
 <meta property="og:image" content="http://www.1clinic.co.kr/logo.png">
 <meta property="og:url" content="http://www.1clinic.co.kr">

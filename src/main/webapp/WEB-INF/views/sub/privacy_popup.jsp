@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원마취통증의학과 개인정보취급방침</title>
+<title>원통증의학과 개인정보취급방침</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style>
 	.allWrap{
