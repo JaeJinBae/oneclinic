@@ -100,7 +100,7 @@
 					<table>
 						<tr>
 							<td><a href="${pageContext.request.contextPath}/mMenu01_01">의료진소개</a></td>
-							<td><a href="${pageContext.request.contextPath}/mMenu01_02">직원소개</a></td>
+							<td><a href="${pageContext.request.contextPath}/mMenu01_02">치료사소개</a></td>
 							<td><a href="${pageContext.request.contextPath}/mMenu01_03">병원둘러보기</a></td>
 							<td><a href="${pageContext.request.contextPath}/mMenu01_04">오시는길</a></td>
 						</tr>

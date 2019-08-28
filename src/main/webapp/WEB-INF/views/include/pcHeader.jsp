@@ -177,7 +177,7 @@ $(function(){
 				<div class="subMenuWrap">
 					<ul class="subMenuUl">
 						<li><a href="${pageContext.request.contextPath}/menu01_01">의료진소개</a></li>
-						<li><a href="${pageContext.request.contextPath}/menu01_02">직원소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/menu01_02">치료사소개</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_03">병원둘러보기</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_04">오시는 길</a></li>
 						<li><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></li>

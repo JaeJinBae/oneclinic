@@ -376,7 +376,7 @@ $(document).ready(function(){
 						<table>
 							<tr>
 								<td><a href="${pageContext.request.contextPath}/menu01_01">의료진소개</a></td>
-								<td><a href="${pageContext.request.contextPath}/menu01_02">직원소개</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_02">치료사소개</a></td>
 								<td><a href="${pageContext.request.contextPath}/menu01_03">병원둘러보기</a></td>
 								<td><a href="${pageContext.request.contextPath}/menu01_04">오시는길</a></td>
 							</tr>
