@@ -115,7 +115,7 @@
 					</table>
 				</div><!-- contentTitle end -->
 				<div class="content">
-					<img src="${pageContext.request.contextPath}/resources/images/mobileMenu01_7img.png">
+					<img src="${pageContext.request.contextPath}/resources/images/menu01_7img.jpg">
 				</div><!-- content end -->
 			</div><!-- contentWrap end -->
 		</div><!-- sectionWrap end -->

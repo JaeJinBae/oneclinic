@@ -181,26 +181,31 @@ $(document).ready(function(){
 							<div class="slider_for slider">
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_12.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_11.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_13.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
 							</div>
 							<div class="slider_nav slider">
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_1.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_2.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_12.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_3.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_4.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_5.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_6.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_7.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_8.jpg"></div>
-								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_9.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_11.jpg"></div>
+								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_13.jpg"></div>
 								<div><img src="${pageContext.request.contextPath}/resources/images/menu01_03_10.jpg"></div>
+								
 							</div>
 						</div>
 					</div><!-- content end -->

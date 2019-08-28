@@ -167,7 +167,7 @@
 .hosTitle{
 	width: 100%;
 	margin: 0 auto;
-	padding: 50px 0;
+	padding: 25px 0;
 	text-align: center;
 	font-weight: bold;
 	font-family: NanumSB;
