@@ -48,6 +48,7 @@
 .sectionContent{
 	width: 1100px;
 	margin: 0 auto;
+	margin-bottom: 100px;
 }
 
 
@@ -230,7 +231,7 @@ $(document).ready(function(){
 							<tr>
 								<td><a href="${pageContext.request.contextPath}/menu01_05">공지사항</a></td>
 								<td><a href="${pageContext.request.contextPath}/menu01_06">언론보도</a></td>
-								<td><a href="${pageContext.request.contextPath}/menu01_07">비급여</a></td>
+								<td><a href="${pageContext.request.contextPath}/menu01_07">비급여항목</a></td>
 								<td><a href="${pageContext.request.contextPath}/menu01_08">상담문의</a></td>
 							</tr>
 						</table>

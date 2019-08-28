@@ -185,7 +185,7 @@
 							<tr>
 								<td><a href="${pageContext.request.contextPath}/mMenu01_05">공지사항</a></td>
 								<td><a href="${pageContext.request.contextPath}/mMenu01_06">언론보도</a></td>
-								<td><a href="${pageContext.request.contextPath}/mMenu01_07">비급여</a></td>
+								<td><a href="${pageContext.request.contextPath}/mMenu01_07">비급여항목</a></td>
 								<td><a href="${pageContext.request.contextPath}/mMenu01_08">상담문의</a></td>
 							</tr>
 						</table>
