@@ -95,10 +95,28 @@
 .mainBanner div{
 	overflow: hidden;
 }
-.mainBanner img{
+.mainBanner div.bannerImgBox{
+	overflow: hidden;
+	position: relative;
+}
+.mainBanner img.bannerImg{
 	width: 100%;
 	height: auto;
 	display: block;
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform-origin: 50% 60%;
+	-webkit-transform-origin: 50% 60%;
+	-o-transform-origin: 50% 60%;
+	-moz-transform-origin: 50% 60%;
+	-ms-transform-origin: 50% 60%;
+}
+.mainBanner div.bannerImgBox img.bannerTxt{
+	width: 40%;
+	position: absolute;
 }
 .slick-slide{
 	transform: scale(1.1);
@@ -114,7 +132,7 @@
 	overflow: hidden;
 }
 .slick-slider { overflow: hidden; }
-.slick-active{
+.slick-active .bannerImg{
   -webkit-animation: myMove 5s ease-in-out;
   -moz-animation: myMove 5s ease-in-out;
   -o-animation: myMove 5s ease-in-out;
@@ -273,6 +291,7 @@
 .boxWrap2{
 	width: 100%;
 	padding: 7px;
+	padding-bottom: 15px;
 	overflow: hidden;
 }
 .box2{
@@ -302,17 +321,20 @@
 	background: url("${pageContext.request.contextPath}/resources/images/mainNotice.jpg") no-repeat;
 	background-size: cover;
 }
-.box2_1_top > .b2t_title > h4 > img{
+.box2_1_top > .b2t_title > h4 > a{
+	color: #fff;
+}
+.box2_1_top > .b2t_title > h4 > a > img{
 	width: 70px;
 }
-.box2_1_top > .b2t_title > h4 > span{
+.box2_1_top > .b2t_title > h4 > a > span{
 	display: inline-block;
 	padding-top: 20px;
 	margin-left: 10px;
 }
 .box2_1_top > .b2t_content{
 	width: 530px;
-	padding: 39px 15px;
+	padding: 38px 15px;
 	float:left;
 }
 .box2_1_top > .b2t_content > .updownBanner{
@@ -322,7 +344,7 @@
 	font-size: 18px;
 }
 .box2_1_top > .b2t_content > .updownBanner a{
-	font-size: 18px;
+	font-size: 20px;
 }
 .box2_1_bottom{
 	width: 100%;
@@ -710,10 +732,10 @@ $(function(){
 		infinite: true,
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		speed:2000,
+		speed:4000,
 		autoplay:true,
-		autoplaySpeed:1,
-		centerPadding: '50px',
+		autoplaySpeed:1000,
+		centerPadding: '100px',
 	});
 	
 	$("#privacyAgreementWrap > span").click(function(){
@@ -799,9 +821,18 @@ $(function(){
 			</div>
 			<div class="mainBannerWrap">
 				<div class="mainBanner">
-					<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner1.jpg">
-					<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner2.jpg">
-					<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner3.jpg">
+					<div class="bannerImgBox">
+						<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner1.jpg">
+						<img class="bannerTxt" src="${pageContext.request.contextPath}/resources/images/mainBannerTxt1.png" style="top: 25%; right: 10%;">
+					</div>
+					<div class="bannerImgBox">
+						<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner2.jpg">
+						<img class="bannerTxt" src="${pageContext.request.contextPath}/resources/images/mainBannerTxt2.png" style="bottom:5%; left: 50%;transform:translate(-50%, 0);">
+					</div>
+					<div class="bannerImgBox">
+						<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner3.jpg">
+						<img class="bannerTxt" src="${pageContext.request.contextPath}/resources/images/mainBannerTxt3.png" style="top:25%; right: 10%;">
+					</div>
 				</div>
 			</div><!-- mainBannerWrap end -->
 			<div class="sectionContentWrap">
@@ -843,7 +874,7 @@ $(function(){
 						<div class="box2 box2_1">
 							<div class="box2_1_top">
 								<div class="b2t_title">
-									<h4><img src="${pageContext.request.contextPath}/resources/images/icon_mainNotice.png"><span>공지사항</span></h4>
+									<h4><a href="${pageContext.request.contextPath}/menu01_05"><img src="${pageContext.request.contextPath}/resources/images/icon_mainNotice.png"><span>공지사항</span></a></h4>
 								</div>
 								<div class="b2t_content">
 									<div class="updownBanner">
@@ -854,7 +885,7 @@ $(function(){
 											    </c:when>
 											    <c:otherwise>
 											        <c:forEach var="item" items="${noticeList}">
-														<li>${item.regdate} <a href="${pageContext.request.contextPath}/menu01_05Read?no=${item.no}">${item.title}</a></li>
+														<li><a href="${pageContext.request.contextPath}/menu01_05Read?no=${item.no}">${item.title}</a></li>
 													</c:forEach>
 												</c:otherwise> 
 											</c:choose> 
@@ -963,7 +994,7 @@ $(function(){
 							</a>
 						</div>
 						<div class="con2Box">
-							<a href="${pageContext.request.contextPath}/">
+							<a href="${pageContext.request.contextPath}/menu01_08">
 								<img src="${pageContext.request.contextPath}/resources/images/mainSpecial4.jpg">
 							</a>
 						</div>
@@ -979,6 +1010,7 @@ $(function(){
 							<img src="${pageContext.request.contextPath}/resources/images/ch4.png">
 							<img src="${pageContext.request.contextPath}/resources/images/ch5.png">
 							<img src="${pageContext.request.contextPath}/resources/images/ch6.png">
+							<img src="${pageContext.request.contextPath}/resources/images/ch7.png">
 						</div>
 					</div>
 				</div>

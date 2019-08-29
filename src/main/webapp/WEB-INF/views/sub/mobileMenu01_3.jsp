@@ -41,6 +41,7 @@
 .contentWrap{
 	width: 100%;
 	padding: 10px 5px;
+	margin-bottom: 50px;
 }
 .contentTitle{
 	width: 100%;

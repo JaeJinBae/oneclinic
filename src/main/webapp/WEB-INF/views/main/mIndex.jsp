@@ -552,7 +552,7 @@ $(function(){
 						<div class="box3Img">
 							<a href="${pageContext.request.contextPath}/mMenu02_01"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial1.jpg"></a>
 							<a href="${pageContext.request.contextPath}/mMenu04_01"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial2.jpg"></a>
-							<a href="${pageContext.request.contextPath}/#none"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial4.jpg"></a>
+							<a href="${pageContext.request.contextPath}/mMenu01_08"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial4.jpg"></a>
 							<a href="${pageContext.request.contextPath}/mMenu03_01"><img src="${pageContext.request.contextPath}/resources/images/mainSpecial3.jpg"></a>
 						</div>
 					</div>
@@ -565,6 +565,8 @@ $(function(){
 								<img src="${pageContext.request.contextPath}/resources/images/ch3.png">
 								<img src="${pageContext.request.contextPath}/resources/images/ch4.png">
 								<img src="${pageContext.request.contextPath}/resources/images/ch5.png">
+								<img src="${pageContext.request.contextPath}/resources/images/ch6.png">
+								<img src="${pageContext.request.contextPath}/resources/images/ch7.png">
 							</div>
 						</div>
 					</div>
