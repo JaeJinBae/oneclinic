@@ -904,7 +904,7 @@ $(function(){
 										<table>
 											<tr>
 												<td>
-													<input type="text" name="title" placeholder="불편한 곳은 어디신가요?">
+													<input type="text" name="title" placeholder="불편한 곳은 어디신가요?" autocomplete="off">
 													<input type="text" name="name" value="" placeholder="이름" autocomplete="off">
 													<input type="text" name="phone" value="" placeholder="연락처" onKeyup="inputPhoneNumber(this);" maxlength="13" autocomplete="off">
 												</td>

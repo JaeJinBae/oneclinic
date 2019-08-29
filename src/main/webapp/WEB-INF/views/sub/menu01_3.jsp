@@ -103,6 +103,7 @@
 }
 .slider_nav{
 	width: 100%;
+	padding-top: 50px;
 }
 .slider_nav img{
 	width: 190px;

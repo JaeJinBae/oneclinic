@@ -128,9 +128,6 @@
 .tblWrap > table tr{
 	border-bottom: 1px solid lightgray;
 }
-.tblWrap > table tr:first-child{
-	
-}
 .tblWrap > table tr > th{
 	color: #fff;
 	font-size: 17px;
