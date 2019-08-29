@@ -180,20 +180,24 @@
 }
 .tblWrap{
 	width: 100%;
+	border-top: 8px solid #26cae2;
 }
 .tblWrap > table{
 	width: 100%;
-	border-top: 8px solid #417ca6; 
+	margin-top: 2px;
 }
 .tblWrap > table tr{
 	border-bottom: 1px solid lightgray;
+}
+.tblWrap > table tr:last-child{
+	border-bottom: 8px solid #26cae2;
 }
 .tblWrap > table tr > th{
 	color: #fff;
 	font-size: 17px;
 	text-align: center;
-	background: #91b0c4;
-	padding: 6px 0;
+	background: #86d6e2;
+	padding: 15px 0;
 }
 .tblWrap > table tr > th:nth-child(1){
 	width: 50px;
@@ -217,7 +221,7 @@
 }
 .tblWrap > table tr > td:nth-child(2){
 	text-align: left;
-	padding: 7px 10px;
+	padding: 14px 10px;
 }
 .tblWrap > table tr > td > p{
 	font-size: 15px;
@@ -240,7 +244,7 @@
 .registerBtn > p{
 	width: 70px;
 	float: right;
-	background: #3e7395;
+	background: #26cae2;
 	padding: 5px;
 	text-align: center;
 }
@@ -252,6 +256,7 @@
 }
 .page{
 	margin: 15px auto;
+	margin-top: 60px;
 }
 .page > ul{
 	text-align: center;
@@ -267,7 +272,8 @@
 	background: #fafafa;
 }
 .active1{
-	background: #4a7899 !important;
+	background: #26cae2 !important;
+	border: 0 !important;
 }
 .active2{
 	font-weight: bold;
@@ -389,7 +395,7 @@ $(document).ready(function(){
 						</table>
 					</div><!-- contentTitle end -->
 					<div class="content">
-						<div class="searchWrap">
+						<!-- <div class="searchWrap">
 							<select>
 								<option>선 택</option>
 								<option>제 목</option>
@@ -398,7 +404,7 @@ $(document).ready(function(){
 							</select>
 							<input type="text" name="">
 							<p>검색</p>
-						</div>
+						</div> -->
 						<div class="tblWrap">
 							<table>
 								<tr>
@@ -407,7 +413,6 @@ $(document).ready(function(){
 									<th>상태</th>
 									<th>작성자</th>
 									<th>등록일</th>
-									<th>조회</th>
 								</tr>
 								<c:choose>
 								    <c:when test="${fn:length(list) == 0}">
@@ -448,7 +453,6 @@ $(document).ready(function(){
 													<%-- ${item.writer} --%>
 												</td>
 												<td>${item.regdate}</td>
-												<td>${item.cnt}</td>
 											</tr>
 										</c:forEach>
 								    </c:otherwise> 
