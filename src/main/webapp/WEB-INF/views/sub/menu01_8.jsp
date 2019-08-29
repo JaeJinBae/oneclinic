@@ -446,7 +446,6 @@ $(document).ready(function(){
 													</c:choose>
 												</td>
 												<td>
-													
 													<c:set var="writer" value="${item.writer}"></c:set>
 													<c:set var="writer2" value="${fn:substring(writer,1,4)}"/>
 													${fn:replace(writer,writer2,"**") }

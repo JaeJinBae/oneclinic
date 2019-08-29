@@ -138,8 +138,6 @@
 function statistic(){
 	var referrer =  document.referrer;
 	if(referrer.indexOf("1clinic.co.kr") > 0 || referrer == ""){
-		console.log("같은페이지에서 넘어옴");
-		console.log(referrer);
 	}else{
 		referrer = decodeURIComponent(referrer);
 		console.log(referrer);

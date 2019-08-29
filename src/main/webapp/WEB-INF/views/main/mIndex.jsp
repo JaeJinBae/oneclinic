@@ -364,7 +364,6 @@ function post_adviceRegister(info){
 				$(".formWrap > table tr:nth-child(2) > td > input[name='pw']").val("");
 				$(".formWrap > table tr:nth-child(3) > td > textarea[name='content']").val("");
 			}else{
-				console.log(json);
 				alert("문의글 등록이 정상적으로 등록되지 않았습니다. 새로고침(F5) 후 다시 이용하세요.");
 			}
 		},
