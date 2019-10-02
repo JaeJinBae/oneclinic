@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .popup{
-	display: none;
+	/* display: none; */
 }
 .allWrap{
 	width:100%;
@@ -477,7 +477,7 @@ $(function(){
 		</div>
 		<div class="sectionWrap">
 			<div class="popup">
-				<img src="${pageContext.request.contextPath}/resources/popup/popup_20190807.jpg">
+				<img src="${pageContext.request.contextPath}/resources/popup/popup_20191002.jpg">
 				<div class="popup_closeBtn">
 					<p>닫기</p>
 				</div>

@@ -24,7 +24,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 .popup{
-	display: none;
+	/* display: none; */
 }
 .allWrap{
 	width:100%;
@@ -813,7 +813,7 @@ $(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="popup">
-				<img src="${pageContext.request.contextPath}/resources/popup/popup_20190807.jpg">
+				<img src="${pageContext.request.contextPath}/resources/popup/popup_20191002.jpg">
 				<div class="popup_closeBtn">
 					<p>닫기</p>
 				</div>

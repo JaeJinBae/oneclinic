@@ -711,7 +711,7 @@ public class HomeController {
 			
 			/******************** 전송정보 ********************/
 			sms.put("msg", txt); // 메세지 내용
-			sms.put("receiver", "01052799993"); // 수신번호
+			sms.put("receiver", "01086927582"); // 수신번호
 			sms.put("destination", ""); // 수신인 %고객명% 치환
 			sms.put("sender", ""); // 발신번호
 			sms.put("rdate", ""); // 예약일자 - 20161004 : 2016-10-04일기준
