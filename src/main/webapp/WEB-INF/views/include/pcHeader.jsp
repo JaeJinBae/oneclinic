@@ -88,10 +88,15 @@
 <script>
 function statistic(){
 	var referrer =  document.referrer;
-	if(referrer.indexOf("1clinic.co.kr") > 0 || referrer == ""){
+	if(referrer.indexOf("1clinic.co.kr") > 0){
 		return false;
 	}else{
-		referrer = decodeURIComponent(referrer);
+		if(referrer == ""){
+			referrer = "직접 또는 즐겨찾기";
+		}else{
+			referrer = decodeURIComponent(referrer);
+		}
+		
 		var device = navigator.userAgent;
 		var pc_device = "win16|win32|win64|mac|macintel"; 
 	    // 접속한 디바이스 환경
