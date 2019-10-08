@@ -263,6 +263,31 @@ function sendSms(info){
 	});
 }
 
+function sendSmsReply(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/adminAdviceSendSmsReply",
+		type: "post",
+		data:JSON.stringify(info),
+		async:false,
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		success:function(json){
+			if(json == "ok"){
+				alert("댓글 저장 및 문자 전송이 완료되었습니다.");
+				var nowUrl = window.location.href;
+				var urlArr = nowUrl.split("?");
+				location.href="${pageContext.request.contextPath}/admin/adminAdviceRead?"+urlArr[1];
+			}else{
+				console.log(json);
+				alert("문자전송이 실패했습니다. 새로고침(F5) 후 다시 이용하세요.\n계속 실패 하는 경우 관리자에게 문의하세요.");
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
 $(function(){
 	$("#sendSmsBtn").click(function(){
 		var phone = $(".smsWrap > input[name='phone']").val();
@@ -273,6 +298,18 @@ $(function(){
 		}
 		var info = {phone:phone, content:cont};
 		sendSms(info);
+	});
+	
+	$("#sendSmsReplyBtn").click(function(){
+		var no = $("input[name='no']").val();
+		var phone = $(".smsWrap > input[name='phone']").val();
+		var cont = $(".smsWrap > #smsContent").val();
+		if(cont == ""){
+			alert("내용이 없습니다.");
+			return false;
+		}
+		var info = {no:no, phone:phone, content:cont};
+		sendSmsReply(info);
 	});
 });
 </script>
@@ -340,32 +377,32 @@ $(function(){
 				</div><!-- notice_content end --> 
 				<c:choose>
 					<c:when test="${item.reply eq ''}">
-					<div class="container smsWrap">
-						<h2>문자답변</h2>
-						<hr>
-						<input type="hidden" name="phone" value="${item.phone}">
-						<textarea id="smsContent" name="reply"></textarea>
-						<hr>
-						<div class="btn">
-							<p><button id="sendSmsBtn" type="button">전송</button></p>
-						</div>
-					</div>
-					<form id="form1" method="post" action="adminAdviceReplyRegister">
-						<input type="hidden" name="no" value="${item.no}">
-						<div class="container">
-							<h2>댓글답변</h2>
+						<div class="container smsWrap">
+							<h2>문자답변</h2>
 							<hr>
-							<p>작성자: <input type="text" name="replyer" value="관리자"></p>
-							<input type="hidden" name="no" value="${item.no}">
-							<textarea id="editor1" name="reply"></textarea>
+							<input type="hidden" name="phone" value="${item.phone}">
+							<textarea id="smsContent" name="reply"></textarea>
 							<hr>
 							<div class="btn">
-								<input type="submit" value="저장">
-								<a href="${pageContext.request.contextPath}/admin/adminAdvice"><button type="button">뒤로가기</button></a>
+								<p><button id="sendSmsBtn" type="button">문자전송</button>&nbsp;&nbsp;<button id="sendSmsReplyBtn" type="button">문자&댓글 저장</button></p>
 							</div>
 						</div>
-					</form>
-				</c:when>
+						<form id="form1" method="post" action="adminAdviceReplyRegister">
+							<input type="hidden" name="no" value="${item.no}">
+							<div class="container">
+								<h2>댓글답변</h2>
+								<hr>
+								<p>작성자: <input type="text" name="replyer" value="관리자"></p>
+								<input type="hidden" name="no" value="${item.no}">
+								<textarea id="editor1" name="reply"></textarea>
+								<hr>
+								<div class="btn">
+									<input type="submit" value="저장">
+									<a href="${pageContext.request.contextPath}/admin/adminAdvice"><button type="button">뒤로가기</button></a>
+								</div>
+							</div>
+						</form>
+					</c:when>
 					<c:otherwise>
 						<div class="notice_content">
 							<h2>답변</h2>

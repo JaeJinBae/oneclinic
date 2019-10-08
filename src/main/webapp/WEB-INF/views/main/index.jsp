@@ -813,7 +813,7 @@ $(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="popup">
-				<img src="${pageContext.request.contextPath}/resources/popup/popup_20191002.jpg">
+				<img src="${pageContext.request.contextPath}/resources/popup/popup_20191007.jpg">
 				<div class="popup_closeBtn">
 					<p>닫기</p>
 				</div>
