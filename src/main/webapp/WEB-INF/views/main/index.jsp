@@ -24,7 +24,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 .popup{
-	/* display: none; */
+	display: none;
 }
 .allWrap{
 	width:100%;
