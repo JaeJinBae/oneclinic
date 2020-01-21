@@ -34,7 +34,7 @@
 
 <style>
 .popup{
-	display: none;
+	/* display: none; */
 }
 .allWrap{
 	width:100%;
@@ -64,9 +64,9 @@
 .popup{
 	position: fixed;
 	top: 140px;
-	right: 500px;
+	left: 100px;
 	z-index: 99;
-	width: 550px;
+	width: 700px;
 	border: 1px solid lightgray;
 }
 .popup > img{
@@ -823,7 +823,7 @@ $(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="popup">
-				<img src="${pageContext.request.contextPath}/resources/popup/popup_20191010.jpg">
+				<img src="${pageContext.request.contextPath}/resources/popup/popup_20200121.jpg">
 				<div class="popup_closeBtn">
 					<p>닫기</p>
 				</div>
