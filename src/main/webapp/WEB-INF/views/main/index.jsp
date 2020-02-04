@@ -66,7 +66,7 @@
 	top: 140px;
 	left: 100px;
 	z-index: 99;
-	width: 700px;
+	width: 600px;
 	border: 1px solid lightgray;
 }
 .popup > img{
@@ -823,7 +823,7 @@ $(function(){
 		<div class="mg_top_135"></div>
 		<div class="sectionWrap">
 			<div class="popup">
-				<img src="${pageContext.request.contextPath}/resources/popup/popup_20200121.jpg">
+				<img src="${pageContext.request.contextPath}/resources/popup/popup_20200204.jpg">
 				<div class="popup_closeBtn">
 					<p>닫기</p>
 				</div>

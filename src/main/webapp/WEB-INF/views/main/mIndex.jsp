@@ -487,7 +487,7 @@ $(function(){
 		</div>
 		<div class="sectionWrap">
 			<div class="popup">
-				<img src="${pageContext.request.contextPath}/resources/popup/popup_20200121.jpg">
+				<img src="${pageContext.request.contextPath}/resources/popup/popup_20200204.jpg">
 				<div class="popup_closeBtn">
 					<p>닫기</p>
 				</div>
