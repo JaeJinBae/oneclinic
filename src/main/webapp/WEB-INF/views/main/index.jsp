@@ -34,7 +34,7 @@
 
 <style>
 .popup{
-	/* display: none; */
+	display: none;
 }
 .allWrap{
 	width:100%;
@@ -836,7 +836,7 @@ $(function(){
 					</div>
 					<div class="bannerImgBox">
 						<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner2.jpg">
-						<img class="bannerTxt" src="${pageContext.request.contextPath}/resources/images/mainBannerTxt2.png" style="bottom:5%; left: 50%;transform:translate(-50%, 0);">
+						<img class="bannerTxt" src="${pageContext.request.contextPath}/resources/images/mainBannerTxt2.png" style="top:25%; left: 10%;">
 					</div>
 					<div class="bannerImgBox">
 						<img class="bannerImg" src="${pageContext.request.contextPath}/resources/images/mainBanner3.jpg">
@@ -860,7 +860,7 @@ $(function(){
 						<div class="box1">
 							<h4>원내영상</h4>
 							<div class="box1_videoWrap">
-								<video loop autoplay src="${pageContext.request.contextPath}/resources/video/v1.mp4"></video>
+								<video loop autoplay muted src="${pageContext.request.contextPath}/resources/video/v1.mp4"></video>
 							</div>
 						</div> 
 						<div class="box1">
